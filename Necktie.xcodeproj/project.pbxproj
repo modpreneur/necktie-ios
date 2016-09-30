@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB551A1D9E80AD005347DB /* AppDelegate.swift */; };
-		2BBB551D1D9E80AD005347DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB551C1D9E80AD005347DB /* ViewController.swift */; };
 		2BBB55201D9E80AD005347DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBB551E1D9E80AD005347DB /* Main.storyboard */; };
 		2BBB55221D9E80AD005347DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BBB55211D9E80AD005347DB /* Assets.xcassets */; };
 		2BBB55251D9E80AD005347DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBB55231D9E80AD005347DB /* LaunchScreen.storyboard */; };
 		2BBB55301D9E80AD005347DB /* NecktieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB552F1D9E80AD005347DB /* NecktieTests.swift */; };
 		2BBB553B1D9E80AD005347DB /* NecktieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB553A1D9E80AD005347DB /* NecktieUITests.swift */; };
+		2BBB55501D9E8552005347DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB554F1D9E8552005347DB /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +36,8 @@
 /* Begin PBXFileReference section */
 		2BBB55171D9E80AD005347DB /* Necktie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Necktie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBB551A1D9E80AD005347DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2BBB551C1D9E80AD005347DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2BBB551F1D9E80AD005347DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2BBB55211D9E80AD005347DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BBB55211D9E80AD005347DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Necktie/Assets.xcassets; sourceTree = "<group>"; };
 		2BBB55241D9E80AD005347DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BBB55261D9E80AD005347DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BBB552B1D9E80AD005347DB /* NecktieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NecktieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +46,7 @@
 		2BBB55361D9E80AD005347DB /* NecktieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NecktieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBB553A1D9E80AD005347DB /* NecktieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecktieUITests.swift; sourceTree = "<group>"; };
 		2BBB553C1D9E80AD005347DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BBB554F1D9E8552005347DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				2BBB55191D9E80AD005347DB /* Necktie */,
+				2BBB55211D9E80AD005347DB /* Assets.xcassets */,
 				2BBB552E1D9E80AD005347DB /* NecktieTests */,
 				2BBB55391D9E80AD005347DB /* NecktieUITests */,
 				2BBB55181D9E80AD005347DB /* Products */,
@@ -98,11 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				2BBB551A1D9E80AD005347DB /* AppDelegate.swift */,
-				2BBB551C1D9E80AD005347DB /* ViewController.swift */,
-				2BBB551E1D9E80AD005347DB /* Main.storyboard */,
-				2BBB55211D9E80AD005347DB /* Assets.xcassets */,
-				2BBB55231D9E80AD005347DB /* LaunchScreen.storyboard */,
-				2BBB55261D9E80AD005347DB /* Info.plist */,
+				2BBB554E1D9E8506005347DB /* Helpers */,
+				2BBB55491D9E8128005347DB /* Model */,
+				2BBB55481D9E8118005347DB /* UI */,
+				2BBB554B1D9E8162005347DB /* Supporting Files */,
 			);
 			path = Necktie;
 			sourceTree = "<group>";
@@ -123,6 +123,63 @@
 				2BBB553C1D9E80AD005347DB /* Info.plist */,
 			);
 			path = NecktieUITests;
+			sourceTree = "<group>";
+		};
+		2BBB55481D9E8118005347DB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB554C1D9E8211005347DB /* Controller */,
+				2BBB554A1D9E8148005347DB /* Storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2BBB55491D9E8128005347DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BBB554A1D9E8148005347DB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB551E1D9E80AD005347DB /* Main.storyboard */,
+				2BBB55231D9E80AD005347DB /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		2BBB554B1D9E8162005347DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB55261D9E80AD005347DB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BBB554C1D9E8211005347DB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB554D1D9E82F1005347DB /* Login */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2BBB554D1D9E82F1005347DB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		2BBB554E1D9E8506005347DB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB554F1D9E8552005347DB /* Constants.swift */,
+			);
+			name = Helpers;
+			path = UI/Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +316,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BBB551D1D9E80AD005347DB /* ViewController.swift in Sources */,
 				2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */,
+				2BBB55501D9E8552005347DB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +359,7 @@
 				2BBB551F1D9E80AD005347DB /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		2BBB55231D9E80AD005347DB /* LaunchScreen.storyboard */ = {
@@ -310,6 +368,7 @@
 				2BBB55241D9E80AD005347DB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -413,6 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Necktie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getnecktie.Necktie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Necktie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getnecktie.Necktie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
