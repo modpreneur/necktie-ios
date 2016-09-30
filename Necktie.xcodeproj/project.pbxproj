@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB551A1D9E80AD005347DB /* AppDelegate.swift */; };
+		2BBB551D1D9E80AD005347DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB551C1D9E80AD005347DB /* ViewController.swift */; };
+		2BBB55201D9E80AD005347DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBB551E1D9E80AD005347DB /* Main.storyboard */; };
+		2BBB55221D9E80AD005347DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BBB55211D9E80AD005347DB /* Assets.xcassets */; };
+		2BBB55251D9E80AD005347DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBB55231D9E80AD005347DB /* LaunchScreen.storyboard */; };
+		2BBB55301D9E80AD005347DB /* NecktieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB552F1D9E80AD005347DB /* NecktieTests.swift */; };
+		2BBB553B1D9E80AD005347DB /* NecktieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB553A1D9E80AD005347DB /* NecktieUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2BBB552C1D9E80AD005347DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BBB550F1D9E80AD005347DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BBB55161D9E80AD005347DB;
+			remoteInfo = Necktie;
+		};
+		2BBB55371D9E80AD005347DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BBB550F1D9E80AD005347DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BBB55161D9E80AD005347DB;
+			remoteInfo = Necktie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2BBB55171D9E80AD005347DB /* Necktie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Necktie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BBB551A1D9E80AD005347DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2BBB551C1D9E80AD005347DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2BBB551F1D9E80AD005347DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BBB55211D9E80AD005347DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BBB55241D9E80AD005347DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BBB55261D9E80AD005347DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BBB552B1D9E80AD005347DB /* NecktieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NecktieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BBB552F1D9E80AD005347DB /* NecktieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecktieTests.swift; sourceTree = "<group>"; };
+		2BBB55311D9E80AD005347DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BBB55361D9E80AD005347DB /* NecktieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NecktieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BBB553A1D9E80AD005347DB /* NecktieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecktieUITests.swift; sourceTree = "<group>"; };
+		2BBB553C1D9E80AD005347DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BBB55141D9E80AD005347DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BBB55281D9E80AD005347DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BBB55331D9E80AD005347DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BBB550E1D9E80AD005347DB = {
+			isa = PBXGroup;
+			children = (
+				2BBB55191D9E80AD005347DB /* Necktie */,
+				2BBB552E1D9E80AD005347DB /* NecktieTests */,
+				2BBB55391D9E80AD005347DB /* NecktieUITests */,
+				2BBB55181D9E80AD005347DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2BBB55181D9E80AD005347DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB55171D9E80AD005347DB /* Necktie.app */,
+				2BBB552B1D9E80AD005347DB /* NecktieTests.xctest */,
+				2BBB55361D9E80AD005347DB /* NecktieUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BBB55191D9E80AD005347DB /* Necktie */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB551A1D9E80AD005347DB /* AppDelegate.swift */,
+				2BBB551C1D9E80AD005347DB /* ViewController.swift */,
+				2BBB551E1D9E80AD005347DB /* Main.storyboard */,
+				2BBB55211D9E80AD005347DB /* Assets.xcassets */,
+				2BBB55231D9E80AD005347DB /* LaunchScreen.storyboard */,
+				2BBB55261D9E80AD005347DB /* Info.plist */,
+			);
+			path = Necktie;
+			sourceTree = "<group>";
+		};
+		2BBB552E1D9E80AD005347DB /* NecktieTests */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB552F1D9E80AD005347DB /* NecktieTests.swift */,
+				2BBB55311D9E80AD005347DB /* Info.plist */,
+			);
+			path = NecktieTests;
+			sourceTree = "<group>";
+		};
+		2BBB55391D9E80AD005347DB /* NecktieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB553A1D9E80AD005347DB /* NecktieUITests.swift */,
+				2BBB553C1D9E80AD005347DB /* Info.plist */,
+			);
+			path = NecktieUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BBB55161D9E80AD005347DB /* Necktie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BBB553F1D9E80AD005347DB /* Build configuration list for PBXNativeTarget "Necktie" */;
+			buildPhases = (
+				2BBB55131D9E80AD005347DB /* Sources */,
+				2BBB55141D9E80AD005347DB /* Frameworks */,
+				2BBB55151D9E80AD005347DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Necktie;
+			productName = Necktie;
+			productReference = 2BBB55171D9E80AD005347DB /* Necktie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2BBB552A1D9E80AD005347DB /* NecktieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BBB55421D9E80AD005347DB /* Build configuration list for PBXNativeTarget "NecktieTests" */;
+			buildPhases = (
+				2BBB55271D9E80AD005347DB /* Sources */,
+				2BBB55281D9E80AD005347DB /* Frameworks */,
+				2BBB55291D9E80AD005347DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BBB552D1D9E80AD005347DB /* PBXTargetDependency */,
+			);
+			name = NecktieTests;
+			productName = NecktieTests;
+			productReference = 2BBB552B1D9E80AD005347DB /* NecktieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2BBB55351D9E80AD005347DB /* NecktieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BBB55451D9E80AD005347DB /* Build configuration list for PBXNativeTarget "NecktieUITests" */;
+			buildPhases = (
+				2BBB55321D9E80AD005347DB /* Sources */,
+				2BBB55331D9E80AD005347DB /* Frameworks */,
+				2BBB55341D9E80AD005347DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BBB55381D9E80AD005347DB /* PBXTargetDependency */,
+			);
+			name = NecktieUITests;
+			productName = NecktieUITests;
+			productReference = 2BBB55361D9E80AD005347DB /* NecktieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BBB550F1D9E80AD005347DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Necktie;
+				TargetAttributes = {
+					2BBB55161D9E80AD005347DB = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					2BBB552A1D9E80AD005347DB = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2BBB55161D9E80AD005347DB;
+					};
+					2BBB55351D9E80AD005347DB = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2BBB55161D9E80AD005347DB;
+					};
+				};
+			};
+			buildConfigurationList = 2BBB55121D9E80AD005347DB /* Build configuration list for PBXProject "Necktie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2BBB550E1D9E80AD005347DB;
+			productRefGroup = 2BBB55181D9E80AD005347DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BBB55161D9E80AD005347DB /* Necktie */,
+				2BBB552A1D9E80AD005347DB /* NecktieTests */,
+				2BBB55351D9E80AD005347DB /* NecktieUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BBB55151D9E80AD005347DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BBB55251D9E80AD005347DB /* LaunchScreen.storyboard in Resources */,
+				2BBB55221D9E80AD005347DB /* Assets.xcassets in Resources */,
+				2BBB55201D9E80AD005347DB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BBB55291D9E80AD005347DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BBB55341D9E80AD005347DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BBB55131D9E80AD005347DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BBB551D1D9E80AD005347DB /* ViewController.swift in Sources */,
+				2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BBB55271D9E80AD005347DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BBB55301D9E80AD005347DB /* NecktieTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BBB55321D9E80AD005347DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BBB553B1D9E80AD005347DB /* NecktieUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2BBB552D1D9E80AD005347DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BBB55161D9E80AD005347DB /* Necktie */;
+			targetProxy = 2BBB552C1D9E80AD005347DB /* PBXContainerItemProxy */;
+		};
+		2BBB55381D9E80AD005347DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BBB55161D9E80AD005347DB /* Necktie */;
+			targetProxy = 2BBB55371D9E80AD005347DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2BBB551E1D9E80AD005347DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BBB551F1D9E80AD005347DB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2BBB55231D9E80AD005347DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BBB55241D9E80AD005347DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2BBB553D1D9E80AD005347DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BBB553E1D9E80AD005347DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2BBB55401D9E80AD005347DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Necktie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getnecktie.Necktie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2BBB55411D9E80AD005347DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Necktie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getnecktie.Necktie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2BBB55431D9E80AD005347DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NecktieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getnecktie.NecktieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Necktie.app/Necktie";
+			};
+			name = Debug;
+		};
+		2BBB55441D9E80AD005347DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NecktieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getnecktie.NecktieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Necktie.app/Necktie";
+			};
+			name = Release;
+		};
+		2BBB55461D9E80AD005347DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = NecktieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getnecktie.NecktieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Necktie;
+			};
+			name = Debug;
+		};
+		2BBB55471D9E80AD005347DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = NecktieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getnecktie.NecktieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Necktie;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BBB55121D9E80AD005347DB /* Build configuration list for PBXProject "Necktie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BBB553D1D9E80AD005347DB /* Debug */,
+				2BBB553E1D9E80AD005347DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BBB553F1D9E80AD005347DB /* Build configuration list for PBXNativeTarget "Necktie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BBB55401D9E80AD005347DB /* Debug */,
+				2BBB55411D9E80AD005347DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2BBB55421D9E80AD005347DB /* Build configuration list for PBXNativeTarget "NecktieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BBB55431D9E80AD005347DB /* Debug */,
+				2BBB55441D9E80AD005347DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2BBB55451D9E80AD005347DB /* Build configuration list for PBXNativeTarget "NecktieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BBB55461D9E80AD005347DB /* Debug */,
+				2BBB55471D9E80AD005347DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BBB550F1D9E80AD005347DB /* Project object */;
+}
