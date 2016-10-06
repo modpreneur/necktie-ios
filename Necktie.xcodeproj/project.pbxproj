@@ -566,6 +566,7 @@
 				2BBB55411D9E80AD005347DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BBB55421D9E80AD005347DB /* Build configuration list for PBXNativeTarget "NecktieTests" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +575,7 @@
 				2BBB55441D9E80AD005347DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BBB55451D9E80AD005347DB /* Build configuration list for PBXNativeTarget "NecktieUITests" */ = {
 			isa = XCConfigurationList;
@@ -582,6 +584,7 @@
 				2BBB55471D9E80AD005347DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
