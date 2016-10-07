@@ -16,6 +16,8 @@
 		2BBB55501D9E8552005347DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB554F1D9E8552005347DB /* Constants.swift */; };
 		2BBBD6001DA64D9000696D1E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBBD5FF1DA64D9000696D1E /* Login.storyboard */; };
 		2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6011DA65D9800696D1E /* LoginViewController.swift */; };
+		2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */; };
+		2BFB0BF01DA78EA900D29BC4 /* UIViewController+MotionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		2BBB554F1D9E8552005347DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2BBBD5FF1DA64D9000696D1E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2BBBD6011DA65D9800696D1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+MotionEffect.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 		2BBB554C1D9E8211005347DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2BBBD6031DA6821300696D1E /* Dashboard */,
 				2BBB554D1D9E82F1005347DB /* Login */,
 			);
 			name = Controller;
@@ -183,9 +188,18 @@
 			isa = PBXGroup;
 			children = (
 				2BBB554F1D9E8552005347DB /* Constants.swift */,
+				2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */,
 			);
 			name = Helpers;
 			path = UI/Helpers;
+			sourceTree = "<group>";
+		};
+		2BBBD6031DA6821300696D1E /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */,
+			);
+			name = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +270,7 @@
 				TargetAttributes = {
 					2BBB55161D9E80AD005347DB = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = YDUY2357U5;
 						ProvisioningStyle = Automatic;
 					};
 					2BBB552A1D9E80AD005347DB = {
@@ -325,7 +340,9 @@
 			files = (
 				2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */,
 				2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */,
+				2BFB0BF01DA78EA900D29BC4 /* UIViewController+MotionEffect.swift in Sources */,
 				2BBB55501D9E8552005347DB /* Constants.swift in Sources */,
+				2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YDUY2357U5;
 				INFOPLIST_FILE = Necktie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -492,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YDUY2357U5;
 				INFOPLIST_FILE = Necktie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

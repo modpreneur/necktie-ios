@@ -129,14 +129,16 @@ Control every step. Discover the most beautiful and effective system ever. Be pr
                         <color key="backgroundColor" red="0.1529411765" green="0.24313725489999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ZVv-yX-pUp" firstAttribute="centerX" secondItem="hdF-OZ-E8s" secondAttribute="centerX" id="Flh-hJ-gOR"/>
-                            <constraint firstItem="5A4-BN-R2y" firstAttribute="top" secondItem="BOd-Tm-Ds5" secondAttribute="bottom" id="PIX-QB-G2w"/>
+                            <constraint firstItem="5A4-BN-R2y" firstAttribute="top" secondItem="BOd-Tm-Ds5" secondAttribute="bottom" constant="-50" id="PIX-QB-G2w"/>
                             <constraint firstItem="ZVv-yX-pUp" firstAttribute="centerY" secondItem="hdF-OZ-E8s" secondAttribute="centerY" id="PkJ-bJ-yg8"/>
-                            <constraint firstItem="BOd-Tm-Ds5" firstAttribute="leading" secondItem="hdF-OZ-E8s" secondAttribute="leading" id="YrU-Ed-fWb"/>
-                            <constraint firstItem="BOd-Tm-Ds5" firstAttribute="top" secondItem="hdF-OZ-E8s" secondAttribute="top" id="eRo-cg-fCh"/>
-                            <constraint firstAttribute="trailing" secondItem="BOd-Tm-Ds5" secondAttribute="trailing" id="pEp-ZF-MKW"/>
+                            <constraint firstItem="BOd-Tm-Ds5" firstAttribute="leading" secondItem="hdF-OZ-E8s" secondAttribute="leading" constant="-50" id="YrU-Ed-fWb"/>
+                            <constraint firstItem="BOd-Tm-Ds5" firstAttribute="top" secondItem="hdF-OZ-E8s" secondAttribute="top" constant="-50" id="eRo-cg-fCh"/>
+                            <constraint firstAttribute="trailing" secondItem="BOd-Tm-Ds5" secondAttribute="trailing" constant="-50" id="pEp-ZF-MKW"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="BOd-Tm-Ds5" id="AEd-03-Wgq"/>
+                        <outlet property="containerView" destination="ZVv-yX-pUp" id="W5r-Ls-Icz"/>
                         <outlet property="loginButton" destination="fVo-iV-tLg" id="uQ0-5s-Ng0"/>
                         <outlet property="loginTextField" destination="sjI-qQ-ug5" id="gDA-Qq-9wm"/>
                         <outlet property="passwordTextField" destination="eLI-jg-qMg" id="OOS-lK-vCv"/>

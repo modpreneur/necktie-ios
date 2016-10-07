@@ -18,4 +18,5 @@ struct Constant {
 struct Color {
     static let necktieBlue = UIColor(red:0.15, green:0.24, blue:0.33, alpha:1.00)
     static let necktieGreen = UIColor(red:0.00, green:0.77, blue:0.62, alpha:1.00)
+    static let necktieGray = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1.00)
 }

@@ -10,10 +10,16 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    // MARK: - Properties
+    
+    @IBOutlet var backgroundView: UIImageView!
+    @IBOutlet var containerView: UIView!
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
 
+    // MARK: - View
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +30,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Reset button
         loginButton.backgroundColor = UIColor.lightGray
         loginButton.isEnabled = false
+        
+        // Add motion effect to background and login container views
+        applyMotionEffect(toView: backgroundView, magnitude: 5)
+        applyMotionEffect(toView: containerView, magnitude: -10)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +47,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else if (textField === passwordTextField) {
             passwordTextField.resignFirstResponder()
-            print("Done")
         }
         
         return true
