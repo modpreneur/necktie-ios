@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Necktie
 
 class NecktieTests: XCTestCase {
     

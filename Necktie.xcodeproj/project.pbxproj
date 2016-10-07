@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29C3D7063EC45364895AB139 /* Pods_NecktieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14E9C439F698E2570115C41 /* Pods_NecktieUITests.framework */; };
 		2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB551A1D9E80AD005347DB /* AppDelegate.swift */; };
 		2BBB55201D9E80AD005347DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBB551E1D9E80AD005347DB /* Main.storyboard */; };
 		2BBB55221D9E80AD005347DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BBB55211D9E80AD005347DB /* Assets.xcassets */; };
@@ -18,6 +19,8 @@
 		2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6011DA65D9800696D1E /* LoginViewController.swift */; };
 		2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */; };
 		2BFB0BF01DA78EA900D29BC4 /* UIViewController+MotionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */; };
+		5047CC83408BDFCABC8DABD2 /* Pods_NecktieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C7B9A84F53E45030BACDED /* Pods_NecktieTests.framework */; };
+		5B41E82DA44C90B62C923581 /* Pods_Necktie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958064951AA6F4BE954D3E11 /* Pods_Necktie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10A5CB944B3979ADEF7CF38F /* Pods-NecktieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NecktieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NecktieUITests/Pods-NecktieUITests.release.xcconfig"; sourceTree = "<group>"; };
+		14AD381534BFAB2648520186 /* Pods-Necktie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Necktie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Necktie/Pods-Necktie.release.xcconfig"; sourceTree = "<group>"; };
+		25C7B9A84F53E45030BACDED /* Pods_NecktieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NecktieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBB55171D9E80AD005347DB /* Necktie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Necktie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBB551A1D9E80AD005347DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BBB551F1D9E80AD005347DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +61,13 @@
 		2BBBD6011DA65D9800696D1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+MotionEffect.swift"; sourceTree = "<group>"; };
+		2BFB0BF61DA7A21300D29BC4 /* Necktie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Necktie-Bridging-Header.h"; sourceTree = "<group>"; };
+		3279B56140C68B1C4466EE0E /* Pods-NecktieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NecktieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NecktieTests/Pods-NecktieTests.release.xcconfig"; sourceTree = "<group>"; };
+		79497D1B3739B00E5E2D91CE /* Pods-NecktieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NecktieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NecktieUITests/Pods-NecktieUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		958064951AA6F4BE954D3E11 /* Pods_Necktie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Necktie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD596E331BD7C9E7F8080181 /* Pods-Necktie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Necktie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Necktie/Pods-Necktie.debug.xcconfig"; sourceTree = "<group>"; };
+		F14E9C439F698E2570115C41 /* Pods_NecktieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NecktieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7515C0614C828B0A6A56B5D /* Pods-NecktieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NecktieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NecktieTests/Pods-NecktieTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B41E82DA44C90B62C923581 /* Pods_Necktie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5047CC83408BDFCABC8DABD2 /* Pods_NecktieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C3D7063EC45364895AB139 /* Pods_NecktieUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +106,8 @@
 				2BBB552E1D9E80AD005347DB /* NecktieTests */,
 				2BBB55391D9E80AD005347DB /* NecktieUITests */,
 				2BBB55181D9E80AD005347DB /* Products */,
+				AEE1E8127496C87EE299620F /* Pods */,
+				737D1E1F7A3A4F2239EAAF00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				2BBB55261D9E80AD005347DB /* Info.plist */,
+				2BFB0BF61DA7A21300D29BC4 /* Necktie-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -202,6 +221,29 @@
 			name = Dashboard;
 			sourceTree = "<group>";
 		};
+		737D1E1F7A3A4F2239EAAF00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				958064951AA6F4BE954D3E11 /* Pods_Necktie.framework */,
+				25C7B9A84F53E45030BACDED /* Pods_NecktieTests.framework */,
+				F14E9C439F698E2570115C41 /* Pods_NecktieUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEE1E8127496C87EE299620F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD596E331BD7C9E7F8080181 /* Pods-Necktie.debug.xcconfig */,
+				14AD381534BFAB2648520186 /* Pods-Necktie.release.xcconfig */,
+				F7515C0614C828B0A6A56B5D /* Pods-NecktieTests.debug.xcconfig */,
+				3279B56140C68B1C4466EE0E /* Pods-NecktieTests.release.xcconfig */,
+				79497D1B3739B00E5E2D91CE /* Pods-NecktieUITests.debug.xcconfig */,
+				10A5CB944B3979ADEF7CF38F /* Pods-NecktieUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,9 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BBB553F1D9E80AD005347DB /* Build configuration list for PBXNativeTarget "Necktie" */;
 			buildPhases = (
+				E5C192E520820AD732ECC96B /* [CP] Check Pods Manifest.lock */,
 				2BBB55131D9E80AD005347DB /* Sources */,
 				2BBB55141D9E80AD005347DB /* Frameworks */,
 				2BBB55151D9E80AD005347DB /* Resources */,
+				0CFF7CD209222E10BF64C9BD /* [CP] Embed Pods Frameworks */,
+				3478504C25C37CDDFC57D29B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,9 +271,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BBB55421D9E80AD005347DB /* Build configuration list for PBXNativeTarget "NecktieTests" */;
 			buildPhases = (
+				C8AA10C935953588A96462CF /* [CP] Check Pods Manifest.lock */,
 				2BBB55271D9E80AD005347DB /* Sources */,
 				2BBB55281D9E80AD005347DB /* Frameworks */,
 				2BBB55291D9E80AD005347DB /* Resources */,
+				E6174D600AACFDF366598C3D /* [CP] Embed Pods Frameworks */,
+				6D123D6C07F2FC0BFF413305 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,9 +292,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BBB55451D9E80AD005347DB /* Build configuration list for PBXNativeTarget "NecktieUITests" */;
 			buildPhases = (
+				2A4A2D66E3667E7B4F39C79E /* [CP] Check Pods Manifest.lock */,
 				2BBB55321D9E80AD005347DB /* Sources */,
 				2BBB55331D9E80AD005347DB /* Frameworks */,
 				2BBB55341D9E80AD005347DB /* Resources */,
+				B45D68582C2A033D2585FE96 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,15 +321,18 @@
 					2BBB55161D9E80AD005347DB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = YDUY2357U5;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					2BBB552A1D9E80AD005347DB = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2BBB55161D9E80AD005347DB;
 					};
 					2BBB55351D9E80AD005347DB = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2BBB55161D9E80AD005347DB;
 					};
@@ -332,6 +385,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CFF7CD209222E10BF64C9BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Necktie/Pods-Necktie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A4A2D66E3667E7B4F39C79E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3478504C25C37CDDFC57D29B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Necktie/Pods-Necktie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D123D6C07F2FC0BFF413305 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NecktieTests/Pods-NecktieTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B45D68582C2A033D2585FE96 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NecktieUITests/Pods-NecktieUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8AA10C935953588A96462CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5C192E520820AD732ECC96B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E6174D600AACFDF366598C3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NecktieTests/Pods-NecktieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2BBB55131D9E80AD005347DB /* Sources */ = {
@@ -494,11 +670,12 @@
 		};
 		2BBB55401D9E80AD005347DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD596E331BD7C9E7F8080181 /* Pods-Necktie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YDUY2357U5;
 				INFOPLIST_FILE = Necktie/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getnecktie.Necktie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,11 +685,12 @@
 		};
 		2BBB55411D9E80AD005347DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14AD381534BFAB2648520186 /* Pods-Necktie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YDUY2357U5;
 				INFOPLIST_FILE = Necktie/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getnecktie.Necktie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -522,6 +700,7 @@
 		};
 		2BBB55431D9E80AD005347DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7515C0614C828B0A6A56B5D /* Pods-NecktieTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +715,7 @@
 		};
 		2BBB55441D9E80AD005347DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3279B56140C68B1C4466EE0E /* Pods-NecktieTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,6 +730,7 @@
 		};
 		2BBB55461D9E80AD005347DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79497D1B3739B00E5E2D91CE /* Pods-NecktieUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = NecktieUITests/Info.plist;
@@ -563,6 +744,7 @@
 		};
 		2BBB55471D9E80AD005347DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10A5CB944B3979ADEF7CF38F /* Pods-NecktieUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = NecktieUITests/Info.plist;

@@ -8,6 +8,8 @@
 
 import UIKit
 
+import IHKeyboardAvoiding
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Properties
@@ -35,9 +37,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         applyMotionEffect(toView: backgroundView, magnitude: 5)
         applyMotionEffect(toView: containerView, magnitude: -10)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        // Set keyboard to avoid containerView
+        IHKeyboardAvoiding.setAvoiding(containerView)
+        IHKeyboardAvoiding.setPaddingForCurrentAvoidingView(-64)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // Dismiss keyboard when tapping outside text fields
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        loginTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
     }
     
     // MARK: - UITextFieldDelegate
