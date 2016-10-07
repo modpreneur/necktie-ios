@@ -34,8 +34,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.isEnabled = false
         
         // Add motion effect to background and login container views
-        applyMotionEffect(toView: backgroundView, magnitude: 5)
-        applyMotionEffect(toView: containerView, magnitude: -10)
+        applyMotionEffect(toView: backgroundView, magnitude: 10)
+        applyMotionEffect(toView: containerView, magnitude: -20)
     }
     
     override func viewDidAppear(_ animated: Bool) {

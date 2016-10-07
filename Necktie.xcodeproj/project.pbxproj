@@ -19,6 +19,13 @@
 		2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6011DA65D9800696D1E /* LoginViewController.swift */; };
 		2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */; };
 		2BFB0BF01DA78EA900D29BC4 /* UIViewController+MotionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */; };
+		2BFB0BF81DA7BA4800D29BC4 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFB0BF71DA7BA4800D29BC4 /* Dashboard.storyboard */; };
+		2BFB0BFB1DA7BB1D00D29BC4 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFB0BFA1DA7BB1D00D29BC4 /* Menu.storyboard */; };
+		2BFB0BFE1DA7BD6D00D29BC4 /* MenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0BFD1DA7BD6D00D29BC4 /* MenuContainerViewController.swift */; };
+		2BFB0C021DA7BE8900D29BC4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0C011DA7BE8900D29BC4 /* MenuViewController.swift */; };
+		2BFB0C041DA7C17B00D29BC4 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0C031DA7C17B00D29BC4 /* MenuTableViewCell.swift */; };
+		2BFB0C061DA7CAD200D29BC4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0C051DA7CAD200D29BC4 /* MainViewController.swift */; };
+		2BFB0C081DA7D3F500D29BC4 /* SideMenuCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0C071DA7D3F500D29BC4 /* SideMenuCustom.swift */; };
 		5047CC83408BDFCABC8DABD2 /* Pods_NecktieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C7B9A84F53E45030BACDED /* Pods_NecktieTests.framework */; };
 		5B41E82DA44C90B62C923581 /* Pods_Necktie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958064951AA6F4BE954D3E11 /* Pods_Necktie.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +69,13 @@
 		2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+MotionEffect.swift"; sourceTree = "<group>"; };
 		2BFB0BF61DA7A21300D29BC4 /* Necktie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Necktie-Bridging-Header.h"; sourceTree = "<group>"; };
+		2BFB0BF71DA7BA4800D29BC4 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		2BFB0BFA1DA7BB1D00D29BC4 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		2BFB0BFD1DA7BD6D00D29BC4 /* MenuContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerViewController.swift; sourceTree = "<group>"; };
+		2BFB0C011DA7BE8900D29BC4 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		2BFB0C031DA7C17B00D29BC4 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		2BFB0C051DA7CAD200D29BC4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2BFB0C071DA7D3F500D29BC4 /* SideMenuCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCustom.swift; sourceTree = "<group>"; };
 		3279B56140C68B1C4466EE0E /* Pods-NecktieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NecktieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NecktieTests/Pods-NecktieTests.release.xcconfig"; sourceTree = "<group>"; };
 		79497D1B3739B00E5E2D91CE /* Pods-NecktieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NecktieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NecktieUITests/Pods-NecktieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		958064951AA6F4BE954D3E11 /* Pods_Necktie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Necktie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,8 +185,10 @@
 			isa = PBXGroup;
 			children = (
 				2BBB551E1D9E80AD005347DB /* Main.storyboard */,
+				2BFB0BF71DA7BA4800D29BC4 /* Dashboard.storyboard */,
 				2BBB55231D9E80AD005347DB /* LaunchScreen.storyboard */,
 				2BBBD5FF1DA64D9000696D1E /* Login.storyboard */,
+				2BFB0BFA1DA7BB1D00D29BC4 /* Menu.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -189,6 +205,8 @@
 		2BBB554C1D9E8211005347DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2BFB0C051DA7CAD200D29BC4 /* MainViewController.swift */,
+				2BFB0BFC1DA7BD4600D29BC4 /* Menu */,
 				2BBBD6031DA6821300696D1E /* Dashboard */,
 				2BBB554D1D9E82F1005347DB /* Login */,
 			);
@@ -219,6 +237,17 @@
 				2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */,
 			);
 			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		2BFB0BFC1DA7BD4600D29BC4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				2BFB0C011DA7BE8900D29BC4 /* MenuViewController.swift */,
+				2BFB0BFD1DA7BD6D00D29BC4 /* MenuContainerViewController.swift */,
+				2BFB0C031DA7C17B00D29BC4 /* MenuTableViewCell.swift */,
+				2BFB0C071DA7D3F500D29BC4 /* SideMenuCustom.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		737D1E1F7A3A4F2239EAAF00 /* Frameworks */ = {
@@ -364,7 +393,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BBBD6001DA64D9000696D1E /* Login.storyboard in Resources */,
+				2BFB0BF81DA7BA4800D29BC4 /* Dashboard.storyboard in Resources */,
 				2BBB55251D9E80AD005347DB /* LaunchScreen.storyboard in Resources */,
+				2BFB0BFB1DA7BB1D00D29BC4 /* Menu.storyboard in Resources */,
 				2BBB55221D9E80AD005347DB /* Assets.xcassets in Resources */,
 				2BBB55201D9E80AD005347DB /* Main.storyboard in Resources */,
 			);
@@ -516,8 +547,13 @@
 			files = (
 				2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */,
 				2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */,
+				2BFB0C041DA7C17B00D29BC4 /* MenuTableViewCell.swift in Sources */,
 				2BFB0BF01DA78EA900D29BC4 /* UIViewController+MotionEffect.swift in Sources */,
+				2BFB0C021DA7BE8900D29BC4 /* MenuViewController.swift in Sources */,
+				2BFB0BFE1DA7BD6D00D29BC4 /* MenuContainerViewController.swift in Sources */,
+				2BFB0C061DA7CAD200D29BC4 /* MainViewController.swift in Sources */,
 				2BBB55501D9E8552005347DB /* Constants.swift in Sources */,
+				2BFB0C081DA7D3F500D29BC4 /* SideMenuCustom.swift in Sources */,
 				2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,26 +8,28 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
+import SideMenuController
+
+class DashboardViewController: UIViewController, SideMenuControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sideMenuController?.delegate = self
+        
+        navigationController?.addSideMenuButton()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func sideMenuControllerDidHide(_ sideMenuController: SideMenuController) {
+        print(#function)
     }
-    */
+    
+    func sideMenuControllerDidReveal(_ sideMenuController: SideMenuController) {
+        print(#function)
+    }
 
 }

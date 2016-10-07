@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LRq-Ii-QzA">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dashboard View Controller-->
+        <scene sceneID="88u-Yk-DJ6">
+            <objects>
+                <viewController storyboardIdentifier="dashboard" id="hih-3X-egD" customClass="DashboardViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p7j-OE-B1M"/>
+                        <viewControllerLayoutGuide type="bottom" id="U8V-1K-gGP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PXt-XE-Az9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jdz-H1-fxu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wRT-Of-Vmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="74.212893553223395"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="V1m-LS-yVa">
+            <objects>
+                <navigationController storyboardIdentifier="dashboardNav" automaticallyAdjustsScrollViewInsets="NO" id="LRq-Ii-QzA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kvh-RN-qcg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.76862745099999996" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hih-3X-egD" kind="relationship" relationship="rootViewController" id="VdC-Ec-dIt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khf-Nh-Yb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.200000000000003" y="74.212893553223395"/>
+        </scene>
+    </scenes>
+</document>

@@ -99,6 +99,7 @@
                                                 <state key="normal" title="LOG IN"/>
                                                 <connections>
                                                     <action selector="login:" destination="SFS-n5-9eN" eventType="touchUpInside" id="yuc-HV-GzX"/>
+                                                    <segue destination="lmx-nK-pCV" kind="show" id="e1e-6i-G9f"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJb-oa-X5A">
@@ -174,6 +175,14 @@ Control every step. Discover the most beautiful and effective system ever. Be pr
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqT-qw-37e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-34.399999999999999" y="142.57871064467767"/>
+        </scene>
+        <!--menuContainer-->
+        <scene sceneID="bZM-Ga-kqn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="menuContainer" id="lmx-nK-pCV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i8x-su-zpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="674" y="309"/>
         </scene>
     </scenes>
     <resources>

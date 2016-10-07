@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SideMenuController
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
