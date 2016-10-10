@@ -38,7 +38,7 @@ class HeaderView: UIView {
         imageView.backgroundColor = UIColor().necktieGreen
         imageView.clipsToBounds = true
         imageView.contentMode = .center
-        imageView.image = UIImage(named: "menu")
+        imageView.image = UIImage(named: "Menu_Logo")
         containerView.addSubview(imageView)
         containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[imageView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["imageView" : imageView]))
         bottomLayoutConstraint = NSLayoutConstraint(item: imageView, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1.0, constant: 0.0)
