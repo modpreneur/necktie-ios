@@ -10,25 +10,19 @@ import UIKit
 
 class MenuViewController: UITableViewController {
     
-    struct MenuItem {
-        var name: String
-        var segue: String
-        var image: String
-    }
-    
-    let menuItems: Array<MenuItem> = [MenuItem.init(name: "Dashboard", segue: "showDashboard", image: "dashboard"),
-                                      MenuItem.init(name: "Products", segue: "showProducts", image: "products"),
-                                      MenuItem.init(name: "Projects", segue: "showProjects", image: "projects"),
-                                      MenuItem.init(name: "Users", segue: "showUsers", image: "users")]
+    var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
 
     private var previousIndex: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.clearsSelectionOnViewWillAppear = false
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.tableView.backgroundColor = UIColor().necktieBlue
+        
+        self.tableView.tableHeaderView = HeaderView.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 66));
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -46,22 +40,45 @@ class MenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
         
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor().necktieLightBlue
+        cell.selectedBackgroundView = bgColorView
+        
         let item = menuItems[indexPath.row] as MenuItem
 
         cell.menuItemName?.text = item.name.uppercased()
+        
+        if selectedIndex == indexPath {
+            cell.backgroundColor = UIColor().necktieLightBlue
+        } else {
+            cell.backgroundColor = UIColor().necktieBlue
+        }
 
         return cell
     }
+    
+    // MARK: - Table view delegate
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let index = previousIndex {
             tableView.deselectRow(at: index, animated: true)
         }
         
+        selectedIndex = indexPath
+        
         let item = menuItems[indexPath.row] as MenuItem
         
         sideMenuController?.performSegue(withIdentifier: item.segue, sender: nil)
         previousIndex = indexPath
+        
+        tableView.reloadData()
+    }
+    
+    // MARK: - Scroll view delegate
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let headerView = self.tableView.tableHeaderView as! HeaderView
+        headerView.scrollViewDidScroll(scrollView: scrollView)
     }
 
 }

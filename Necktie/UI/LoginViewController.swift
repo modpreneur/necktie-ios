@@ -75,7 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (loginTextField.text?.characters.count)! > 3 && (passwordTextField.text?.characters.count)! > 3 {
             UIView.animate(withDuration: 0.3, animations: {
                 self.loginButton.isEnabled = true
-                self.loginButton.backgroundColor = Color.necktieBlue
+                self.loginButton.backgroundColor = UIColor().necktieBlue
             })
         } else {
             UIView.animate(withDuration: 0.3, animations: {
