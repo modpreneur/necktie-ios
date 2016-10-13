@@ -11,9 +11,9 @@ import Foundation
 /**
  Menu Item
  
- - *name* = text displayed in menu
- - *segue* = segue identifier to viewController (needs to be set in Menu.storyboard; probably via reference)
- - *image* = name of image for icon displayed in menu next to text (in .xcassets)
+ - *name* (String) = text displayed in menu
+ - *segue* (String) = segue identifier to viewController (needs to be set in Menu.storyboard; probably via reference)
+ - *image* (String) = name of image for icon displayed in menu next to text (in .xcassets)
  */
 struct MenuItem {
     let name: String
@@ -30,10 +30,13 @@ var menuItems = [MenuItem(name: "Dashboard",
                  MenuItem(name: "Products",
                           segue: "showDashboard",
                           image: "products"),
-                 MenuItem(name: "Projects",
+                 MenuItem(name: "Company",
                           segue: "showDashboard",
-                          image: "projects"),
+                          image: "company"),
                  MenuItem(name: "Users",
                           segue: "showDashboard",
-                          image: "users")
+                          image: "users"),
+                 MenuItem(name: "Settings",
+                          segue: "showDashboard",
+                          image: "settings")
 ]

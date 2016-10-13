@@ -12,6 +12,8 @@ import SideMenuController
 
 class DashboardViewController: UIViewController, SideMenuControllerDelegate {
 
+    // MARK: - View
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,12 +26,14 @@ class DashboardViewController: UIViewController, SideMenuControllerDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - SideMenuControllerDelegate
+    
     func sideMenuControllerDidHide(_ sideMenuController: SideMenuController) {
-        print(#function)
+        
     }
     
     func sideMenuControllerDidReveal(_ sideMenuController: SideMenuController) {
-        print(#function)
+        
     }
 
 }

@@ -20,6 +20,7 @@ class MenuViewController: UITableViewController {
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.tableView.backgroundColor = UIColor().necktieBlue
         
+        // Add stretchable header view
         self.tableView.tableHeaderView = HeaderView.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 64));
     }
     
@@ -40,19 +41,18 @@ class MenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
         
-        let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor().necktieLightBlue
-        cell.selectedBackgroundView = bgColorView
+        // Cell selected background
+        let backgroundColorView = UIView()
+        backgroundColorView.backgroundColor = UIColor().necktieLightBlue
+        cell.selectedBackgroundView = backgroundColorView
         
         let item = menuItems[indexPath.row] as MenuItem
 
+        // Item text converted to uppercase
         cell.menuItemName?.text = item.name.uppercased()
         
-        if selectedIndex == indexPath {
-            cell.backgroundColor = UIColor().necktieLightBlue
-        } else {
-            cell.backgroundColor = UIColor().necktieBlue
-        }
+        // Change cell background color if item is selected
+        cell.backgroundColor = selectedIndex == indexPath ? UIColor().necktieLightBlue : UIColor().necktieBlue
 
         return cell
     }
@@ -68,6 +68,7 @@ class MenuViewController: UITableViewController {
         
         let item = menuItems[indexPath.row] as MenuItem
         
+        // Load desired viewController from menu
         sideMenuController?.performSegue(withIdentifier: item.segue, sender: nil)
         previousIndex = indexPath
         
