@@ -9,7 +9,38 @@
 import Foundation
 import UIKit
 
+import SwiftyUserDefaults
+import Locksmith
+
 /// Global constants
 struct Constant {
     
+}
+
+/// API Paths
+struct API {
+    static var BASE_URL = ""
+}
+
+/// Storyboard view controller identifiers
+struct Identifier {
+    static var login = "login"
+}
+
+/// SwiftyUserDefaults keys
+extension DefaultsKeys {
+    static let isLoggedIn = DefaultsKey<Bool>("isLoggedIn")
+    static let username = DefaultsKey<String>("username")
+}
+
+/// Locksmith saving to system keychain
+struct NecktieAccount: ReadableSecureStorable, CreateableSecureStorable, DeleteableSecureStorable, GenericPasswordSecureStorable {
+    let username: String
+    let password: String
+    
+    let service = "Necktie"
+    var account: String { return username }
+    var data: [String: Any] {
+        return ["password": password]
+    }
 }

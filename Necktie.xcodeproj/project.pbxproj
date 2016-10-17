@@ -11,6 +11,7 @@
 		2B1654381DAB7FE7001DBE43 /* UIColor+Necktie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1654371DAB7FE7001DBE43 /* UIColor+Necktie.swift */; };
 		2B1654421DABA631001DBE43 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1654411DABA631001DBE43 /* HeaderView.swift */; };
 		2B1654441DABBDB0001DBE43 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1654431DABBDB0001DBE43 /* Menu.swift */; };
+		2B51450F1DB4C1120034E884 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51450E1DB4C1120034E884 /* DashboardCell.swift */; };
 		2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB551A1D9E80AD005347DB /* AppDelegate.swift */; };
 		2BBB55201D9E80AD005347DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBB551E1D9E80AD005347DB /* Main.storyboard */; };
 		2BBB55221D9E80AD005347DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BBB55211D9E80AD005347DB /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		2B1654371DAB7FE7001DBE43 /* UIColor+Necktie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Necktie.swift"; sourceTree = "<group>"; };
 		2B1654411DABA631001DBE43 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		2B1654431DABBDB0001DBE43 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		2B51450E1DB4C1120034E884 /* DashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
 		2BBB55171D9E80AD005347DB /* Necktie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Necktie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBB551A1D9E80AD005347DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BBB551F1D9E80AD005347DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */,
+				2B51450E1DB4C1120034E884 /* DashboardCell.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B51450F1DB4C1120034E884 /* DashboardCell.swift in Sources */,
 				2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */,
 				2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */,
 				2BFB0C041DA7C17B00D29BC4 /* MenuTableViewCell.swift in Sources */,

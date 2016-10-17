@@ -10,5 +10,6 @@
 #define Necktie_Bridging_Header_h
 
 #import <IHKeyboardAvoiding/IHKeyboardAvoiding.h>
+#import <MBCircularProgressBar/MBCircularProgressBarView.h>
 
 #endif /* Necktie_Bridging_Header_h */

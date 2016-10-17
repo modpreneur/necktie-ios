@@ -7,6 +7,8 @@ target 'Necktie' do
   pod 'DGElasticPullToRefresh', '~> 1.1'
   pod 'IHKeyboardAvoiding', '~> 2.6'
   pod 'Locksmith', '~> 3.0'
+  pod 'MBCircularProgressBar', '~> 0.3'
+  pod 'Segmentio', '~> 2.0'
   pod 'SideMenuController', '~> 0.2'
   pod 'SkyFloatingLabelTextField', git: 'https://github.com/MLSDev/SkyFloatingLabelTextField.git', branch: 'swift3'
   pod 'SnapKit', '~> 3.0'
