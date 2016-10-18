@@ -9,6 +9,7 @@
 import UIKit
 
 import SideMenuController
+import SwiftyUserDefaults
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,9 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-//        let initViewController: UIViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-//        self.window?.rootViewController? = initViewController
+        if !Defaults[.isLoggedIn] {
+            
+        }
+        
+        // Set UINavigationBar appearance
+        let attributes = [NSFontAttributeName: UIFont(name: "Avenir Next", size: 18.0)!, NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = attributes
         
         return true
     }

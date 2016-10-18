@@ -9,6 +9,7 @@
 import UIKit
 
 import IHKeyboardAvoiding
+import SwiftyUserDefaults
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -86,7 +87,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(_ sender: AnyObject) {
-        
+        Defaults[.isLoggedIn] = true
+        dismiss(animated: true) { 
+            
+        }
     }
 
     /*

@@ -9,6 +9,7 @@
 import UIKit
 
 import SideMenuController
+import SwiftyUserDefaults
 
 class MenuContainerViewController: SideMenuCustom {
 
@@ -17,6 +18,15 @@ class MenuContainerViewController: SideMenuCustom {
 
         performSegue(withIdentifier: "showDashboard", sender: nil)
         performSegue(withIdentifier: "containSideMenu", sender: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if !Defaults[.isLoggedIn] {
+            let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Identifier.login) as! LoginViewController
+            self.present(viewController, animated: true, completion: nil)
+        }
     }
 
 }

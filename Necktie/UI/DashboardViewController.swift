@@ -8,8 +8,9 @@
 
 import UIKit
 
-import SideMenuController
 import MBCircularProgressBar
+import SideMenuController
+import SwiftyUserDefaults
 
 class DashboardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SideMenuControllerDelegate {
 
@@ -26,6 +27,10 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.dataSource = self
         
         navigationController?.addSideMenuButton()
+        
+        //FIXME: Temporary
+        let logout = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(logoutAction))
+        navigationItem.rightBarButtonItem = logout
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +68,14 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         
         return cell
+    }
+    
+    // MARK: - Logout - Temporary
+    
+    func logoutAction() {
+        Defaults[.isLoggedIn] = false
+        let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Identifier.login) as! LoginViewController
+        self.present(viewController, animated: true, completion: nil)
     }
 
     // MARK: - SideMenuControllerDelegate
