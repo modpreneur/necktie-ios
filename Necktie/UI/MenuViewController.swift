@@ -18,7 +18,7 @@ class MenuViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        self.tableView.backgroundColor = UIColor().necktieBlue
+        self.tableView.backgroundColor = UIColor().necktieSecondary
         
         // Add stretchable header view
         self.tableView.tableHeaderView = HeaderView.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 64));
@@ -43,7 +43,7 @@ class MenuViewController: UITableViewController {
         
         // Cell selected background
         let backgroundColorView = UIView()
-        backgroundColorView.backgroundColor = UIColor().necktieLightBlue
+        backgroundColorView.backgroundColor = UIColor().necktieSecondaryLight
         cell.selectedBackgroundView = backgroundColorView
         
         let item = menuItems[indexPath.row] as MenuItem
@@ -52,7 +52,7 @@ class MenuViewController: UITableViewController {
         cell.menuItemName?.text = item.name.uppercased()
         
         // Change cell background color if item is selected
-        cell.backgroundColor = selectedIndex == indexPath ? UIColor().necktieLightBlue : UIColor().necktieBlue
+        cell.backgroundColor = selectedIndex == indexPath ? UIColor().necktieSecondaryLight : UIColor().necktieSecondary
 
         return cell
     }

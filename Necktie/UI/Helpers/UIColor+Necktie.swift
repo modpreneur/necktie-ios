@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    public var necktieGreen: UIColor {
+    public var necktiePrimary: UIColor {
         return UIColor(red:0.00, green:0.77, blue:0.62, alpha:1.00)
     }
     
-    public var necktieBlue: UIColor {
+    public var necktieSecondary: UIColor {
         return UIColor(red:0.15, green:0.24, blue:0.33, alpha:1.00)
     }
     
-    public var necktieLightBlue: UIColor {
+    public var necktieSecondaryLight: UIColor {
         return UIColor(red:0.23, green:0.35, blue:0.45, alpha:1.00)
     }
     

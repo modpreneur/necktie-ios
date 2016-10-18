@@ -17,7 +17,7 @@ class SideMenuCustom: SideMenuController {
         SideMenuController.preferences.drawing.sidePanelPosition = .overCenterPanelLeft
         SideMenuController.preferences.drawing.sidePanelWidth = UIScreen.main.bounds.width * 0.75
         SideMenuController.preferences.drawing.centerPanelShadow = false
-        SideMenuController.preferences.animating.statusBarBehaviour = .slideAnimation
+        SideMenuController.preferences.animating.statusBarBehaviour = .fadeAnimation
         SideMenuController.preferences.interaction.panningEnabled = true
         super.init(coder: aDecoder)
     }
