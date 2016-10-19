@@ -11,8 +11,9 @@ import UIKit
 import MBCircularProgressBar
 import SideMenuController
 import SwiftyUserDefaults
+import SwiftChart
 
-class DashboardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SideMenuControllerDelegate {
+class DashboardViewController: IntroViewController, UICollectionViewDelegate, UICollectionViewDataSource, SideMenuControllerDelegate {
 
     @IBOutlet var collectionView: UICollectionView!
     
@@ -44,30 +45,51 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardCell", for: indexPath) as! DashboardCell
         
         switch indexPath.row {
         case 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardProgressCell", for: indexPath) as! DashboardProgressCell
             cell.progressView.maxValue = 100
-            cell.progressView.showUnitString = true
-            cell.progressView.setValue(75, animateWithDuration: 0.75)
+            cell.progressView.valueIndicator = "%"
+            cell.progressView.setProgress(value: 75, animationDuration: 0.75, completion: nil)
             cell.descriptionLabel.text = "Active Users"
+            return cell
         case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardProgressCell", for: indexPath) as! DashboardProgressCell
             cell.progressView.maxValue = 100456
-            cell.progressView.showUnitString = false
-            cell.progressView.setValue(100456, animateWithDuration: 0.75)
+            cell.progressView.valueIndicator = ""
+            cell.progressView.setProgress(value: 100456, animationDuration: 0.75, completion: nil)
             cell.descriptionLabel.text = "Total Users"
+            return cell
+        case 2:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardGraphCell", for: indexPath) as! DashboardGraphCell
+            cell.descriptionLabel.text = "Graph"
+            let series = ChartSeries([0, 6.5, 2, 8, 4.1, 7, -3.1, 10, 8])
+            series.color = UIColor().necktiePrimary
+            cell.graphView.add(series)
+            cell.graphView.topInset = 8
+            return cell
         default:
-            break
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardProgressCell", for: indexPath) as! DashboardProgressCell
+            return cell
         }
-        
-        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        switch indexPath.row {
+        case 0, 1:
+            return CGSize(width: 160, height: 200)
+        case 2:
+            return CGSize(width: 320, height: 180)
+        default:
+            return CGSize(width: 160, height: 200)
+        }
     }
     
     // MARK: - Logout - Temporary

@@ -9,10 +9,19 @@
 import UIKit
 
 import MBCircularProgressBar
+import UICircularProgressRing
+import SwiftChart
 
-class DashboardCell: UICollectionViewCell {
+class DashboardProgressCell: UICollectionViewCell {
     
     @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet var progressView: MBCircularProgressBarView!
+    @IBOutlet var progressView: UICircularProgressRingView!
+
+}
+
+class DashboardGraphCell: UICollectionViewCell {
+    
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var graphView: Chart!
 
 }

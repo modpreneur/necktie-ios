@@ -31,6 +31,7 @@ struct Identifier {
 extension DefaultsKeys {
     static let isLoggedIn = DefaultsKey<Bool>("isLoggedIn")
     static let username = DefaultsKey<String>("username")
+    static let introAnimation = DefaultsKey<Bool>("introAnimation")
 }
 
 /// Locksmith saving to system keychain

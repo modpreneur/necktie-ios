@@ -26,51 +26,48 @@
                                     <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dashboardCell" id="IAR-SZ-OdA" customClass="DashboardCell" customModule="Necktie" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="16" width="160" height="190"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dashboardProgressCell" id="IAR-SZ-OdA" customClass="DashboardProgressCell" customModule="Necktie" customModuleProvider="target">
+                                        <rect key="frame" x="108" y="16" width="160" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QZ-vt-NAU" customClass="MBCircularProgressBarView">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QZ-vt-NAU" customClass="UICircularProgressRingView" customModule="UICircularProgressRing">
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="Tod-Q5-DRu"/>
+                                                        <constraint firstAttribute="height" constant="150" id="cHK-42-5dS"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="unitFontName" value="Avenir Next"/>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
-                                                            <color key="value" red="0.0" green="0.76862745099999996" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
-                                                            <color key="value" red="0.0" green="0.76862745099999996" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
-                                                            <color key="value" red="0.0" green="0.76862745099999996" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
-                                                            <real key="value" value="12"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
-                                                            <color key="value" red="0.1529411765" green="0.24313725489999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
-                                                            <integer key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
-                                                            <integer key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="value">
                                                             <real key="value" value="50"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
-                                                            <real key="value" value="12"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="progressAngle">
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
                                                             <real key="value" value="100"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="valueFontName" value="Avenir Next"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
+                                                            <color key="value" red="0.0" green="0.76862745099999996" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="outerRingColor">
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="innerRingWidth">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="innerRingSpacing">
+                                                            <real key="value" value="-40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="outerRingWidth">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="customFontWithName" value="Avenir Next"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                            <color key="value" red="0.0" green="0.76862745099999996" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPw-bQ-VcC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dashboardProgressCell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="MPw-bQ-VcC">
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -80,15 +77,58 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="1QZ-vt-NAU" secondAttribute="bottom" id="0im-rQ-1VJ"/>
                                             <constraint firstItem="1QZ-vt-NAU" firstAttribute="top" secondItem="MPw-bQ-VcC" secondAttribute="bottom" constant="1" id="KPk-rd-H7b"/>
-                                            <constraint firstItem="1QZ-vt-NAU" firstAttribute="leading" secondItem="IAR-SZ-OdA" secondAttribute="leading" id="YJx-Fh-fyO"/>
-                                            <constraint firstAttribute="trailing" secondItem="1QZ-vt-NAU" secondAttribute="trailing" id="Z0h-9J-sZA"/>
+                                            <constraint firstItem="1QZ-vt-NAU" firstAttribute="centerX" secondItem="IAR-SZ-OdA" secondAttribute="centerX" id="gPU-Ov-QDP"/>
                                             <constraint firstAttribute="trailing" secondItem="MPw-bQ-VcC" secondAttribute="trailing" constant="8" id="wb9-Ta-jtZ"/>
                                             <constraint firstItem="MPw-bQ-VcC" firstAttribute="leading" secondItem="IAR-SZ-OdA" secondAttribute="leading" constant="8" id="xMs-Jl-bOO"/>
                                             <constraint firstItem="MPw-bQ-VcC" firstAttribute="top" secondItem="IAR-SZ-OdA" secondAttribute="top" constant="8" id="ysU-Nc-sUg"/>
                                         </constraints>
+                                        <size key="customSize" width="160" height="200"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="MPw-bQ-VcC" id="bkl-lm-kcz"/>
                                             <outlet property="progressView" destination="1QZ-vt-NAU" id="idh-NB-8VY"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dashboardGraphCell" id="fW3-Ke-W3U" customClass="DashboardGraphCell" customModule="Necktie" customModuleProvider="target">
+                                        <rect key="frame" x="27.5" y="226" width="320" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="321" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdC-DH-Szj" customClass="Chart" customModule="SwiftChart">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="gridColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="axesColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dashboardGraphCell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="4oa-m7-aKi">
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="LdC-DH-Szj" firstAttribute="top" secondItem="4oa-m7-aKi" secondAttribute="bottom" constant="1" id="CmA-0O-Z1q"/>
+                                            <constraint firstAttribute="trailing" secondItem="LdC-DH-Szj" secondAttribute="trailing" id="Sbc-Fl-fKn"/>
+                                            <constraint firstItem="4oa-m7-aKi" firstAttribute="leading" secondItem="fW3-Ke-W3U" secondAttribute="leading" constant="8" id="UhU-St-cG8"/>
+                                            <constraint firstItem="LdC-DH-Szj" firstAttribute="leading" secondItem="fW3-Ke-W3U" secondAttribute="leading" id="WbS-1g-sAn"/>
+                                            <constraint firstItem="4oa-m7-aKi" firstAttribute="top" secondItem="fW3-Ke-W3U" secondAttribute="top" constant="8" id="eNc-xP-aFK"/>
+                                            <constraint firstAttribute="trailing" secondItem="4oa-m7-aKi" secondAttribute="trailing" constant="8" id="m59-SD-v6Q"/>
+                                            <constraint firstAttribute="bottom" secondItem="LdC-DH-Szj" secondAttribute="bottom" id="utj-sO-k48"/>
+                                        </constraints>
+                                        <size key="customSize" width="320" height="180"/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="4oa-m7-aKi" id="oaU-6A-9mS"/>
+                                            <outlet property="graphView" destination="LdC-DH-Szj" id="g9H-cJ-F6d"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -120,7 +160,7 @@
             <objects>
                 <navigationController storyboardIdentifier="dashboardNav" automaticallyAdjustsScrollViewInsets="NO" id="LRq-Ii-QzA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kvh-RN-qcg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kvh-RN-qcg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -11,7 +11,7 @@ import UIKit
 
 extension UIColor {
     public var necktiePrimary: UIColor {
-        return UIColor(red:0.00, green:0.77, blue:0.62, alpha:1.00)
+        return UIColor(red:0.14, green:0.73, blue:0.61, alpha:1.00)
     }
     
     public var necktieSecondary: UIColor {

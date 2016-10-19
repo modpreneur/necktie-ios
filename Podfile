@@ -6,7 +6,6 @@ target 'Necktie' do
   pod 'Alamofire', '~> 4.0'
   pod 'BusyNavigationBar', '~> 2.0'
   pod 'DGElasticPullToRefresh', '~> 1.1'
-  pod 'Graphs', '~> 0.1'
   pod 'IHKeyboardAvoiding', '~> 2.6'
   pod 'Locksmith', '~> 3.0'
   pod 'MBCircularProgressBar', '~> 0.3'
@@ -14,7 +13,9 @@ target 'Necktie' do
   pod 'SideMenuController', '~> 0.2'
   pod 'SkyFloatingLabelTextField', git: 'https://github.com/MLSDev/SkyFloatingLabelTextField.git', branch: 'swift3'
   pod 'SnapKit', '~> 3.0'
+  pod 'SwiftChart', '~> 0.3'
   pod 'SwiftyUserDefaults', '~> 3.0'
+  pod 'UICircularProgressRing', '~> 1.1'
 
   target 'NecktieTests' do
     inherit! :search_paths

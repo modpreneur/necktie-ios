@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
+        Defaults[.introAnimation] = false
+        
         // Set UINavigationBar appearance
         let attributes = [NSFontAttributeName: UIFont(name: "Avenir Next", size: 18.0)!, NSForegroundColorAttributeName: UIColor.white]
         UINavigationBar.appearance().titleTextAttributes = attributes
