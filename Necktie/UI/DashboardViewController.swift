@@ -8,12 +8,12 @@
 
 import UIKit
 
-import MBCircularProgressBar
+import RevealingSplashView
 import SideMenuController
 import SwiftyUserDefaults
 import SwiftChart
 
-class DashboardViewController: IntroViewController, UICollectionViewDelegate, UICollectionViewDataSource, SideMenuControllerDelegate {
+class DashboardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SideMenuControllerDelegate {
 
     @IBOutlet var collectionView: UICollectionView!
     
@@ -32,6 +32,19 @@ class DashboardViewController: IntroViewController, UICollectionViewDelegate, UI
         //FIXME: Temporary
         let logout = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(logoutAction))
         navigationItem.rightBarButtonItem = logout
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        // Add intro animation
+        if Defaults[.introAnimation] == false {
+            let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Logo_Mask")!, iconInitialSize: CGSize(width: 120, height: 125), backgroundColor: UIColor().necktiePrimary)
+            let window = UIApplication.shared.keyWindow
+            window?.addSubview(revealingSplashView)
+            revealingSplashView.startAnimation() { }
+            Defaults[.introAnimation] = true
+        }
     }
 
     override func didReceiveMemoryWarning() {

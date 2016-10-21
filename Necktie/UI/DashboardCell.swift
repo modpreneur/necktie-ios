@@ -8,7 +8,6 @@
 
 import UIKit
 
-import MBCircularProgressBar
 import UICircularProgressRing
 import SwiftChart
 
