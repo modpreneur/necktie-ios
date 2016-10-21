@@ -82,11 +82,17 @@ class DashboardViewController: IntroViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let screenSize = UIApplication.shared.keyWindow?.bounds
+        let insets: CGFloat = 16
+        let spacing: CGFloat = 16
+        
         switch indexPath.row {
         case 0, 1:
-            return CGSize(width: 160, height: 200)
+            let itemSize = CGSize(width: ((screenSize?.width)!/2)-insets-spacing, height: 200)
+            return itemSize
         case 2:
-            return CGSize(width: 320, height: 180)
+            let itemSize = CGSize(width: (screenSize?.width)!-(insets*2), height: 180)
+            return itemSize
         default:
             return CGSize(width: 160, height: 200)
         }
