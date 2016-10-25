@@ -27,7 +27,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dashboardProgressCell" id="IAR-SZ-OdA" customClass="DashboardProgressCell" customModule="Necktie" customModuleProvider="target">
-                                        <rect key="frame" x="107.5" y="16" width="160" height="200"/>
+                                        <rect key="frame" x="108" y="16" width="160" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
@@ -74,7 +74,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.75293999909999998" green="0.12156999860000001" blue="0.14509999749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="1QZ-vt-NAU" secondAttribute="bottom" id="0im-rQ-1VJ"/>
                                             <constraint firstItem="1QZ-vt-NAU" firstAttribute="top" secondItem="MPw-bQ-VcC" secondAttribute="bottom" constant="1" id="KPk-rd-H7b"/>
@@ -90,10 +90,10 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dashboardGraphCell" id="fW3-Ke-W3U" customClass="DashboardGraphCell" customModule="Necktie" customModuleProvider="target">
-                                        <rect key="frame" x="27.5" y="232" width="320" height="180"/>
+                                        <rect key="frame" x="28" y="232" width="320" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="321" height="180"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdC-DH-Szj" customClass="Chart" customModule="SwiftChart">
@@ -117,7 +117,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.75293999909999998" green="0.12156999860000001" blue="0.14509999749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="LdC-DH-Szj" firstAttribute="top" secondItem="4oa-m7-aKi" secondAttribute="bottom" constant="1" id="CmA-0O-Z1q"/>
                                             <constraint firstAttribute="trailing" secondItem="LdC-DH-Szj" secondAttribute="trailing" id="Sbc-Fl-fKn"/>
