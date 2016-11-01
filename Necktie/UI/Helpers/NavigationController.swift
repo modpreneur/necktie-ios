@@ -33,5 +33,16 @@ class NavigationController: UINavigationController {
         UIGraphicsEndImageContext()
         return image!
     }
+    
+}
 
+public extension UINavigationController {
+    /// Adds title image to navigationBar title
+    public func addTitleImage() {
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "Splash")
+        imageView.image = image
+        self.topViewController?.navigationItem.titleView = imageView
+    }
 }

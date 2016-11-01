@@ -22,12 +22,14 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set delegates for sideMenuController and collectionView
         sideMenuController?.delegate = self
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        /// Add menu button and title image to navigationBar
         navigationController?.addSideMenuButton()
+        navigationController?.addTitleImage()
         
         //FIXME: Temporary
         let logout = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(logoutAction))
