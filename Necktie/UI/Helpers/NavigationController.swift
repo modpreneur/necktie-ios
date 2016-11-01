@@ -14,9 +14,9 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         self.navigationBar.isTranslucent = false
         self.navigationBar.tintColor = UIColor.white
-        let fontDictionary = [NSForegroundColorAttributeName:UIColor.white]
-        self.navigationBar.titleTextAttributes = fontDictionary
+        self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Roboto-Regular", size: 18.0)!, NSForegroundColorAttributeName: UIColor.white]
         self.navigationBar.setBackgroundImage(imageLayerForGradientBackground(), for: UIBarMetrics.default)
+        self.navigationBar.shadowImage = UIImage()
     }
 
     override func didReceiveMemoryWarning() {

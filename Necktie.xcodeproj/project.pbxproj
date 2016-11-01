@@ -150,7 +150,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B71DB7A1DC88BB000893937 /* Resources */ = {
+		2B1119701DC8CCF2002A8D5B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				2B71DB7B1DC88BE000893937 /* Roboto-Black.ttf */,
@@ -165,6 +165,14 @@
 				2B71DB841DC88BE000893937 /* Roboto-Regular.ttf */,
 				2B71DB851DC88BE000893937 /* Roboto-Thin.ttf */,
 				2B71DB861DC88BE000893937 /* Roboto-ThinItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		2B71DB7A1DC88BB000893937 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2B1119701DC8CCF2002A8D5B /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -283,11 +291,11 @@
 			isa = PBXGroup;
 			children = (
 				2BBB554F1D9E8552005347DB /* Constants.swift */,
+				2B71DBA31DC892B500893937 /* CAGradientLayer+Image.swift */,
 				2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */,
 				2B1654371DAB7FE7001DBE43 /* UIColor+Necktie.swift */,
-				2B656B8C1DBA5DBA00F898F1 /* GradientView.swift */,
-				2B71DBA31DC892B500893937 /* CAGradientLayer+Image.swift */,
 				2B71DBA51DC8938900893937 /* NavigationController.swift */,
+				2B656B8C1DBA5DBA00F898F1 /* GradientView.swift */,
 			);
 			name = Helpers;
 			path = UI/Helpers;
