@@ -9,6 +9,7 @@ target 'Necktie' do
   pod 'IHKeyboardAvoiding', '~> 2.6'
   pod 'Locksmith', '~> 3.0'
   pod 'RevealingSplashView', '~> 0.1'
+  pod 'ScrollableGraphView', '~> 3.0'
   pod 'Segmentio', '~> 2.0'
   pod 'SideMenuController', '~> 0.2'
   pod 'SkyFloatingLabelTextField', git: 'https://github.com/MLSDev/SkyFloatingLabelTextField.git', branch: 'swift3'

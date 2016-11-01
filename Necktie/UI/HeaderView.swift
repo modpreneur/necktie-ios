@@ -18,14 +18,14 @@ class HeaderView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor().necktiePrimary
+        self.backgroundColor = UIColor().necktieGradientStart
         
         // The container view is needed to extend the visible area for the image view
         // to include that below the navigation bar. If this container view isn't present
         // the image view would be clipped at the navigation bar's bottom and the parallax
         // effect would not work correctly
         
-        containerView.backgroundColor = UIColor().necktiePrimary
+        containerView.backgroundColor = UIColor().necktieGradientStart
         containerView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(containerView)
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[containerView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["containerView" : containerView]))
@@ -35,7 +35,7 @@ class HeaderView: UIView {
         
         let imageView: UIImageView = UIImageView.init()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = UIColor().necktiePrimary
+        imageView.backgroundColor = UIColor().necktieGradientStart
         imageView.clipsToBounds = true
         imageView.contentMode = .center
         imageView.image = UIImage(named: "Menu_Logo")
