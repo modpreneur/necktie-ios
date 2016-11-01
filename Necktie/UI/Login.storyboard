@@ -76,13 +76,13 @@
                                                         <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                                        <color key="value" red="0.0" green="0.76862745099999996" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.29125192761421204" green="0.7420649528503418" blue="0.98579519987106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                         <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                        <color key="value" red="0.1529411765" green="0.24313725489999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -105,10 +105,10 @@
                                                         <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                                        <color key="value" red="0.0" green="0.76862745099999996" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.29125192761421204" green="0.7420649528503418" blue="0.98579519987106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                        <color key="value" red="0.1529411765" green="0.24313725489999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -117,14 +117,16 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVo-iV-tLg">
                                                 <rect key="frame" x="60" y="216" width="200" height="48"/>
-                                                <color key="backgroundColor" red="0.1529411765" green="0.24313725489999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="27O-9r-JH0"/>
                                                     <constraint firstAttribute="height" constant="48" id="Q4i-Ag-czf"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="LOG IN"/>
+                                                <state key="normal" title="LOG IN">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="login:" destination="SFS-n5-9eN" eventType="touchUpInside" id="yuc-HV-GzX"/>
                                                 </connections>
@@ -133,13 +135,13 @@
                                                 <rect key="frame" x="103" y="296" width="114" height="31"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <state key="normal" title="Forgot password?">
-                                                    <color key="titleColor" red="0.0" green="0.76862745099999996" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.29125192761421204" green="0.7420649528503418" blue="0.98579519987106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejl-mM-Ub1">
                                                 <rect key="frame" x="122.5" y="32" width="75" height="32"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="24"/>
-                                                <color key="textColor" red="0.1529411765" green="0.24313725489999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>

@@ -50,7 +50,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y8s-Yi-ofM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.1529411765" green="0.24313725489999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="48" id="46Q-7c-c0h" customClass="MenuTableViewCell" customModule="Necktie" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="48"/>
@@ -81,7 +81,7 @@
                                         <constraint firstItem="JNC-60-bcr" firstAttribute="centerY" secondItem="r32-oW-73I" secondAttribute="centerY" id="x9k-vu-WoP"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.1529411765" green="0.24313725489999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="menuItemIcon" destination="JNC-60-bcr" id="B4m-cb-pdn"/>
                                     <outlet property="menuItemName" destination="Zar-Yz-6Gp" id="lm1-Df-Iqs"/>

@@ -11,18 +11,30 @@ import UIKit
 
 extension UIColor {
     public var necktiePrimary: UIColor {
-        return UIColor(red:0.14, green:0.73, blue:0.61, alpha:1.00)
+        return UIColor(red:0.09, green:0.741, blue:1, alpha:1)
     }
     
     public var necktieSecondary: UIColor {
-        return UIColor(red:0.15, green:0.24, blue:0.33, alpha:1.00)
+        return UIColor(red:0.176, green:0.196, blue:0.243, alpha:1)
     }
     
     public var necktieSecondaryLight: UIColor {
-        return UIColor(red:0.23, green:0.35, blue:0.45, alpha:1.00)
+        return UIColor(red:0.156, green:0.172, blue:0.215, alpha:1)
     }
     
     public var necktieGray: UIColor {
-        return UIColor(red:0.97, green:0.97, blue:0.97, alpha:1.00)
+        return UIColor(red:0.823, green:0.843, blue:0.89, alpha:1)
+    }
+    
+    public var necktieBackground: UIColor {
+        return UIColor(red:0.858, green:0.878, blue:0.913, alpha:1)
+    }
+    
+    public var necktieDisabled: UIColor {
+        return UIColor(red:0.384, green:0.772, blue:0, alpha:1)
+    }
+    
+    public var necktiePending: UIColor {
+        return UIColor(red:0.384, green:0.772, blue:0, alpha:1)
     }
 }
