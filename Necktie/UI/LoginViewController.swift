@@ -20,6 +20,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
+    @IBOutlet var loginLabel: UILabel!
+    @IBOutlet var passwordLabel: UILabel!
+    @IBOutlet var facebookButton: UIButton!
 
     // MARK: - View
     
@@ -34,17 +37,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.backgroundColor = UIColor.lightGray
         loginButton.isEnabled = false
         
-        // Add motion effect to background and login container views
-        applyMotionEffect(toView: backgroundView, magnitude: 10)
-        applyMotionEffect(toView: containerView, magnitude: -20)
+        // Set default alpha for labels
+        loginLabel.alpha = 0
+        passwordLabel.alpha = 0
+        
+        // Set corner radius
+        loginTextField.layer.cornerRadius = 3
+        passwordTextField.layer.cornerRadius = 3
+        facebookButton.layer.cornerRadius = 3
+        
+        // Style login button
+        loginButton.backgroundColor = UIColor.clear
+        loginButton.layer.cornerRadius = 3
+        loginButton.layer.borderWidth = 1
+        loginButton.layer.borderColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.2).cgColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         // Set keyboard to avoid containerView
-        IHKeyboardAvoiding.setAvoiding(containerView)
-        IHKeyboardAvoiding.setPaddingForCurrentAvoidingView(-64)
+        IHKeyboardAvoiding.setAvoiding(loginButton)
+        //IHKeyboardAvoiding.setPaddingForCurrentAvoidingView(-118)
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,19 +83,43 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if (textField === self.loginTextField) {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.loginLabel.alpha = 1.0
+            })
+        } else if (textField === passwordTextField) {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.passwordLabel.alpha = 1.0
+            })
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if (textField === self.loginTextField && (textField.text?.characters.count)! == 0) {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.loginLabel.alpha = 0
+            })
+        } else if (textField === passwordTextField && (textField.text?.characters.count)! == 0) {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.passwordLabel.alpha = 0
+            })
+        }
+    }
+    
     // MARK: - IBActions
     
     // Checks if fields changed for login button animation
     @IBAction func textFieldChanged(_ sender: AnyObject) {
         if (loginTextField.text?.characters.count)! > 3 && (passwordTextField.text?.characters.count)! > 3 {
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 self.loginButton.isEnabled = true
-                self.loginButton.backgroundColor = UIColor().necktieSecondary
+                self.loginButton.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.3)
             })
         } else {
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 self.loginButton.isEnabled = false
-                self.loginButton.backgroundColor = UIColor.lightGray
+                self.loginButton.backgroundColor = UIColor.clear
             })
         }
     }
@@ -91,6 +129,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         dismiss(animated: true) { 
             
         }
+    }
+    
+    @IBAction func facebookLogin(_ sender: AnyObject) {
+        
     }
 
     /*

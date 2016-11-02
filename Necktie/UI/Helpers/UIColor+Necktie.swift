@@ -39,10 +39,10 @@ extension UIColor {
     }
     
     public var necktieGradientStart: UIColor {
-        return UIColor(red:0.36, green:0.78, blue:0.93, alpha:1.00)
+        return UIColor(red:0.09, green:0.741, blue:1, alpha:1)
     }
     
     public var necktieGradientEnd: UIColor {
-        return UIColor(red:0.44, green:0.41, blue:0.98, alpha:1.00)
+        return UIColor(red:0.435, green:0.407, blue:0.976, alpha:1)
     }
 }
