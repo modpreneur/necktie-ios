@@ -84,12 +84,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if (textField === self.loginTextField) {
+        // Animates placeholder label
+        if (textField === self.loginTextField && (textField.text?.characters.count)! == 0) {
+            loginLabel.frame.origin.y += 16
             UIView.animate(withDuration: 0.5, animations: {
                 self.loginLabel.alpha = 1.0
+                self.loginLabel.frame.origin.y -= 16
             })
-        } else if (textField === passwordTextField) {
+        } else if (textField === passwordTextField && (textField.text?.characters.count)! == 0) {
+            passwordLabel.frame.origin.y += 16
             UIView.animate(withDuration: 0.5, animations: {
+                self.passwordLabel.frame.origin.y -= 16
                 self.passwordLabel.alpha = 1.0
             })
         }
