@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "necktie obrys white copy.png",
+      "filename" : "company.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "necktie obrys white copy@2x.png",
+      "filename" : "company@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "necktie obrys white copy@3x.png",
+      "filename" : "company@3x.png",
       "scale" : "3x"
     }
   ],

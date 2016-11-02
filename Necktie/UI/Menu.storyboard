@@ -47,29 +47,28 @@
         <scene sceneID="lE7-nh-pQ0">
             <objects>
                 <tableViewController storyboardIdentifier="menu" id="xMC-Hx-cwh" customClass="MenuViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y8s-Yi-ofM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y8s-Yi-ofM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="48" id="46Q-7c-c0h" customClass="MenuTableViewCell" customModule="Necktie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="48"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="40" id="46Q-7c-c0h" customClass="MenuTableViewCell" customModule="Necktie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="46Q-7c-c0h" id="r32-oW-73I">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JNC-60-bcr">
-                                            <rect key="frame" x="32" y="9" width="30" height="30"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JNC-60-bcr">
+                                            <rect key="frame" x="20" y="12.5" width="15" height="15"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="kbR-Lt-sZg"/>
-                                                <constraint firstAttribute="height" constant="30" id="soU-S9-Q57"/>
+                                                <constraint firstAttribute="width" constant="15" id="kbR-Lt-sZg"/>
+                                                <constraint firstAttribute="height" constant="15" id="soU-S9-Q57"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zar-Yz-6Gp">
-                                            <rect key="frame" x="78" y="15.5" width="29.5" height="17.5"/>
-                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                            <rect key="frame" x="51" y="11.5" width="26.5" height="17.5"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -77,7 +76,7 @@
                                     <constraints>
                                         <constraint firstItem="Zar-Yz-6Gp" firstAttribute="centerY" secondItem="JNC-60-bcr" secondAttribute="centerY" id="EML-Vc-FHo"/>
                                         <constraint firstItem="Zar-Yz-6Gp" firstAttribute="leading" secondItem="JNC-60-bcr" secondAttribute="trailing" constant="16" id="Glq-Eb-VZn"/>
-                                        <constraint firstItem="JNC-60-bcr" firstAttribute="leading" secondItem="r32-oW-73I" secondAttribute="leading" constant="32" id="vGT-Af-Ihk"/>
+                                        <constraint firstItem="JNC-60-bcr" firstAttribute="leading" secondItem="r32-oW-73I" secondAttribute="leading" constant="20" id="vGT-Af-Ihk"/>
                                         <constraint firstItem="JNC-60-bcr" firstAttribute="centerY" secondItem="r32-oW-73I" secondAttribute="centerY" id="x9k-vu-WoP"/>
                                     </constraints>
                                 </tableViewCellContentView>

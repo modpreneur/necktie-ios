@@ -26,17 +26,17 @@ struct MenuItem {
  */
 var menuItems = [MenuItem(name: "Dashboard",
                           segue: "showDashboard",
-                          image: "dashboard"),
+                          image: "Dashboard"),
                  MenuItem(name: "Products",
                           segue: "showDashboard",
-                          image: "products"),
+                          image: "Products"),
                  MenuItem(name: "Company",
                           segue: "showDashboard",
-                          image: "company"),
+                          image: "Company"),
                  MenuItem(name: "Users",
                           segue: "showDashboard",
-                          image: "users"),
+                          image: "Users"),
                  MenuItem(name: "Settings",
                           segue: "showDashboard",
-                          image: "settings")
+                          image: "Settings")
 ]

@@ -41,7 +41,7 @@ public extension UINavigationController {
     public func addTitleImage() {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "Splash")
+        let image = UIImage(named: "NavigationBar_Logo")
         imageView.image = image
         self.topViewController?.navigationItem.titleView = imageView
     }

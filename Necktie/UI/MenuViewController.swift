@@ -49,7 +49,10 @@ class MenuViewController: UITableViewController {
         let item = menuItems[indexPath.row] as MenuItem
 
         // Item text converted to uppercase
-        cell.menuItemName?.text = item.name.uppercased()
+        cell.menuItemName?.text = item.name
+        
+        // Item icon
+        cell.menuItemIcon.image = UIImage(named: item.image)
         
         // Change cell background color if item is selected
         cell.backgroundColor = selectedIndex == indexPath ? UIColor().necktieSecondaryLight : UIColor().necktieSecondary
