@@ -24,19 +24,19 @@ struct MenuItem {
 /**
  List of all items in menu (in displayed order)
  */
-var menuItems = [MenuItem(name: "Dashboard",
-                          segue: "showDashboard",
-                          image: "Dashboard"),
-                 MenuItem(name: "Products",
-                          segue: "showDashboard",
-                          image: "Products"),
-                 MenuItem(name: "Company",
-                          segue: "showDashboard",
-                          image: "Company"),
-                 MenuItem(name: "Users",
-                          segue: "showDashboard",
-                          image: "Users"),
-                 MenuItem(name: "Settings",
-                          segue: "showDashboard",
-                          image: "Settings")
+var menuItems: Array<MenuItem> = [MenuItem(name: "Dashboard",
+                                           segue: "showDashboard",
+                                           image: "Dashboard"),
+                                  MenuItem(name: "Products",
+                                           segue: "showDashboard",
+                                           image: "Products"),
+                                  MenuItem(name: "Company",
+                                           segue: "showDashboard",
+                                           image: "Company"),
+                                  MenuItem(name: "Users",
+                                           segue: "showDashboard",
+                                           image: "Users"),
+                                  MenuItem(name: "Settings",
+                                           segue: "showDashboard",
+                                           image: "Settings")
 ]

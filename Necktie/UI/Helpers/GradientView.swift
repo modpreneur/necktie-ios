@@ -13,7 +13,7 @@ import UIKit
     @IBInspectable var startColor: UIColor = UIColor.orange
     @IBInspectable var endColor: UIColor = UIColor.red
     
-    /// 0 = vertical, 1 = horizontal
+    /// 0 = vertical, 1 = horizontal, 2 = diagonal
     @IBInspectable var orientation: Int = 0
     
     override func draw(_ rect: CGRect) {
@@ -26,9 +26,13 @@ import UIKit
             let startPoint = CGPoint.zero
             let endPoint = CGPoint(x: 0, y: self.bounds.height)
             context!.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
-        } else {
+        } else if orientation == 1 {
             let startPoint = CGPoint.zero
             let endPoint = CGPoint(x: self.bounds.width, y: 0)
+            context!.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
+        } else {
+            let startPoint = CGPoint.zero
+            let endPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
             context!.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
         }
     }
