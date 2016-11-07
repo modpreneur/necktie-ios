@@ -5,9 +5,13 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -27,123 +31,297 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CrP-tf-luK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="tlJ-cq-XsB">
-                                    <size key="itemSize" width="160" height="190"/>
+                                <color key="backgroundColor" red="0.86060404777526855" green="0.87966305017471313" blue="0.91186362504959106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="tlJ-cq-XsB">
+                                    <size key="itemSize" width="349" height="290"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
+                                    <inset key="sectionInset" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dashboardProgressCell" id="IAR-SZ-OdA" customClass="DashboardProgressCell" customModule="Necktie" customModuleProvider="target">
-                                        <rect key="frame" x="108" y="16" width="160" height="200"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dashboardGraphCell" id="fW3-Ke-W3U" customClass="DashboardGraphCell" customModule="Necktie" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="359" height="290"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="290"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QZ-vt-NAU" customClass="UICircularProgressRingView" customModule="UICircularProgressRing">
-                                                    <rect key="frame" x="5" y="50" width="150" height="150"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0E-3q-nSD">
+                                                    <rect key="frame" x="16" y="16" width="48.5" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vb7-9G-uYM" customClass="ScrollableGraphView" customModule="ScrollableGraphView">
+                                                    <rect key="frame" x="0.0" y="40" width="359" height="250"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="Tod-Q5-DRu"/>
-                                                        <constraint firstAttribute="height" constant="150" id="cHK-42-5dS"/>
-                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                                            <real key="value" value="50"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                            <color key="value" red="0.82492238283157349" green="0.84518212080001831" blue="0.88795769214630127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                            <real key="value" value="100"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
-                                                            <color key="value" red="0.29125192761421204" green="0.7420649528503418" blue="0.98579519987106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="outerRingColor">
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="dataPointFillColor">
                                                             <color key="value" red="0.86060404777526855" green="0.87966305017471313" blue="0.91186362504959106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="innerRingWidth">
-                                                            <real key="value" value="20"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineStyle_">
+                                                            <integer key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="innerRingSpacing">
-                                                            <real key="value" value="-40"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillGradientStartColor">
+                                                            <color key="value" red="0.43255615234375" green="0.41591155529022217" blue="0.98916715383529663" alpha="0.79846366626794263" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="outerRingWidth">
-                                                            <real key="value" value="20"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillGradientEndColor">
+                                                            <color key="value" red="0.43529411759999997" green="0.40784313729999999" blue="0.97647058819999999" alpha="0.7977721291866029" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="customFontWithName" value="Roboto-Regular"/>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
-                                                            <color key="value" red="0.29125192761421204" green="0.7420649528503418" blue="0.98579519987106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillType_">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillGradientType_">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rangeMin">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rangeMax">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="referenceLineColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldDrawDataPoint" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="referenceLineLabelColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="dataPointLabelColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="dataPointSize">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldFill" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="dataPointSpacing">
+                                                            <real key="value" value="80"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundFillColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dashboardProgressCell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="MPw-bQ-VcC">
-                                                    <rect key="frame" x="8" y="8" width="144" height="41"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="1QZ-vt-NAU" secondAttribute="bottom" id="0im-rQ-1VJ"/>
-                                            <constraint firstItem="1QZ-vt-NAU" firstAttribute="top" secondItem="MPw-bQ-VcC" secondAttribute="bottom" constant="1" id="KPk-rd-H7b"/>
-                                            <constraint firstItem="1QZ-vt-NAU" firstAttribute="centerX" secondItem="IAR-SZ-OdA" secondAttribute="centerX" id="gPU-Ov-QDP"/>
-                                            <constraint firstAttribute="trailing" secondItem="MPw-bQ-VcC" secondAttribute="trailing" constant="8" id="wb9-Ta-jtZ"/>
-                                            <constraint firstItem="MPw-bQ-VcC" firstAttribute="leading" secondItem="IAR-SZ-OdA" secondAttribute="leading" constant="8" id="xMs-Jl-bOO"/>
-                                            <constraint firstItem="MPw-bQ-VcC" firstAttribute="top" secondItem="IAR-SZ-OdA" secondAttribute="top" constant="8" id="ysU-Nc-sUg"/>
-                                        </constraints>
-                                        <size key="customSize" width="160" height="200"/>
-                                        <connections>
-                                            <outlet property="descriptionLabel" destination="MPw-bQ-VcC" id="bkl-lm-kcz"/>
-                                            <outlet property="progressView" destination="1QZ-vt-NAU" id="idh-NB-8VY"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dashboardGraphCell" id="fW3-Ke-W3U" customClass="DashboardGraphCell" customModule="Necktie" customModuleProvider="target">
-                                        <rect key="frame" x="28" y="232" width="320" height="180"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdC-DH-Szj" customClass="Chart" customModule="SwiftChart">
-                                                    <rect key="frame" x="0.0" y="30" width="320" height="150"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEG-vw-O0L" customClass="ScrollableGraphView" customModule="ScrollableGraphView">
+                                                    <rect key="frame" x="0.0" y="48" width="359" height="242"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="gridColor">
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                            <color key="value" red="0.82492238283157349" green="0.84518212080001831" blue="0.88795769214630127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="dataPointFillColor">
+                                                            <color key="value" red="0.86060404777526855" green="0.87966305017471313" blue="0.91186362504959106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineStyle_">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillGradientStartColor">
+                                                            <color key="value" red="0.36470588240000001" green="0.78039215689999997" blue="0.92549019610000005" alpha="0.80287455143540665" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillGradientEndColor">
+                                                            <color key="value" red="0.0" green="0.74690300226211548" blue="1" alpha="0.79734225478468901" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillType_">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillGradientType_">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rangeMin">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rangeMax">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="referenceLineColor">
                                                             <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="axesColor">
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldDrawDataPoint" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="referenceLineLabelColor">
                                                             <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="dataPointLabelColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="dataPointSize">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldFill" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="dataPointSpacing">
+                                                            <real key="value" value="80"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundFillColor">
                                                             <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dashboardGraphCell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="4oa-m7-aKi">
-                                                    <rect key="frame" x="8" y="8" width="304" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="LdC-DH-Szj" firstAttribute="top" secondItem="4oa-m7-aKi" secondAttribute="bottom" constant="1" id="CmA-0O-Z1q"/>
-                                            <constraint firstAttribute="trailing" secondItem="LdC-DH-Szj" secondAttribute="trailing" id="Sbc-Fl-fKn"/>
-                                            <constraint firstItem="4oa-m7-aKi" firstAttribute="leading" secondItem="fW3-Ke-W3U" secondAttribute="leading" constant="8" id="UhU-St-cG8"/>
-                                            <constraint firstItem="LdC-DH-Szj" firstAttribute="leading" secondItem="fW3-Ke-W3U" secondAttribute="leading" id="WbS-1g-sAn"/>
-                                            <constraint firstItem="4oa-m7-aKi" firstAttribute="top" secondItem="fW3-Ke-W3U" secondAttribute="top" constant="8" id="eNc-xP-aFK"/>
-                                            <constraint firstAttribute="trailing" secondItem="4oa-m7-aKi" secondAttribute="trailing" constant="8" id="m59-SD-v6Q"/>
-                                            <constraint firstAttribute="bottom" secondItem="LdC-DH-Szj" secondAttribute="bottom" id="utj-sO-k48"/>
+                                            <constraint firstItem="lEG-vw-O0L" firstAttribute="top" secondItem="j0E-3q-nSD" secondAttribute="bottom" constant="8" id="0hp-Wl-Eyz"/>
+                                            <constraint firstItem="j0E-3q-nSD" firstAttribute="leading" secondItem="fW3-Ke-W3U" secondAttribute="leading" constant="16" id="5h5-Ck-KCu"/>
+                                            <constraint firstAttribute="trailing" secondItem="lEG-vw-O0L" secondAttribute="trailing" id="6i1-Nq-Cek"/>
+                                            <constraint firstAttribute="bottom" secondItem="vb7-9G-uYM" secondAttribute="bottom" id="6rY-DR-Sp8"/>
+                                            <constraint firstItem="vb7-9G-uYM" firstAttribute="leading" secondItem="fW3-Ke-W3U" secondAttribute="leading" id="IWb-f1-ehg"/>
+                                            <constraint firstItem="lEG-vw-O0L" firstAttribute="leading" secondItem="fW3-Ke-W3U" secondAttribute="leading" id="JKp-ec-VIU"/>
+                                            <constraint firstItem="vb7-9G-uYM" firstAttribute="top" secondItem="j0E-3q-nSD" secondAttribute="bottom" id="gQt-I2-7ez"/>
+                                            <constraint firstItem="j0E-3q-nSD" firstAttribute="top" secondItem="fW3-Ke-W3U" secondAttribute="top" constant="16" id="oUG-xz-Mat"/>
+                                            <constraint firstAttribute="trailing" secondItem="vb7-9G-uYM" secondAttribute="trailing" id="r12-mO-hMm"/>
+                                            <constraint firstAttribute="bottom" secondItem="lEG-vw-O0L" secondAttribute="bottom" id="u0M-99-VWq"/>
                                         </constraints>
-                                        <size key="customSize" width="320" height="180"/>
+                                        <size key="customSize" width="359" height="290"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="descriptionLabel" destination="4oa-m7-aKi" id="oaU-6A-9mS"/>
-                                            <outlet property="graphView" destination="LdC-DH-Szj" id="g9H-cJ-F6d"/>
+                                            <outlet property="descriptionLabel" destination="j0E-3q-nSD" id="Aqj-g1-hHs"/>
+                                            <outlet property="graphView" destination="lEG-vw-O0L" id="pXM-au-sAz"/>
+                                            <outlet property="secondGraphView" destination="vb7-9G-uYM" id="jrM-yY-BdW"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dashboardProgressCell" id="Skr-fQ-Rtp" customClass="DashboardProgressCell" customModule="Necktie" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="306" width="359" height="228"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="228"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gE7-gr-0Ka">
+                                                    <rect key="frame" x="16" y="16" width="48.5" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNc-PC-CZu" customClass="KDCircularProgress" customModule="KDCircularProgress">
+                                                    <rect key="frame" x="8" y="48" width="170" height="170"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="89%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCh-Qz-afk">
+                                                            <rect key="frame" x="68.5" y="67" width="33.5" height="24"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDt-JA-44E">
+                                                            <rect key="frame" x="70.5" y="91" width="29.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="gCh-Qz-afk" firstAttribute="centerX" secondItem="JNc-PC-CZu" secondAttribute="centerX" id="6o0-Kz-ykd"/>
+                                                        <constraint firstItem="gCh-Qz-afk" firstAttribute="centerY" secondItem="JNc-PC-CZu" secondAttribute="centerY" constant="-6" id="O0r-67-mRV"/>
+                                                        <constraint firstItem="KDt-JA-44E" firstAttribute="top" secondItem="gCh-Qz-afk" secondAttribute="bottom" id="cVh-Qn-BaN"/>
+                                                        <constraint firstAttribute="height" constant="170" id="er6-YM-siY"/>
+                                                        <constraint firstAttribute="width" constant="170" id="mIv-2d-CrL"/>
+                                                        <constraint firstItem="KDt-JA-44E" firstAttribute="centerX" secondItem="JNc-PC-CZu" secondAttribute="centerX" id="v1H-DM-uJw"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                                            <color key="value" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
+                                                            <color key="value" red="0.0" green="0.74690300226211548" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="IBColor2">
+                                                            <color key="value" red="0.43255615234375" green="0.41591155529022217" blue="0.98916715383529663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="clockwise" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="glowAmount">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                                            <real key="value" value="90"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huE-vp-uV6" customClass="KDCircularProgress" customModule="KDCircularProgress">
+                                                    <rect key="frame" x="181" y="48" width="170" height="170"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feV-YL-TaY">
+                                                            <rect key="frame" x="68" y="67" width="34" height="24"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-3c-snO">
+                                                            <rect key="frame" x="71" y="91" width="29.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ACa-3c-snO" firstAttribute="centerX" secondItem="huE-vp-uV6" secondAttribute="centerX" id="0On-Gp-jeh"/>
+                                                        <constraint firstItem="feV-YL-TaY" firstAttribute="centerY" secondItem="huE-vp-uV6" secondAttribute="centerY" constant="-6" id="GFK-Et-SI0"/>
+                                                        <constraint firstAttribute="height" constant="170" id="qa2-KR-cEE"/>
+                                                        <constraint firstAttribute="width" constant="170" id="qmV-Bf-pyc"/>
+                                                        <constraint firstItem="ACa-3c-snO" firstAttribute="top" secondItem="feV-YL-TaY" secondAttribute="bottom" id="sGU-xb-aph"/>
+                                                        <constraint firstItem="feV-YL-TaY" firstAttribute="centerX" secondItem="huE-vp-uV6" secondAttribute="centerX" id="wRA-sC-lPH"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="clockwise" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                                            <color key="value" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
+                                                            <color key="value" red="0.48971015214920044" green="0.73232561349868774" blue="0.07937159389257431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="IBColor2">
+                                                            <color key="value" red="0.0" green="0.74690300226211548" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="glowAmount">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                                            <real key="value" value="90"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="gE7-gr-0Ka" firstAttribute="top" secondItem="Skr-fQ-Rtp" secondAttribute="top" constant="16" id="3gE-5d-yr5"/>
+                                            <constraint firstItem="gE7-gr-0Ka" firstAttribute="leading" secondItem="Skr-fQ-Rtp" secondAttribute="leading" constant="16" id="6re-zJ-IWe"/>
+                                            <constraint firstItem="huE-vp-uV6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JNc-PC-CZu" secondAttribute="trailing" id="QAq-Sy-e7M"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="huE-vp-uV6" secondAttribute="trailing" id="ay5-FF-Fn7"/>
+                                            <constraint firstAttribute="leadingMargin" secondItem="JNc-PC-CZu" secondAttribute="leading" id="d5y-ft-MqJ"/>
+                                            <constraint firstItem="JNc-PC-CZu" firstAttribute="top" secondItem="gE7-gr-0Ka" secondAttribute="bottom" constant="8" id="slC-gb-eh9"/>
+                                            <constraint firstItem="huE-vp-uV6" firstAttribute="centerY" secondItem="JNc-PC-CZu" secondAttribute="centerY" id="vGu-dZ-CYs"/>
+                                        </constraints>
+                                        <size key="customSize" width="359" height="228"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="gE7-gr-0Ka" id="01d-Fo-mWN"/>
+                                            <outlet property="firstGraph" destination="JNc-PC-CZu" id="QTp-4h-LZL"/>
+                                            <outlet property="firstGraphDescription" destination="KDt-JA-44E" id="tmE-7p-frN"/>
+                                            <outlet property="firstGraphLabel" destination="gCh-Qz-afk" id="Jh5-8n-eWZ"/>
+                                            <outlet property="secondGraph" destination="huE-vp-uV6" id="AEU-Fe-bZh"/>
+                                            <outlet property="secondGraphDescription" destination="ACa-3c-snO" id="Awu-bo-QRh"/>
+                                            <outlet property="secondGraphLabel" destination="feV-YL-TaY" id="2NE-fA-D0Y"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -175,7 +353,7 @@
             <objects>
                 <navigationController storyboardIdentifier="dashboardNav" automaticallyAdjustsScrollViewInsets="NO" id="LRq-Ii-QzA" customClass="NavigationController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="kvh-RN-qcg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="kvh-RN-qcg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

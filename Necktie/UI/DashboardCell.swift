@@ -8,19 +8,28 @@
 
 import UIKit
 
-import UICircularProgressRing
-import SwiftChart
+import KDCircularProgress
+import ScrollableGraphView
 
 class DashboardProgressCell: UICollectionViewCell {
     
     @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet var progressView: UICircularProgressRingView!
 
+    @IBOutlet var firstGraph: KDCircularProgress!
+    @IBOutlet var secondGraph: KDCircularProgress!
+
+    @IBOutlet var firstGraphLabel: UILabel!
+    @IBOutlet var secondGraphLabel: UILabel!
+    
+    @IBOutlet var firstGraphDescription: UILabel!
+    @IBOutlet var secondGraphDescription: UILabel!
 }
 
 class DashboardGraphCell: UICollectionViewCell {
     
     @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet var graphView: Chart!
 
+    @IBOutlet var graphView: ScrollableGraphView!
+    @IBOutlet var secondGraphView: ScrollableGraphView!
+    
 }

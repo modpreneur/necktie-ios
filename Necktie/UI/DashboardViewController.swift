@@ -8,7 +8,9 @@
 
 import UIKit
 
+import KDCircularProgress
 import RevealingSplashView
+import ScrollableGraphView
 import SideMenuController
 import SwiftyUserDefaults
 import SwiftChart
@@ -60,7 +62,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     // MARK: - UICollectionViewDelegate
@@ -69,26 +71,28 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
         
         switch indexPath.row {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardProgressCell", for: indexPath) as! DashboardProgressCell
-            cell.progressView.maxValue = 100
-            cell.progressView.valueIndicator = "%"
-            cell.progressView.setProgress(value: 75, animationDuration: 0.75, completion: nil)
-            cell.descriptionLabel.text = "Active Users"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardGraphCell", for: indexPath) as! DashboardGraphCell
+            
+            cell.graphView.set(data: [1, 3, 9, 8, 2, 4, 7, 2], withLabels: [])
+            cell.secondGraphView.set(data: [4, 1, 2, 1, 3, 4, 1, 4], withLabels: [])
+            
+            cell.descriptionLabel.text = "Users activity"
+            
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardProgressCell", for: indexPath) as! DashboardProgressCell
-            cell.progressView.maxValue = 100456
-            cell.progressView.valueIndicator = ""
-            cell.progressView.setProgress(value: 100456, animationDuration: 0.75, completion: nil)
-            cell.descriptionLabel.text = "Total Users"
-            return cell
-        case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardGraphCell", for: indexPath) as! DashboardGraphCell
-            cell.descriptionLabel.text = "Graph"
-            let series = ChartSeries([0, 6.5, 2, 8, 4.1, 7, -3.1, 10, 8])
-            series.color = UIColor().necktiePrimary
-            cell.graphView.add(series)
-            cell.graphView.topInset = 8
+            
+            cell.firstGraph.animate(fromAngle: 0, toAngle: 265, duration: 0.5, completion: nil)
+            cell.secondGraph.animate(fromAngle: 0, toAngle: 90, duration: 0.5, completion: nil)
+            
+            cell.descriptionLabel.text = "Graph design 2"
+            
+            cell.firstGraphLabel.text = "89%"
+            cell.firstGraphDescription.text = "Graph 1"
+            
+            cell.secondGraphLabel.text = "25%"
+            cell.secondGraphDescription.text = "Graph 2"
+            
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardProgressCell", for: indexPath) as! DashboardProgressCell
@@ -98,19 +102,19 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let screenSize = UIApplication.shared.keyWindow?.bounds
-        let insets: CGFloat = 16
-        let spacing: CGFloat = 16
+        let insets: CGFloat = 8
+        
+        let width: CGFloat = (screenSize?.width)!-(2*insets)
         
         switch indexPath.row {
-        case 0, 1:
-            let itemSize = CGSize(width: ((screenSize?.width)!/2)-insets-spacing, height: 200)
-            return itemSize
-        case 2:
-            let itemSize = CGSize(width: (screenSize?.width)!-(insets*2), height: 180)
-            return itemSize
+        case 0:
+            return CGSize(width: width, height: 294)
+        case 1:
+            return CGSize(width: width, height: 228)
         default:
-            return CGSize(width: 160, height: 200)
+            return CGSize(width: width, height: 200)
         }
+        
     }
     
     // MARK: - Logout - Temporary
