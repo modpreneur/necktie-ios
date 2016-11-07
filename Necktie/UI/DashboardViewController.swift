@@ -62,7 +62,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     // MARK: - UICollectionViewDelegate
@@ -92,6 +92,14 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
             
             cell.secondGraphLabel.text = "25%"
             cell.secondGraphDescription.text = "Graph 2"
+            
+            return cell
+        case 2:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardBarGraphCell", for: indexPath) as! DashboardBarGraphCell
+            
+            cell.graphView.set(data: [1, 3, 9, 8, 2, 4, 7, 2], withLabels: ["1", "2", "3", "4", "5", "6", "7", "8"])
+            
+            cell.descriptionLabel.text = "Graph design 3"
             
             return cell
         default:

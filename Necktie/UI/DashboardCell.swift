@@ -33,3 +33,11 @@ class DashboardGraphCell: UICollectionViewCell {
     @IBOutlet var secondGraphView: ScrollableGraphView!
     
 }
+
+class DashboardBarGraphCell: UICollectionViewCell {
+    
+    @IBOutlet var descriptionLabel: UILabel!
+    
+    @IBOutlet var graphView: ScrollableGraphView!
+    
+}
