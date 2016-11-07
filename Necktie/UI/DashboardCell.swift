@@ -11,6 +11,30 @@ import UIKit
 import KDCircularProgress
 import ScrollableGraphView
 
+class DashboardSummaryCell: UICollectionViewCell {
+    
+    @IBOutlet var firstItemImage: UIImageView!
+    @IBOutlet var firstItemValue: UILabel!
+    @IBOutlet var firstItemDescription: UILabel!
+    @IBOutlet var firstItemSummary: UILabel!
+    
+    @IBOutlet var secondItemImage: UIImageView!
+    @IBOutlet var secondItemValue: UILabel!
+    @IBOutlet var secondItemDescription: UILabel!
+    @IBOutlet var secondItemSummary: UILabel!
+    
+    @IBOutlet var thirdItemImage: UIImageView!
+    @IBOutlet var thirdItemValue: UILabel!
+    @IBOutlet var thirdItemDescription: UILabel!
+    @IBOutlet var thirdItemSummary: UILabel!
+    
+    @IBOutlet var fourthItemImage: UIImageView!
+    @IBOutlet var fourthItemValue: UILabel!
+    @IBOutlet var fourthItemDescription: UILabel!
+    @IBOutlet var fourthItemSummary: UILabel!
+    
+}
+
 class DashboardProgressCell: UICollectionViewCell {
     
     @IBOutlet var descriptionLabel: UILabel!

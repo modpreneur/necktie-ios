@@ -62,7 +62,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     // MARK: - UICollectionViewDelegate
@@ -71,6 +71,31 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
         
         switch indexPath.row {
         case 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardSummaryCell", for: indexPath) as! DashboardSummaryCell
+            
+            // First item
+            cell.firstItemValue.text = "520,437"
+            cell.firstItemDescription.text = "Active users this month"
+            cell.firstItemSummary.text = "+ 34% From last Week"
+            
+            // Second item
+            cell.secondItemValue.text = "$5290"
+            cell.secondItemSummary.text = "Received money without refunds"
+            cell.secondItemSummary.text = "-19% From last Week"
+            cell.secondItemSummary.textColor = UIColor(red:1, green:0.541, blue:0, alpha:1)
+            
+            // Third item
+            cell.thirdItemValue.text = "52,377"
+            cell.thirdItemDescription.text = "Orders without refunds"
+            cell.thirdItemSummary.text = "+ 4% From last Week"
+            
+            // Fourth item
+            cell.fourthItemValue.text = "1,230,389"
+            cell.fourthItemDescription.text = "Total views at all sites"
+            cell.fourthItemSummary.text = "+ 98% From last Week"
+            
+            return cell
+        case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardGraphCell", for: indexPath) as! DashboardGraphCell
             
             cell.graphView.set(data: [1, 3, 9, 8, 2, 4, 7, 2], withLabels: [])
@@ -79,7 +104,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.descriptionLabel.text = "Users activity"
             
             return cell
-        case 1:
+        case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardProgressCell", for: indexPath) as! DashboardProgressCell
             
             cell.firstGraph.animate(fromAngle: 0, toAngle: 265, duration: 0.5, completion: nil)
@@ -94,7 +119,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.secondGraphDescription.text = "Graph 2"
             
             return cell
-        case 2:
+        case 3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardBarGraphCell", for: indexPath) as! DashboardBarGraphCell
             
             cell.graphView.set(data: [1, 3, 9, 8, 2, 4, 7, 2], withLabels: ["1", "2", "3", "4", "5", "6", "7", "8"])
@@ -116,8 +141,10 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
         
         switch indexPath.row {
         case 0:
-            return CGSize(width: width, height: 294)
+            return CGSize(width: width, height: 214)
         case 1:
+            return CGSize(width: width, height: 294)
+        case 2:
             return CGSize(width: width, height: 228)
         default:
             return CGSize(width: width, height: 200)
