@@ -107,15 +107,18 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardProgressCell", for: indexPath) as! DashboardProgressCell
             
-            cell.firstGraph.animate(fromAngle: 0, toAngle: 265, duration: 0.5, completion: nil)
-            cell.secondGraph.animate(fromAngle: 0, toAngle: 90, duration: 0.5, completion: nil)
+            let firstValue: Double = (300/600)*100
+            let secondValue: Double = (25/100)*100
+            
+            cell.firstGraph.animate(fromAngle: 0, toAngle: firstValue.toArc(), duration: 0.5, completion: nil)
+            cell.secondGraph.animate(fromAngle: 0, toAngle: secondValue.toArc(), duration: 0.5, completion: nil)
             
             cell.descriptionLabel.text = "Graph design 2"
             
-            cell.firstGraphLabel.text = "89%"
+            cell.firstGraphLabel.text = "\(Int(firstValue))%"
             cell.firstGraphDescription.text = "Graph 1"
             
-            cell.secondGraphLabel.text = "25%"
+            cell.secondGraphLabel.text = "\(Int(secondValue))%"
             cell.secondGraphDescription.text = "Graph 2"
             
             return cell
