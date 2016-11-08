@@ -32,10 +32,6 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
         /// Add menu button and title image to navigationBar
         navigationController?.addSideMenuButton()
         navigationController?.addTitleImage()
-        
-        //FIXME: Temporary
-        let logout = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(logoutAction))
-        navigationItem.rightBarButtonItem = logout
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -154,14 +150,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         
     }
-    
-    // MARK: - Logout - Temporary
-    
-    func logoutAction() {
-        Defaults[.isLoggedIn] = false
-        let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Identifier.login) as! LoginViewController
-        self.present(viewController, animated: true, completion: nil)
-    }
+
 
     // MARK: - SideMenuControllerDelegate
     

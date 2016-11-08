@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SwiftyUserDefaults
+
 class MenuViewController: UITableViewController {
     
     var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
@@ -35,29 +37,64 @@ class MenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItems.count
+        return menuItems.count + 3
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
-        
-        // Cell selected background
-        let backgroundColorView = UIView()
-        backgroundColorView.backgroundColor = UIColor().necktieSecondaryLight
-        cell.selectedBackgroundView = backgroundColorView
-        
-        let item = menuItems[indexPath.row] as MenuItem
-
-        // Item text converted to uppercase
-        cell.menuItemName?.text = item.name
-        
-        // Item icon
-        cell.menuItemIcon.image = UIImage(named: item.image)
-        
-        // Change cell background color if item is selected
-        cell.backgroundColor = selectedIndex == indexPath ? UIColor().necktieSecondaryLight : UIColor().necktieSecondary
-
-        return cell
+        // Menu item cells
+        if indexPath.row < menuItems.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
+            
+            // Cell selected background
+            let backgroundColorView = UIView()
+            backgroundColorView.backgroundColor = UIColor().necktieSecondaryLight
+            cell.selectedBackgroundView = backgroundColorView
+            
+            let item = menuItems[indexPath.row] as MenuItem
+            
+            // Item text converted to uppercase
+            cell.menuItemName?.text = item.name
+            
+            // Item icon
+            cell.menuItemIcon.image = UIImage(named: item.image)
+            
+            // Change cell background color and font weight if item is selected
+            cell.backgroundColor = selectedIndex == indexPath ? UIColor().necktieSecondaryLight : UIColor().necktieSecondary
+            cell.menuItemName.font = selectedIndex == indexPath ? UIFont(name: "Roboto-Bold", size: 13) : UIFont(name: "Roboto", size: 13)
+            
+            return cell
+        // Spacer cell
+        } else if indexPath.row == menuItems.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "spacerCell", for: indexPath)
+            
+            cell.backgroundColor = UIColor().necktieSecondary
+            cell.isUserInteractionEnabled = false
+            
+            return cell
+        // Cell with profile image and name
+        } else if indexPath.row == menuItems.count + 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! MenuProfileCell
+            
+            cell.profileName.text = "John Appleseed"
+            
+            return cell
+        // Cell for log out
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "logoutCell", for: indexPath) as! MenuLogoutCell
+            
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == menuItems.count {
+            let menuHeight = 64 + (menuItems.count * 40) + (48 * 2)
+            let cellHeight: CGFloat = self.view.bounds.height - CGFloat(menuHeight)
+            
+            return cellHeight
+        } else {
+            return 40
+        }
     }
     
     // MARK: - Table view delegate
@@ -67,15 +104,25 @@ class MenuViewController: UITableViewController {
             tableView.deselectRow(at: index, animated: true)
         }
         
-        selectedIndex = indexPath
+        if indexPath.row == menuItems.count {
         
-        let item = menuItems[indexPath.row] as MenuItem
-        
-        // Load desired viewController from menu
-        sideMenuController?.performSegue(withIdentifier: item.segue, sender: nil)
-        previousIndex = indexPath
-        
-        tableView.reloadData()
+        } else if indexPath.row == menuItems.count + 1 {
+            selectedIndex = indexPath
+            
+            print("Open profile")
+        } else if indexPath.row == menuItems.count + 2 {
+            logoutAction()
+        } else {
+            selectedIndex = indexPath
+            
+            let item = menuItems[indexPath.row] as MenuItem
+            
+            // Load desired viewController from menu
+            sideMenuController?.performSegue(withIdentifier: item.segue, sender: nil)
+            previousIndex = indexPath
+            
+            tableView.reloadData()
+        }
     }
     
     // MARK: - Scroll view delegate
@@ -83,6 +130,14 @@ class MenuViewController: UITableViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let headerView = self.tableView.tableHeaderView as! HeaderView
         headerView.scrollViewDidScroll(scrollView: scrollView)
+    }
+    
+    // MARK: - Log Out Action
+    
+    func logoutAction() {
+        Defaults[.isLoggedIn] = false
+        let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Identifier.login) as! LoginViewController
+        self.present(viewController, animated: true, completion: nil)
     }
 
 }

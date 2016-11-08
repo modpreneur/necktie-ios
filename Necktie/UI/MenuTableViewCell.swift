@@ -22,3 +22,28 @@ class MenuTableViewCell: UITableViewCell {
     }
 
 }
+
+class MenuProfileCell: UITableViewCell {
+    
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var profileName: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+}
+
+class MenuLogoutCell: UITableViewCell {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+}

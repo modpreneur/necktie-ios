@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -56,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="46Q-7c-c0h" id="r32-oW-73I">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JNC-60-bcr">
@@ -67,7 +70,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zar-Yz-6Gp">
-                                            <rect key="frame" x="54" y="11.5" width="26.5" height="17.5"/>
+                                            <rect key="frame" x="54" y="11.5" width="26" height="17.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -86,6 +89,86 @@
                                     <outlet property="menuItemName" destination="Zar-Yz-6Gp" id="lm1-Df-Iqs"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="48" id="cvA-ae-pF4" customClass="MenuProfileCell" customModule="Necktie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="68" width="375" height="48"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cvA-ae-pF4" id="h0q-aC-ve1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="gjW-f5-quy">
+                                            <rect key="frame" x="17" y="11.5" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="SBV-t7-hSB"/>
+                                                <constraint firstAttribute="width" constant="24" id="ZZ1-dS-Yvp"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Appleseed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaj-ss-s6K">
+                                            <rect key="frame" x="54" y="14.5" width="94" height="18"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gjW-f5-quy" firstAttribute="centerY" secondItem="h0q-aC-ve1" secondAttribute="centerY" id="GNV-iz-AUd"/>
+                                        <constraint firstItem="gaj-ss-s6K" firstAttribute="centerY" secondItem="gjW-f5-quy" secondAttribute="centerY" id="GmN-1d-5Ph"/>
+                                        <constraint firstItem="gjW-f5-quy" firstAttribute="leading" secondItem="h0q-aC-ve1" secondAttribute="leading" constant="17" id="MPl-9t-rBC"/>
+                                        <constraint firstItem="gaj-ss-s6K" firstAttribute="leading" secondItem="gjW-f5-quy" secondAttribute="trailing" constant="13" id="NSj-et-FKB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="profileImage" destination="gjW-f5-quy" id="ooI-0b-7kn"/>
+                                    <outlet property="profileName" destination="gaj-ss-s6K" id="6np-tB-wxI"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="logoutCell" rowHeight="48" id="iJd-Be-pt9" customClass="MenuLogoutCell" customModule="Necktie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="375" height="48"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iJd-Be-pt9" id="xOd-kW-Qo0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logout" translatesAutoresizingMaskIntoConstraints="NO" id="G29-01-ayl">
+                                            <rect key="frame" x="20" y="14" width="18" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="USi-ur-jSs"/>
+                                                <constraint firstAttribute="width" constant="18" id="Vdo-8z-adq"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="hxJ-qO-lmE"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="nU2-7g-Yro"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUz-Rg-ns3">
+                                            <rect key="frame" x="54" y="14" width="46" height="17.5"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="G29-01-ayl" firstAttribute="leading" secondItem="xOd-kW-Qo0" secondAttribute="leading" constant="20" id="BbY-br-zKK"/>
+                                        <constraint firstItem="KUz-Rg-ns3" firstAttribute="leading" secondItem="G29-01-ayl" secondAttribute="trailing" constant="16" id="Rk2-X1-ZIb"/>
+                                        <constraint firstItem="G29-01-ayl" firstAttribute="centerY" secondItem="xOd-kW-Qo0" secondAttribute="centerY" id="TiY-qK-DaG"/>
+                                        <constraint firstItem="KUz-Rg-ns3" firstAttribute="centerY" secondItem="G29-01-ayl" secondAttribute="centerY" id="W5M-Bu-YVZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="spacerCell" id="LAs-AH-0qY">
+                                <rect key="frame" x="0.0" y="164" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LAs-AH-0qY" id="e4g-OU-zwm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="xMC-Hx-cwh" id="taB-va-4dO"/>
@@ -98,5 +181,9 @@
             <point key="canvasLocation" x="-530.39999999999998" y="527.58620689655174"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Avatar" width="170" height="170"/>
+        <image name="Logout" width="15" height="17"/>
+    </resources>
     <color key="tintColor" red="0.29125192761421204" green="0.7420649528503418" blue="0.98579519987106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
