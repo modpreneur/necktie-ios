@@ -29,7 +29,7 @@ class MenuViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    // MARK: - Table view data source
+    // MARK: - UITableView data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -96,7 +96,7 @@ class MenuViewController: UITableViewController {
         }
     }
     
-    // MARK: - Table view delegate
+    // MARK: - UITableView delegate
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let index = previousIndex {

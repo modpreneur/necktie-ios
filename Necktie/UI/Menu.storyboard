@@ -32,6 +32,7 @@
                     <connections>
                         <segue destination="xMC-Hx-cwh" kind="custom" identifier="containSideMenu" customClass="SideContainmentSegue" customModule="SideMenuController" id="DNd-aW-9hQ"/>
                         <segue destination="frA-ye-Uko" kind="custom" identifier="showDashboard" customClass="CenterContainmentSegue" customModule="SideMenuController" id="DX3-Fs-DhR"/>
+                        <segue destination="VaG-mB-Dfy" kind="custom" identifier="showUsers" customClass="CenterContainmentSegue" customModule="SideMenuController" id="aRn-CK-NvR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCY-GH-Dwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -45,6 +46,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUz-Sv-L3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="297" y="-440"/>
+        </scene>
+        <!--usersNav-->
+        <scene sceneID="pC4-jR-DBc">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="usersNav" storyboardName="Users" referencedIdentifier="usersNav" id="VaG-mB-Dfy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YhQ-lV-2Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271" y="-396"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="lE7-nh-pQ0">
@@ -110,7 +119,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Appleseed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaj-ss-s6K">
-                                            <rect key="frame" x="54" y="14.5" width="94" height="18"/>
+                                            <rect key="frame" x="54" y="15" width="94" height="17.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>

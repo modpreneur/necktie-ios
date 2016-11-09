@@ -21,7 +21,7 @@ class MenuContainerViewController: SideMenuCustom {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+        super.viewDidAppear(animated)
         
         if !Defaults[.isLoggedIn] {
             let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Identifier.login) as! LoginViewController

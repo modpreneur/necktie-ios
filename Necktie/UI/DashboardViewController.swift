@@ -35,7 +35,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
         // Add intro animation
         if Defaults[.introAnimation] == false {
