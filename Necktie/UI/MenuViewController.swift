@@ -12,8 +12,7 @@ import SwiftyUserDefaults
 
 class MenuViewController: UITableViewController {
     
-    var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
-
+    private var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
     private var previousIndex: IndexPath?
     
     override func viewDidLoad() {
@@ -134,7 +133,7 @@ class MenuViewController: UITableViewController {
     
     // MARK: - Log Out Action
     
-    func logoutAction() {
+    private func logoutAction() {
         Defaults[.isLoggedIn] = false
         let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Identifier.login) as! LoginViewController
         self.present(viewController, animated: true, completion: nil)

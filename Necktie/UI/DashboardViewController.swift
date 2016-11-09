@@ -76,7 +76,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
             
             // Second item
             cell.secondItemValue.text = "$5290"
-            cell.secondItemSummary.text = "Received money without refunds"
+            cell.secondItemDescription.text = "Received money without refunds"
             cell.secondItemSummary.text = "-19% From last Week"
             cell.secondItemSummary.textColor = UIColor(red:1, green:0.541, blue:0, alpha:1)
             
