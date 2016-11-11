@@ -17,13 +17,34 @@ class UserCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+}
+
+class UserPhotoCell: UITableViewCell {
+    
+    @IBOutlet var userPhoto: UIImageView!
+    @IBOutlet var selectPhotoButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.selectPhotoButton.layer.borderWidth = 1
+        self.selectPhotoButton.layer.borderColor = UIColor().necktiePrimary.cgColor
+        self.selectPhotoButton.layer.cornerRadius = 3
+    }
+}
+
+class UserDataCell: UITableViewCell {
+    
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var valueLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
 }

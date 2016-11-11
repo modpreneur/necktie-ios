@@ -41,6 +41,7 @@
 		2BBBD6001DA64D9000696D1E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBBD5FF1DA64D9000696D1E /* Login.storyboard */; };
 		2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6011DA65D9800696D1E /* LoginViewController.swift */; };
 		2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */; };
+		2BD409191DD5DFFE00A6D050 /* UsersEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD409181DD5DFFE00A6D050 /* UsersEditViewController.swift */; };
 		2BFB0BF01DA78EA900D29BC4 /* UIViewController+MotionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */; };
 		2BFB0BF81DA7BA4800D29BC4 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFB0BF71DA7BA4800D29BC4 /* Dashboard.storyboard */; };
 		2BFB0BFB1DA7BB1D00D29BC4 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFB0BFA1DA7BB1D00D29BC4 /* Menu.storyboard */; };
@@ -113,6 +114,7 @@
 		2BBBD5FF1DA64D9000696D1E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2BBBD6011DA65D9800696D1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		2BD409181DD5DFFE00A6D050 /* UsersEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersEditViewController.swift; sourceTree = "<group>"; };
 		2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+MotionEffect.swift"; sourceTree = "<group>"; };
 		2BFB0BF61DA7A21300D29BC4 /* Necktie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Necktie-Bridging-Header.h"; sourceTree = "<group>"; };
 		2BFB0BF71DA7BA4800D29BC4 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				2B7084071DD31C7B00FE4A7D /* UsersViewController.swift */,
+				2BD409181DD5DFFE00A6D050 /* UsersEditViewController.swift */,
 				2B70840B1DD31F6800FE4A7D /* UserCell.swift */,
 			);
 			name = Users;
@@ -684,6 +687,7 @@
 				2BFB0C061DA7CAD200D29BC4 /* MainViewController.swift in Sources */,
 				2B1654441DABBDB0001DBE43 /* Menu.swift in Sources */,
 				2BBB55501D9E8552005347DB /* Constants.swift in Sources */,
+				2BD409191DD5DFFE00A6D050 /* UsersEditViewController.swift in Sources */,
 				2BFB0C081DA7D3F500D29BC4 /* SideMenuCustom.swift in Sources */,
 				2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */,
 				2B7084081DD31C7B00FE4A7D /* UsersViewController.swift in Sources */,
