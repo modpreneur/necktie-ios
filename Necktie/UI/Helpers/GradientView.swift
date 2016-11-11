@@ -13,6 +13,9 @@ import UIKit
     @IBInspectable var startColor: UIColor = UIColor.orange
     @IBInspectable var endColor: UIColor = UIColor.red
     
+    @IBInspectable var locationA: CGFloat = 0.0
+    @IBInspectable var locationB: CGFloat = 1.0
+    
     /// 0 = vertical, 1 = horizontal, 2 = diagonal
     @IBInspectable var orientation: Int = 0
     
@@ -20,7 +23,7 @@ import UIKit
         let context = UIGraphicsGetCurrentContext()
         let colors = [startColor.cgColor, endColor.cgColor]
         
-        let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors as CFArray, locations: [0.0, 1.0])
+        let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors as CFArray, locations: [locationA, locationB])
         
         if orientation == 0 {
             let startPoint = CGPoint.zero
