@@ -84,14 +84,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        let characterCount = textField.text?.characters.count
+        
         // Animates placeholder label
-        if (textField === self.loginTextField && (textField.text?.characters.count)! == 0) {
+        if (textField === self.loginTextField && characterCount == 0) {
             loginLabel.frame.origin.y += 16
             UIView.animate(withDuration: 0.5, animations: {
                 self.loginLabel.alpha = 1.0
                 self.loginLabel.frame.origin.y -= 16
             })
-        } else if (textField === passwordTextField && (textField.text?.characters.count)! == 0) {
+        } else if (textField === passwordTextField && characterCount == 0) {
             passwordLabel.frame.origin.y += 16
             UIView.animate(withDuration: 0.5, animations: {
                 self.passwordLabel.frame.origin.y -= 16
@@ -101,11 +103,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if (textField === self.loginTextField && (textField.text?.characters.count)! == 0) {
+        let characterCount = textField.text?.characters.count
+        
+        if (textField === self.loginTextField && characterCount == 0) {
             UIView.animate(withDuration: 0.5, animations: {
                 self.loginLabel.alpha = 0
             })
-        } else if (textField === passwordTextField && (textField.text?.characters.count)! == 0) {
+        } else if (textField === passwordTextField && characterCount == 0) {
             UIView.animate(withDuration: 0.5, animations: {
                 self.passwordLabel.alpha = 0
             })

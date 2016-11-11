@@ -22,6 +22,8 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Tomáš Jančar"
+        
         // Set tableView delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
