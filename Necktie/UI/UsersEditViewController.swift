@@ -11,6 +11,8 @@ import UIKit
 class UsersEditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var headerView: UIView!
+    @IBOutlet var footerView: UIView!
     
     struct Data {
         var key: String
@@ -28,7 +30,8 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.tableFooterView = UIView()
+        tableView.tableHeaderView = headerView
+        tableView.tableFooterView = footerView
     }
 
     override func didReceiveMemoryWarning() {

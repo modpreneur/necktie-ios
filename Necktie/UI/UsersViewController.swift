@@ -12,6 +12,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet var footerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,21 +22,21 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
         
         tableView.tableHeaderView = headerView
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = footerView
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - UITableView data source
+    // MARK: - UITableView
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,7 +56,9 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    // MARK: - UITableView delegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
     
     /*
     // MARK: - Navigation
