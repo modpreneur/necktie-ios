@@ -10,9 +10,8 @@ import UIKit
 
 class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var headerView: UIView!
-    @IBOutlet var footerView: UIView!
+    @IBOutlet var tableView: TableView!
+    @IBOutlet var sectionHeaderView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +19,12 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Set tableView delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
-        
-        tableView.tableHeaderView = headerView
-        tableView.tableFooterView = footerView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: index, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +60,14 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return sectionHeaderView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
     }
     
     /*

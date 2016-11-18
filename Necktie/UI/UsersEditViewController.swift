@@ -11,8 +11,6 @@ import UIKit
 class UsersEditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var headerView: UIView!
-    @IBOutlet var footerView: UIView!
     
     struct Data {
         var key: String
@@ -29,9 +27,6 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         // Set tableView delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
-        
-        tableView.tableHeaderView = headerView
-        tableView.tableFooterView = footerView
     }
 
     override func didReceiveMemoryWarning() {
