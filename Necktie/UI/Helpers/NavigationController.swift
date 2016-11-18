@@ -14,7 +14,8 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         self.navigationBar.isTranslucent = false
         self.navigationBar.tintColor = UIColor.white
-        self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Roboto-Regular", size: 20.0)!, NSForegroundColorAttributeName: UIColor.white]
+        self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Roboto-Regular", size: 17.0)!, NSForegroundColorAttributeName: UIColor.white]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Roboto-Regular", size: 17.0)!], for: UIControlState.normal)
         self.navigationBar.setBackgroundImage(imageLayerForGradientBackground(), for: UIBarMetrics.default)
         self.navigationBar.shadowImage = UIImage()
     }
