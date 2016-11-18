@@ -51,11 +51,16 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.emailLabel.text = "appleseed@apple.com"
         
         cell.statusLabel.text = "Active"
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell = cell as! UserCell
+        
         cell.statusLabel.backgroundColor = UIColor().necktiePending
         cell.statusLabel.layer.cornerRadius = 3
         cell.statusLabel.layer.masksToBounds = true
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
