@@ -8,7 +8,9 @@
 
 import UIKit
 
-class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+import DZNEmptyDataSet
+
+class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     @IBOutlet var tableView: TableView!
     @IBOutlet var sectionHeaderView: UIView!
@@ -19,6 +21,9 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Set tableView delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +43,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,6 +78,14 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 36
+    }
+    
+    // MARK: - DZNEmptyDataSet
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let emptyString: NSAttributedString = NSAttributedString(string: "Nothing found", attributes: [NSForegroundColorAttributeName: UIColor(red:0.37, green:0.38, blue:0.38, alpha:1.00), NSFontAttributeName: UIFont(name: "Roboto-Thin", size: 22)!])
+        
+        return emptyString
     }
     
     /*

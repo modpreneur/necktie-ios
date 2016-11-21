@@ -11,5 +11,6 @@
 
 #import <IHKeyboardAvoiding/IHKeyboardAvoiding.h>
 #import <MBCircularProgressBar/MBCircularProgressBarView.h>
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
 #endif /* Necktie_Bridging_Header_h */
