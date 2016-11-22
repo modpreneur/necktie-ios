@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Properties
     
-    var activityIndicator: UIActivityIndicatorView!
+    var activityIndicator: UIActivityIndicatorView! = UIActivityIndicatorView(activityIndicatorStyle: .white)
     
     // MARK: - IBOutlets
     
@@ -91,6 +91,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else if (textField === passwordTextField) {
             passwordTextField.resignFirstResponder()
+            login()
         }
         
         return true
@@ -147,6 +148,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(_ sender: AnyObject) {
+        login()
+    }
+    
+    @IBAction func facebookLogin(_ sender: AnyObject) {
+        
+    }
+    
+    // MARK: - Login
+    
+    func login() {
         let parameters: Parameters = ["client_id": Constant.clientId,
                                       "client_secret": Constant.clientSecret,
                                       "grant_type": "password",
@@ -154,6 +165,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                       "password": passwordTextField.text!]
         
         let headers: HTTPHeaders = [:]
+        
+        show(activityIndicatorView: activityIndicator, on: loginButton)
         
         Alamofire.request(API.BASE_URL + API.OAuthPath, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { response in
@@ -170,15 +183,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     Defaults[.username] = self.loginTextField.text!
                     Defaults[.isLoggedIn] = true
-                    self.dismiss(animated: true) { }
+                    
+                    self.dismiss(animated: true) {
+                        self.dismiss(activityIndicatorView: self.activityIndicator, on: self.loginButton)
+                    }
                 case .failure(let error):
+                    self.dismiss(activityIndicatorView: self.activityIndicator, on: self.loginButton)
+                    
                     print("Request Error: \(error)")
                 }
-            }
-    }
-    
-    @IBAction func facebookLogin(_ sender: AnyObject) {
-        
+        }
     }
 
     /*
