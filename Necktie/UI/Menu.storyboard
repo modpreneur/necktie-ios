@@ -33,6 +33,7 @@
                         <segue destination="xMC-Hx-cwh" kind="custom" identifier="containSideMenu" customClass="SideContainmentSegue" customModule="SideMenuController" id="DNd-aW-9hQ"/>
                         <segue destination="frA-ye-Uko" kind="custom" identifier="showDashboard" customClass="CenterContainmentSegue" customModule="SideMenuController" id="DX3-Fs-DhR"/>
                         <segue destination="VaG-mB-Dfy" kind="custom" identifier="showUsers" customClass="CenterContainmentSegue" customModule="SideMenuController" id="aRn-CK-NvR"/>
+                        <segue destination="3g2-UR-Rs0" kind="custom" identifier="showProducts" customClass="CenterContainmentSegue" customModule="SideMenuController" id="Vne-of-ilp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCY-GH-Dwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -54,6 +55,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhQ-lV-2Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="271" y="-396"/>
+        </scene>
+        <!--productsNav-->
+        <scene sceneID="EuS-CW-V7d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Products" referencedIdentifier="productsNav" id="3g2-UR-Rs0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="240-Wm-pjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="286" y="-353"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="lE7-nh-pQ0">

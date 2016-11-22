@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Products-->
+        <scene sceneID="P8s-Vg-Yxd">
+            <objects>
+                <viewController storyboardIdentifier="products" id="AP0-3K-LH9" customClass="ProductsViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GjW-E0-fgB"/>
+                        <viewControllerLayoutGuide type="bottom" id="vlB-Ma-J81"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KKL-5D-Rha">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GOW-dH-8PQ" customClass="TableView" customModule="Necktie" customModuleProvider="target">
+                                <rect key="frame" x="8" y="44" width="359" height="559"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="UjK-dG-6vM" customClass="SectionHeaderView" customModule="Necktie" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="359" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfR-Mg-nsL">
+                                            <rect key="frame" x="16" y="10" width="7.5" height="16"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
+                                            <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxF-ed-WeD">
+                                            <rect key="frame" x="56" y="10" width="32" height="16"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
+                                            <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtC-Ea-W7O">
+                                            <rect key="frame" x="253" y="10" width="46" height="16"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
+                                            <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="XtC-Ea-W7O" secondAttribute="trailing" constant="60" id="7vC-ca-J5o"/>
+                                        <constraint firstItem="sxF-ed-WeD" firstAttribute="leading" secondItem="UjK-dG-6vM" secondAttribute="leading" constant="56" id="N2u-q4-gIz"/>
+                                        <constraint firstItem="XtC-Ea-W7O" firstAttribute="centerY" secondItem="ZfR-Mg-nsL" secondAttribute="centerY" id="Sop-v5-f6g"/>
+                                        <constraint firstItem="ZfR-Mg-nsL" firstAttribute="centerY" secondItem="UjK-dG-6vM" secondAttribute="centerY" id="cza-19-Q9u"/>
+                                        <constraint firstItem="ZfR-Mg-nsL" firstAttribute="leading" secondItem="UjK-dG-6vM" secondAttribute="leading" constant="16" id="lIQ-ct-CCg"/>
+                                        <constraint firstItem="sxF-ed-WeD" firstAttribute="centerY" secondItem="ZfR-Mg-nsL" secondAttribute="centerY" id="pvU-zy-PiA"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="50" id="h7V-Bo-Qsr" customClass="ProductCell" customModule="Necktie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="359" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7V-Bo-Qsr" id="o5T-5r-aiM">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgA-mS-kcs">
+                                                    <rect key="frame" x="16" y="8" width="7.5" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVN-O2-Mks">
+                                                    <rect key="frame" x="56" y="8" width="32" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                    <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDd-Xr-aDw">
+                                                    <rect key="frame" x="264" y="8" width="57" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                    <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qDd-Xr-aDw" secondAttribute="trailing" constant="30" id="6na-Ak-KKI"/>
+                                                <constraint firstItem="UVN-O2-Mks" firstAttribute="centerY" secondItem="FgA-mS-kcs" secondAttribute="centerY" id="8Lm-OS-ECL"/>
+                                                <constraint firstItem="FgA-mS-kcs" firstAttribute="leading" secondItem="o5T-5r-aiM" secondAttribute="leading" constant="16" id="Ehe-ps-w5A"/>
+                                                <constraint firstItem="qDd-Xr-aDw" firstAttribute="centerY" secondItem="FgA-mS-kcs" secondAttribute="centerY" id="POH-2L-zYo"/>
+                                                <constraint firstItem="UVN-O2-Mks" firstAttribute="leading" secondItem="o5T-5r-aiM" secondAttribute="leadingMargin" constant="48" id="b8r-Wk-xMG"/>
+                                                <constraint firstItem="FgA-mS-kcs" firstAttribute="top" secondItem="o5T-5r-aiM" secondAttribute="topMargin" id="vTU-L4-nrA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="idLabel" destination="FgA-mS-kcs" id="Htc-CT-ERg"/>
+                                            <outlet property="modifiedLabel" destination="qDd-Xr-aDw" id="Pgj-VE-H9G"/>
+                                            <outlet property="nameLabel" destination="UVN-O2-Mks" id="IuG-Oa-vvI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="AP0-3K-LH9" id="CXp-fX-mTA"/>
+                                    <outlet property="delegate" destination="AP0-3K-LH9" id="p8D-EG-1qP"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="QGB-CU-OS7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82492238283157349" green="0.84518212080001831" blue="0.88795769214630127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QGB-CU-OS7" secondAttribute="trailing" id="E0C-va-aea"/>
+                            <constraint firstItem="GOW-dH-8PQ" firstAttribute="leading" secondItem="KKL-5D-Rha" secondAttribute="leading" constant="8" id="byL-7X-gyU"/>
+                            <constraint firstItem="QGB-CU-OS7" firstAttribute="leading" secondItem="KKL-5D-Rha" secondAttribute="leading" id="loG-DD-Waf"/>
+                            <constraint firstItem="QGB-CU-OS7" firstAttribute="top" secondItem="GjW-E0-fgB" secondAttribute="bottom" id="mSa-nJ-4gs"/>
+                            <constraint firstItem="GOW-dH-8PQ" firstAttribute="top" secondItem="QGB-CU-OS7" secondAttribute="bottom" id="p2s-JE-pkm"/>
+                            <constraint firstAttribute="trailing" secondItem="GOW-dH-8PQ" secondAttribute="trailing" constant="8" id="reu-3o-v2H"/>
+                            <constraint firstAttribute="bottom" secondItem="GOW-dH-8PQ" secondAttribute="bottom" id="xxo-YB-Al3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Products" id="m3t-00-0AS"/>
+                    <connections>
+                        <outlet property="searchBar" destination="QGB-CU-OS7" id="8lN-jk-IAF"/>
+                        <outlet property="sectionHeaderView" destination="UjK-dG-6vM" id="m5Q-nm-DZw"/>
+                        <outlet property="tableView" destination="GOW-dH-8PQ" id="OUg-te-w5a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="USA-dl-wCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="165.06746626686657"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0At-Oc-cdB">
+            <objects>
+                <navigationController storyboardIdentifier="productsNav" automaticallyAdjustsScrollViewInsets="NO" id="rv2-WM-BL6" customClass="NavigationController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="0XO-kN-PwV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AP0-3K-LH9" kind="relationship" relationship="rootViewController" id="gZc-Mb-6NI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l7b-nk-zRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16.800000000000001" y="165.96701649175412"/>
+        </scene>
+    </scenes>
+</document>
