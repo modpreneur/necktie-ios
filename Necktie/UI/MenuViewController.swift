@@ -8,6 +8,7 @@
 
 import UIKit
 
+import Locksmith
 import SwiftyUserDefaults
 
 class MenuViewController: UITableViewController {
@@ -135,6 +136,14 @@ class MenuViewController: UITableViewController {
     
     private func logoutAction() {
         Defaults[.isLoggedIn] = false
+        
+        let username = Defaults[.username]
+        do {
+            try Locksmith.deleteDataForUserAccount(userAccount: username, inService: "Necktie")
+        } catch {
+            print("Locksmith error")
+        }
+        
         let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Identifier.login) as! LoginViewController
         self.present(viewController, animated: true, completion: nil)
     }

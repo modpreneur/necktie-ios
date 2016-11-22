@@ -176,9 +176,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let accessToken = valueDictionary.value(forKey: "access_token")
                     
                     do {
-                        try Locksmith.updateData(data: ["access_token": accessToken!], forUserAccount: self.loginTextField.text!)
+                        try Locksmith.saveData(data: ["access_token": accessToken!], forUserAccount: self.loginTextField.text!, inService: "Necktie")
                     } catch {
-                        print("Locksmith error")
+                        print("Locksmith error: \(error)")
                     }
                     
                     Defaults[.username] = self.loginTextField.text!

@@ -30,6 +30,25 @@ struct API {
     static var OAuthPath: String = "/oauth/v2/token"
 }
 
+/// User Access Token
+struct AccessToken {
+    /// Returns current user's access token
+    static func getAccessToken() -> String {
+        let username = Defaults[.username]
+        let dictionary: Dictionary = Locksmith.loadDataForUserAccount(userAccount: username, inService: "Necktie")!
+        let accessToken: String = dictionary["access_token"] as! String
+        
+        return accessToken
+    }
+    
+    /// Constructs and returns HTTP headers with access token
+    static func requestHeaders() -> Dictionary<String, String> {
+        let headers = ["Authorization": "Bearer " + AccessToken.getAccessToken()]
+        
+        return headers
+    }
+}
+
 /// Storyboard view controller identifiers
 struct Identifier {
     static var login = "login"
@@ -40,16 +59,4 @@ extension DefaultsKeys {
     static let isLoggedIn = DefaultsKey<Bool>("isLoggedIn")
     static let username = DefaultsKey<String>("username")
     static let introAnimation = DefaultsKey<Bool>("introAnimation")
-}
-
-/// Locksmith saving to system keychain
-struct NecktieAccount: ReadableSecureStorable, CreateableSecureStorable, DeleteableSecureStorable, GenericPasswordSecureStorable {
-    let username: String
-    let password: String
-    
-    let service = "Necktie"
-    var account: String { return username }
-    var data: [String: Any] {
-        return ["password": password]
-    }
 }
