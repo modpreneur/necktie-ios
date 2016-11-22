@@ -8,12 +8,18 @@
 
 import UIKit
 
+import Alamofire
 import IHKeyboardAvoiding
+import Locksmith
 import SwiftyUserDefaults
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Properties
+    
+    var activityIndicator: UIActivityIndicatorView!
+    
+    // MARK: - IBOutlets
     
     @IBOutlet var backgroundView: UIImageView!
     @IBOutlet var containerView: UIView!
@@ -51,6 +57,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.layer.cornerRadius = 3
         loginButton.layer.borderWidth = 1
         loginButton.layer.borderColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.2).cgColor
+        
+        // Prefill username
+        if Defaults[.username].characters.count > 0 {
+            loginTextField.text = Defaults[.username]
+            loginLabel.frame.origin.y += 16
+            loginLabel.alpha = 1.0
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -120,7 +133,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // Checks if fields changed for login button animation
     @IBAction func textFieldChanged(_ sender: AnyObject) {
-        if (loginTextField.text?.characters.count)! > 3 && (passwordTextField.text?.characters.count)! > 3 {
+        if (loginTextField.text?.characters.count)! > 1 && (passwordTextField.text?.characters.count)! > 1 {
             UIView.animate(withDuration: 0.5, animations: {
                 self.loginButton.isEnabled = true
                 self.loginButton.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.3)
@@ -134,10 +147,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(_ sender: AnyObject) {
-        Defaults[.isLoggedIn] = true
-        dismiss(animated: true) { 
-            
-        }
+        let parameters: Parameters = ["client_id": Constant.clientId,
+                                      "client_secret": Constant.clientSecret,
+                                      "grant_type": "password",
+                                      "username": loginTextField.text!,
+                                      "password": passwordTextField.text!]
+        
+        let headers: HTTPHeaders = [:]
+        
+        Alamofire.request(API.BASE_URL + API.OAuthPath, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let valueDictionary = value as! NSDictionary
+                    let accessToken = valueDictionary.value(forKey: "access_token")
+                    
+                    do {
+                        try Locksmith.updateData(data: ["access_token": accessToken!], forUserAccount: self.loginTextField.text!)
+                    } catch {
+                        print("Locksmith error")
+                    }
+                    
+                    Defaults[.username] = self.loginTextField.text!
+                    Defaults[.isLoggedIn] = true
+                    self.dismiss(animated: true) { }
+                case .failure(let error):
+                    print("Request Error: \(error)")
+                }
+            }
     }
     
     @IBAction func facebookLogin(_ sender: AnyObject) {
