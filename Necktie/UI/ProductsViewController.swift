@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Alamofire
+
 class ProductsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet var tableView: UITableView!
@@ -27,6 +29,8 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
         if let index = tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: index, animated: true)
         }
+        
+        requestProducts()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +67,15 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 36
+    }
+    
+    // MARK: - Request
+    
+    func requestProducts() {
+        Alamofire.request(API.BASE_URL + API.Products, method: .get, parameters: [:], encoding: URLEncoding.default, headers: AccessToken.requestHeaders())
+            .responseJSON { response in
+                debugPrint(response)
+        }
     }
 
     /*

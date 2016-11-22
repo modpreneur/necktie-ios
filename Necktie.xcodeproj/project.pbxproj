@@ -126,6 +126,7 @@
 		2BD1A4481DE47B6E007837EB /* Products.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
 		2BD1A44B1DE47BAC007837EB /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		2BD1A44D1DE48192007837EB /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		2BD1A44F1DE48DF5007837EB /* Necktie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Necktie.entitlements; sourceTree = "<group>"; };
 		2BD409181DD5DFFE00A6D050 /* UsersEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersEditViewController.swift; sourceTree = "<group>"; };
 		2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+MotionEffect.swift"; sourceTree = "<group>"; };
 		2BFB0BF61DA7A21300D29BC4 /* Necktie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Necktie-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -235,6 +236,7 @@
 		2BBB55191D9E80AD005347DB /* Necktie */ = {
 			isa = PBXGroup;
 			children = (
+				2BD1A44F1DE48DF5007837EB /* Necktie.entitlements */,
 				2BBB551A1D9E80AD005347DB /* AppDelegate.swift */,
 				2BBB554E1D9E8506005347DB /* Helpers */,
 				2BBB55491D9E8128005347DB /* Model */,
@@ -475,6 +477,11 @@
 						DevelopmentTeam = 45YKP5BM7U;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					2BBB552A1D9E80AD005347DB = {
 						CreatedOnToolsVersion = 8.0;
@@ -878,6 +885,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Necktie/Necktie.entitlements;
 				DEVELOPMENT_TEAM = 45YKP5BM7U;
 				INFOPLIST_FILE = Necktie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -896,6 +904,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Necktie/Necktie.entitlements;
 				DEVELOPMENT_TEAM = 45YKP5BM7U;
 				INFOPLIST_FILE = Necktie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

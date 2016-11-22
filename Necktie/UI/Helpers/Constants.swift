@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+import Alamofire
 import SwiftyUserDefaults
 import Locksmith
 
@@ -26,8 +27,13 @@ struct API {
     /// API Version
     static var Version: Int = 1
     
+    static var APIPath: String = "/api/v" + "\(API.Version)" + "/"
+    
     /// OAuth2 URL
     static var OAuthPath: String = "/oauth/v2/token"
+    
+    /// Paths
+    static var Products: String = API.APIPath + "products"
 }
 
 /// User Access Token
@@ -35,15 +41,18 @@ struct AccessToken {
     /// Returns current user's access token
     static func getAccessToken() -> String {
         let username = Defaults[.username]
-        let dictionary: Dictionary = Locksmith.loadDataForUserAccount(userAccount: username, inService: "Necktie")!
-        let accessToken: String = dictionary["access_token"] as! String
-        
-        return accessToken
+        if let dictionary = Locksmith.loadDataForUserAccount(userAccount: username, inService: "Necktie") {
+            let accessToken: String = dictionary["access_token"] as! String
+            
+            return accessToken
+        } else {
+            return ""
+        }
     }
     
     /// Constructs and returns HTTP headers with access token
-    static func requestHeaders() -> Dictionary<String, String> {
-        let headers = ["Authorization": "Bearer " + AccessToken.getAccessToken()]
+    static func requestHeaders() -> HTTPHeaders {
+        let headers: HTTPHeaders = ["Authorization": "Bearer " + AccessToken.getAccessToken()]
         
         return headers
     }
