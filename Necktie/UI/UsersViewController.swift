@@ -10,20 +10,21 @@ import UIKit
 
 import DZNEmptyDataSet
 
-class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     @IBOutlet var tableView: TableView!
     @IBOutlet var sectionHeaderView: UIView!
+    @IBOutlet var searchBar: SearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set tableView delegate and data source
+        // Set delegates
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.emptyDataSetDelegate = self
         tableView.emptyDataSetSource = self
+        searchBar.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +44,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,6 +79,16 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 36
+    }
+    
+    // MARK: - UISearchBar
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("\(searchText)")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("Clicked")
     }
     
     // MARK: - DZNEmptyDataSet

@@ -43,6 +43,7 @@
 		2BBBD6001DA64D9000696D1E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBBD5FF1DA64D9000696D1E /* Login.storyboard */; };
 		2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6011DA65D9800696D1E /* LoginViewController.swift */; };
 		2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */; };
+		2BD0F20E1DE3327F002BAE5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0F20D1DE3327F002BAE5F /* SearchBar.swift */; };
 		2BD409191DD5DFFE00A6D050 /* UsersEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD409181DD5DFFE00A6D050 /* UsersEditViewController.swift */; };
 		2BFB0BF01DA78EA900D29BC4 /* UIViewController+MotionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */; };
 		2BFB0BF81DA7BA4800D29BC4 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFB0BF71DA7BA4800D29BC4 /* Dashboard.storyboard */; };
@@ -118,6 +119,7 @@
 		2BBBD5FF1DA64D9000696D1E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2BBBD6011DA65D9800696D1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		2BD0F20D1DE3327F002BAE5F /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		2BD409181DD5DFFE00A6D050 /* UsersEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersEditViewController.swift; sourceTree = "<group>"; };
 		2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+MotionEffect.swift"; sourceTree = "<group>"; };
 		2BFB0BF61DA7A21300D29BC4 /* Necktie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Necktie-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				2B1654371DAB7FE7001DBE43 /* UIColor+Necktie.swift */,
 				2B71DBA51DC8938900893937 /* NavigationController.swift */,
 				2B3C6B4E1DDF163200A11D5B /* TableView.swift */,
+				2BD0F20D1DE3327F002BAE5F /* SearchBar.swift */,
 				2B3C6B501DDF1C6100A11D5B /* SectionHeaderView.swift */,
 				2B656B8C1DBA5DBA00F898F1 /* GradientView.swift */,
 				2B80A92E1DD0C97200EED246 /* Extensions.swift */,
@@ -681,6 +684,7 @@
 				2B51450F1DB4C1120034E884 /* DashboardCell.swift in Sources */,
 				2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */,
 				2B656B8D1DBA5DBA00F898F1 /* GradientView.swift in Sources */,
+				2BD0F20E1DE3327F002BAE5F /* SearchBar.swift in Sources */,
 				2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */,
 				2B71DBA61DC8938900893937 /* NavigationController.swift in Sources */,
 				2BFB0C041DA7C17B00D29BC4 /* MenuTableViewCell.swift in Sources */,
