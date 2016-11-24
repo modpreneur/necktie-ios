@@ -1,11 +1,15 @@
 PODS:
   - Alamofire (4.0.1)
+  - AlamofireObjectMapper (4.0.0):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.0)
   - BusyNavigationBar (2.0.0)
   - DGElasticPullToRefresh (1.1)
   - DZNEmptyDataSet (1.8.1)
   - IHKeyboardAvoiding (2.6)
   - KDCircularProgress (1.5.2)
   - Locksmith (3.0.0)
+  - ObjectMapper (2.2.1)
   - RevealingSplashView (0.1.0)
   - ScrollableGraphView (3.0.0)
   - Segmentio (2.0)
@@ -18,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - AlamofireObjectMapper (~> 4.0)
   - BusyNavigationBar (~> 2.0)
   - DGElasticPullToRefresh (~> 1.1)
   - DZNEmptyDataSet (~> 1.8)
@@ -46,12 +51,14 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
   BusyNavigationBar: b73fd434b95f6198809dcf048b0245ad89ec1b37
   DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IHKeyboardAvoiding: d2541ee56dad83e160cd9aed0468c52247af6f49
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
   Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
+  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   RevealingSplashView: 501dd03d975ba2c4165dd463ea1c7c407fb9d13e
   ScrollableGraphView: 9b0ff86f9193068ffaf7e7ea875dcd297d7e8ded
   Segmentio: 3f55a720e214e6d5ec1b205663228691bc3bb043
@@ -62,6 +69,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   UICircularProgressRing: c37697577b2f07841fa901ad162959f6f5530204
 
-PODFILE CHECKSUM: 2027ff24a0221b5e623f3361587f1ac6e71ffb91
+PODFILE CHECKSUM: 37b0247c43c0b080a7161c3baa8ba8950d19f01d
 
 COCOAPODS: 1.1.1

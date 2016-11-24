@@ -9,12 +9,17 @@
 import UIKit
 
 import Alamofire
+import AlamofireObjectMapper
+import BusyNavigationBar
+import DZNEmptyDataSet
 
-class ProductsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class ProductsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var sectionHeaderView: UIView!
     @IBOutlet var searchBar: UISearchBar!
+    
+    var productArray: Array<Product> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +27,8 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
         // Set delegates
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
         searchBar.delegate = self
     }
     
@@ -44,15 +51,25 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return productArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as! ProductCell
         
-        cell.idLabel.text = "\(indexPath.row)"
-        cell.nameLabel.text = "Mailchimp"
-        cell.modifiedLabel.text = "yesterday"
+        let product: Product = productArray[indexPath.row]
+        
+        if let productId = product.id {
+            cell.idLabel.text = "\(productId)"
+        }
+        
+        if let productName = product.name {
+            cell.nameLabel.text = productName
+        }
+        
+        if let productUpdated = product.updated {
+            cell.modifiedLabel.text = productUpdated.convertDate()
+        }
         
         return cell
     }
@@ -72,10 +89,29 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - Request
     
     func requestProducts() {
+        self.navigationController?.navigationBar.start()
         Alamofire.request(API.BASE_URL + API.Products, method: .get, parameters: [:], encoding: URLEncoding.default, headers: AccessToken.requestHeaders())
-            .responseJSON { response in
-                debugPrint(response)
+            .responseArray(keyPath: "products") { (response: DataResponse<[Product]>) in
+                let responseArray = response.result.value
+                
+                if let responseArray = responseArray {
+                    for product in responseArray {
+                        self.productArray.append(product)
+                    }
+                }
+                
+                self.navigationController?.navigationBar.stop()
+                
+                self.tableView.reloadData()
         }
+    }
+    
+    // MARK: - DZNEmptyDataSet
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let emptyString: NSAttributedString = NSAttributedString(string: "Nothing found", attributes: [NSForegroundColorAttributeName: UIColor(red:0.37, green:0.38, blue:0.38, alpha:1.00), NSFontAttributeName: UIFont(name: "Roboto-Thin", size: 22)!])
+        
+        return emptyString
     }
 
     /*

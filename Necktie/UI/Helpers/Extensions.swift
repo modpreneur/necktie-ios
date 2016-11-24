@@ -45,3 +45,16 @@ extension UIViewController {
         button.setNeedsDisplay()
     }
 }
+
+extension String {
+    func convertDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let myDate = dateFormatter.date(from: self)!
+        
+        dateFormatter.dateFormat = "MMM dd, YYYY hh:mm a"
+        let convertedDate = dateFormatter.string(from: myDate)
+        
+        return convertedDate
+    }
+}
