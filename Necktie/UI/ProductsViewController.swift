@@ -10,6 +10,7 @@ import UIKit
 
 import Alamofire
 import AlamofireObjectMapper
+import ARSLineProgress
 import BusyNavigationBar
 import DZNEmptyDataSet
 
@@ -90,6 +91,7 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func requestProducts() {
         self.navigationController?.navigationBar.start()
+        ARSLineProgress.show()
         Alamofire.request(API.BASE_URL + API.Products, method: .get, parameters: [:], encoding: URLEncoding.default, headers: AccessToken.requestHeaders())
             .responseArray(keyPath: "products") { (response: DataResponse<[Product]>) in
                 let responseArray = response.result.value
@@ -100,6 +102,7 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                 }
                 
+                ARSLineProgress.hide()
                 self.navigationController?.navigationBar.stop()
                 
                 self.tableView.reloadData()

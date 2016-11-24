@@ -5,6 +5,7 @@ target 'Necktie' do
 
   pod 'Alamofire', '~> 4.0'
   pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'ARSLineProgress', '~> 2.1'
   pod 'BusyNavigationBar', '~> 2.0'
   pod 'DGElasticPullToRefresh', '~> 1.1'
   pod 'DZNEmptyDataSet', '~> 1.8'

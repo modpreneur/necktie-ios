@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (4.0.0):
     - Alamofire (~> 4.0)
     - ObjectMapper (~> 2.0)
+  - ARSLineProgress (2.1.0)
   - BusyNavigationBar (2.0.0)
   - DGElasticPullToRefresh (1.1)
   - DZNEmptyDataSet (1.8.1)
@@ -23,6 +24,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireObjectMapper (~> 4.0)
+  - ARSLineProgress (~> 2.1)
   - BusyNavigationBar (~> 2.0)
   - DGElasticPullToRefresh (~> 1.1)
   - DZNEmptyDataSet (~> 1.8)
@@ -52,6 +54,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  ARSLineProgress: 44dd1ec9994a4ddea7767944ecb9001046ecd697
   BusyNavigationBar: b73fd434b95f6198809dcf048b0245ad89ec1b37
   DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -69,6 +72,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   UICircularProgressRing: c37697577b2f07841fa901ad162959f6f5530204
 
-PODFILE CHECKSUM: 37b0247c43c0b080a7161c3baa8ba8950d19f01d
+PODFILE CHECKSUM: 60f652838bec62b4b0a5b0b8b080ddf1cd7c3529
 
 COCOAPODS: 1.1.1
