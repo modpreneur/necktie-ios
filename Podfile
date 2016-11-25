@@ -11,7 +11,7 @@ target 'Necktie' do
   pod 'DZNEmptyDataSet', '~> 1.8'
   pod 'IHKeyboardAvoiding', '~> 2.6'
   pod 'KDCircularProgress'
-  pod 'Locksmith', '~> 3.0'
+  pod 'KeychainAccess', '~> 3.0'
   pod 'RevealingSplashView', '~> 0.1'
   pod 'ScrollableGraphView', '~> 3.0'
   pod 'Segmentio', '~> 2.0'

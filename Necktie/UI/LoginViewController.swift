@@ -10,7 +10,7 @@ import UIKit
 
 import Alamofire
 import IHKeyboardAvoiding
-import Locksmith
+import KeychainAccess
 import SwiftyUserDefaults
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
@@ -177,12 +177,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let accessToken = valueDictionary.value(forKey: "access_token")
                     let refreshToken = valueDictionary.value(forKey: "refresh_token")
                     
-                    do {
-                        try Locksmith.saveData(data: ["access_token": accessToken!], forUserAccount: self.loginTextField.text!, inService: "Necktie")
-                        try Locksmith.saveData(data: ["refresh_token": refreshToken!], forUserAccount: self.loginTextField.text!, inService: "Necktie")
-                    } catch {
-                        print("Locksmith error: \(error)")
-                    }
+                    let keychain = Keychain(service: Constant.service)
+                    keychain["access_token"] = accessToken as! String?
+                    keychain["refresh_token"] = refreshToken as! String?
                     
                     Defaults[.username] = self.loginTextField.text!
                     Defaults[.isLoggedIn] = true

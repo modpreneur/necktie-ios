@@ -8,7 +8,7 @@
 
 import UIKit
 
-import Locksmith
+import KeychainAccess
 import SwiftyUserDefaults
 
 class MenuViewController: UITableViewController {
@@ -137,12 +137,9 @@ class MenuViewController: UITableViewController {
     private func logoutAction() {
         Defaults[.isLoggedIn] = false
         
-        let username = Defaults[.username]
-        do {
-            try Locksmith.deleteDataForUserAccount(userAccount: username, inService: "Necktie")
-        } catch {
-            print("Locksmith error")
-        }
+        let keychain = Keychain(service: Constant.service)
+        keychain["access_token"] = nil
+        keychain["refresh_token"] = nil
         
         let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Identifier.login) as! LoginViewController
         self.present(viewController, animated: true, completion: nil)

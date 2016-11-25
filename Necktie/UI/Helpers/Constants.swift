@@ -10,13 +10,15 @@ import Foundation
 import UIKit
 
 import Alamofire
+import KeychainAccess
 import SwiftyUserDefaults
-import Locksmith
 
 /// Global constants
 struct Constant {
     static var clientId: String = "1_i6rapb3zuc8cgo8sgkogk80g0o8co40o0kkwowok0s4skocc4"
     static var clientSecret: String = "5jszcq44v84cgsocs8o00ko0k88og0g4ccw0408o44848ok8o0"
+    
+    static var service: String = "com.getnecktie.Necktie"
 }
 
 /// API Paths
@@ -40,10 +42,9 @@ struct API {
 struct AccessToken {
     /// Returns current user's access token
     static func getAccessToken() -> String {
-        let username = Defaults[.username]
-        if let dictionary = Locksmith.loadDataForUserAccount(userAccount: username, inService: "Necktie") {
-            let accessToken: String = dictionary["access_token"] as! String
-            
+        let keychain = Keychain(service: Constant.service)
+        
+        if let accessToken = keychain["access_token"] {
             return accessToken
         } else {
             return ""
