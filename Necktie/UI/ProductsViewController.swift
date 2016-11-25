@@ -90,22 +90,28 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - Request
     
     func requestProducts() {
-        self.navigationController?.navigationBar.start()
         ARSLineProgress.show()
+        self.navigationController?.navigationBar.start()
+        
         Alamofire.request(API.BASE_URL + API.Products, method: .get, parameters: [:], encoding: URLEncoding.default, headers: AccessToken.requestHeaders())
+            .validate()
             .responseArray(keyPath: "products") { (response: DataResponse<[Product]>) in
-                let responseArray = response.result.value
-                
-                if let responseArray = responseArray {
+                switch response.result {
+                case .success(let responseArray):
                     for product in responseArray {
                         self.productArray.append(product)
                     }
+                    
+                    ARSLineProgress.hide()
+                    self.navigationController?.navigationBar.stop()
+                    
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    print("Error: \(error)")
+                    
+                    ARSLineProgress.hide()
+                    self.navigationController?.navigationBar.stop()
                 }
-                
-                ARSLineProgress.hide()
-                self.navigationController?.navigationBar.stop()
-                
-                self.tableView.reloadData()
         }
     }
     

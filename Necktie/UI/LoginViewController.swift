@@ -169,14 +169,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         show(activityIndicatorView: activityIndicator, on: loginButton)
         
         Alamofire.request(API.BASE_URL + API.OAuthPath, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .validate()
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
                     let valueDictionary = value as! NSDictionary
                     let accessToken = valueDictionary.value(forKey: "access_token")
+                    let refreshToken = valueDictionary.value(forKey: "refresh_token")
                     
                     do {
                         try Locksmith.saveData(data: ["access_token": accessToken!], forUserAccount: self.loginTextField.text!, inService: "Necktie")
+                        try Locksmith.saveData(data: ["refresh_token": refreshToken!], forUserAccount: self.loginTextField.text!, inService: "Necktie")
                     } catch {
                         print("Locksmith error: \(error)")
                     }
