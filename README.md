@@ -16,8 +16,8 @@
 	- easy AutoLayout in code (Swift version of *Masonry*)
 - **IHKeyboardAvoiding**
 	- library to keep text fields (or other views) always above keyboard
-- **Locksmith**
-	- better way to work with system keychains
+- **KeychainAccess**
+	- better way to work with system keychains and Touch ID
 - **SwiftyUserDefaults**
 	- better way to work with NSUserDefaults
 - **Segmentio**
@@ -63,9 +63,12 @@ Storyboards are separated to smaller ones for each menu item.
 
 ##Helpers
 
-- **Constants.swift**: basic constants
-- **UIViewController+MotionEffect.swift**: applies motion (`UIInterpolationgMotionEffect`) to create parallax effect (like Login screen)
+- **Constants.swift**: basic constants.
 - **UIColor+Necktie.swift**: global colors extension (call `UIColor().customColor`)
+- **NavigationController.swift**: sets default appearance for *UINavigationController* used in the app (font, gradient background).
+- **TableView.swift**: *UITableView* subclass which sets rounded corners (header, footer) and separators. `@IBDesignable` if needed.
+- **SearchBar.swift**: *UISearchBar* subclass which sets its font.
+- **GradientView.swift**: creates `IBDesignable` *UIView* to create gradient (vertical, horizontal or diagonal).
 
 ##Colors
 
@@ -130,14 +133,14 @@ This subclass draws a line at bottom as separator.
 2. To set value: `animate(fromAngle: 0, toAngle: 265, duration: 0.5, completion: nil)`. This sets value to 265 degrees and animation duration to 0.5 seconds.
 3. Set `label` and `description` to display values inside the circle.
 
-For more info see documentation<sup id="an3">[3](#fn3)</sup>
+For more info see documentation<sup id="an3">[3](#fn3)</sup>.
 
 ###ScrollableGraphView
 
 1. Add *UIView* to storyboard, set class to `ScrollableGraphView` and connect the outlet. Customization can be done via Interface Builder.
 2. Set data with `set(data: [Double], withLabels: [String])`
 
-For more info see documentation<sup id="an4">[4](#fn4)</sup>
+For more info see documentation<sup id="an4">[4](#fn4)</sup>.
 
 ###SwiftyUserDefaults
 
@@ -147,7 +150,42 @@ Simplifies usage of NSUserDefaults. Some important keys are defined in `Constant
 - **Reading**: `let name = Defaults[.name]`
 - **Writing**: `Defaults[.name] = value`
 
-For more info see documentation<sup id="an2">[2](#fn2)</sup>
+For more info see documentation<sup id="an2">[2](#fn2)</sup>.
+
+###KeychainAccess
+
+KeychainAccess is a simple Swift wrapper for Keychain.
+
+- **Instantiate**: `let keychain = Keychain(service: "bundle.id")`
+- **Reading**: `let key = keychain["key"]`
+- **Writing**: `keychain["key"] = "value"`
+
+It is also possible to *write* and *read* using `do try catch` to get catch errors:
+
+	do {
+		try keychain.set("value", key: "key")
+	}
+	catch let error {
+		print(error)
+	}
+
+For more info see documentation<sup id="an5">[5](#fn5)</sup>.
+
+###SnapKit
+
+Makes autolayout in code easy.
+
+	var box = UIView()
+	
+	self.view.addSubview(box)
+	box.snp.makeConstraints { (make) -> Void in
+		make.width.height.equalTo(50)
+		make.center.equalTo(self.view)
+	}
+
+This creates a 50x50 points box in the center.
+
+For more info see documentation<sup id="an6">[6](#fn6)</sup>.
 
 ##Links
 
@@ -158,3 +196,7 @@ For more info see documentation<sup id="an2">[2](#fn2)</sup>
 <a name="fn3">**3.**</a> [https://github.com/kaandedeoglu/KDCircularProgress](https://github.com/kaandedeoglu/KDCircularProgress) [↩](#an3)
 
 <a name="fn4">**4.**</a> [https://github.com/philackm/Scrollable-GraphView](https://github.com/philackm/Scrollable-GraphView) [↩](#an4)
+
+<a name="fn5">**5.**</a> [https://github.com/kishikawakatsumi/KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess) [↩](#an5)
+
+<a name="fn6">**6.**</a> [https://github.com/SnapKit/SnapKit](https://github.com/SnapKit/SnapKit) [↩](#an6)
