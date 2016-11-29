@@ -75,7 +75,7 @@ class MenuViewController: UITableViewController {
         } else if indexPath.row == menuItems.count + 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! MenuProfileCell
             
-            cell.profileName.text = "John Appleseed"
+            cell.profileName.text = Defaults[.username]
             
             return cell
         // Cell for log out

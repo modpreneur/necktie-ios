@@ -9,6 +9,7 @@
 import UIKit
 
 import Alamofire
+import AlamofireObjectMapper
 import IHKeyboardAvoiding
 import KeychainAccess
 import SwiftyUserDefaults
@@ -184,6 +185,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     Defaults[.username] = self.loginTextField.text!
                     Defaults[.isLoggedIn] = true
                     
+                    self.getUser()
+                    
                     self.dismiss(animated: true) {
                         self.dismiss(activityIndicatorView: self.activityIndicator, on: self.loginButton)
                     }
@@ -193,6 +196,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     print("Request Error: \(error)")
                 }
         }
+    }
+    
+    // MARK: - Get user
+    
+    func getUser() {
+        APIManager.sharedManager.request(APIRouter.profile)
+            .validate()
+            .responseObject(keyPath: "user") { (response: DataResponse<Profile>) in
+                switch response.result {
+                case .success(let user):
+                    print(user.username!)
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            }
     }
 
     /*
