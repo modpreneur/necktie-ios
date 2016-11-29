@@ -21,25 +21,8 @@ struct Constant {
     static var service: String = "com.getnecktie.Necktie"
 }
 
-/// API Paths
-struct API {
-    /// API Base URL
-    static var BASE_URL: String = "http://dev.getnecktie.com"
-    
-    /// API Version
-    static var Version: Int = 1
-    
-    static var APIPath: String = "/api/v" + "\(API.Version)" + "/"
-    
-    /// OAuth2 URL
-    static var OAuthPath: String = "/oauth/v2/token"
-    
-    /// Paths
-    static var Products: String = API.APIPath + "products"
-}
-
 /// User Access Token
-struct AccessToken {
+struct Token {
     /// Returns current user's access token
     static func getAccessToken() -> String {
         let keychain = Keychain(service: Constant.service)
@@ -51,9 +34,19 @@ struct AccessToken {
         }
     }
     
+    static func getRefreshToken() -> String {
+        let keychain = Keychain(service: Constant.service)
+        
+        if let refreshToken = keychain["refresh_token"] {
+            return refreshToken
+        } else {
+            return ""
+        }
+    }
+    
     /// Constructs and returns HTTP headers with access token
     static func requestHeaders() -> HTTPHeaders {
-        let headers: HTTPHeaders = ["Authorization": "Bearer " + AccessToken.getAccessToken()]
+        let headers: HTTPHeaders = ["Authorization": "Bearer " + Token.getAccessToken()]
         
         return headers
     }

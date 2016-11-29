@@ -14,7 +14,7 @@ import ARSLineProgress
 import BusyNavigationBar
 import DZNEmptyDataSet
 
-class ProductsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var sectionHeaderView: UIView!
@@ -93,7 +93,7 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
         ARSLineProgress.show()
         self.navigationController?.navigationBar.start()
         
-        Alamofire.request(API.BASE_URL + API.Products, method: .get, parameters: [:], encoding: URLEncoding.default, headers: AccessToken.requestHeaders())
+        APIManager.sharedManager.request(APIRouter.products)
             .validate()
             .responseArray(keyPath: "products") { (response: DataResponse<[Product]>) in
                 switch response.result {

@@ -168,7 +168,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         show(activityIndicatorView: activityIndicator, on: loginButton)
         
-        Alamofire.request(API.BASE_URL + API.OAuthPath, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        Alamofire.request(API.baseURL.dev + API.OAuthPath, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseJSON { response in
                 switch response.result {
