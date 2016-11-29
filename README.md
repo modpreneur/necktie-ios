@@ -2,7 +2,7 @@
 
 ##Getting the code
 
-	git clone 
+	git clone https://github.com/modpreneur/necktie-ios.git
 	cd Necktie
 	pod install
 
@@ -68,7 +68,7 @@ Storyboards are separated to smaller ones for each menu item.
 - **NavigationController.swift**: sets default appearance for *UINavigationController* used in the app (font, gradient background).
 - **TableView.swift**: *UITableView* subclass which sets rounded corners (header, footer) and separators. `@IBDesignable` if needed.
 - **SearchBar.swift**: *UISearchBar* subclass which sets its font.
-- **GradientView.swift**: creates `IBDesignable` *UIView* to create gradient (vertical, horizontal or diagonal).
+- **GradientView.swift**: creates `@IBDesignable` *UIView* to create gradient (vertical, horizontal or diagonal).
 
 ##Colors
 
@@ -125,11 +125,25 @@ To set fixed section header:
 
 This subclass draws a line at bottom as separator.
 
+##Networking
+
+This project uses *Alamofire* library for all the networking. To ensure all (authorized) requests have *OAuth2* token embedded, all requests should use `APIManager.sharedManager` (instead of plain `Alamofire`).
+
+To map object use *AlamofireObjectMapper* (*ObjectMapper*):
+
+	.responseObject(keyPath: "object") { (response: DataResponse<Object>) in }
+
+or to map array of objects:
+
+	.responseArray(keyPath: "array") { (response: DataResponse<[Object]>) in }
+
+*Object* is a class which conforms to `Mappable` protocol.
+
 ##Libraries
 
 ###KDCircularProgress
 
-1. Place *UIView* in storyboard, change class to `UICircularProgressRingView` and connect outlet to view controller. It's `IBDesignable` so customization is easy via Interface Builder.
+1. Place *UIView* in storyboard, change class to `UICircularProgressRingView` and connect outlet to view controller. It's `@IBDesignable` so customization is easy via Interface Builder.
 2. To set value: `animate(fromAngle: 0, toAngle: 265, duration: 0.5, completion: nil)`. This sets value to 265 degrees and animation duration to 0.5 seconds.
 3. Set `label` and `description` to display values inside the circle.
 

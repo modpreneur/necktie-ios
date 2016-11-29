@@ -12,6 +12,7 @@
 		2B1654381DAB7FE7001DBE43 /* UIColor+Necktie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1654371DAB7FE7001DBE43 /* UIColor+Necktie.swift */; };
 		2B1654421DABA631001DBE43 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1654411DABA631001DBE43 /* HeaderView.swift */; };
 		2B1654441DABBDB0001DBE43 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1654431DABBDB0001DBE43 /* Menu.swift */; };
+		2B26DA851DEDD51800C06D23 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2B26DA841DEDD51800C06D23 /* README.md */; };
 		2B29B0611DE5D52B0093AEA7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B29B0601DE5D52B0093AEA7 /* Product.swift */; };
 		2B3C6B4F1DDF163200A11D5B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C6B4E1DDF163200A11D5B /* TableView.swift */; };
 		2B3C6B511DDF1C6100A11D5B /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C6B501DDF1C6100A11D5B /* SectionHeaderView.swift */; };
@@ -91,6 +92,7 @@
 		2B1654371DAB7FE7001DBE43 /* UIColor+Necktie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Necktie.swift"; sourceTree = "<group>"; };
 		2B1654411DABA631001DBE43 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		2B1654431DABBDB0001DBE43 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		2B26DA841DEDD51800C06D23 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		2B29B0601DE5D52B0093AEA7 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		2B3C6B4E1DDF163200A11D5B /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		2B3C6B501DDF1C6100A11D5B /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		2BBB55191D9E80AD005347DB /* Necktie */ = {
 			isa = PBXGroup;
 			children = (
+				2B26DA841DEDD51800C06D23 /* README.md */,
 				2BD1A44F1DE48DF5007837EB /* Necktie.entitlements */,
 				2BBB551A1D9E80AD005347DB /* AppDelegate.swift */,
 				2BADDF281DEDAB0F00D22271 /* API */,
@@ -739,6 +742,7 @@
 				2BD0F20E1DE3327F002BAE5F /* SearchBar.swift in Sources */,
 				2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */,
 				2BADDF2C1DEDAB6000D22271 /* APIRouter.swift in Sources */,
+				2B26DA851DEDD51800C06D23 /* README.md in Sources */,
 				2B71DBA61DC8938900893937 /* NavigationController.swift in Sources */,
 				2BFB0C041DA7C17B00D29BC4 /* MenuTableViewCell.swift in Sources */,
 				2B70840C1DD31F6800FE4A7D /* UserCell.swift in Sources */,
