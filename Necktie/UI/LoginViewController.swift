@@ -177,7 +177,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let accessToken = valueDictionary.value(forKey: "access_token")
                     let refreshToken = valueDictionary.value(forKey: "refresh_token")
                     
-                    let keychain = Keychain(service: Constant.service)
+                    let keychain = Keychain(service: Constant.App.bundleId)
                     keychain["access_token"] = accessToken as! String?
                     keychain["refresh_token"] = refreshToken as! String?
                     

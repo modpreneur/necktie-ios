@@ -137,7 +137,7 @@ class MenuViewController: UITableViewController {
     private func logoutAction() {
         Defaults[.isLoggedIn] = false
         
-        let keychain = Keychain(service: Constant.service)
+        let keychain = Keychain(service: Constant.App.bundleId)
         keychain["access_token"] = nil
         keychain["refresh_token"] = nil
         

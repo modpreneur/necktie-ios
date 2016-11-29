@@ -115,7 +115,7 @@ class OAuth2RetryHandler: RequestAdapter, RequestRetrier {
                     let refreshToken = json["refresh_token"] as? String
                 {
                     completion(true, accessToken, refreshToken)
-                    let keychain = Keychain(service: Constant.service)
+                    let keychain = Keychain(service: Constant.App.bundleId)
                     keychain["access_token"] = accessToken
                     keychain["refresh_token"] = refreshToken
                     

@@ -18,14 +18,18 @@ struct Constant {
     static var clientId: String = "1_i6rapb3zuc8cgo8sgkogk80g0o8co40o0kkwowok0s4skocc4"
     static var clientSecret: String = "5jszcq44v84cgsocs8o00ko0k88og0g4ccw0408o44848ok8o0"
     
-    static var service: String = "com.getnecktie.Necktie"
+    struct App {
+        static var bundleId: String = Bundle.main.bundleIdentifier!
+        static var version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        static var build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+    }
 }
 
 /// User Access Token
 struct Token {
     /// Returns current user's access token
     static func getAccessToken() -> String {
-        let keychain = Keychain(service: Constant.service)
+        let keychain = Keychain(service: Constant.App.bundleId)
         
         if let accessToken = keychain["access_token"] {
             return accessToken
@@ -35,7 +39,7 @@ struct Token {
     }
     
     static func getRefreshToken() -> String {
-        let keychain = Keychain(service: Constant.service)
+        let keychain = Keychain(service: Constant.App.bundleId)
         
         if let refreshToken = keychain["refresh_token"] {
             return refreshToken
