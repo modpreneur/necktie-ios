@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+import ARSLineProgress
+import BusyNavigationBar
 import SnapKit
 
 extension Double {
@@ -43,6 +45,16 @@ extension UIViewController {
         button.addSubview(button.titleLabel!)
         
         button.setNeedsDisplay()
+    }
+    
+    func loadingStart() {
+        ARSLineProgress.show()
+        self.navigationController?.navigationBar.start()
+    }
+    
+    func loadingStop() {
+        ARSLineProgress.hide()
+        self.navigationController?.navigationBar.stop()
     }
 }
 

@@ -10,8 +10,6 @@ import UIKit
 
 import Alamofire
 import AlamofireObjectMapper
-import ARSLineProgress
-import BusyNavigationBar
 import DZNEmptyDataSet
 
 class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
@@ -90,8 +88,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
     // MARK: - Request
     
     func requestProducts() {
-        ARSLineProgress.show()
-        self.navigationController?.navigationBar.start()
+        loadingStart()
         
         APIManager.sharedManager.request(APIRouter.products)
             .validate()
@@ -102,15 +99,13 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                         self.productArray.append(product)
                     }
                     
-                    ARSLineProgress.hide()
-                    self.navigationController?.navigationBar.stop()
+                    self.loadingStop()
                     
                     self.tableView.reloadData()
                 case .failure(let error):
                     print("Error: \(error)")
                     
-                    ARSLineProgress.hide()
-                    self.navigationController?.navigationBar.stop()
+                    self.loadingStop()
                 }
         }
     }
