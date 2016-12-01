@@ -90,7 +90,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
     func requestProducts() {
         loadingStart()
         
-        APIManager.sharedManager.request(APIRouter.products)
+        APIManager.sharedManager.request(Router.products)
             .validate()
             .responseArray(keyPath: "products") { (response: DataResponse<[Product]>) in
                 switch response.result {

@@ -34,7 +34,7 @@ struct API {
 }
 
 /// API Router, returns URLConvertible
-enum APIRouter: URLRequestConvertible {
+enum Router: URLRequestConvertible {
     static let baseURLString = API.baseURL.dev
     
     case product(id: Int)
@@ -59,7 +59,7 @@ enum APIRouter: URLRequestConvertible {
             }
         }()
         
-        let url = try APIRouter.baseURLString.asURL()
+        let url = try Router.baseURLString.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(result.path))
         
         urlRequest.httpMethod = result.method.rawValue

@@ -201,7 +201,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Get user
     
     func getUser() {
-        APIManager.sharedManager.request(APIRouter.profile)
+        APIManager.sharedManager.request(Router.profile)
             .validate()
             .responseObject(keyPath: "user") { (response: DataResponse<Profile>) in
                 switch response.result {
