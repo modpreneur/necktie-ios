@@ -18,6 +18,7 @@ PODS:
   - SkyFloatingLabelTextField (1.2.1)
   - SnapKit (3.0.1)
   - SwiftChart (0.3.0)
+  - SwiftyBeaver (1.1.1)
   - SwiftyUserDefaults (3.0.0)
   - UICircularProgressRing (1.1.1)
 
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - SkyFloatingLabelTextField (from `https://github.com/MLSDev/SkyFloatingLabelTextField.git`, branch `swift3`)
   - SnapKit (~> 3.0)
   - SwiftChart (~> 0.3)
+  - SwiftyBeaver (~> 1.1)
   - SwiftyUserDefaults (~> 3.0)
   - UICircularProgressRing (~> 1.1)
 
@@ -69,9 +71,10 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 3f6610aded18e778df5cfab3b9e12a11b3e014e9
   SnapKit: f818b8326d45b4e1c777d0ab27b5c0a3624bfdeb
   SwiftChart: 39b48ba287a9f77a2a958726ff58fc05d5d9129f
+  SwiftyBeaver: 2b68694df862381235e32bcfc4ec991e26bf131d
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   UICircularProgressRing: c37697577b2f07841fa901ad162959f6f5530204
 
-PODFILE CHECKSUM: d69891ab832600d233f8426880718145499eb53f
+PODFILE CHECKSUM: 8b3b881792162feae34acdc7371a696701dfe1b1
 
 COCOAPODS: 1.1.1
