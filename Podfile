@@ -7,7 +7,6 @@ target 'Necktie' do
   pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'ARSLineProgress', '~> 2.1'
   pod 'BusyNavigationBar', '~> 2.0'
-  pod 'DGElasticPullToRefresh', '~> 1.1'
   pod 'DZNEmptyDataSet', '~> 1.8'
   pod 'IHKeyboardAvoiding', '~> 2.6'
   pod 'KDCircularProgress'
@@ -16,10 +15,8 @@ target 'Necktie' do
   pod 'ScrollableGraphView', '~> 3.0'
   pod 'Segmentio', '~> 2.0'
   pod 'SideMenuController', '~> 0.2'
-  pod 'SkyFloatingLabelTextField', git: 'https://github.com/MLSDev/SkyFloatingLabelTextField.git', branch: 'swift3'
   pod 'SnapKit', '~> 3.0'
   pod 'SwiftyBeaver', '~> 1.1'
-  pod 'SwiftChart', '~> 0.3'
   pod 'SwiftyUserDefaults', '~> 3.0'
   pod 'UICircularProgressRing', '~> 1.1'
 
