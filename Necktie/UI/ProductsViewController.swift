@@ -99,11 +99,13 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                         self.productArray.append(product)
                     }
                     
+                    log.info("Loaded \(self.productArray.count) products")
+                    
                     self.loadingStop()
                     
                     self.tableView.reloadData()
                 case .failure(let error):
-                    print("Error: \(error)")
+                    log.error("Request Error: \(error)")
                     
                     self.loadingStop()
                 }

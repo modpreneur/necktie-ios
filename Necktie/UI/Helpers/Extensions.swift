@@ -12,6 +12,7 @@ import UIKit
 import ARSLineProgress
 import BusyNavigationBar
 import SnapKit
+import SwiftyBeaver
 
 extension Double {
     func toArc() -> Double {
@@ -68,5 +69,20 @@ extension String {
         let convertedDate = dateFormatter.string(from: myDate)
         
         return convertedDate
+    }
+}
+
+public extension SwiftyBeaver {
+    static func setup() {
+        let console = ConsoleDestination()
+        
+        console.format = "$DHH:mm:ss$d $L $M"
+        console.levelString.verbose = "💡[VERBOSE]:"
+        console.levelString.debug = "🛠[DEBUG]:"
+        console.levelString.info = "💎[INFO]:"
+        console.levelString.warning = "⚠️[WARNING]:"
+        console.levelString.error = "🔥[ERROR]:"
+        
+        log.addDestination(console)
     }
 }

@@ -193,7 +193,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 case .failure(let error):
                     self.dismiss(activityIndicatorView: self.activityIndicator, on: self.loginButton)
                     
-                    print("Request Error: \(error)")
+                    log.error("Request Error: \(error)")
                 }
         }
     }
@@ -206,9 +206,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             .responseObject(keyPath: "user") { (response: DataResponse<Profile>) in
                 switch response.result {
                 case .success(let user):
-                    print(user.username!)
+                    log.verbose(user.username!)
                 case .failure(let error):
-                    print("Error: \(error)")
+                    log.error("Error: \(error)")
                 }
             }
     }

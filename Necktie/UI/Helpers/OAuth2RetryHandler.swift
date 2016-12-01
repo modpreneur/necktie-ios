@@ -61,8 +61,8 @@ class OAuth2RetryHandler: RequestAdapter, RequestRetrier {
         
         if let response = request.task?.response as? HTTPURLResponse, response.statusCode == 401 {
             requestsToRetry.append(completion)
-            
-            print("[DEBUG]: Token is invalid, refreshing")
+
+            log.info("Token is invalid, refreshing")
             
             if !isRefreshing {
                 refreshTokens { [weak self] succeeded, accessToken, refreshToken in
@@ -82,7 +82,7 @@ class OAuth2RetryHandler: RequestAdapter, RequestRetrier {
         } else {
             completion(false, 0.0)
             
-            print("[DEBUG]: Token is valid")
+            log.info("Token is valid")
         }
     }
     
@@ -90,8 +90,8 @@ class OAuth2RetryHandler: RequestAdapter, RequestRetrier {
     
     private func refreshTokens(completion: @escaping RefreshCompletion) {
         guard !isRefreshing else { return }
-        
-        print("[DEBUG]: Refreshing token")
+
+        log.info("Refreshing token")
         
         isRefreshing = true
         
@@ -118,12 +118,12 @@ class OAuth2RetryHandler: RequestAdapter, RequestRetrier {
                     let keychain = Keychain(service: Constant.App.bundleId)
                     keychain["access_token"] = accessToken
                     keychain["refresh_token"] = refreshToken
-                    
-                    print("[DEBUG]: Token successfully refreshed")
+
+                    log.info("Token successfully refreshed")
                 } else {
                     completion(false, nil, nil)
                     
-                    print("[DEBUG]: Token not refreshed")
+                    log.error("Token not refreshed")
                 }
                 
                 strongSelf.isRefreshing = false
