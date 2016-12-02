@@ -24,7 +24,7 @@ struct MenuItem {
 /**
  List of all items in menu (in displayed order)
  */
-var menuItems: Array<MenuItem> = [MenuItem(name: "Dashboard",
+var menuItems: [MenuItem] = [MenuItem(name: "Dashboard",
                                            segue: "showDashboard",
                                            image: "Dashboard"),
                                   MenuItem(name: "Products",

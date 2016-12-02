@@ -14,29 +14,27 @@ import Alamofire
 struct API {
     /// API Base URL
     static var baseURL: String {
-        get {
-            #if DEBUG
-                //return "http://88.146.49.119/app_dev.php"
-                return "http://dev.getnecktie.com"
-            #else
-                return "http://dev.getnecktie.com"
-            #endif
-        }
+    #if DEBUG
+        //return "http://88.146.49.119/app_dev.php"
+        return "http://dev.getnecktie.com"
+    #else
+        return "http://dev.getnecktie.com"
+    #endif
     }
     
     /// OAuth2 URL
-    static var OAuthPath: String = "/oauth/v2/token"
+    static var OAuthPath = "/oauth/v2/token"
     
     /// API Version
-    static var version: Int = 1
-    static var path: String = "/api/v" + "\(API.version)" + "/"
+    static var version = 1
+    static var path = "/api/v" + "\(API.version)" + "/"
     
     /// Paths
-    static var products: String = API.path + "products"
-    static var product: String = API.path + "product"
-    static var users: String = API.path + "users"
-    static var user: String = API.path + "user"
-    static var profile: String = API.path + "profile"
+    static var products = API.path + "products"
+    static var product = API.path + "product"
+    static var users = API.path + "users"
+    static var user = API.path + "user"
+    static var profile = API.path + "profile"
 }
 
 /// API Router, returns URLConvertible

@@ -10,7 +10,7 @@ import Foundation
 
 import ObjectMapper
 
-class Product: Mappable {
+final class Product: Mappable {
     var id: Int?
     var name: String?
     var created: String?

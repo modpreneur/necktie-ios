@@ -14,12 +14,14 @@ import BusyNavigationBar
 import SnapKit
 import SwiftyBeaver
 
+// MARK: - Double
 extension Double {
     func toArc() -> Double {
         return (self * 0.01) * 360.0
     }
 }
 
+// MARK: - UIViewController
 extension UIViewController {
     func show(activityIndicatorView: UIActivityIndicatorView, on button: UIButton) {
         activityIndicatorView.startAnimating()
@@ -59,6 +61,7 @@ extension UIViewController {
     }
 }
 
+// MARK: - String
 extension String {
     func convertDate() -> String {
         let dateFormatter = DateFormatter()
@@ -72,6 +75,7 @@ extension String {
     }
 }
 
+// MARK: - SwiftyBeaver
 public extension SwiftyBeaver {
     static func setup() {
         let console = ConsoleDestination()

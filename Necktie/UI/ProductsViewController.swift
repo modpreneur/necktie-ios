@@ -19,7 +19,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var sectionHeaderView: UIView!
     @IBOutlet var searchBar: UISearchBar!
     
-    var productArray: Array<Product> = []
+    var productArray: [Product] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

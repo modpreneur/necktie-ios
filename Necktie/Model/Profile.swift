@@ -10,12 +10,12 @@ import Foundation
 
 import ObjectMapper
 
-class Profile: Mappable {
+final class Profile: Mappable {
     var id: Int?
     var username: String?
     var email: String?
     var country: String?
-    var roles: Array<String>?
+    var roles: [String]?
     var updated: String?
     var isPublic: Bool?
     
