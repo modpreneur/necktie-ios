@@ -62,7 +62,7 @@ class OAuth2RetryHandler: RequestAdapter, RequestRetrier {
         if let response = request.task?.response as? HTTPURLResponse, response.statusCode == 401 {
             requestsToRetry.append(completion)
 
-            log.info("Token is invalid, refreshing")
+            log.warning("Token is invalid")
             
             if !isRefreshing {
                 refreshTokens { [weak self] succeeded, accessToken, refreshToken in

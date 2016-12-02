@@ -8,6 +8,7 @@
 
 import UIKit
 
+import PopupDialog
 import SideMenuController
 import SwiftyBeaver
 import SwiftyUserDefaults
@@ -25,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set up SwiftyBeaver (in Extensions.swift)
         log.setup()
+        
+        // Set up PopupDialog
+        popupDialogConfig()
         
         log.info("Using baseURL: \(API.baseURL)")
         
@@ -59,10 +63,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    // MARK: - SwiftyBeaver config
+    // MARK: - PopupDialog config
     
-    func swiftyBeaverConfig() {
+    func popupDialogConfig() {
+        let dialogAppearance = PopupDialogDefaultView.appearance()
+        dialogAppearance.backgroundColor      = UIColor.white
+        dialogAppearance.titleFont            = UIFont(name: "Roboto-Medium", size: 18)!
+        dialogAppearance.titleColor           = UIColor().necktieSecondary
+        dialogAppearance.messageFont          = UIFont(name: "Roboto-Regular", size: 14)!
+        dialogAppearance.messageColor         = UIColor().necktieSecondary
         
+        let defaultButtonAppearance = DefaultButton.appearance()
+        defaultButtonAppearance.titleFont      = UIFont(name: "Roboto-Medium", size: 16)
+        defaultButtonAppearance.titleColor     = UIColor().necktiePrimary
+        
+        let cancelButtonAppearance = CancelButton.appearance()
+        cancelButtonAppearance.titleFont      = UIFont(name: "Roboto-Regular", size: 16)
+        cancelButtonAppearance.titleColor     = UIColor().necktieSecondary
+        
+        let destructiveButtonAppearance = DestructiveButton.appearance()
+        destructiveButtonAppearance.titleFont      = UIFont(name: "Roboto-Regular", size: 16)
+        destructiveButtonAppearance.titleColor     = UIColor(red:0.952, green:0.568, blue:0.191, alpha:1)
     }
 
 }

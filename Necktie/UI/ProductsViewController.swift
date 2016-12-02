@@ -11,6 +11,7 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 import DZNEmptyDataSet
+import PopupDialog
 
 class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
@@ -105,7 +106,16 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                     
                     self.tableView.reloadData()
                 case .failure(let error):
-                    log.error("Request Error: \(error)")
+                    log.error("Request Error: \(error.localizedDescription)")
+                    
+                    let alert = PopupDialog(title: "ERROR", message: "\(error.localizedDescription)", image: nil, buttonAlignment: .horizontal, transitionStyle: .bounceUp, gestureDismissal: true, completion: nil)
+                    let okButton = CancelButton(title: "OK", dismissOnTap: true, action: nil)
+                    let retryButton = DefaultButton(title: "Retry", action: {
+                        self.requestProducts()
+                    })
+                    alert.addButton(okButton)
+                    alert.addButton(retryButton)
+                    self.present(alert, animated: true, completion: nil)
                     
                     self.loadingStop()
                 }

@@ -13,7 +13,6 @@ import RevealingSplashView
 import ScrollableGraphView
 import SideMenuController
 import SwiftyUserDefaults
-import SwiftChart
 
 class DashboardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SideMenuControllerDelegate {
 
