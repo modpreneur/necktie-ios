@@ -20,7 +20,7 @@ open class APIManager: Alamofire.SessionManager {
         
         // Set retry handler for OAuth2
         let manager = Alamofire.SessionManager(configuration: configuration)
-        let retrier = OAuth2RetryHandler(clientID: Constant.clientId, clientSecret: Constant.clientSecret, baseURLString: API.baseURL.dev, accessToken: Token.getAccessToken(), refreshToken: Token.getRefreshToken())
+        let retrier = OAuth2RetryHandler(clientID: Constant.clientId, clientSecret: Constant.clientSecret, baseURLString: API.baseURL, accessToken: Token.getAccessToken(), refreshToken: Token.getRefreshToken())
         manager.adapter = retrier
         manager.retrier = retrier
         

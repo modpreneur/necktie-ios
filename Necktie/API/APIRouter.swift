@@ -13,9 +13,15 @@ import Alamofire
 /// API Paths
 struct API {
     /// API Base URL
-    struct baseURL {
-        static var production: String = "http://dev.getnecktie.com"
-        static var dev: String = "http://dev.getnecktie.com"
+    static var baseURL: String {
+        get {
+            #if DEBUG
+                //return "http://88.146.49.119/app_dev.php"
+                return "http://dev.getnecktie.com"
+            #else
+                return "http://dev.getnecktie.com"
+            #endif
+        }
     }
     
     /// OAuth2 URL
@@ -35,7 +41,7 @@ struct API {
 
 /// API Router, returns URLConvertible
 enum Router: URLRequestConvertible {
-    static let baseURLString = API.baseURL.dev
+    static let baseURLString = API.baseURL
     
     case product(id: Int)
     case products

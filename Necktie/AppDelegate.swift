@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set up SwiftyBeaver (in Extensions.swift)
         log.setup()
         
+        log.info("Using baseURL: \(API.baseURL)")
+        
         if !Defaults[.isLoggedIn] {
             
         }

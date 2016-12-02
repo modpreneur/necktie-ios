@@ -169,7 +169,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         show(activityIndicatorView: activityIndicator, on: loginButton)
         
-        Alamofire.request(API.baseURL.dev + API.OAuthPath, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        Alamofire.request(API.baseURL + API.OAuthPath, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -206,7 +206,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             .responseObject(keyPath: "user") { (response: DataResponse<Profile>) in
                 switch response.result {
                 case .success(let user):
-                    log.verbose(user.username!)
+                    log.verbose("Current user: \(user.username!)")
                 case .failure(let error):
                     log.error("Error: \(error)")
                 }
