@@ -14,11 +14,11 @@ target 'Necktie' do
   pod 'PopupDialog', '~> 0.5'
   pod 'RevealingSplashView', '~> 0.1'
   pod 'ScrollableGraphView', '~> 3.0'
+  pod 'Segmentio', '~> 2.1'
   pod 'SideMenuController', '~> 0.2'
   pod 'SnapKit', '~> 3.0'
   pod 'SwiftyBeaver', '~> 1.1'
   pod 'SwiftyUserDefaults', '~> 3.0'
-  pod 'SWSegmentedControl', '~> 2.1'
   pod 'UICircularProgressRing', '~> 1.1'
 
   target 'NecktieTests' do
