@@ -8,9 +8,12 @@
 
 import UIKit
 
+import Segmentio
+
 class UsersEditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var segmentio: Segmentio!
     
     struct Data {
         var key: String
@@ -27,6 +30,14 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         // Set tableView delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupSegmentio()
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,6 +80,23 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         } else {
             return 50
         }
+    }
+    
+    // MARK: - Segmentio
+    
+    fileprivate func setupSegmentio() {
+        let tabs = [SegmentioItem(title: "Edit", image: nil), SegmentioItem(title: "Invoices", image: nil), SegmentioItem(title: "Newsletter", image: nil), SegmentioItem(title: "Danger Zone", image: nil)]
+        SegmentioBuilder.buildSegmentioView(segmentioView: segmentio, segmentioItems: tabs, segmentioStyle: .onlyLabel)
+        
+        segmentio.selectedSegmentioIndex = selectedSegmentioIndex()
+        
+        segmentio.valueDidChange = { segmentio, segmentIndex in
+            log.info("Selected index: \(segmentIndex)")
+        }
+    }
+    
+    fileprivate func selectedSegmentioIndex() -> Int {
+        return 0
     }
     
     /*

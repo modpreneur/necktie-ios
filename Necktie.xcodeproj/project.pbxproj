@@ -50,6 +50,7 @@
 		2BBBD6001DA64D9000696D1E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBBD5FF1DA64D9000696D1E /* Login.storyboard */; };
 		2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6011DA65D9800696D1E /* LoginViewController.swift */; };
 		2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */; };
+		2BC13F741DF989C100CC5390 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC13F731DF989C100CC5390 /* SegmentioBuilder.swift */; };
 		2BD0F20E1DE3327F002BAE5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0F20D1DE3327F002BAE5F /* SearchBar.swift */; };
 		2BD1A4491DE47B6E007837EB /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD1A4481DE47B6E007837EB /* Products.storyboard */; };
 		2BD1A44C1DE47BAC007837EB /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD1A44B1DE47BAC007837EB /* ProductsViewController.swift */; };
@@ -136,6 +137,7 @@
 		2BBBD5FF1DA64D9000696D1E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2BBBD6011DA65D9800696D1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		2BC13F731DF989C100CC5390 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
 		2BD0F20D1DE3327F002BAE5F /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		2BD1A4481DE47B6E007837EB /* Products.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
 		2BD1A44B1DE47BAC007837EB /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				2B80A92E1DD0C97200EED246 /* Extensions.swift */,
 				2B0445311DEC64EC00F15DED /* ViewController.swift */,
 				2B74CBF81DEC663600393219 /* OAuth2RetryHandler.swift */,
+				2BC13F731DF989C100CC5390 /* SegmentioBuilder.swift */,
 			);
 			name = Helpers;
 			path = UI/Helpers;
@@ -746,6 +749,7 @@
 				2B71DBA61DC8938900893937 /* NavigationController.swift in Sources */,
 				2BFB0C041DA7C17B00D29BC4 /* MenuTableViewCell.swift in Sources */,
 				2B70840C1DD31F6800FE4A7D /* UserCell.swift in Sources */,
+				2BC13F741DF989C100CC5390 /* SegmentioBuilder.swift in Sources */,
 				2B3C6B511DDF1C6100A11D5B /* SectionHeaderView.swift in Sources */,
 				2BADDF2B1DEDAB6000D22271 /* APIManager.swift in Sources */,
 				2B3C6B4F1DDF163200A11D5B /* TableView.swift in Sources */,

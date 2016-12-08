@@ -11,6 +11,7 @@ import UIKit
 
 import ARSLineProgress
 import BusyNavigationBar
+import Segmentio
 import SnapKit
 import SwiftyBeaver
 
