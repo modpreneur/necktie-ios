@@ -23,7 +23,7 @@ final class Product: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]
-        created <- map["created_at"]
-        updated <- map["updated_at"]
+        created <- (map["created_at"], TransformDate())
+        updated <- (map["updated_at"], TransformDate())
     }
 }

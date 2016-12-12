@@ -68,7 +68,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
         }
         
         if let productUpdated = product.updated {
-            cell.modifiedLabel.text = productUpdated.convertDate()
+            cell.modifiedLabel.text = productUpdated
         }
         
         return cell

@@ -29,7 +29,7 @@ final class Profile: Mappable {
         email <- map["email"]
         country <- map["country"]
         roles <- map["roles"]
-        updated <- map["updated_at"]
+        updated <- (map["updated_at"], TransformDate())
         isPublic <- map["public"]
     }
 }
