@@ -60,6 +60,15 @@ extension UIViewController {
         ARSLineProgress.hide()
         self.navigationController?.navigationBar.stop()
     }
+    
+    func setupTabs(tabs: [String]) -> [SegmentioItem] {
+        var segmentioTabs: [SegmentioItem] = []
+        for item in tabs {
+            let tab = SegmentioItem(title: item, image: nil)
+            segmentioTabs.append(tab)
+        }
+        return segmentioTabs
+    }
 }
 
 // MARK: - String

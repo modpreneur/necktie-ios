@@ -21,6 +21,27 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     let data: Array<Data> = [Data(key: "Username", value: "Tomáš Jančar"), Data(key: "E-mail", value: "tjancar@email.com"), Data(key: "Password", value: "********"), Data(key: "First name", value: "Tomáš"), Data(key: "Last name", value: "Jančar")]
+    
+    private enum Tabs: String {
+        case edit = "Edit"
+        case newsletter = "Newsletter"
+        case invoices = "Invoices"
+        case accesses = "Accesses"
+        case history = "History"
+        case permissions = "Permissions"
+        case status = "Status"
+        case dangerzone = "Danger Zone"
+        
+        static var allValues = [edit.rawValue,
+                                newsletter.rawValue,
+                                invoices.rawValue,
+                                accesses.rawValue,
+                                history.rawValue,
+                                permissions.rawValue,
+                                status.rawValue,
+                                dangerzone.rawValue]
+    }
+    private let tabs = Tabs.allValues
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +51,6 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         // Set tableView delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,20 +75,25 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "userPhotoCell", for: indexPath) as! UserPhotoCell
-            
-            cell.userPhoto.image = UIImage(named: "Avatar")
-            
-            return cell
+        if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "userPhotoCell", for: indexPath) as! UserPhotoCell
+                
+                cell.userPhoto.image = UIImage(named: "Avatar")
+                
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "userDataCell", for: indexPath) as! UserDataCell
+                
+                let item: Data = data[indexPath.row-1]
+                
+                cell.descriptionLabel.text = item.key
+                cell.valueLabel.text = item.value
+                
+                return cell
+            }
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "userDataCell", for: indexPath) as! UserDataCell
-            
-            let item: Data = data[indexPath.row-1]
-            
-            cell.descriptionLabel.text = item.key
-            cell.valueLabel.text = item.value
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             return cell
         }
     }
@@ -85,18 +109,20 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - Segmentio
     
     fileprivate func setupSegmentio() {
-        let tabs = [SegmentioItem(title: "Edit", image: nil), SegmentioItem(title: "Invoices", image: nil), SegmentioItem(title: "Newsletter", image: nil), SegmentioItem(title: "Danger Zone", image: nil)]
+        let tabs = setupTabs(tabs: self.tabs)
         SegmentioBuilder.buildSegmentioView(segmentioView: segmentio, segmentioItems: tabs, segmentioStyle: .onlyLabel)
         
-        segmentio.selectedSegmentioIndex = selectedSegmentioIndex()
+        segmentio.selectedSegmentioIndex = 0
         
         segmentio.valueDidChange = { segmentio, segmentIndex in
-            log.info("Selected index: \(segmentIndex)")
+            log.info("Selected index: \(segmentio.selectedSegmentioIndex)")
+            
+            self.tableView.reloadData()
+            
+            // Temporary fix
+            let collectionView: UICollectionView = segmentio.subviews[0] as! UICollectionView
+            collectionView.reloadData()
         }
-    }
-    
-    fileprivate func selectedSegmentioIndex() -> Int {
-        return 0
     }
     
     /*

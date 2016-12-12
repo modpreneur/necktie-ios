@@ -57,21 +57,20 @@ struct SegmentioBuilder {
     }
     
     private static func segmentioStates() -> SegmentioStates {
-        let font = UIFont(name: "Roboto-Regular", size: 12)!
         return SegmentioStates(
             defaultState: segmentioState(
                 backgroundColor: .clear,
-                titleFont: font,
+                titleFont: UIFont(name: "Roboto-Regular", size: 12)!,
                 titleTextColor: .lightGray
             ),
             selectedState: segmentioState(
                 backgroundColor: .clear,
-                titleFont: font,
+                titleFont: UIFont(name: "Roboto-Bold", size: 12)!,
                 titleTextColor: .black
             ),
             highlightedState: segmentioState(
                 backgroundColor: .clear,
-                titleFont: font,
+                titleFont: UIFont(name: "Roboto-Regular", size: 12)!,
                 titleTextColor: .lightGray
             )
         )
