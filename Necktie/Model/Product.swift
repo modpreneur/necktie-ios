@@ -15,6 +15,7 @@ final class Product: Mappable {
     var name: String?
     var created: String?
     var updated: String?
+    var billingPlans: [BillingPlan] = []
     
     required init?(map: Map) {
         
@@ -25,5 +26,6 @@ final class Product: Mappable {
         name <- map["name"]
         created <- (map["created_at"], TransformDate())
         updated <- (map["updated_at"], TransformDate())
+        billingPlans <- map["billing_plans"]
     }
 }

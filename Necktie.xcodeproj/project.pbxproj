@@ -38,6 +38,7 @@
 		2B74CBF91DEC663600393219 /* OAuth2RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74CBF81DEC663600393219 /* OAuth2RetryHandler.swift */; };
 		2B80A92F1DD0C97200EED246 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80A92E1DD0C97200EED246 /* Extensions.swift */; };
 		2B8E55531DFECDED000E1B11 /* TransformDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E55521DFECDED000E1B11 /* TransformDate.swift */; };
+		2B8E55551DFED736000E1B11 /* BillingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E55541DFED736000E1B11 /* BillingPlan.swift */; };
 		2BADDF2B1DEDAB6000D22271 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BADDF291DEDAB6000D22271 /* APIManager.swift */; };
 		2BADDF2C1DEDAB6000D22271 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BADDF2A1DEDAB6000D22271 /* APIRouter.swift */; };
 		2BADDF2E1DEDC38B00D22271 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BADDF2D1DEDC38B00D22271 /* Profile.swift */; };
@@ -120,6 +121,7 @@
 		2B74CBF81DEC663600393219 /* OAuth2RetryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2RetryHandler.swift; sourceTree = "<group>"; };
 		2B80A92E1DD0C97200EED246 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2B8E55521DFECDED000E1B11 /* TransformDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformDate.swift; sourceTree = "<group>"; };
+		2B8E55541DFED736000E1B11 /* BillingPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingPlan.swift; sourceTree = "<group>"; };
 		2BADDF291DEDAB6000D22271 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		2BADDF2A1DEDAB6000D22271 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		2BADDF2D1DEDC38B00D22271 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				2B29B0601DE5D52B0093AEA7 /* Product.swift */,
+				2B8E55541DFED736000E1B11 /* BillingPlan.swift */,
 				2BADDF2D1DEDC38B00D22271 /* Profile.swift */,
 				2B8E55521DFECDED000E1B11 /* TransformDate.swift */,
 			);
@@ -763,6 +766,7 @@
 				2BFB0C021DA7BE8900D29BC4 /* MenuViewController.swift in Sources */,
 				2BFB0BFE1DA7BD6D00D29BC4 /* MenuContainerViewController.swift in Sources */,
 				2BD1A44E1DE48192007837EB /* ProductCell.swift in Sources */,
+				2B8E55551DFED736000E1B11 /* BillingPlan.swift in Sources */,
 				2B0445321DEC64EC00F15DED /* ViewController.swift in Sources */,
 				2B1654421DABA631001DBE43 /* HeaderView.swift in Sources */,
 				2BFB0C061DA7CAD200D29BC4 /* MainViewController.swift in Sources */,
