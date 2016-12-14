@@ -132,7 +132,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             
             // Label: Trial
             if let trial = billingPlan.trial {
-                cell.trialLabel.text = "\(trial)"
+                cell.trialLabel.text = "\(trial)d"
             } else {
                 cell.trialLabel.text = "No"
             }

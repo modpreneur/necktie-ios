@@ -24,6 +24,7 @@ extension Double {
 
 // MARK: - UIViewController
 extension UIViewController {
+    /// Adds loading indicator to button
     func show(activityIndicatorView: UIActivityIndicatorView, on button: UIButton) {
         activityIndicatorView.startAnimating()
         
@@ -41,6 +42,7 @@ extension UIViewController {
         button.setNeedsDisplay()
     }
     
+    /// Removes loading indicator from button
     func dismiss(activityIndicatorView: UIActivityIndicatorView, on button: UIButton) {
         activityIndicatorView.stopAnimating()
         activityIndicatorView.removeFromSuperview()
@@ -61,6 +63,7 @@ extension UIViewController {
         self.navigationController?.navigationBar.stop()
     }
     
+    /// Constructs array of SegmentioItems for Segmentio
     func setupTabs(tabs: [String]) -> [SegmentioItem] {
         var segmentioTabs: [SegmentioItem] = []
         for item in tabs {
@@ -73,6 +76,7 @@ extension UIViewController {
 
 // MARK: - String
 extension String {
+    /// Convert date to specified format
     func convertDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -84,6 +88,7 @@ extension String {
         return convertedDate
     }
     
+    /// Format currency based on locale
     func formatCurrency() -> String {
         let number = Double(self)
         
@@ -95,6 +100,18 @@ extension String {
         let priceString = currencyFormatter.string(from: NSNumber(value: number!))
         
         return priceString!
+    }
+}
+
+// MARK: - Int
+extension Int {
+    /// Formats given Int and returns complete String with plural if needed
+    func formatDays() -> String {
+        if self == 1 {
+            return "\(self) day"
+        } else {
+            return "\(self) days"
+        }
     }
 }
 
