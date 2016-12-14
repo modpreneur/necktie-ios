@@ -101,7 +101,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         } else if segmentio.selectedSegmentioIndex == Tabs.billingPlans.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "productBillingPlanCell", for: indexPath) as! ProductBillingPlanCell
             
-            let billingPlan = product.billingPlans[0] as BillingPlan
+            let billingPlan = product.billingPlans[indexPath.row] as BillingPlan
             let paySystemVendor = billingPlan.paySystemVendor! as PaySystemVendor
             let paySystem = paySystemVendor.paySystem! as PaySystem
             

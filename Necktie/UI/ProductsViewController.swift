@@ -96,6 +96,8 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
             .responseArray(keyPath: "products") { (response: DataResponse<[Product]>) in
                 switch response.result {
                 case .success(let responseArray):
+                    self.productArray = []
+                    
                     for product in responseArray {
                         self.productArray.append(product)
                     }
