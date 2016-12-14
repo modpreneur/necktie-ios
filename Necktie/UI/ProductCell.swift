@@ -23,3 +23,28 @@ class ProductCell: UITableViewCell {
     }
 
 }
+
+class ProductDataCell: UITableViewCell {
+    
+    @IBOutlet var keyLabel: UILabel!
+    @IBOutlet var valueLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+}
+
+class ProductBillingPlanCell: UITableViewCell {
+    
+    @IBOutlet var idLabel: UILabel!
+    @IBOutlet var vendorLabel: UILabel!
+    @IBOutlet var defaultLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var frequencyLabel: UILabel!
+    @IBOutlet var trialLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+}

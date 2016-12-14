@@ -12,11 +12,15 @@ import ObjectMapper
 
 final class BillingPlan: Mappable {
     var id: Int?
-    var initialPrice: Double?
+    var initialPrice: String?
     var created: String?
     var updated: String?
     var itemId: String?
-    var paySystemVendor: [String: Any] = [:]
+    var rebillPrice: String?
+    var frequency: Int?
+    var rebillTimes: Int?
+    var trial: Int?
+    var paySystemVendor: PaySystemVendor?
     
     required init?(map: Map) {
         
@@ -28,13 +32,18 @@ final class BillingPlan: Mappable {
         created <- (map["created_at"], TransformDate())
         updated <- (map["updated_at"], TransformDate())
         itemId <- map["item_id"]
+        rebillPrice <- map["rebill_times"]
+        frequency <- map["frequency"]
+        rebillTimes <- map["rebill_times"]
+        trial <- map["trial"]
+        paySystemVendor <- map["pay_system_vendor"]
     }
 }
 
 final class PaySystemVendor: Mappable {
     var id: Int?
     var name: String?
-    var paySystem: [PaySystem] = []
+    var paySystem: PaySystem?
     var setting: [String: String] = [:]
     
     required init?(map: Map) {

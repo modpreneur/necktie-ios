@@ -12,7 +12,7 @@ import Segmentio
 
 class UsersEditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var tableView: TableView!
     @IBOutlet weak var segmentio: Segmentio!
     
     struct Data {

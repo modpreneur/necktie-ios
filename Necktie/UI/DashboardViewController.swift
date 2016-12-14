@@ -28,7 +28,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        /// Add menu button and title image to navigationBar
+        // Add menu button and title image to navigationBar
         navigationController?.addSideMenuButton()
         navigationController?.addTitleImage()
     }

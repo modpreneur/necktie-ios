@@ -130,14 +130,16 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
         return emptyString
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "products->productDetail" {
+            let selectedCell = sender as! UITableViewCell
+            let destination = segue.destination as! ProductDetailViewController
+            let product = productArray[(tableView.indexPath(for: selectedCell)?.row)!] 
+            destination.product = product
+            log.info("Displaying product detail of \(product.name!)")
+        }
     }
-    */
 
 }
