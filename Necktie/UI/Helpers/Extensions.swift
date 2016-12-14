@@ -83,6 +83,19 @@ extension String {
         
         return convertedDate
     }
+    
+    func formatCurrency() -> String {
+        let number = Double(self)
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = NumberFormatter.Style.currency
+        currencyFormatter.locale = Locale.current
+        
+        let priceString = currencyFormatter.string(from: NSNumber(value: number!))
+        
+        return priceString!
+    }
 }
 
 // MARK: - SwiftyBeaver

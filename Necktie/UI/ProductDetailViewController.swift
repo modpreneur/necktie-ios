@@ -117,7 +117,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             
             // Label: Price
             if let initialPrice = billingPlan.initialPrice {
-                cell.priceLabel.text = initialPrice
+                cell.priceLabel.text = initialPrice.formatCurrency()
             }
             
             // Label: Frequency
