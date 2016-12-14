@@ -119,7 +119,7 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
             
             self.tableView.reloadData()
             
-            // Temporary fix
+            //TODO: Temporary fix, remove
             let collectionView: UICollectionView = segmentio.subviews[0] as! UICollectionView
             collectionView.reloadData()
         }

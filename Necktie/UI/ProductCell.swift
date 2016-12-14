@@ -48,3 +48,13 @@ class ProductBillingPlanCell: UITableViewCell {
         super.awakeFromNib()
     }
 }
+
+class ProductWarningCell: UITableViewCell {
+    
+    @IBOutlet var deleteButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+}

@@ -29,6 +29,7 @@ import UIKit
         clipsToBounds = false
         scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, scrollIndicatorInsetRight)
         separatorInset = UIEdgeInsetsMake(0, separatorInsetLeft, 0, separatorInsetRight)
+        alwaysBounceVertical = false
         
         // Header View
         headerView.clipsToBounds = true

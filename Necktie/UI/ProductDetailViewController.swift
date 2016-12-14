@@ -9,6 +9,7 @@
 import UIKit
 
 import Segmentio
+import PopupDialog
 
 class ProductDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -71,6 +72,8 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             let product = self.product!
             
             return product.billingPlans.count
+        } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
+            return 1
         } else {
             return 0
         }
@@ -136,6 +139,16 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             
             return cell
         
+        // Tab Danger zone
+        } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "productWarningCell", for: indexPath) as! ProductWarningCell
+            
+            cell.selectionStyle = .none
+            
+            cell.deleteButton.addTarget(self, action: #selector(deleteProduct(sender:)), for: .touchUpInside)
+            
+            return cell
+        
         // Default
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -144,10 +157,10 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 44
+        if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
+            return 300
         } else {
-            return 50
+            return 44
         }
     }
     
@@ -180,10 +193,25 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             
             self.tableView.reloadData()
             
-            // Temporary fix
+            //TODO: Temporary fix, remove
             let collectionView: UICollectionView = segmentio.subviews[0] as! UICollectionView
             collectionView.reloadData()
         }
+    }
+    
+    // MARK: - Delete Product
+    
+    @objc private func deleteProduct(sender: UIButton) {
+        log.info("Delete product?")
+        
+        let alert = UIAlertController(title: "Delete Product", message: "Are you sure?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+            log.warning("Product will be deleted")
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
     /*

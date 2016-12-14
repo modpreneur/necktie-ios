@@ -83,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let destructiveButtonAppearance = DestructiveButton.appearance()
         destructiveButtonAppearance.titleFont      = UIFont(name: "Roboto-Regular", size: 16)
-        destructiveButtonAppearance.titleColor     = UIColor(red:0.952, green:0.568, blue:0.191, alpha:1)
+        destructiveButtonAppearance.titleColor     = UIColor().necktieDelete
     }
 
 }
