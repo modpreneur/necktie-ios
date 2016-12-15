@@ -214,14 +214,16 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         self.present(alert, animated: true, completion: nil)
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "productDetail->billingPlan" {
+            let selectedCell = sender as! UITableViewCell
+            let destination = segue.destination as! BillingPlanViewController
+            let billingPlan = product?.billingPlans[(self.tableView.indexPath(for: selectedCell)?.row)!]
+            destination.billingPlan = billingPlan
+            log.info("Displaying billing plan \(billingPlan!.id!)")
+        }
     }
-    */
 
 }

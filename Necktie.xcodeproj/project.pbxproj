@@ -14,6 +14,8 @@
 		2B1654441DABBDB0001DBE43 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1654431DABBDB0001DBE43 /* Menu.swift */; };
 		2B26DA851DEDD51800C06D23 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2B26DA841DEDD51800C06D23 /* README.md */; };
 		2B29B0611DE5D52B0093AEA7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B29B0601DE5D52B0093AEA7 /* Product.swift */; };
+		2B36DE611E02CC5A00B6F734 /* BillingPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B36DE601E02CC5A00B6F734 /* BillingPlanViewController.swift */; };
+		2B36DE631E02D23600B6F734 /* BillingPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B36DE621E02D23500B6F734 /* BillingPlanCell.swift */; };
 		2B3C6B4F1DDF163200A11D5B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C6B4E1DDF163200A11D5B /* TableView.swift */; };
 		2B3C6B511DDF1C6100A11D5B /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C6B501DDF1C6100A11D5B /* SectionHeaderView.swift */; };
 		2B51450F1DB4C1120034E884 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51450E1DB4C1120034E884 /* DashboardCell.swift */; };
@@ -98,6 +100,8 @@
 		2B1654431DABBDB0001DBE43 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		2B26DA841DEDD51800C06D23 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		2B29B0601DE5D52B0093AEA7 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		2B36DE601E02CC5A00B6F734 /* BillingPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingPlanViewController.swift; sourceTree = "<group>"; };
+		2B36DE621E02D23500B6F734 /* BillingPlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingPlanCell.swift; sourceTree = "<group>"; };
 		2B3C6B4E1DDF163200A11D5B /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		2B3C6B501DDF1C6100A11D5B /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		2B51450E1DB4C1120034E884 /* DashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
@@ -398,6 +402,8 @@
 				2BD1A44B1DE47BAC007837EB /* ProductsViewController.swift */,
 				2B6A5F4A1E0026D200133CE0 /* ProductDetailViewController.swift */,
 				2BD1A44D1DE48192007837EB /* ProductCell.swift */,
+				2B36DE601E02CC5A00B6F734 /* BillingPlanViewController.swift */,
+				2B36DE621E02D23500B6F734 /* BillingPlanCell.swift */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -770,6 +776,7 @@
 				2BFB0C021DA7BE8900D29BC4 /* MenuViewController.swift in Sources */,
 				2BFB0BFE1DA7BD6D00D29BC4 /* MenuContainerViewController.swift in Sources */,
 				2BD1A44E1DE48192007837EB /* ProductCell.swift in Sources */,
+				2B36DE611E02CC5A00B6F734 /* BillingPlanViewController.swift in Sources */,
 				2B8E55551DFED736000E1B11 /* BillingPlan.swift in Sources */,
 				2B0445321DEC64EC00F15DED /* ViewController.swift in Sources */,
 				2B1654421DABA631001DBE43 /* HeaderView.swift in Sources */,
@@ -778,6 +785,7 @@
 				2BADDF2E1DEDC38B00D22271 /* Profile.swift in Sources */,
 				2B1654441DABBDB0001DBE43 /* Menu.swift in Sources */,
 				2BBB55501D9E8552005347DB /* Constants.swift in Sources */,
+				2B36DE631E02D23600B6F734 /* BillingPlanCell.swift in Sources */,
 				2BD409191DD5DFFE00A6D050 /* UsersEditViewController.swift in Sources */,
 				2BFB0C081DA7D3F500D29BC4 /* SideMenuCustom.swift in Sources */,
 				2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */,

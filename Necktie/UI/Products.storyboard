@@ -153,7 +153,7 @@
             </objects>
             <point key="canvasLocation" x="956" y="165.06746626686657"/>
         </scene>
-        <!--Title-->
+        <!--Product-->
         <scene sceneID="Nlc-ou-3qX">
             <objects>
                 <viewController storyboardIdentifier="productDetail" id="70S-Xe-eNW" customClass="ProductDetailViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
@@ -312,6 +312,7 @@
                                             <outlet property="priceLabel" destination="bWT-yX-ePS" id="ZAe-Z8-9iT"/>
                                             <outlet property="trialLabel" destination="Kgy-8B-dym" id="weo-Wu-ZAf"/>
                                             <outlet property="vendorLabel" destination="VDt-kD-HPh" id="YLC-uy-Y70"/>
+                                            <segue destination="kTq-x8-RJ3" kind="show" identifier="productDetail-&gt;billingPlan" id="WX5-jV-bLq"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productWarningCell" rowHeight="300" id="PgS-Lv-aQT" customClass="ProductWarningCell" customModule="Necktie" customModuleProvider="target">
@@ -322,25 +323,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WARNING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1V8-zG-nGg">
-                                                    <rect key="frame" x="111" y="130" width="136" height="40"/>
+                                                    <rect key="frame" x="111.5" y="130.5" width="136" height="40"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="30"/>
                                                     <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuZ-xo-mLg">
-                                                    <rect key="frame" x="166.5" y="8" width="26.5" height="132"/>
+                                                    <rect key="frame" x="167" y="8.5" width="26" height="132"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="100"/>
                                                     <color key="textColor" red="0.95246535539627075" green="0.56881427764892578" blue="0.19122317433357239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With product you remove all products billing plans, there is no going back. Please be certain." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7d-rA-KSb">
-                                                    <rect key="frame" x="40" y="178" width="279" height="32"/>
+                                                    <rect key="frame" x="40" y="178.5" width="279" height="32"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-iA-kIe">
-                                                    <rect key="frame" x="119" y="230" width="120" height="32"/>
+                                                    <rect key="frame" x="119" y="230.5" width="120" height="32"/>
                                                     <color key="backgroundColor" red="0.55328524112701416" green="0.19419080018997192" blue="0.18074849247932434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="geO-IA-i6X"/>
@@ -399,7 +400,7 @@
                             <constraint firstItem="Z5I-BV-qfA" firstAttribute="leading" secondItem="DnT-gF-rEx" secondAttribute="leading" constant="8" id="sfw-68-YND"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="xnQ-jl-FzV">
+                    <navigationItem key="navigationItem" title="Product" id="xnQ-jl-FzV">
                         <barButtonItem key="rightBarButtonItem" image="NavigationBar_Plus" id="zAU-bb-w1S">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -413,6 +414,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pJ-8d-JbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1824.8" y="164.16791604197903"/>
+        </scene>
+        <!--Billing Plan-->
+        <scene sceneID="GD0-ts-B72">
+            <objects>
+                <viewController id="kTq-x8-RJ3" customClass="BillingPlanViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="puG-hN-Iyd"/>
+                        <viewControllerLayoutGuide type="bottom" id="oCA-BI-yeX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nlj-m2-E3I">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1C-gr-5js" customClass="Segmentio" customModule="Segmentio">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="JgW-6R-omw"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Mf-ed-fP4" customClass="TableView" customModule="Necktie" customModuleProvider="target">
+                                <rect key="frame" x="8" y="42" width="359" height="561"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="billingPlanCell" id="pw6-03-dGq" customClass="BillingPlanCell" customModule="Necktie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pw6-03-dGq" id="N71-m1-6A9">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGs-vv-LCS">
+                                                    <rect key="frame" x="40" y="13.5" width="20" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
+                                                    <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-83-1qP">
+                                                    <rect key="frame" x="128" y="13.5" width="207" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                    <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KGs-vv-LCS" firstAttribute="leading" secondItem="N71-m1-6A9" secondAttribute="leadingMargin" constant="32" id="6QS-Cj-ZcU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UrP-83-1qP" secondAttribute="trailing" constant="16" id="DUA-Ez-UlA"/>
+                                                <constraint firstItem="UrP-83-1qP" firstAttribute="centerY" secondItem="KGs-vv-LCS" secondAttribute="centerY" id="Mx3-1Q-FWq"/>
+                                                <constraint firstItem="UrP-83-1qP" firstAttribute="leading" secondItem="N71-m1-6A9" secondAttribute="leadingMargin" constant="120" id="Nu2-eS-Fcr"/>
+                                                <constraint firstItem="KGs-vv-LCS" firstAttribute="centerY" secondItem="N71-m1-6A9" secondAttribute="centerY" id="PaU-t1-XZq"/>
+                                                <constraint firstItem="UrP-83-1qP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KGs-vv-LCS" secondAttribute="trailing" constant="16" id="iTg-Fc-7o7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="keyLabel" destination="KGs-vv-LCS" id="7Q9-2Q-e1r"/>
+                                            <outlet property="valueLabel" destination="UrP-83-1qP" id="vaJ-mj-OoH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82492238283157349" green="0.84518212080001831" blue="0.88795769214630127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2Mf-ed-fP4" firstAttribute="leading" secondItem="Nlj-m2-E3I" secondAttribute="leading" constant="8" id="0G5-kV-Ul3"/>
+                            <constraint firstItem="j1C-gr-5js" firstAttribute="top" secondItem="puG-hN-Iyd" secondAttribute="bottom" id="0fT-xu-72g"/>
+                            <constraint firstItem="2Mf-ed-fP4" firstAttribute="top" secondItem="j1C-gr-5js" secondAttribute="bottom" id="IdS-0M-TS7"/>
+                            <constraint firstAttribute="trailing" secondItem="j1C-gr-5js" secondAttribute="trailing" id="f6h-ko-WNm"/>
+                            <constraint firstAttribute="trailing" secondItem="2Mf-ed-fP4" secondAttribute="trailing" constant="8" id="hgo-VA-wJx"/>
+                            <constraint firstItem="j1C-gr-5js" firstAttribute="leading" secondItem="Nlj-m2-E3I" secondAttribute="leading" id="lf9-C3-afO"/>
+                            <constraint firstItem="oCA-BI-yeX" firstAttribute="top" secondItem="2Mf-ed-fP4" secondAttribute="bottom" id="phL-Fu-SZU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Billing Plan" id="Hmd-11-kdv">
+                        <barButtonItem key="rightBarButtonItem" image="NavigationBar_Plus" id="t7b-GD-bkV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentio" destination="j1C-gr-5js" id="fYC-c9-b0i"/>
+                        <outlet property="tableView" destination="2Mf-ed-fP4" id="cb5-Ce-Egl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ysn-n6-ASu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2669.5999999999999" y="164.16791604197903"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0At-Oc-cdB">
