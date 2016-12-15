@@ -14,6 +14,7 @@ import BusyNavigationBar
 import Segmentio
 import SnapKit
 import SwiftyBeaver
+import SwiftyUserDefaults
 
 // MARK: - Double
 extension Double {
@@ -94,8 +95,9 @@ extension String {
         
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.numberStyle = NumberFormatter.Style.currency
-        currencyFormatter.locale = Locale.current
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.currencyCode = Defaults[.currency]
+        //currencyFormatter.locale = Locale.current
         
         let priceString = currencyFormatter.string(from: NSNumber(value: number!))
         

@@ -66,4 +66,5 @@ extension DefaultsKeys {
     static let isLoggedIn = DefaultsKey<Bool>("isLoggedIn")
     static let username = DefaultsKey<String>("username")
     static let introAnimation = DefaultsKey<Bool>("introAnimation")
+    static let currency = DefaultsKey<String>("currency")
 }

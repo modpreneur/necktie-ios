@@ -33,3 +33,25 @@ final class Profile: Mappable {
         isPublic <- map["public"]
     }
 }
+
+final class Settings: Mappable {
+    var date: String?
+    var time: String?
+    var dateTime: String?
+    var currency: String?
+    var vat: Int?
+    var itemsOnPage: Int?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        date <- map["date"]
+        time <- map["time"]
+        dateTime <- map["date_time"]
+        currency <- map["currency"]
+        vat <- map["vat"]
+        itemsOnPage <- map["items_on_page"]
+    }
+}

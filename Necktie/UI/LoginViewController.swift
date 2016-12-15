@@ -186,6 +186,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     Defaults[.isLoggedIn] = true
                     
                     self.getUser()
+                    self.getSettings()
                     
                     self.dismiss(animated: true) {
                         self.dismiss(activityIndicatorView: self.activityIndicator, on: self.loginButton)
@@ -211,6 +212,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     log.error("Error: \(error)")
                 }
             }
+    }
+    
+    // MARK: - Get settings
+    
+    func getSettings() {
+        APIManager.sharedManager.request(Router.settings)
+            .validate()
+            .responseObject { (response: DataResponse<Settings>) in
+                switch response.result {
+                case .success(let settings):
+                    log.info("Settings downloaded")
+                    if let currency = settings.currency {
+                        Defaults[.currency] = currency
+                    }
+                case .failure(let error):
+                    log.error("Error: \(error)")
+                }
+        }
     }
 
     /*

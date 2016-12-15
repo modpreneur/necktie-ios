@@ -35,6 +35,7 @@ struct API {
     static var users = API.path + "users"
     static var user = API.path + "user"
     static var profile = API.path + "profile"
+    static var settings = API.path + "settings"
 }
 
 /// API Router, returns URLConvertible
@@ -46,6 +47,7 @@ enum Router: URLRequestConvertible {
     case user(id: Int)
     case users
     case profile
+    case settings
     
     func asURLRequest() throws -> URLRequest {
         let result: (path: String, method: HTTPMethod, parameters: Parameters) = {
@@ -60,6 +62,8 @@ enum Router: URLRequestConvertible {
                 return (API.user + "/\(id)", .get, [:])
             case .profile:
                 return (API.profile, .get, [:])
+            case .settings:
+                return (API.settings, .get, [:])
             }
         }()
         
