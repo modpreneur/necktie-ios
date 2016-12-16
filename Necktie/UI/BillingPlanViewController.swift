@@ -20,7 +20,7 @@ class BillingPlanViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Properties
     
     private enum Tabs: String {
-        case edit = "Edit"
+        case edit = "View"
         case status = "Status"
         case dangerzone = "Danger Zone"
         
@@ -65,19 +65,27 @@ class BillingPlanViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let billingPlan = self.billingPlan!
+        let billingPlan = self.billingPlan!
         
-        return 1
+        if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
+            if let _ = billingPlan.frequency {
+                return 8
+            } else {
+                return 5
+            }
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let billingPlan = self.billingPlan!
+        let _ = self.billingPlan!
         
         // Tab Edit
         if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "billingPlanCell", for: indexPath) as! BillingPlanCell
             
-            cell.keyLabel.text = "Test"
+            self.configureEditCell(cell: cell, at: indexPath)
             
             return cell
         
@@ -103,6 +111,73 @@ class BillingPlanViewController: UIViewController, UITableViewDelegate, UITableV
             return height
         } else {
             return 44
+        }
+    }
+    
+    // MARK: - Configure cells
+    
+    private func configureEditCell(cell: UITableViewCell, at indexPath: IndexPath) {
+        let cell = cell as! BillingPlanCell
+        
+        let billingPlan = self.billingPlan!
+        let paySystemVendor = billingPlan.paySystemVendor! as PaySystemVendor
+        let paySystem = paySystemVendor.paySystem! as PaySystem
+        
+        var isRecurring = false
+        if let _ = billingPlan.frequency {
+            isRecurring = true
+        }
+        
+        switch indexPath.row {
+        case 0: // Vendor
+            cell.keyLabel.text = "Vendor"
+            
+            if let vendorName = paySystemVendor.name, let paySystemName = paySystem.name {
+                cell.valueLabel.text = "\(paySystemName): \(vendorName)"
+            }
+            
+        case 1: // Name
+            cell.keyLabel.text = paySystem.itemText()
+            
+            if let itemId = billingPlan.itemId {
+                cell.valueLabel.text = "\(itemId)"
+            }
+            
+        case 2: // Default
+            cell.keyLabel.text = "Default"
+            cell.valueLabel.text = "Yes"
+            
+        case 3: // Type
+            cell.keyLabel.text = "Type"
+            cell.valueLabel.text = isRecurring ? "Recurring" : "Standard"
+            
+        case 4: // Price
+            cell.keyLabel.text = "Price"
+            
+            if let price = billingPlan.initialPrice {
+                cell.valueLabel.text = price.formatCurrency()
+            }
+            
+        case 5: // Frequency
+            cell.keyLabel.text = "Frequency"
+            cell.valueLabel.text = billingPlan.frequencyText()
+            
+        case 6: // Rebill times
+            cell.keyLabel.text = "Rebill times"
+            
+            if let rebillTimes = billingPlan.rebillTimes {
+                cell.valueLabel.text = "\(rebillTimes)"
+            }
+            
+        case 7: // Trial period
+            cell.keyLabel.text = "Trial period"
+            
+            if let trialPeriod = billingPlan.trial {
+                cell.valueLabel.text = "\(trialPeriod)"
+            }
+            
+        default:
+            cell.keyLabel.text = ""
         }
     }
     

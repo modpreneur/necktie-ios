@@ -22,7 +22,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: - Properties
     
     private enum Tabs: String {
-        case edit = "Edit"
+        case edit = "View"
         case billingPlans = "Billing Plans"
         case status = "Status"
         case dangerzone = "Danger Zone"
@@ -135,7 +135,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             
             // Label: Trial
             if let trial = billingPlan.trial {
-                cell.trialLabel.text = "\(trial)d"
+                cell.trialLabel.text = "\(trial)m"
             } else {
                 cell.trialLabel.text = "No"
             }

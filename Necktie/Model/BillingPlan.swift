@@ -10,6 +10,8 @@ import Foundation
 
 import ObjectMapper
 
+// MARK: - BillingPlan
+
 final class BillingPlan: Mappable {
     var id: Int?
     var initialPrice: String?
@@ -40,6 +42,26 @@ final class BillingPlan: Mappable {
     }
 }
 
+extension BillingPlan {
+    func frequencyText() -> String {
+        let frequency = self.frequency!
+        switch frequency {
+        case 7:
+            return "Weekly"
+        case 14:
+            return "Bi-weekly"
+        case 30:
+            return "Monthly"
+        case 91:
+            return "Quarterly"
+        default:
+            return "-"
+        }
+    }
+}
+
+// MARK: - PaySystemVendor
+
 final class PaySystemVendor: Mappable {
     var id: Int?
     var name: String?
@@ -58,6 +80,8 @@ final class PaySystemVendor: Mappable {
     }
 }
 
+// MARK: - PaySystem
+
 final class PaySystem: Mappable {
     var id: Int?
     var name: String?
@@ -73,5 +97,17 @@ final class PaySystem: Mappable {
         name <- map["name"]
         vendors <- map["vendors"]
         postback <- map["postback"]
+    }
+}
+
+extension PaySystem {
+    func itemText() -> String {
+        var itemText = ""
+        let vendorName = self.name!
+        
+        if vendorName == "Clickbank" { itemText = "Clickbank number" }
+        if vendorName == "Braintree" { itemText = "Plan ID" }
+        
+        return itemText
     }
 }
