@@ -51,6 +51,9 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         // Set tableView delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Register warning cell
+        tableView.register(UINib(nibName: "WarningCell", bundle: nil), forCellReuseIdentifier: "warningCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +78,8 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Tab Edit
         if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "userPhotoCell", for: indexPath) as! UserPhotoCell
@@ -92,6 +97,16 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 return cell
             }
+            
+        // Tab Danger Zone
+        } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningCell
+            
+            cell.warningLabel.text = .warningUser
+            
+            cell.deleteButton.addTarget(self, action: #selector(deleteUser(sender:)), for: .touchUpInside)
+            
+            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             return cell
@@ -123,6 +138,21 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
             let collectionView: UICollectionView = segmentio.subviews[0] as! UICollectionView
             collectionView.reloadData()
         }
+    }
+    
+    // MARK: - Delete Product
+    
+    @objc private func deleteUser(sender: UIButton) {
+        log.info("Delete product?")
+        
+        let alert = UIAlertController(title: "Delete Product", message: "Are you sure?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+            log.warning("Product will be deleted")
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*

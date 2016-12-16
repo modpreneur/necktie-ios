@@ -42,6 +42,9 @@ class BillingPlanViewController: UIViewController, UITableViewDelegate, UITableV
         // Set tableView delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Register warning cell
+        tableView.register(UINib(nibName: "WarningCell", bundle: nil), forCellReuseIdentifier: "warningCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,10 +73,21 @@ class BillingPlanViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let billingPlan = self.billingPlan!
         
+        // Tab Edit
         if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "billingPlanCell", for: indexPath) as! BillingPlanCell
             
             cell.keyLabel.text = "Test"
+            
+            return cell
+        
+        // Tab Danger Zone
+        } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningCell
+            
+            cell.warningLabel.text = .warningBillingPlan
+            
+            cell.deleteButton.addTarget(self, action: #selector(deleteBillingPlan(sender:)), for: .touchUpInside)
             
             return cell
         } else {
@@ -85,7 +99,8 @@ class BillingPlanViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
-            return 300
+            let height = self.tableView.frame.size.height - 22
+            return height
         } else {
             return 44
         }
@@ -108,6 +123,21 @@ class BillingPlanViewController: UIViewController, UITableViewDelegate, UITableV
             let collectionView: UICollectionView = segmentio.subviews[0] as! UICollectionView
             collectionView.reloadData()
         }
+    }
+    
+    // MARK: - Delete billing plan
+    
+    @objc private func deleteBillingPlan(sender: UIButton) {
+        log.info("Delete product?")
+        
+        let alert = UIAlertController(title: "Delete Billing Plan", message: "Are you sure?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+            log.warning("Product will be deleted")
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
     /*

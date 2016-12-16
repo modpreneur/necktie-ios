@@ -12,9 +12,6 @@
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
-        <array key="Roboto-Light.ttf">
-            <string>Roboto-Light</string>
-        </array>
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
@@ -43,7 +40,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfR-Mg-nsL">
-                                            <rect key="frame" x="16" y="10" width="7.5" height="16"/>
+                                            <rect key="frame" x="16" y="10" width="7" height="16"/>
                                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                             <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -76,7 +73,7 @@
                                         <rect key="frame" x="0.0" y="64" width="359" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7V-Bo-Qsr" id="o5T-5r-aiM">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgA-mS-kcs">
@@ -92,7 +89,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDd-Xr-aDw">
-                                                    <rect key="frame" x="271" y="9.5" width="47" height="13.5"/>
+                                                    <rect key="frame" x="271" y="10" width="47" height="13.5"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -222,7 +219,7 @@
                                         <rect key="frame" x="0.0" y="64" width="359" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EgA-AF-jKV" id="UaH-fA-9n3">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBZ-Cc-Xug">
@@ -256,7 +253,7 @@
                                         <rect key="frame" x="0.0" y="108" width="359" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YuU-vl-hJN" id="fyS-bs-ibx">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qou-Lg-2Gp">
@@ -313,66 +310,6 @@
                                             <outlet property="trialLabel" destination="Kgy-8B-dym" id="weo-Wu-ZAf"/>
                                             <outlet property="vendorLabel" destination="VDt-kD-HPh" id="YLC-uy-Y70"/>
                                             <segue destination="kTq-x8-RJ3" kind="show" identifier="productDetail-&gt;billingPlan" id="WX5-jV-bLq"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productWarningCell" rowHeight="300" id="PgS-Lv-aQT" customClass="ProductWarningCell" customModule="Necktie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="152" width="359" height="300"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PgS-Lv-aQT" id="LaN-3u-Kwy">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="299"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WARNING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1V8-zG-nGg">
-                                                    <rect key="frame" x="111.5" y="130.5" width="136" height="40"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="30"/>
-                                                    <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuZ-xo-mLg">
-                                                    <rect key="frame" x="167" y="8.5" width="26" height="132"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="100"/>
-                                                    <color key="textColor" red="0.95246535539627075" green="0.56881427764892578" blue="0.19122317433357239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With product you remove all products billing plans, there is no going back. Please be certain." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7d-rA-KSb">
-                                                    <rect key="frame" x="40" y="178.5" width="279" height="32"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-iA-kIe">
-                                                    <rect key="frame" x="119" y="230.5" width="120" height="32"/>
-                                                    <color key="backgroundColor" red="0.55328524112701416" green="0.19419080018997192" blue="0.18074849247932434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="geO-IA-i6X"/>
-                                                        <constraint firstAttribute="height" constant="32" id="ss9-mH-84B"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
-                                                    <state key="normal" title="DELETE">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="MuZ-xo-mLg" firstAttribute="centerX" secondItem="1V8-zG-nGg" secondAttribute="centerX" id="5bK-yR-vJ6"/>
-                                                <constraint firstItem="P7d-rA-KSb" firstAttribute="top" secondItem="1V8-zG-nGg" secondAttribute="bottom" constant="8" id="5eb-ME-Smp"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="P7d-rA-KSb" secondAttribute="trailing" constant="32" id="74s-pm-Rli"/>
-                                                <constraint firstItem="nA6-iA-kIe" firstAttribute="top" secondItem="P7d-rA-KSb" secondAttribute="bottom" constant="20" id="KdW-4S-SBU"/>
-                                                <constraint firstItem="P7d-rA-KSb" firstAttribute="leading" secondItem="LaN-3u-Kwy" secondAttribute="leadingMargin" constant="32" id="MlZ-x2-j4g"/>
-                                                <constraint firstItem="1V8-zG-nGg" firstAttribute="centerY" secondItem="LaN-3u-Kwy" secondAttribute="centerY" id="Rf3-fI-RyD"/>
-                                                <constraint firstItem="1V8-zG-nGg" firstAttribute="centerX" secondItem="LaN-3u-Kwy" secondAttribute="centerX" id="r3G-mY-Iv7"/>
-                                                <constraint firstItem="1V8-zG-nGg" firstAttribute="top" secondItem="MuZ-xo-mLg" secondAttribute="bottom" constant="-10" id="ucq-PV-WGz"/>
-                                                <constraint firstItem="nA6-iA-kIe" firstAttribute="centerX" secondItem="LaN-3u-Kwy" secondAttribute="centerX" id="zSg-5W-wEC"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="deleteButton" destination="nA6-iA-kIe" id="T2Y-4v-gGv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -442,7 +379,7 @@
                                         <rect key="frame" x="0.0" y="28" width="359" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pw6-03-dGq" id="N71-m1-6A9">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGs-vv-LCS">

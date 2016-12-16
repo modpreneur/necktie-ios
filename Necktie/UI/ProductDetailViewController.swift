@@ -46,6 +46,9 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         // Set tableView delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Register warning cell
+        tableView.register(UINib(nibName: "WarningCell", bundle: nil), forCellReuseIdentifier: "warningCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -141,9 +144,9 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         
         // Tab Danger zone
         } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "productWarningCell", for: indexPath) as! ProductWarningCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningCell
             
-            cell.selectionStyle = .none
+            cell.warningLabel.text = .warningProduct
             
             cell.deleteButton.addTarget(self, action: #selector(deleteProduct(sender:)), for: .touchUpInside)
             
@@ -158,7 +161,8 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
-            return 300
+            let height = self.tableView.frame.size.height - 22
+            return height
         } else {
             return 44
         }

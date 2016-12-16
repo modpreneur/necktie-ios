@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="warningCell" rowHeight="500" id="KGk-i7-Jjw" customClass="WarningCell" customModule="Necktie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="399.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WARNING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUe-ep-aTZ">
+                        <rect key="frame" x="69.5" y="123.5" width="181.5" height="53"/>
+                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="40"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUG-Fu-pfX">
+                        <rect key="frame" x="147" y="11.5" width="26" height="132"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="100"/>
+                        <color key="textColor" red="0.95246535539627075" green="0.56881427764892578" blue="0.19122317433357239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeL-9i-5uj">
+                        <rect key="frame" x="20" y="192.5" width="280" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNa-GL-Aiu">
+                        <rect key="frame" x="100" y="223" width="120" height="35"/>
+                        <color key="backgroundColor" red="0.55328524112701416" green="0.19419080018997192" blue="0.18074849247932434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="fNy-tT-XsJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                        <state key="normal" title="DELETE">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="aeL-9i-5uj" secondAttribute="trailing" constant="20" id="17X-20-TKg"/>
+                    <constraint firstItem="aeL-9i-5uj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="2EG-lS-S9F"/>
+                    <constraint firstItem="FUG-Fu-pfX" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="8RD-zT-aiR"/>
+                    <constraint firstItem="UNa-GL-Aiu" firstAttribute="top" secondItem="aeL-9i-5uj" secondAttribute="bottom" constant="16" id="Npo-51-rtM"/>
+                    <constraint firstItem="aeL-9i-5uj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fgD-6H-JoX"/>
+                    <constraint firstItem="aeL-9i-5uj" firstAttribute="top" secondItem="gUe-ep-aTZ" secondAttribute="bottom" constant="16" id="hhh-Cs-qAl"/>
+                    <constraint firstItem="UNa-GL-Aiu" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="j4h-PZ-zbY"/>
+                    <constraint firstItem="gUe-ep-aTZ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wWm-uc-PGI"/>
+                    <constraint firstItem="gUe-ep-aTZ" firstAttribute="top" secondItem="FUG-Fu-pfX" secondAttribute="bottom" constant="-20" id="yPE-ET-ScC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="deleteButton" destination="UNa-GL-Aiu" id="T8v-vq-929"/>
+                <outlet property="warningLabel" destination="aeL-9i-5uj" id="pIi-bF-YNI"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="232"/>
+        </tableViewCell>
+    </objects>
+</document>
