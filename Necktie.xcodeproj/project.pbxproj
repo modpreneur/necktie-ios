@@ -16,6 +16,10 @@
 		2B1CEA1A1E07FF3C0028182F /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CEA191E07FF3C0028182F /* CompanyCell.swift */; };
 		2B1CEA1C1E07FF530028182F /* CompaniesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CEA1B1E07FF530028182F /* CompaniesViewController.swift */; };
 		2B1CEA1E1E08056D0028182F /* CompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CEA1D1E08056D0028182F /* CompanyDetailViewController.swift */; };
+		2B1CEA201E080B7C0028182F /* Projects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B1CEA1F1E080B7C0028182F /* Projects.storyboard */; };
+		2B1CEA231E0810A80028182F /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CEA221E0810A80028182F /* ProjectsViewController.swift */; };
+		2B1CEA251E0811790028182F /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CEA241E0811790028182F /* ProjectDetailViewController.swift */; };
+		2B1CEA271E0811920028182F /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CEA261E0811920028182F /* ProjectCell.swift */; };
 		2B26DA851DEDD51800C06D23 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2B26DA841DEDD51800C06D23 /* README.md */; };
 		2B29B0611DE5D52B0093AEA7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B29B0601DE5D52B0093AEA7 /* Product.swift */; };
 		2B36DE611E02CC5A00B6F734 /* BillingPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B36DE601E02CC5A00B6F734 /* BillingPlanViewController.swift */; };
@@ -109,6 +113,10 @@
 		2B1CEA191E07FF3C0028182F /* CompanyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		2B1CEA1B1E07FF530028182F /* CompaniesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesViewController.swift; sourceTree = "<group>"; };
 		2B1CEA1D1E08056D0028182F /* CompanyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyDetailViewController.swift; sourceTree = "<group>"; };
+		2B1CEA1F1E080B7C0028182F /* Projects.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Projects.storyboard; sourceTree = "<group>"; };
+		2B1CEA221E0810A80028182F /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		2B1CEA241E0811790028182F /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
+		2B1CEA261E0811920028182F /* ProjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		2B26DA841DEDD51800C06D23 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		2B29B0601DE5D52B0093AEA7 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		2B36DE601E02CC5A00B6F734 /* BillingPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingPlanViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +250,16 @@
 			name = Companies;
 			sourceTree = "<group>";
 		};
+		2B1CEA211E0810830028182F /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				2B1CEA221E0810A80028182F /* ProjectsViewController.swift */,
+				2B1CEA241E0811790028182F /* ProjectDetailViewController.swift */,
+				2B1CEA261E0811920028182F /* ProjectCell.swift */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
 		2B4DEEBF1E03E08D0053287F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +385,7 @@
 				2B7084091DD31C8B00FE4A7D /* Users.storyboard */,
 				2BD1A4481DE47B6E007837EB /* Products.storyboard */,
 				2B1CEA161E07F9A70028182F /* Companies.storyboard */,
+				2B1CEA1F1E080B7C0028182F /* Projects.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -390,6 +409,7 @@
 				2BD1A44A1DE47B7F007837EB /* Products */,
 				2B1CEA181E07FF050028182F /* Companies */,
 				2B7084061DD31C3900FE4A7D /* Users */,
+				2B1CEA211E0810830028182F /* Projects */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -613,6 +633,7 @@
 				2BFB0BF81DA7BA4800D29BC4 /* Dashboard.storyboard in Resources */,
 				2B71DB921DC88BE000893937 /* Roboto-Light.ttf in Resources */,
 				2B71DB981DC88BE000893937 /* Roboto-ThinItalic.ttf in Resources */,
+				2B1CEA201E080B7C0028182F /* Projects.storyboard in Resources */,
 				2BBB55251D9E80AD005347DB /* LaunchScreen.storyboard in Resources */,
 				2B71DB931DC88BE000893937 /* Roboto-LightItalic.ttf in Resources */,
 				2BFB0BFB1DA7BB1D00D29BC4 /* Menu.storyboard in Resources */,
@@ -797,7 +818,9 @@
 				2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */,
 				2B74CBF91DEC663600393219 /* OAuth2RetryHandler.swift in Sources */,
 				2B656B8D1DBA5DBA00F898F1 /* GradientView.swift in Sources */,
+				2B1CEA251E0811790028182F /* ProjectDetailViewController.swift in Sources */,
 				2BD0F20E1DE3327F002BAE5F /* SearchBar.swift in Sources */,
+				2B1CEA271E0811920028182F /* ProjectCell.swift in Sources */,
 				2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */,
 				2BADDF2C1DEDAB6000D22271 /* APIRouter.swift in Sources */,
 				2B26DA851DEDD51800C06D23 /* README.md in Sources */,
@@ -811,6 +834,7 @@
 				2BADDF2B1DEDAB6000D22271 /* APIManager.swift in Sources */,
 				2B1CEA1E1E08056D0028182F /* CompanyDetailViewController.swift in Sources */,
 				2B3C6B4F1DDF163200A11D5B /* TableView.swift in Sources */,
+				2B1CEA231E0810A80028182F /* ProjectsViewController.swift in Sources */,
 				2BFB0BF01DA78EA900D29BC4 /* UIViewController+MotionEffect.swift in Sources */,
 				2B6A5F4B1E0026D200133CE0 /* ProductDetailViewController.swift in Sources */,
 				2B1654381DAB7FE7001DBE43 /* UIColor+Necktie.swift in Sources */,
