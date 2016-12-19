@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Bm-K1-83a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Bm-K1-83a">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -34,6 +34,7 @@
                         <segue destination="frA-ye-Uko" kind="custom" identifier="showDashboard" customClass="CenterContainmentSegue" customModule="SideMenuController" id="DX3-Fs-DhR"/>
                         <segue destination="VaG-mB-Dfy" kind="custom" identifier="showUsers" customClass="CenterContainmentSegue" customModule="SideMenuController" id="aRn-CK-NvR"/>
                         <segue destination="3g2-UR-Rs0" kind="custom" identifier="showProducts" customClass="CenterContainmentSegue" customModule="SideMenuController" id="Vne-of-ilp"/>
+                        <segue destination="Zg4-2s-FdZ" kind="custom" identifier="showCompanies" customClass="CenterContainmentSegue" customModule="SideMenuController" id="yAN-mK-0QT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCY-GH-Dwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -54,7 +55,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="usersNav" storyboardName="Users" referencedIdentifier="usersNav" id="VaG-mB-Dfy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhQ-lV-2Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="271" y="-396"/>
+            <point key="canvasLocation" x="271" y="-398"/>
         </scene>
         <!--productsNav-->
         <scene sceneID="EuS-CW-V7d">
@@ -62,7 +63,15 @@
                 <viewControllerPlaceholder storyboardName="Products" referencedIdentifier="productsNav" id="3g2-UR-Rs0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="240-Wm-pjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286" y="-353"/>
+            <point key="canvasLocation" x="288" y="-354"/>
+        </scene>
+        <!--companiesNav-->
+        <scene sceneID="U7a-8l-7Cq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Companies" referencedIdentifier="companiesNav" id="Zg4-2s-FdZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyg-3F-BKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297" y="-309"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="lE7-nh-pQ0">
@@ -88,7 +97,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zar-Yz-6Gp">
-                                            <rect key="frame" x="54" y="11.5" width="26" height="17.5"/>
+                                            <rect key="frame" x="54" y="12.5" width="26" height="15.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -128,7 +137,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Appleseed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaj-ss-s6K">
-                                            <rect key="frame" x="54" y="15" width="94" height="17.5"/>
+                                            <rect key="frame" x="54" y="16" width="94" height="15.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -164,7 +173,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUz-Rg-ns3">
-                                            <rect key="frame" x="54" y="14" width="46" height="17.5"/>
+                                            <rect key="frame" x="54" y="15" width="47" height="15.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
