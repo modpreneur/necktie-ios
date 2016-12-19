@@ -36,6 +36,8 @@ struct API {
     static var user = API.path + "user"
     static var profile = API.path + "profile"
     static var settings = API.path + "settings"
+    static var billingPlan = API.path + "billing-plan"
+    static var invoices = API.path + "invoices"
 }
 
 /// API Router, returns URLConvertible
@@ -48,6 +50,10 @@ enum Router: URLRequestConvertible {
     case users
     case profile
     case settings
+    case billingPlan(id: Int)
+    case invoice(id: Int)
+    case invoices
+    case invoiceItems(id: Int)
     
     func asURLRequest() throws -> URLRequest {
         let result: (path: String, method: HTTPMethod, parameters: Parameters) = {
@@ -64,6 +70,14 @@ enum Router: URLRequestConvertible {
                 return (API.profile, .get, [:])
             case .settings:
                 return (API.settings, .get, [:])
+            case let .billingPlan(id):
+                return (API.billingPlan + "/\(id)", .get, [:])
+            case let .invoice(id):
+                return (API.invoices + "/\(id)", .get, [:])
+            case .invoices:
+                return (API.invoices, .get, [:])
+            case let .invoiceItems(id):
+                return (API.invoices + "\(id)" + "/items", .get, [:])
             }
         }()
         
