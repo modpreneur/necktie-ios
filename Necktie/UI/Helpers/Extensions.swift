@@ -96,8 +96,8 @@ extension String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale(identifier: "en_US") // Locale.current
         currencyFormatter.currencyCode = Defaults[.currency]
-        //currencyFormatter.locale = Locale.current
         
         let priceString = currencyFormatter.string(from: NSNumber(value: number!))
         
