@@ -23,7 +23,7 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     let data: Array<Data> = [Data(key: "Username", value: "Tomáš Jančar"), Data(key: "E-mail", value: "tjancar@email.com"), Data(key: "Password", value: "********"), Data(key: "First name", value: "Tomáš"), Data(key: "Last name", value: "Jančar")]
     
     private enum Tabs: String {
-        case edit = "Edit"
+        case edit = "View"
         case newsletter = "Newsletter"
         case invoices = "Invoices"
         case accesses = "Accesses"
@@ -54,6 +54,9 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // Register warning cell
         tableView.register(UINib(nibName: "WarningCell", bundle: nil), forCellReuseIdentifier: "warningCell")
+        
+        // Register warning cell
+        tableView.register(UINib(nibName: "NoDataCell", bundle: nil), forCellReuseIdentifier: "noDataCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +77,11 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count+1
+        if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
+            return data.count+1
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,6 +105,42 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
                 return cell
             }
             
+        // Tab Newsletter
+        } else if segmentio.selectedSegmentioIndex == Tabs.newsletter.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+            
+            return cell
+        
+        // Tab Invoices
+        } else if segmentio.selectedSegmentioIndex == Tabs.invoices.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+            
+            return cell
+        
+        // Tab Accesses
+        } else if segmentio.selectedSegmentioIndex == Tabs.accesses.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+            
+            return cell
+        
+        // Tab History
+        } else if segmentio.selectedSegmentioIndex == Tabs.history.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+            
+            return cell
+            
+        // Tab Permissions
+        } else if segmentio.selectedSegmentioIndex == Tabs.permissions.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+            
+            return cell
+        
+        // Tab Status
+        } else if segmentio.selectedSegmentioIndex == Tabs.status.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+            
+            return cell
+        
         // Tab Danger Zone
         } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningCell
@@ -114,10 +157,19 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 94
+        if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
+            if indexPath.row == 0 {
+                return 94
+            } else {
+                return 50
+            }
         } else {
-            return 50
+            let array: [String] = []
+            if array.count == 0 {
+                return self.tableView.frame.size.height - 22
+            } else {
+                return 44
+            }
         }
     }
     
@@ -130,7 +182,7 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         segmentio.selectedSegmentioIndex = 0
         
         segmentio.valueDidChange = { segmentio, segmentIndex in
-            log.info("Selected index: \(segmentio.selectedSegmentioIndex)")
+            log.info("Selected index: \(segmentio.selectedSegmentioIndex) (\(Tabs.allValues[segmentio.selectedSegmentioIndex]))")
             
             self.tableView.reloadData()
             

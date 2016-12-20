@@ -66,6 +66,8 @@
 		2BBBD6001DA64D9000696D1E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBBD5FF1DA64D9000696D1E /* Login.storyboard */; };
 		2BBBD6021DA65D9800696D1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6011DA65D9800696D1E /* LoginViewController.swift */; };
 		2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */; };
+		2BC061351E094A0F0027FC32 /* NoDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC061331E094A0F0027FC32 /* NoDataCell.swift */; };
+		2BC061361E094A0F0027FC32 /* NoDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BC061341E094A0F0027FC32 /* NoDataCell.xib */; };
 		2BC13F741DF989C100CC5390 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC13F731DF989C100CC5390 /* SegmentioBuilder.swift */; };
 		2BD0F20E1DE3327F002BAE5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0F20D1DE3327F002BAE5F /* SearchBar.swift */; };
 		2BD1A4491DE47B6E007837EB /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD1A4481DE47B6E007837EB /* Products.storyboard */; };
@@ -169,6 +171,8 @@
 		2BBBD5FF1DA64D9000696D1E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2BBBD6011DA65D9800696D1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2BBBD6041DA682DD00696D1E /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		2BC061331E094A0F0027FC32 /* NoDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataCell.swift; sourceTree = "<group>"; };
+		2BC061341E094A0F0027FC32 /* NoDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataCell.xib; sourceTree = "<group>"; };
 		2BC13F731DF989C100CC5390 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
 		2BD0F20D1DE3327F002BAE5F /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		2BD1A4481DE47B6E007837EB /* Products.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 			children = (
 				2B4DEEC01E03E0B60053287F /* WarningCell.swift */,
 				2B4DEEC11E03E0B60053287F /* WarningCell.xib */,
+				2BC061331E094A0F0027FC32 /* NoDataCell.swift */,
+				2BC061341E094A0F0027FC32 /* NoDataCell.xib */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				2B71DB8D1DC88BE000893937 /* Roboto-Black.ttf in Resources */,
 				2B71DB8F1DC88BE000893937 /* Roboto-Bold.ttf in Resources */,
 				2B1CEA171E07F9A70028182F /* Companies.storyboard in Resources */,
+				2BC061361E094A0F0027FC32 /* NoDataCell.xib in Resources */,
 				2B70840A1DD31C8B00FE4A7D /* Users.storyboard in Resources */,
 				2BBB55221D9E80AD005347DB /* Assets.xcassets in Resources */,
 				2BBB55201D9E80AD005347DB /* Main.storyboard in Resources */,
@@ -845,6 +852,7 @@
 				2B36DE611E02CC5A00B6F734 /* BillingPlanViewController.swift in Sources */,
 				2B8E55551DFED736000E1B11 /* BillingPlan.swift in Sources */,
 				2B0445321DEC64EC00F15DED /* ViewController.swift in Sources */,
+				2BC061351E094A0F0027FC32 /* NoDataCell.swift in Sources */,
 				2B1654421DABA631001DBE43 /* HeaderView.swift in Sources */,
 				2BFB0C061DA7CAD200D29BC4 /* MainViewController.swift in Sources */,
 				2B1CEA1A1E07FF3C0028182F /* CompanyCell.swift in Sources */,

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
         <array key="Roboto-Light.ttf">
             <string>Roboto-Light</string>
         </array>
@@ -248,13 +251,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqi-hE-Khe">
-                                                    <rect key="frame" x="16" y="17" width="20" height="16"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="32" y="17" width="20" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
+                                                    <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glu-UJ-RNC">
-                                                    <rect key="frame" x="96" y="17" width="30.5" height="16"/>
+                                                    <rect key="frame" x="168" y="17" width="30.5" height="16"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                     <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -262,11 +265,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="Aqi-hE-Khe" firstAttribute="leading" secondItem="AJM-9J-kP1" secondAttribute="leading" constant="16" id="4bn-Hz-cvb"/>
+                                                <constraint firstItem="Aqi-hE-Khe" firstAttribute="leading" secondItem="AJM-9J-kP1" secondAttribute="leading" constant="32" id="4bn-Hz-cvb"/>
                                                 <constraint firstItem="glu-UJ-RNC" firstAttribute="centerY" secondItem="Aqi-hE-Khe" secondAttribute="centerY" id="aYE-dj-dc7"/>
                                                 <constraint firstItem="Aqi-hE-Khe" firstAttribute="centerY" secondItem="AJM-9J-kP1" secondAttribute="centerY" id="c5X-WV-gMo"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="glu-UJ-RNC" secondAttribute="trailing" id="dRC-uJ-RuK"/>
-                                                <constraint firstItem="glu-UJ-RNC" firstAttribute="leading" secondItem="AJM-9J-kP1" secondAttribute="leadingMargin" constant="88" id="oUg-0R-AOv"/>
+                                                <constraint firstItem="glu-UJ-RNC" firstAttribute="leading" secondItem="AJM-9J-kP1" secondAttribute="leadingMargin" constant="160" id="oUg-0R-AOv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
