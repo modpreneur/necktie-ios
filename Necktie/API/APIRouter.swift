@@ -47,37 +47,47 @@ enum Router: URLRequestConvertible {
     case product(id: Int)
     case products(limit: Int, skip: Int, sort: String, direction: Sort)
     case user(id: Int)
-    case users
+    case users(limit: Int, skip: Int)
     case profile
     case settings
     case billingPlan(id: Int)
     case invoice(id: Int)
-    case invoices
-    case invoiceItems(id: Int)
+    case invoices(limit: Int, skip: Int, sort: String, direction: Sort)
+    case invoiceItems(id: Int, limit: Int, skip: Int, sort: String, direction: Sort)
     
     func asURLRequest() throws -> URLRequest {
         let result: (path: String, method: HTTPMethod, parameters: Parameters) = {
             switch self {
             case let .products(limit, skip, sort, direction):
                 return (API.products, .get, ["limit": limit, "skip": skip, "sort": sort, "direction": direction])
+                
             case let .product(id):
                 return (API.product + "/\(id)", .get, [:])
-            case .users:
-                return (API.users, .get, [:])
+                
+            case let .users(limit, skip):
+                return (API.users, .get, ["limit": limit, "skip": skip])
+                
             case let .user(id):
                 return (API.user + "/\(id)", .get, [:])
+                
             case .profile:
                 return (API.profile, .get, [:])
+                
             case .settings:
                 return (API.settings, .get, [:])
+                
             case let .billingPlan(id):
                 return (API.billingPlan + "/\(id)", .get, [:])
+                
             case let .invoice(id):
                 return (API.invoices + "/\(id)", .get, [:])
-            case .invoices:
-                return (API.invoices, .get, [:])
-            case let .invoiceItems(id):
-                return (API.invoices + "\(id)" + "/items", .get, [:])
+                
+            case let .invoices(limit, skip, sort, direction):
+                return (API.invoices, .get, ["limit": limit, "skip": skip, "sort": sort, "direction": direction])
+                
+            case let .invoiceItems(id, limit, skip, sort, direction):
+                return (API.invoices + "\(id)" + "/items", .get, ["limit": limit, "skip": skip, "sort": sort, "direction": direction])
+                
             }
         }()
         
