@@ -15,12 +15,21 @@ import PopupDialog
 
 class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet var sectionHeaderView: UIView!
     @IBOutlet var searchBar: UISearchBar!
     
+    // MARK: - Properties
+    
     var productArray: [Product] = []
+    
+    let limit = 15
+    var skipCount = 0
 
+    // MARK: - View
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +46,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
             self.tableView.deselectRow(at: index, animated: true)
         }
         
-        requestProducts()
+        requestProducts(skip: skipCount)
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,12 +97,14 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: - Request
     
-    func requestProducts() {
+    func requestProducts(skip: Int) {
         loadingStart()
         
-        APIManager.sharedManager.request(Router.products)
+        APIManager.sharedManager.request(Router.products(limit: self.limit, skip: skipCount, sort: "id", direction: Sort.asc))
             .validate()
             .responseArray(keyPath: "products") { (response: DataResponse<[Product]>) in
+                log.info("Request URL: \(response.request?.url!)")
+                
                 switch response.result {
                 case .success(let responseArray):
                     self.productArray = []
@@ -115,7 +126,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                     let retryAction = UIAlertAction(title: "Retry", style: .default) { action in
                         log.info("Retry request")
                         
-                        self.requestProducts()
+                        self.requestProducts(skip: self.skipCount)
                     }
                     alert.addAction(okAction)
                     alert.addAction(retryAction)

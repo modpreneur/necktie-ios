@@ -15,8 +15,13 @@ import SwiftyUserDefaults
 
 /// Global constants
 struct Constant {
-    static var clientId = "1_i6rapb3zuc8cgo8sgkogk80g0o8co40o0kkwowok0s4skocc4"
-    static var clientSecret = "5jszcq44v84cgsocs8o00ko0k88og0g4ccw0408o44848ok8o0"
+    #if DEBUG
+        static var clientId = "2_1zxf66rtd32848cw8s00k0wcs0k0sg4so4g8o08ogw0g8gg4k4"
+        static var clientSecret = "2l3ytusjnzc48gcog0skk88880soss4kc4gwgs0s408cgwwkww"
+    #else
+        static var clientId = "1_i6rapb3zuc8cgo8sgkogk80g0o8co40o0kkwowok0s4skocc4"
+        static var clientSecret = "5jszcq44v84cgsocs8o00ko0k88og0g4ccw0408o44848ok8o0"
+    #endif
     
     struct App {
         static var bundleId: String = Bundle.main.bundleIdentifier!

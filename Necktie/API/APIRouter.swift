@@ -15,8 +15,8 @@ struct API {
     /// API Base URL
     static var baseURL: String {
     #if DEBUG
-        //return "http://88.146.49.119/app_dev.php"
-        return "http://dev.getnecktie.com"
+        return "http://88.146.49.119/app_dev.php"
+        //return "http://dev.getnecktie.com"
     #else
         return "http://dev.getnecktie.com"
     #endif
@@ -45,7 +45,7 @@ enum Router: URLRequestConvertible {
     static let baseURLString = API.baseURL
     
     case product(id: Int)
-    case products
+    case products(limit: Int, skip: Int, sort: String, direction: Sort)
     case user(id: Int)
     case users
     case profile
@@ -58,8 +58,8 @@ enum Router: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest {
         let result: (path: String, method: HTTPMethod, parameters: Parameters) = {
             switch self {
-            case .products:
-                return (API.products, .get, [:])
+            case let .products(limit, skip, sort, direction):
+                return (API.products, .get, ["limit": limit, "skip": skip, "sort": sort, "direction": direction])
             case let .product(id):
                 return (API.product + "/\(id)", .get, [:])
             case .users:
@@ -86,10 +86,11 @@ enum Router: URLRequestConvertible {
         
         urlRequest.httpMethod = result.method.rawValue
         
-        if result.parameters.count > 0 {
-            return try JSONEncoding.default.encode(urlRequest, with: result.parameters)
-        } else {
-            return try URLEncoding.default.encode(urlRequest, with: result.parameters)
-        }
+        return try URLEncoding.default.encode(urlRequest, with: result.parameters)
     }
+}
+
+public enum Sort: String {
+    case asc = "asc"
+    case desc = "desc"
 }
