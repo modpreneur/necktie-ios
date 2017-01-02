@@ -110,13 +110,15 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                 case .failure(let error):
                     log.error("Request Error: \(error.localizedDescription)")
                     
-                    let alert = PopupDialog(title: "ERROR", message: "\(error.localizedDescription)", image: nil, buttonAlignment: .horizontal, transitionStyle: .bounceUp, gestureDismissal: true, completion: nil)
-                    let okButton = CancelButton(title: "OK", dismissOnTap: true, action: nil)
-                    let retryButton = DefaultButton(title: "Retry", action: {
+                    let alert = UIAlertController(title: "ERROR", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    let retryAction = UIAlertAction(title: "Retry", style: .default) { action in
+                        log.info("Retry request")
+                        
                         self.requestProducts()
-                    })
-                    alert.addButton(okButton)
-                    alert.addButton(retryButton)
+                    }
+                    alert.addAction(okAction)
+                    alert.addAction(retryAction)
                     self.present(alert, animated: true, completion: nil)
                     
                     self.loadingStop()
