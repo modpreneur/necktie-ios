@@ -12,15 +12,14 @@ import Segmentio
 
 class UsersEditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet var tableView: TableView!
     @IBOutlet weak var segmentio: Segmentio!
     
-    struct Data {
-        var key: String
-        var value: String
-    }
+    // MARK: - Properties
     
-    let data: Array<Data> = [Data(key: "Username", value: "Tomáš Jančar"), Data(key: "E-mail", value: "tjancar@email.com"), Data(key: "Password", value: "********"), Data(key: "First name", value: "Tomáš"), Data(key: "Last name", value: "Jančar")]
+    var user: User? = nil
     
     private enum Tabs: String {
         case edit = "View"
@@ -42,11 +41,13 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
                                 dangerzone.rawValue]
     }
     private let tabs = Tabs.allValues
+    
+    // MARK: - View
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Tomáš Jančar"
+        self.title = user?.username!
         
         // Set tableView delegate and data source
         tableView.delegate = self
@@ -78,13 +79,14 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
-            return data.count+1
+            return 5
         } else {
             return 1
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let user = self.user!
         
         // Tab Edit
         if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
@@ -97,11 +99,39 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "userDataCell", for: indexPath) as! UserDataCell
                 
-                let item: Data = data[indexPath.row-1]
+                switch indexPath.row {
+                // Username
+                case 1:
+                    if let username = user.username {
+                        cell.descriptionLabel.text = "Username"
+                        cell.valueLabel.text = username
+                    }
+                    
+                // Email
+                case 2:
+                    if let email = user.email {
+                        cell.descriptionLabel.text = "Email"
+                        cell.valueLabel.text = email
+                    }
                 
-                cell.descriptionLabel.text = item.key
-                cell.valueLabel.text = item.value
+                // First Name
+                case 3:
+                    if let firstName = user.firstName {
+                        cell.descriptionLabel.text = "First Name"
+                        cell.valueLabel.text = firstName
+                    }
                 
+                // Last Name
+                case 4:
+                    if let lastName = user.lastName {
+                        cell.descriptionLabel.text = "Last Name"
+                        cell.valueLabel.text = lastName
+                    }
+                    
+                default:
+                    cell.descriptionLabel.text = "Key"
+                    cell.valueLabel.text = "Value"
+                }
                 return cell
             }
             

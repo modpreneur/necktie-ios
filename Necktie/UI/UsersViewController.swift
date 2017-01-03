@@ -8,14 +8,27 @@
 
 import UIKit
 
+import Alamofire
+import AlamofireObjectMapper
 import DZNEmptyDataSet
 
 class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    // MARK: - IBOutlets
     
     @IBOutlet var tableView: TableView!
     @IBOutlet var sectionHeaderView: UIView!
     @IBOutlet var searchBar: SearchBar!
 
+    // MARK: - Properties
+    
+    var userArray: [User] = []
+    
+    let limit = 15
+    var skipCount = 0
+    
+    // MARK: - View
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +44,8 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let index = tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: index, animated: true)
         }
+        
+        requestUsers(skip: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,23 +55,31 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - UITableView
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return userArray.count > 0 ? 1 : 0;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return userArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserCell
         
-        cell.idLabel.text = "\(indexPath.row)"
+        let user = userArray[indexPath.row]
         
-        cell.nameLabel.text = "John Appleseed"
+        if let userId = user.id {
+            cell.idLabel.text = "\(userId)"
+        }
         
-        cell.emailLabel.text = "appleseed@apple.com"
+        if let firstName = user.firstName, let lastName = user.lastName {
+            cell.nameLabel.text = "\(firstName) \(lastName)"
+        }
         
-        cell.statusLabel.text = "Active"
+        if let email = user.email {
+            cell.emailLabel.text = email
+        }
+        
+        cell.statusLabel.text = user.isPublic! ? "Enabled" : "Disabled"
         
         return cell
     }
@@ -64,7 +87,9 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cell = cell as! UserCell
         
-        cell.statusLabel.backgroundColor = UIColor().necktiePending
+        let user = userArray[indexPath.row]
+        
+        cell.statusLabel.backgroundColor = user.isPublic! ? UIColor().necktiePrimary : UIColor.lightGray
         cell.statusLabel.layer.cornerRadius = 3
         cell.statusLabel.layer.masksToBounds = true
     }
@@ -91,6 +116,48 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         print("Clicked")
     }
     
+    // MARK: - Request
+    
+    func requestUsers(skip: Int) {
+        loadingStart()
+        
+        APIManager.sharedManager.request(Router.users(limit: limit, skip: skipCount))
+            .validate()
+            .responseArray(keyPath: "users") { (response: DataResponse<[User]>) in
+                log.debug("Request URL: \(response.request!.url!)")
+                
+                switch response.result {
+                case .success(let responseArray):
+                    self.userArray = []
+                    
+                    for user in responseArray {
+                        self.userArray.append(user)
+                    }
+                    
+                    log.info("Loaded \(self.userArray.count) users")
+                    
+                    self.loadingStop()
+                    
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    log.error("Request Error: \(error.localizedDescription)")
+                    
+                    let alert = UIAlertController(title: "ERROR", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    let retryAction = UIAlertAction(title: "Retry", style: .default) { action in
+                        log.info("Retry request")
+                        
+                        self.requestUsers(skip: 0)
+                    }
+                    alert.addAction(okAction)
+                    alert.addAction(retryAction)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    self.loadingStop()
+                }
+        }
+    }
+    
     // MARK: - DZNEmptyDataSet
     
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
@@ -99,14 +166,16 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return emptyString
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "users->userDetail" {
+            let selectedCell = sender as! UITableViewCell
+            let destination = segue.destination as! UsersEditViewController
+            let user = userArray[(tableView.indexPath(for: selectedCell)?.row)!]
+            destination.user = user
+            log.info("Displaying user detail of \(user.username!)")
+        }
     }
-    */
 
 }

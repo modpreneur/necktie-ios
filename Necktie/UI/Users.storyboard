@@ -93,16 +93,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="appleseed@apple.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAx-03-wF5">
-                                                    <rect key="frame" x="56" y="24" width="123" height="16"/>
+                                                    <rect key="frame" x="56" y="26" width="123" height="16"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKx-uu-4Ah">
-                                                    <rect key="frame" x="275" y="16" width="60" height="18"/>
+                                                    <rect key="frame" x="275" y="15" width="60" height="20"/>
                                                     <color key="backgroundColor" red="0.48971015214920044" green="0.73232561349868774" blue="0.07937159389257431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="JBm-U2-Ulb"/>
+                                                        <constraint firstAttribute="height" constant="20" id="JBm-U2-Ulb"/>
                                                         <constraint firstAttribute="width" constant="60" id="nBf-bl-RIh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
@@ -111,7 +111,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="BAx-03-wF5" firstAttribute="top" secondItem="ws0-J8-Ab6" secondAttribute="bottom" id="2k0-50-EcU"/>
+                                                <constraint firstItem="BAx-03-wF5" firstAttribute="top" secondItem="ws0-J8-Ab6" secondAttribute="bottom" constant="2" id="2k0-50-EcU"/>
                                                 <constraint firstItem="BKx-uu-4Ah" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ws0-J8-Ab6" secondAttribute="trailing" constant="16" id="FSW-HW-qar"/>
                                                 <constraint firstItem="BAx-03-wF5" firstAttribute="leading" secondItem="ws0-J8-Ab6" secondAttribute="leading" id="Shx-Lx-NVn"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="BKx-uu-4Ah" secondAttribute="trailing" constant="16" id="Tl3-eh-oI5"/>
@@ -129,7 +129,7 @@
                                             <outlet property="idLabel" destination="Fqk-fh-czW" id="a8h-eH-5fH"/>
                                             <outlet property="nameLabel" destination="ws0-J8-Ab6" id="L1c-8X-tHa"/>
                                             <outlet property="statusLabel" destination="BKx-uu-4Ah" id="us2-sU-GSg"/>
-                                            <segue destination="H1t-Vs-NeA" kind="show" id="053-oz-ib7"/>
+                                            <segue destination="H1t-Vs-NeA" kind="show" identifier="users-&gt;userDetail" id="053-oz-ib7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -269,6 +269,7 @@
                                                 <constraint firstItem="glu-UJ-RNC" firstAttribute="centerY" secondItem="Aqi-hE-Khe" secondAttribute="centerY" id="aYE-dj-dc7"/>
                                                 <constraint firstItem="Aqi-hE-Khe" firstAttribute="centerY" secondItem="AJM-9J-kP1" secondAttribute="centerY" id="c5X-WV-gMo"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="glu-UJ-RNC" secondAttribute="trailing" id="dRC-uJ-RuK"/>
+                                                <constraint firstItem="glu-UJ-RNC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Aqi-hE-Khe" secondAttribute="trailing" constant="16" id="gWR-AN-5XH"/>
                                                 <constraint firstItem="glu-UJ-RNC" firstAttribute="leading" secondItem="AJM-9J-kP1" secondAttribute="leadingMargin" constant="160" id="oUg-0R-AOv"/>
                                             </constraints>
                                         </tableViewCellContentView>

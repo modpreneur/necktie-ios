@@ -103,7 +103,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
         APIManager.sharedManager.request(Router.products(limit: self.limit, skip: skipCount, sort: "id", direction: Sort.asc))
             .validate()
             .responseArray(keyPath: "products") { (response: DataResponse<[Product]>) in
-                log.info("Request URL: \(response.request?.url!)")
+                log.debug("Request URL: \(response.request!.url!)")
                 
                 switch response.result {
                 case .success(let responseArray):
