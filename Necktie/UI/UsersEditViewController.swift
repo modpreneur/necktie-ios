@@ -42,12 +42,20 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     private let tabs = Tabs.allValues
     
+    private let keys = ["User Picture", "Username", "Email", "First Name", "Last Name"]
+    
     // MARK: - View
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = user?.username!
+        if let firstName = user?.firstName, let lastName = user?.lastName {
+            self.title = "\(firstName) \(lastName)"
+        } else {
+            if let username = user?.username {
+                self.title = username
+            }
+        }
         
         // Set tableView delegate and data source
         tableView.delegate = self
@@ -99,33 +107,37 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "userDataCell", for: indexPath) as! UserDataCell
                 
+                cell.descriptionLabel.text = keys[indexPath.row]
+                
                 switch indexPath.row {
                 // Username
                 case 1:
                     if let username = user.username {
-                        cell.descriptionLabel.text = "Username"
                         cell.valueLabel.text = username
                     }
                     
                 // Email
                 case 2:
                     if let email = user.email {
-                        cell.descriptionLabel.text = "Email"
                         cell.valueLabel.text = email
                     }
                 
                 // First Name
                 case 3:
                     if let firstName = user.firstName {
-                        cell.descriptionLabel.text = "First Name"
                         cell.valueLabel.text = firstName
+                    } else {
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                 
                 // Last Name
                 case 4:
                     if let lastName = user.lastName {
-                        cell.descriptionLabel.text = "Last Name"
                         cell.valueLabel.text = lastName
+                    } else {
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                     
                 default:

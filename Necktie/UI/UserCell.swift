@@ -20,9 +20,10 @@ class UserCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        let color = self.statusLabel.backgroundColor
         super.setSelected(selected, animated: animated)
+        self.statusLabel.backgroundColor = color
     }
-
 }
 
 class UserPhotoCell: UITableViewCell {
