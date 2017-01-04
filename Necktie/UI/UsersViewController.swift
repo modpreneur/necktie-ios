@@ -161,7 +161,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - DZNEmptyDataSet
     
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let emptyString: NSAttributedString = NSAttributedString(string: "Nothing found", attributes: [NSForegroundColorAttributeName: UIColor(red:0.37, green:0.38, blue:0.38, alpha:1.00), NSFontAttributeName: UIFont(name: "Roboto-Thin", size: 22)!])
+        let emptyString: NSAttributedString = .nothingFound
         
         return emptyString
     }

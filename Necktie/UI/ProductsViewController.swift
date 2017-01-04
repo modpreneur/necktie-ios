@@ -56,7 +56,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
     // MARK: - UITableView
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return productArray.count > 0 ? 1 : 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,7 +140,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
     // MARK: - DZNEmptyDataSet
     
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let emptyString: NSAttributedString = NSAttributedString(string: "Nothing found", attributes: [NSForegroundColorAttributeName: UIColor(red:0.37, green:0.38, blue:0.38, alpha:1.00), NSFontAttributeName: UIFont(name: "Roboto-Thin", size: 22)!])
+        let emptyString: NSAttributedString = .nothingFound
         
         return emptyString
     }
