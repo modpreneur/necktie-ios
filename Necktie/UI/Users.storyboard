@@ -77,7 +77,7 @@
                                         <rect key="frame" x="0.0" y="64" width="359" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MUz-dj-hnt" id="p8W-gv-HKL">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="##" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqk-fh-czW">
@@ -193,7 +193,7 @@
                                         <rect key="frame" x="0.0" y="28" width="359" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" tableViewCell="ExX-5t-WMO" id="zp8-xh-oK8">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="513-Ud-ywN">
@@ -209,20 +209,20 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihg-Uy-Fr5">
-                                                    <rect key="frame" x="88" y="12" width="90.5" height="22.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihg-Uy-Fr5">
+                                                    <rect key="frame" x="88" y="12" width="81.5" height="23"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                                     <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2c-xz-q98">
-                                                    <rect key="frame" x="88" y="42.5" width="68" height="24"/>
+                                                    <rect key="frame" x="88" y="42.5" width="88" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="68" id="EXh-dF-eOY"/>
+                                                        <constraint firstAttribute="width" constant="88" id="EXh-dF-eOY"/>
                                                         <constraint firstAttribute="height" constant="24" id="lp1-Yt-tyZ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                                    <state key="normal" title="Select file">
+                                                    <state key="normal" title="Select picture">
                                                         <color key="titleColor" red="0.29125192761421204" green="0.7420649528503418" blue="0.98579519987106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
@@ -239,6 +239,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="nameLabel" destination="ihg-Uy-Fr5" id="AZ7-Th-nba"/>
                                             <outlet property="selectPhotoButton" destination="p2c-xz-q98" id="V7J-AE-1vK"/>
                                             <outlet property="userPhoto" destination="513-Ud-ywN" id="Kg1-VJ-qx3"/>
                                         </connections>
@@ -247,7 +248,7 @@
                                         <rect key="frame" x="0.0" y="113" width="359" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kzr-yv-ftg" id="AJM-9J-kP1">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqi-hE-Khe">
@@ -317,7 +318,7 @@
             <objects>
                 <navigationController storyboardIdentifier="usersNav" automaticallyAdjustsScrollViewInsets="NO" id="IqT-bI-KTK" customClass="NavigationController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="431-ms-8mD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="431-ms-8mD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

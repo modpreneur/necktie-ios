@@ -30,6 +30,7 @@ class UserPhotoCell: UITableViewCell {
     
     @IBOutlet var userPhoto: UIImageView!
     @IBOutlet var selectPhotoButton: UIButton!
+    @IBOutlet var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -103,6 +103,17 @@ extension String {
         
         return priceString!
     }
+    
+    // Converts country ISO code to corresponding name
+    func convertCountry() -> String {
+        let locale: NSLocale = NSLocale.init(localeIdentifier: "en_US")
+        
+        if let countryName = locale.displayName(forKey: .countryCode, value: self) {
+            return countryName
+        } else {
+            return "Not Available"
+        }
+    }
 }
 
 // MARK: - Int

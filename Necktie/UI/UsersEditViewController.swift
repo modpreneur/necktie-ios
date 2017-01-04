@@ -42,7 +42,7 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     private let tabs = Tabs.allValues
     
-    private let keys = ["User Picture", "Username", "Email", "First Name", "Last Name"]
+    private let keys = ["User Picture", "Username", "Email", "First Name", "Last Name", "Phone Number", "Website", "Country"]
     
     // MARK: - View
 
@@ -87,7 +87,7 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
-            return 5
+            return keys.count
         } else {
             return 1
         }
@@ -96,12 +96,22 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = self.user!
         
-        // Tab Edit
+        // MARK: Tab Edit
         if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "userPhotoCell", for: indexPath) as! UserPhotoCell
                 
                 cell.userPhoto.image = UIImage(named: "Avatar")
+                
+                if let firstName = user.firstName, let lastName = user.lastName {
+                    cell.nameLabel.text = "\(firstName) \(lastName)"
+                } else {
+                    if let username = user.username {
+                        cell.nameLabel.text = username
+                    }
+                }
+                
+                cell.selectionStyle = .none
                 
                 return cell
             } else {
@@ -139,6 +149,33 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
                         cell.valueLabel.text = "---"
                         cell.valueLabel.textColor = UIColor.lightGray
                     }
+                
+                // Phone Number
+                case 5:
+                    if let phoneNumber = user.phoneNumber {
+                        cell.valueLabel.text = phoneNumber
+                    } else {
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
+                    }
+                
+                // Website
+                case 6:
+                    if let website = user.website {
+                        cell.valueLabel.text = website
+                    } else {
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
+                    }
+                
+                // Country
+                case 7:
+                    if let country = user.country {
+                        cell.valueLabel.text = country.convertCountry()
+                    } else {
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
+                    }
                     
                 default:
                     cell.descriptionLabel.text = "Key"
@@ -147,43 +184,43 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
                 return cell
             }
             
-        // Tab Newsletter
+        // MARK: Tab Newsletter
         } else if segmentio.selectedSegmentioIndex == Tabs.newsletter.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
             
             return cell
         
-        // Tab Invoices
+        // MARK: Tab Invoices
         } else if segmentio.selectedSegmentioIndex == Tabs.invoices.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
             
             return cell
         
-        // Tab Accesses
+        // MARK: Tab Accesses
         } else if segmentio.selectedSegmentioIndex == Tabs.accesses.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
             
             return cell
         
-        // Tab History
+        // MARK: Tab History
         } else if segmentio.selectedSegmentioIndex == Tabs.history.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
             
             return cell
             
-        // Tab Permissions
+        // MARK: Tab Permissions
         } else if segmentio.selectedSegmentioIndex == Tabs.permissions.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
             
             return cell
         
-        // Tab Status
+        // MARK: Tab Status
         } else if segmentio.selectedSegmentioIndex == Tabs.status.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
             
             return cell
         
-        // Tab Danger Zone
+        // MARK: Tab Danger Zone
         } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningCell
             
