@@ -105,7 +105,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
     // MARK: - Request
     
     func requestProducts(skip: Int) {
-        loadingStart()
+        skipCount > 0 ? refreshStart() : loadingStart()
         
         APIManager.sharedManager.request(Router.products(limit: self.limit, skip: skipCount, sort: "id", direction: Sort.asc))
             .validate()
@@ -125,6 +125,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                     
                     log.info("Displaying \(self.productArray.count) products")
                     
+                    self.refreshStop()
                     self.loadingStop()
                     
                     self.tableView.reloadData()
@@ -142,6 +143,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                     alert.addAction(retryAction)
                     self.present(alert, animated: true, completion: nil)
                     
+                    self.refreshStop()
                     self.loadingStop()
                 }
         }

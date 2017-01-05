@@ -54,13 +54,25 @@ extension UIViewController {
         button.setNeedsDisplay()
     }
     
+    /// Starts loading animations
     func loadingStart() {
         ARSLineProgress.show()
         self.navigationController?.navigationBar.start()
     }
     
+    /// Stops loading animations
     func loadingStop() {
         ARSLineProgress.hide()
+        self.navigationController?.navigationBar.stop()
+    }
+    
+    /// Starts navigationBar animation
+    func refreshStart() {
+        self.navigationController?.navigationBar.start()
+    }
+    
+    /// Stops navigationBar animation
+    func refreshStop() {
         self.navigationController?.navigationBar.stop()
     }
     

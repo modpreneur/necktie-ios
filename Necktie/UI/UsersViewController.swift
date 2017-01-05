@@ -127,7 +127,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - Request
     
     func requestUsers(skip: Int) {
-        loadingStart()
+        skipCount > 0 ? refreshStart() : loadingStart()
         
         APIManager.sharedManager.request(Router.users(limit: limit, skip: skipCount))
             .validate()
@@ -147,6 +147,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     log.info("Displaying \(self.userArray.count) users")
                     
+                    self.refreshStop()
                     self.loadingStop()
                     
                     self.tableView.reloadData()
@@ -164,6 +165,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     alert.addAction(retryAction)
                     self.present(alert, animated: true, completion: nil)
                     
+                    self.refreshStop()
                     self.loadingStop()
                 }
         }
