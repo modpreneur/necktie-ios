@@ -8,6 +8,7 @@
 
 import UIKit
 
+import AlamofireNetworkActivityIndicator
 import PopupDialog
 import SideMenuController
 import SwiftyBeaver
@@ -37,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         Defaults[.introAnimation] = false
+        
+        NetworkActivityIndicatorManager.shared.isEnabled = true
         
         return true
     }

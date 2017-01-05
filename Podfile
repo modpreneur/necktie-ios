@@ -3,7 +3,8 @@ platform :ios, '9.0'
 target 'Necktie' do
   use_frameworks!
 
-  pod 'Alamofire', '~> 4.0'
+  pod 'Alamofire', '~> 4.1'
+  pod 'AlamofireNetworkActivityIndicator', '~> 2.1'
   pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'ARSLineProgress', '~> 2.1'
   pod 'BusyNavigationBar', '~> 2.0'

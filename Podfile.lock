@@ -1,5 +1,7 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (4.2.0)
+  - AlamofireNetworkActivityIndicator (2.1.0):
+    - Alamofire (~> 4.1)
   - AlamofireObjectMapper (4.0.0):
     - Alamofire (~> 4.0)
     - ObjectMapper (~> 2.0)
@@ -22,7 +24,8 @@ PODS:
   - UIScrollView-InfiniteScroll (1.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - Alamofire (~> 4.1)
+  - AlamofireNetworkActivityIndicator (~> 2.1)
   - AlamofireObjectMapper (~> 4.0)
   - ARSLineProgress (~> 2.1)
   - BusyNavigationBar (~> 2.0)
@@ -42,7 +45,8 @@ DEPENDENCIES:
   - UIScrollView-InfiniteScroll (~> 1.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
   AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
   ARSLineProgress: 44dd1ec9994a4ddea7767944ecb9001046ecd697
   BusyNavigationBar: b73fd434b95f6198809dcf048b0245ad89ec1b37
@@ -62,6 +66,6 @@ SPEC CHECKSUMS:
   UICircularProgressRing: c37697577b2f07841fa901ad162959f6f5530204
   UIScrollView-InfiniteScroll: d26885be71caca7485cdb37eab513a8f89036bb0
 
-PODFILE CHECKSUM: 1d5518e9dc607af596887ae8e79894dc27fa48e3
+PODFILE CHECKSUM: 8b2b8841aa9ecb24f858dda97aaf4453fd9f734d
 
 COCOAPODS: 1.2.0.beta.1
