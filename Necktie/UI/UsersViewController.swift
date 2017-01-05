@@ -161,9 +161,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - DZNEmptyDataSet
     
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let emptyString: NSAttributedString = .nothingFound
-        
-        return emptyString
+        return .nothingFound
     }
     
     // MARK: - Navigation
