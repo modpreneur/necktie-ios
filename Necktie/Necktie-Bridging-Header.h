@@ -13,4 +13,6 @@
 #import <MBCircularProgressBar/MBCircularProgressBarView.h>
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
+@import UIScrollView-InfiniteScroll
+
 #endif /* Necktie_Bridging_Header_h */

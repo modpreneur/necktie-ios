@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 import DZNEmptyDataSet
-import PopupDialog
+import UIScrollView_InfiniteScroll
 
 class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
@@ -39,14 +39,21 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
         tableView.emptyDataSetDelegate = self
         tableView.emptyDataSetSource = self
         searchBar.delegate = self
+        
+        requestProducts(skip: skipCount)
+        
+        // Infinite Scroll
+        tableView.addInfiniteScroll { (tableView) in
+            self.requestProducts(skip: self.skipCount)
+            
+            tableView .finishInfiniteScroll()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let index = tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: index, animated: true)
         }
-        
-        requestProducts(skip: skipCount)
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,13 +114,16 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                 
                 switch response.result {
                 case .success(let responseArray):
-                    self.productArray = []
                     
+                    // Add new objects to array
                     for product in responseArray {
                         self.productArray.append(product)
                     }
                     
-                    log.info("Loaded \(self.productArray.count) products")
+                    // Set skip count
+                    self.skipCount = self.skipCount + self.limit
+                    
+                    log.info("Displaying \(self.productArray.count) products")
                     
                     self.loadingStop()
                     

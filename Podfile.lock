@@ -19,6 +19,7 @@ PODS:
   - SwiftyBeaver (1.1.1)
   - SwiftyUserDefaults (3.0.0)
   - UICircularProgressRing (1.1.1)
+  - UIScrollView-InfiniteScroll (1.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - SwiftyBeaver (~> 1.1)
   - SwiftyUserDefaults (~> 3.0)
   - UICircularProgressRing (~> 1.1)
+  - UIScrollView-InfiniteScroll (~> 1.0)
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -58,7 +60,8 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 2b68694df862381235e32bcfc4ec991e26bf131d
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   UICircularProgressRing: c37697577b2f07841fa901ad162959f6f5530204
+  UIScrollView-InfiniteScroll: d26885be71caca7485cdb37eab513a8f89036bb0
 
-PODFILE CHECKSUM: 72f39774ac630d735110a0b1206cb33a5334bc11
+PODFILE CHECKSUM: 1d5518e9dc607af596887ae8e79894dc27fa48e3
 
 COCOAPODS: 1.2.0.beta.1

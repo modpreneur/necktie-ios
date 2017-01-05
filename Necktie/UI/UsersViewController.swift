@@ -11,6 +11,7 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 import DZNEmptyDataSet
+import UIScrollView_InfiniteScroll
 
 class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
@@ -38,14 +39,21 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.emptyDataSetDelegate = self
         tableView.emptyDataSetSource = self
         searchBar.delegate = self
+        
+        requestUsers(skip: 0)
+        
+        // Infinite Scroll
+        tableView.addInfiniteScroll { (tableView) in
+            self.requestUsers(skip: self.skipCount)
+            
+            tableView .finishInfiniteScroll()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let index = tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: index, animated: true)
         }
-        
-        requestUsers(skip: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -128,13 +136,16 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 switch response.result {
                 case .success(let responseArray):
-                    self.userArray = []
                     
+                    // Add new objects to array
                     for user in responseArray {
                         self.userArray.append(user)
                     }
                     
-                    log.info("Loaded \(self.userArray.count) users")
+                    // Set skip count
+                    self.skipCount = self.skipCount + self.limit
+                    
+                    log.info("Displaying \(self.userArray.count) users")
                     
                     self.loadingStop()
                     

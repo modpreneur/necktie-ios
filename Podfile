@@ -20,6 +20,7 @@ target 'Necktie' do
   pod 'SwiftyBeaver', '~> 1.1'
   pod 'SwiftyUserDefaults', '~> 3.0'
   pod 'UICircularProgressRing', '~> 1.1'
+  pod 'UIScrollView-InfiniteScroll', '~> 1.0'
 
   target 'NecktieTests' do
     inherit! :search_paths
