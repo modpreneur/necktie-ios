@@ -48,6 +48,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             tableView .finishInfiniteScroll()
         }
+        tableView.infiniteScrollTriggerOffset = 500
     }
     
     override func viewWillAppear(_ animated: Bool) {

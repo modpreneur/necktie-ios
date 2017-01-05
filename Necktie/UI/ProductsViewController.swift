@@ -48,6 +48,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
             
             tableView .finishInfiniteScroll()
         }
+        tableView.infiniteScrollTriggerOffset = 500
     }
     
     override func viewWillAppear(_ animated: Bool) {
