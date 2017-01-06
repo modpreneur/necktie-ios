@@ -24,7 +24,7 @@ class MenuContainerViewController: SideMenuCustom {
         super.viewDidAppear(animated)
         
         if !Defaults[.isLoggedIn] {
-            let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Identifier.login) as! LoginViewController
+            let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Controller.login) as! LoginViewController
             self.present(viewController, animated: true, completion: nil)
         }
     }

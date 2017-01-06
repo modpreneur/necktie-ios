@@ -141,7 +141,7 @@ class MenuViewController: UITableViewController {
         keychain["access_token"] = nil
         keychain["refresh_token"] = nil
         
-        let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Identifier.login) as! LoginViewController
+        let viewController: UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Controller.login) as! LoginViewController
         self.present(viewController, animated: true, completion: nil)
     }
 

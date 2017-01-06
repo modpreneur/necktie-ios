@@ -55,7 +55,7 @@ public struct Token {
 }
 
 /// Storyboard view controller identifiers
-public struct Identifier {
+public struct Controller {
     static let login = "login"
     
     static let products = "products"

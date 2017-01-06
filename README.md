@@ -30,8 +30,8 @@
 	- adds animated circular progress view
 - **KDCircularProgress**
 	- adds animated circular progress view
-- **SkyFloatingLabelTextField**
-	- adds floating label to text fields
+- **SwiftyBeaver**
+	- powerful logging framework
 - **RevealingSplashView**
 	- adds nice intro animation
 
@@ -61,14 +61,19 @@ View Controller to be presented from menu has to conform to SideMenuControllerDe
 
 Storyboards are separated to smaller ones for each menu item.
 
+Controller and segue identifiers are specified in `Constants.swift` to minimize typos. Intended to be used as `Controller.products` or `Segue.productToProductDetail`.
+
 ##Helpers
 
-- **Constants.swift**: basic constants.
+- **Constants.swift**: basic constants and global structs/variables.
+- **Extensions.swift**: some useful extensions
 - **UIColor+Necktie.swift**: global colors extension (call `UIColor().customColor`)
+- **Strings.swift**: strings file to futureproof localization
 - **NavigationController.swift**: sets default appearance for *UINavigationController* used in the app (font, gradient background).
 - **TableView.swift**: *UITableView* subclass which sets rounded corners (header, footer) and separators. `@IBDesignable` if needed.
 - **SearchBar.swift**: *UISearchBar* subclass which sets its font.
 - **GradientView.swift**: creates `@IBDesignable` *UIView* to create gradient (vertical, horizontal or diagonal).
+- **SegmentioBuilder.swift**: specifies default appearance of *Segmentio*
 
 ##Colors
 
@@ -109,7 +114,7 @@ In `viewWillAppear(animated:)` there is intro animation done with *RevealingSpla
 
 ###TableViews
 
-To create a new section with `UITableView`:
+####To create a new section with `UITableView`:
 
 1. Create empty `UIViewController` in storyboard,
 2. Drag `UITableView` to this controller and change its class to `TableView` (defined in *TableView.swift*),
@@ -117,13 +122,26 @@ To create a new section with `UITableView`:
 
 This will automatically add *header* and *footer* with rounded corners and sets insets as needed. These properties are `@IBInspectable`.
 
-To set fixed section header:
+####To set fixed section header:
 
 1. Add empty `UIView` to tableView and set its class to `SectionHeaderView` (defined in *SectionHeaderView.swift*),
 2. Connect it as *IBOutlet* to viewController,
 3. Return it in `tableView(tableView: viewForHeaderInSection:)` and don't forget to set its height (default should be *36*) in `tableView(tableView: heightForHeaderInSection:)`.
 
 This subclass draws a line at bottom as separator.
+
+####Infinite scrolling
+
+There is convenience extension for `UIScrollView` (and its subclasses including `UITableView`) called `UIScrollView_InfiniteScroll`.
+
+	tableView.addInfiniteScroll { (tableView) in
+        loadMore()
+        tableView .finishInfiniteScroll()
+    }
+
+To preload set `tableView.infiniteScrollTriggerOffset`. This triggers handler in specified position from bottom.
+
+For more info see documentation<sup id="an7">[7](#fn7)</sup>.
 
 ##Networking
 
@@ -174,7 +192,7 @@ KeychainAccess is a simple Swift wrapper for Keychain.
 - **Reading**: `let key = keychain["key"]`
 - **Writing**: `keychain["key"] = "value"`
 
-It is also possible to *write* and *read* using `do try catch` to get catch errors:
+It is also possible to *write* and *read* using `do try catch` to catch errors:
 
 	do {
 		try keychain.set("value", key: "key")
@@ -214,3 +232,5 @@ For more info see documentation<sup id="an6">[6](#fn6)</sup>.
 <a name="fn5">**5.**</a> [https://github.com/kishikawakatsumi/KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess) [↩](#an5)
 
 <a name="fn6">**6.**</a> [https://github.com/SnapKit/SnapKit](https://github.com/SnapKit/SnapKit) [↩](#an6)
+
+<a name="fn7">**7.**</a> [https://github.com/pronebird/UIScrollView-InfiniteScroll](https://github.com/pronebird/UIScrollView-InfiniteScroll) [↩](#an7)
