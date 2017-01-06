@@ -93,7 +93,7 @@ class BillingPlanViewController: UIViewController, UITableViewDelegate, UITableV
         } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningCell
             
-            cell.warningLabel.text = .warningBillingPlan
+            cell.warningLabel.text = String.Warning.billingPlan
             
             cell.deleteButton.addTarget(self, action: #selector(deleteBillingPlan(sender:)), for: .touchUpInside)
             

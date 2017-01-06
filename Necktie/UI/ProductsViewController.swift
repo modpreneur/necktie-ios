@@ -133,9 +133,9 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                 case .failure(let error):
                     log.error("Request Error: \(error.localizedDescription)")
                     
-                    let alert = UIAlertController(title: "ERROR", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    let retryAction = UIAlertAction(title: "Retry", style: .default) { action in
+                    let alert = UIAlertController(title: String.Alert.error, message: "\(error.localizedDescription)", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: String.Alert.ok, style: .cancel, handler: nil)
+                    let retryAction = UIAlertAction(title: String.Alert.retry, style: .default) { action in
                         log.info("Retry request")
                         
                         self.requestProducts(skip: self.skipCount)

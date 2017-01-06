@@ -116,7 +116,7 @@ extension String {
         return priceString!
     }
     
-    // Converts country ISO code to corresponding name
+    /// Converts country ISO code to corresponding name
     func convertCountry() -> String {
         let locale: NSLocale = NSLocale.init(localeIdentifier: "en_US")
         

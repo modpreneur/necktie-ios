@@ -146,7 +146,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningCell
             
-            cell.warningLabel.text = .warningProduct
+            cell.warningLabel.text = String.Warning.product
             
             cell.deleteButton.addTarget(self, action: #selector(deleteProduct(sender:)), for: .touchUpInside)
             
@@ -209,8 +209,8 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         log.info("Delete product?")
         
         let alert = UIAlertController(title: "Delete Product", message: "Are you sure?", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+        let cancelAction = UIAlertAction(title: String.Alert.cancel, style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: String.Alert.delete, style: .destructive) { action in
             log.warning("Product will be deleted")
         }
         alert.addAction(cancelAction)

@@ -139,17 +139,17 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                 return cell
             }
             
-            // Tab Billing Plans
+        // Tab Billing Plans
         } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningCell
             
-            cell.warningLabel.text = .warningProduct
+            cell.warningLabel.text = String.Warning.product
             
             cell.deleteButton.addTarget(self, action: #selector(deleteProduct(sender:)), for: .touchUpInside)
             
             return cell
             
-            // Default
+        // Default
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             return cell

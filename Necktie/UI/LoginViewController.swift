@@ -194,6 +194,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 case .failure(let error):
                     self.dismiss(activityIndicatorView: self.activityIndicator, on: self.loginButton)
                     
+                    let alert = UIAlertController(title: String.Alert.error, message: "\(error.localizedDescription)", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: String.Alert.ok, style: .cancel, handler: nil)
+                    let retryAction = UIAlertAction(title: String.Alert.retry, style: .default) { action in
+                        log.info("Retry request")
+                        
+                        self.login()
+                    }
+                    alert.addAction(okAction)
+                    alert.addAction(retryAction)
+                    self.present(alert, animated: true, completion: nil)
+                    
                     log.error("Request Error: \(error)")
                 }
         }
