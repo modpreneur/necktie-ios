@@ -181,7 +181,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "users->userDetail" {
+        if segue.identifier == Segue.usersToUserDetail {
             let selectedCell = sender as! UITableViewCell
             let destination = segue.destination as! UsersEditViewController
             let user = userArray[(tableView.indexPath(for: selectedCell)?.row)!]

@@ -221,7 +221,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "productDetail->billingPlan" {
+        if segue.identifier == Segue.productDetailToBillingPlan {
             let selectedCell = sender as! UITableViewCell
             let destination = segue.destination as! BillingPlanViewController
             let billingPlan = product?.billingPlans[(self.tableView.indexPath(for: selectedCell)?.row)!]

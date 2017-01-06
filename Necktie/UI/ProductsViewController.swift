@@ -159,7 +159,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "products->productDetail" {
+        if segue.identifier == Segue.productToProductDetail {
             let selectedCell = sender as! UITableViewCell
             let destination = segue.destination as! ProductDetailViewController
             let product = productArray[(tableView.indexPath(for: selectedCell)?.row)!] 

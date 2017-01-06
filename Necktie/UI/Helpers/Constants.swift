@@ -14,7 +14,7 @@ import KeychainAccess
 import SwiftyUserDefaults
 
 /// Global constants
-struct Constant {
+public struct Constant {
     #if DEBUG
         static var clientId = "2_1zxf66rtd32848cw8s00k0wcs0k0sg4so4g8o08ogw0g8gg4k4"
         static var clientSecret = "2l3ytusjnzc48gcog0skk88880soss4kc4gwgs0s408cgwwkww"
@@ -24,14 +24,14 @@ struct Constant {
     #endif
     
     struct App {
-        static var bundleId: String = Bundle.main.bundleIdentifier!
-        static var version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-        static var build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+        static let bundleId: String = Bundle.main.bundleIdentifier!
+        static let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        static let build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     }
 }
 
 /// User Access Token
-struct Token {
+public struct Token {
     /// Returns current user's access token
     static func getAccessToken() -> String {
         let keychain = Keychain(service: Constant.App.bundleId)
@@ -52,22 +52,31 @@ struct Token {
             return ""
         }
     }
-    
-    /// Constructs and returns HTTP headers with access token
-    static func requestHeaders() -> HTTPHeaders {
-        let headers: HTTPHeaders = ["Authorization": "Bearer " + Token.getAccessToken()]
-        
-        return headers
-    }
 }
 
 /// Storyboard view controller identifiers
-struct Identifier {
-    static var login = "login"
+public struct Identifier {
+    static let login = "login"
+    
+    static let products = "products"
+    static let productDetail = "productDetail"
+    
+    static let users = "users"
+    static let userDetail = "userDetail"
+    
+    static let billingPlans = "billingPlans"
+    static let billingPlanDetail = "billingPlanDetail"
+}
+
+/// Storyboard segue identifiers
+public struct Segue {
+    static let productToProductDetail = "products->productDetail"
+    static let usersToUserDetail = "users->userDetail"
+    static let productDetailToBillingPlan = "productDetail->billingPlan"
 }
 
 /// SwiftyUserDefaults keys
-extension DefaultsKeys {
+public extension DefaultsKeys {
     static let isLoggedIn = DefaultsKey<Bool>("isLoggedIn")
     static let username = DefaultsKey<String>("username")
     static let introAnimation = DefaultsKey<Bool>("introAnimation")
