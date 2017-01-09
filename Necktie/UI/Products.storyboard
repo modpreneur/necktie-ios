@@ -89,7 +89,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDd-Xr-aDw">
-                                                    <rect key="frame" x="271" y="10" width="47" height="13.5"/>
+                                                    <rect key="frame" x="271" y="9.5" width="47" height="13.5"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -355,7 +355,7 @@
         <!--Billing Plan-->
         <scene sceneID="GD0-ts-B72">
             <objects>
-                <viewController id="kTq-x8-RJ3" customClass="BillingPlanViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="billingPlanDetail" id="kTq-x8-RJ3" customClass="BillingPlanViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="puG-hN-Iyd"/>
                         <viewControllerLayoutGuide type="bottom" id="oCA-BI-yeX"/>

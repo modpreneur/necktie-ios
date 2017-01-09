@@ -19,7 +19,7 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: - Properties
     
-    var user: User? = nil
+    public var user: User? = nil
     
     private enum Tabs: String {
         case edit = "View"
@@ -82,7 +82,7 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - UITableView data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return user != nil ? 1 : 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

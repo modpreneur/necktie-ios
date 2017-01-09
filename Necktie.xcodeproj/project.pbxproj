@@ -435,6 +435,8 @@
 			isa = PBXGroup;
 			children = (
 				2BBB554F1D9E8552005347DB /* Constants.swift */,
+				2B4DEEC41E03E9A10053287F /* Strings.swift */,
+				2B80A92E1DD0C97200EED246 /* Extensions.swift */,
 				2B71DBA31DC892B500893937 /* CAGradientLayer+Image.swift */,
 				2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */,
 				2B1654371DAB7FE7001DBE43 /* UIColor+Necktie.swift */,
@@ -443,11 +445,9 @@
 				2BD0F20D1DE3327F002BAE5F /* SearchBar.swift */,
 				2B3C6B501DDF1C6100A11D5B /* SectionHeaderView.swift */,
 				2B656B8C1DBA5DBA00F898F1 /* GradientView.swift */,
-				2B80A92E1DD0C97200EED246 /* Extensions.swift */,
 				2B0445311DEC64EC00F15DED /* ViewController.swift */,
 				2B74CBF81DEC663600393219 /* OAuth2RetryHandler.swift */,
 				2BC13F731DF989C100CC5390 /* SegmentioBuilder.swift */,
-				2B4DEEC41E03E9A10053287F /* Strings.swift */,
 			);
 			name = Helpers;
 			path = UI/Helpers;

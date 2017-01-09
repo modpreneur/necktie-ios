@@ -58,9 +58,11 @@ public struct Token {
 public struct Controller {
     static let login = "login"
     
+    static let productsNav = "productsNav"
     static let products = "products"
     static let productDetail = "productDetail"
     
+    static let usersNav = "usersNav"
     static let users = "users"
     static let userDetail = "userDetail"
     

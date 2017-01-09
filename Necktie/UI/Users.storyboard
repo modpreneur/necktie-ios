@@ -26,7 +26,7 @@
         <!--Users-->
         <scene sceneID="x8A-HF-PN3">
             <objects>
-                <viewController id="QzF-rD-nb6" customClass="UsersViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="users" id="QzF-rD-nb6" customClass="UsersViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ZD-YS-SBN"/>
                         <viewControllerLayoutGuide type="bottom" id="KpQ-sf-OVS"/>
@@ -77,7 +77,7 @@
                                         <rect key="frame" x="0.0" y="64" width="359" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MUz-dj-hnt" id="p8W-gv-HKL">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="##" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqk-fh-czW">
@@ -174,7 +174,7 @@
         <!--Users Edit View Controller-->
         <scene sceneID="kun-6f-zhs">
             <objects>
-                <viewController id="H1t-Vs-NeA" customClass="UsersEditViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userDetail" id="H1t-Vs-NeA" customClass="UsersEditViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="di7-ei-Vmi"/>
                         <viewControllerLayoutGuide type="bottom" id="7qo-Mo-Mjj"/>
@@ -193,7 +193,7 @@
                                         <rect key="frame" x="0.0" y="28" width="359" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" tableViewCell="ExX-5t-WMO" id="zp8-xh-oK8">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="84.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="513-Ud-ywN">
@@ -210,7 +210,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihg-Uy-Fr5">
-                                                    <rect key="frame" x="88" y="12" width="81.5" height="23"/>
+                                                    <rect key="frame" x="88" y="12" width="81.5" height="22.5"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                                     <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -248,7 +248,7 @@
                                         <rect key="frame" x="0.0" y="113" width="359" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kzr-yv-ftg" id="AJM-9J-kP1">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqi-hE-Khe">
@@ -318,7 +318,7 @@
             <objects>
                 <navigationController storyboardIdentifier="usersNav" automaticallyAdjustsScrollViewInsets="NO" id="IqT-bI-KTK" customClass="NavigationController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="431-ms-8mD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="431-ms-8mD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

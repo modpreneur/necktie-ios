@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Alamofire
+import AlamofireObjectMapper
 import KeychainAccess
 import SwiftyUserDefaults
 
@@ -16,8 +18,12 @@ class MenuViewController: UITableViewController {
     private var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
     private var previousIndex: IndexPath?
     
+    private var user: User? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        requestUser()
 
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.tableView.backgroundColor = UIColor().necktieSecondary
@@ -41,7 +47,7 @@ class MenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Menu item cells
+        // MARK: Menu item cells
         if indexPath.row < menuItems.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
             
@@ -63,7 +69,8 @@ class MenuViewController: UITableViewController {
             cell.menuItemName.font = selectedIndex == indexPath ? UIFont(name: "Roboto-Bold", size: 13) : UIFont(name: "Roboto", size: 13)
             
             return cell
-        // Spacer cell
+            
+        // MARK: Spacer cell
         } else if indexPath.row == menuItems.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "spacerCell", for: indexPath)
             
@@ -71,14 +78,24 @@ class MenuViewController: UITableViewController {
             cell.isUserInteractionEnabled = false
             
             return cell
-        // Cell with profile image and name
+            
+        // MARK: Cell with profile image and name
         } else if indexPath.row == menuItems.count + 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! MenuProfileCell
+            
+            // Cell selected background
+            let backgroundColorView = UIView()
+            backgroundColorView.backgroundColor = UIColor().necktieSecondaryLight
+            cell.selectedBackgroundView = backgroundColorView
+            
+            // Change cell background color and font weight if item is selected
+            cell.backgroundColor = selectedIndex == indexPath ? UIColor().necktieSecondaryLight : UIColor().necktieSecondary
             
             cell.profileName.text = Defaults[.username]
             
             return cell
-        // Cell for log out
+            
+        // MARK: Cell for log out
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "logoutCell", for: indexPath) as! MenuLogoutCell
             
@@ -104,14 +121,31 @@ class MenuViewController: UITableViewController {
             tableView.deselectRow(at: index, animated: true)
         }
         
+        // MARK: Empty cell
         if indexPath.row == menuItems.count {
         
+        // MARK: Profile cell
         } else if indexPath.row == menuItems.count + 1 {
             selectedIndex = indexPath
             
-            print("Open profile")
+            log.info("Open profile")
+            
+            let userDetailController = UIStoryboard(name: "Users", bundle: Bundle.main).instantiateViewController(withIdentifier: Controller.userDetail) as! UsersEditViewController
+            let navigationController = NavigationController.init(rootViewController: userDetailController)
+            userDetailController.user = self.user
+            navigationController.title = "User"
+            
+            sideMenuController?.embed(centerViewController: navigationController)
+            
+            previousIndex = indexPath
+            
+            tableView.reloadData()
+            
+        // MARK: Logout cell
         } else if indexPath.row == menuItems.count + 2 {
             logoutAction()
+            
+        // MARK: Menu cells
         } else {
             selectedIndex = indexPath
             
@@ -145,4 +179,24 @@ class MenuViewController: UITableViewController {
         self.present(viewController, animated: true, completion: nil)
     }
 
+    // MARK: - Request
+    
+    func requestUser() {
+        APIManager.sharedManager.request(Router.user(id: 0))
+            .validate()
+            .responseObject(keyPath: "user") { (response: DataResponse<User>) in
+                
+                switch response.result {
+                case .success(let response):
+                    
+                    self.user = response
+                    
+                    log.info("Loaded current user from menu")
+                    
+                case .failure(let error):
+                    log.error("Request Error: \(error.localizedDescription)")
+                }
+        }
+    }
+    
 }

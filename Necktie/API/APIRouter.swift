@@ -15,7 +15,8 @@ struct API {
     /// API Base URL
     static var baseURL: String {
     #if DEBUG
-        return "http://88.146.49.119/app_dev.php"
+        return "http://ci.corp.modpreneur.com:8000"
+        //return "http://88.146.49.119/app_dev.php"
         //return "http://dev.getnecktie.com"
     #else
         return "http://dev.getnecktie.com"
@@ -68,7 +69,11 @@ enum Router: URLRequestConvertible {
                 return (API.users, .get, ["limit": limit, "skip": skip])
                 
             case let .user(id):
-                return (API.user + "/\(id)", .get, [:])
+                if id == 0 {
+                    return (API.user, .get, [:])
+                } else {
+                    return (API.user + "/\(id)", .get, [:])
+                }
                 
             case .profile:
                 return (API.profile, .get, [:])
