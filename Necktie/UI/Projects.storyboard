@@ -23,7 +23,7 @@
         <!--Projects-->
         <scene sceneID="rEW-L6-HFW">
             <objects>
-                <viewController id="UBe-1X-2oI" customClass="ProjectsViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="projects" id="UBe-1X-2oI" customClass="ProjectsViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IRh-P5-KyI"/>
                         <viewControllerLayoutGuide type="bottom" id="yuO-C9-XwV"/>
@@ -145,7 +145,7 @@
                                             <outlet property="idLabel" destination="lHC-DN-zNf" id="x4V-Mt-hK6"/>
                                             <outlet property="lockedLabel" destination="mY6-ok-nlN" id="7wY-j4-Do2"/>
                                             <outlet property="nameLabel" destination="VtN-0h-nNx" id="oIj-PY-d11"/>
-                                            <segue destination="zRQ-mh-Bs5" kind="show" identifier="project-&gt;projectDetail" id="iZ6-n2-vIf"/>
+                                            <segue destination="zRQ-mh-Bs5" kind="show" identifier="projects-&gt;projectDetail" id="iZ6-n2-vIf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -184,7 +184,7 @@
         <!--Project-->
         <scene sceneID="iGK-jr-Jj3">
             <objects>
-                <viewController id="zRQ-mh-Bs5" customClass="ProjectDetailViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="projectDetail" id="zRQ-mh-Bs5" customClass="ProjectDetailViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cXN-Ug-Lw4"/>
                         <viewControllerLayoutGuide type="bottom" id="kXd-ko-24s"/>

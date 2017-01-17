@@ -19,16 +19,22 @@ class ProjectDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: - Properties
     
+    public var project: Project? = nil
+    
     private enum Tabs: String {
         case edit = "View"
+        case clients = "Clients"
         case status = "Status"
         case dangerzone = "Danger Zone"
         
         static var allValues = [edit.rawValue,
+                                clients.rawValue,
                                 status.rawValue,
                                 dangerzone.rawValue]
     }
     private let tabs = Tabs.allValues
+    
+    private let keys = ["Name", "Company", "Description"]
     
     // MARK: - View
     
@@ -38,6 +44,12 @@ class ProjectDetailViewController: UIViewController, UITableViewDelegate, UITabl
         // Set delegates
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Register warning cell
+        tableView.register(UINib(nibName: "WarningCell", bundle: nil), forCellReuseIdentifier: "warningCell")
+        
+        // Register no data cell
+        tableView.register(UINib(nibName: "NoDataCell", bundle: nil), forCellReuseIdentifier: "noDataCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,8 +58,6 @@ class ProjectDetailViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         setupSegmentio()
-        
-        //requestProducts()
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,62 +71,116 @@ class ProjectDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
+            return keys.count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "projectDataCell", for: indexPath) as! ProjectDataCell
+        let project = self.project!
+
+        // MARK: Tab Edit
+        if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "projectDataCell", for: indexPath) as! ProjectDataCell
+            
+            cell.keyLabel.text = keys[indexPath.row]
         
-        switch indexPath.row {
+            switch indexPath.row {
+            
+            // Name
+            case 0:
+                if let name = project.name {
+                    cell.valueLabel.text = name
+                }
+                
+            // Company
+            case 1:
+                if let company = project.company {
+                    if let companyName = company.businessName {
+                        cell.valueLabel.text = companyName
+                    }
+                } else {
+                    cell.valueLabel.text = "---"
+                }
+            
+            // Company
+            case 2:
+                cell.valueLabel.text = ""
+            
+            // Notification
+            case 3:
+                cell.keyLabel.text = "Notification"
+                
+            // Public ID
+            case 4:
+                cell.keyLabel.text = "Public ID"
+                
+            // Secret
+            case 5:
+                cell.keyLabel.text = "Secret"
+                
+            // Description
+            case 6:
+                cell.keyLabel.text = "Description"
+                
+            // Grant Types
+            case 7:
+                cell.keyLabel.text = "Grant Types"
+            
+            // Redirect URIs
+            case 8:
+                cell.keyLabel.text = "Redirect URIs"
+                
+            // Default
+            default:
+                cell.keyLabel.text = "Default"
+            }
+            
+            return cell
         
-        // Name
-        case 0:
-            cell.keyLabel.text = "Name"
+        // MARK: OAuth Clients
+        } else if segmentio.selectedSegmentioIndex == Tabs.clients.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
             
-        // URL
-        case 1:
-            cell.keyLabel.text = "URL"
-        
-        // Company
-        case 2:
-            cell.keyLabel.text = "Company"
-        
-        // Notification
-        case 3:
-            cell.keyLabel.text = "Notification"
+            return cell
             
-        // Public ID
-        case 4:
-            cell.keyLabel.text = "Public ID"
+        // MARK: Tab Status
+        } else if segmentio.selectedSegmentioIndex == Tabs.status.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
             
-        // Secret
-        case 5:
-            cell.keyLabel.text = "Secret"
+            return cell
             
-        // Description
-        case 6:
-            cell.keyLabel.text = "Description"
+        // MARK: Tab Danger Zone
+        } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningCell
             
-        // Grant Types
-        case 7:
-            cell.keyLabel.text = "Grant Types"
-        
-        // Redirect URIs
-        case 8:
-            cell.keyLabel.text = "Redirect URIs"
+            cell.warningLabel.text = String.Warning.project
             
-        // Default
-        default:
-            cell.keyLabel.text = "Default"
+            cell.deleteButton.addTarget(self, action: #selector(deleteProject(sender:)), for: .touchUpInside)
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            return cell
         }
-        
-        return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
+            return 44
+        } else {
+            let array: [String] = []
+            if array.count == 0 {
+                return self.tableView.frame.size.height - 22
+            } else {
+                return 44
+            }
+        }
     }
-    
+
     // MARK: - Segmentio
     
     fileprivate func setupSegmentio() {
@@ -134,7 +198,7 @@ class ProjectDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: - Delete Product
     
-    @objc private func deleteProduct(sender: UIButton) {
+    @objc private func deleteProject(sender: UIButton) {
         log.info("Delete project?")
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

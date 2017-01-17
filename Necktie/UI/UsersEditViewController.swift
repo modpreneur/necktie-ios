@@ -64,7 +64,7 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         // Register warning cell
         tableView.register(UINib(nibName: "WarningCell", bundle: nil), forCellReuseIdentifier: "warningCell")
         
-        // Register warning cell
+        // Register no data cell
         tableView.register(UINib(nibName: "NoDataCell", bundle: nil), forCellReuseIdentifier: "noDataCell")
     }
     
@@ -267,17 +267,17 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    // MARK: - Delete Product
+    // MARK: - Delete User
     
     @objc private func deleteUser(sender: UIButton) {
-        log.info("Delete product?")
+        log.info("Delete user?")
         
         let cancelAction = UIAlertAction(title: String.Alert.cancel, style: .cancel, handler: nil)
         let deleteAction = UIAlertAction(title: String.Alert.delete, style: .destructive) { action in
-            log.warning("Product will be deleted")
+            log.warning("User will be deleted")
         }
         
-        UIAlertController.showAlert(controller: self, title: "Delete Product", message: "Are you sure?", firstAction: cancelAction, secondAction: deleteAction)
+        UIAlertController.showAlert(controller: self, title: "Delete User", message: "Are you sure?", firstAction: cancelAction, secondAction: deleteAction)
     }
     
     /*

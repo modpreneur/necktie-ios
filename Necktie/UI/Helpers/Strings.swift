@@ -14,6 +14,7 @@ extension String {
         static let product = NSLocalizedString("With product you remove all products billing plans, there is no going back. Please be certain.", comment: "")
         static let billingPlan = NSLocalizedString("Once you delete a Billing plan, there is no going back. Please be certain.", comment: "")
         static let user = NSLocalizedString("With user you remove all his accesses and invoices, there is no going back. Please be certain.", comment: "")
+        static let project = NSLocalizedString("Once you delete a project, there is no going back. Please be certain.", comment: "")
     }
     
     struct Alert {
