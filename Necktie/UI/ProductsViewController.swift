@@ -25,7 +25,6 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
     
     var productArray: [Product] = []
     
-    let limit = 15
     var skipCount = 0
 
     // MARK: - View
@@ -108,7 +107,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
     func requestProducts(skip: Int) {
         skipCount > 0 ? refreshStart() : loadingStart()
         
-        APIManager.sharedManager.request(Router.products(limit: self.limit, skip: skipCount, sort: "id", direction: Sort.asc))
+        APIManager.sharedManager.request(Router.products(limit: Constant.resultLimit, skip: skipCount, sort: "id", direction: Sort.asc))
             .validate()
             .responseArray(keyPath: "products") { (response: DataResponse<[Product]>) in
                 log.debug("Request URL: \(response.request!.url!)")
@@ -122,7 +121,7 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                     }
                     
                     // Set skip count
-                    self.skipCount = self.skipCount + self.limit
+                    self.skipCount = self.skipCount + Constant.resultLimit
                     
                     log.info("Displaying \(self.productArray.count) products")
                     

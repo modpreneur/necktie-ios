@@ -25,7 +25,6 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var userArray: [User] = []
     
-    let limit = 15
     var skipCount = 0
     
     // MARK: - View
@@ -129,7 +128,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func requestUsers(skip: Int) {
         skipCount > 0 ? refreshStart() : loadingStart()
         
-        APIManager.sharedManager.request(Router.users(limit: limit, skip: skipCount))
+        APIManager.sharedManager.request(Router.users(limit: Constant.resultLimit, skip: skipCount))
             .validate()
             .responseArray(keyPath: "users") { (response: DataResponse<[User]>) in
                 log.debug("Request URL: \(response.request!.url!)")
@@ -143,7 +142,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }
                     
                     // Set skip count
-                    self.skipCount = self.skipCount + self.limit
+                    self.skipCount = self.skipCount + Constant.resultLimit
                     
                     log.info("Displaying \(self.userArray.count) users")
                     
