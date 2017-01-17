@@ -32,6 +32,7 @@ class ProjectDataCell: UITableViewCell {
     
     @IBOutlet var keyLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
+    @IBOutlet var colorLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

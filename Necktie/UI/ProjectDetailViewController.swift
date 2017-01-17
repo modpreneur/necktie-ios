@@ -41,6 +41,10 @@ class ProjectDetailViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let projectName = project!.name {
+            self.title = projectName
+        }
+        
         // Set delegates
         tableView.delegate = self
         tableView.dataSource = self
@@ -94,6 +98,13 @@ class ProjectDetailViewController: UIViewController, UITableViewDelegate, UITabl
             case 0:
                 if let name = project.name {
                     cell.valueLabel.text = name
+                }
+                
+                // Colorize label
+                if let color = project.color {
+                    cell.colorLabel.textColor = UIColor(hex: color)
+                } else {
+                    cell.colorLabel.textColor = UIColor.clear
                 }
                 
             // Company

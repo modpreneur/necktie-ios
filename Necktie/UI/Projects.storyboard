@@ -223,8 +223,16 @@
                                                     <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTi-qt-crC">
+                                                    <rect key="frame" x="153" y="4.5" width="13" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="TTi-qt-crC" firstAttribute="centerY" secondItem="Tcr-nK-aSr" secondAttribute="centerY" constant="-2" id="47J-vi-Vo4"/>
+                                                <constraint firstItem="0H5-lx-Rap" firstAttribute="leading" secondItem="TTi-qt-crC" secondAttribute="trailing" constant="2" id="OT8-Zw-Q4k"/>
                                                 <constraint firstItem="Tcr-nK-aSr" firstAttribute="leading" secondItem="xi7-z5-XMg" secondAttribute="leadingMargin" constant="32" id="Vt6-0n-Vad"/>
                                                 <constraint firstItem="0H5-lx-Rap" firstAttribute="centerY" secondItem="Tcr-nK-aSr" secondAttribute="centerY" id="lDJ-M0-e6X"/>
                                                 <constraint firstItem="0H5-lx-Rap" firstAttribute="leading" secondItem="xi7-z5-XMg" secondAttribute="leadingMargin" constant="160" id="tpj-V7-uVw"/>
@@ -233,6 +241,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="colorLabel" destination="TTi-qt-crC" id="D9v-FW-P1W"/>
                                             <outlet property="keyLabel" destination="Tcr-nK-aSr" id="cff-Ix-tzy"/>
                                             <outlet property="valueLabel" destination="0H5-lx-Rap" id="3dE-e7-tfm"/>
                                         </connections>
