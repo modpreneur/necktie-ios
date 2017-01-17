@@ -12,15 +12,18 @@ class ProjectCell: UITableViewCell {
     
     @IBOutlet var idLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var urlLabel: UILabel!
+    @IBOutlet var lockedLabel: UILabel!
     @IBOutlet var companyLabel: UILabel!
+    @IBOutlet var colorLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        let color = self.lockedLabel.backgroundColor
         super.setSelected(selected, animated: animated)
+        self.lockedLabel.backgroundColor = color
     }
 
 }

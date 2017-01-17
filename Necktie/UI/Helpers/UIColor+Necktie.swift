@@ -49,4 +49,8 @@ public extension UIColor {
     static var necktieDelete: UIColor {
         return UIColor(red:0.51, green:0.17, blue:0.16, alpha:1.00)
     }
+    
+    static var necktieGreen: UIColor {
+        return UIColor(red:0.35, green:0.72, blue:0.63, alpha:1.00)
+    }
 }
