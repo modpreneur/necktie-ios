@@ -35,9 +35,7 @@ class UserPhotoCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.selectPhotoButton.layer.borderWidth = 1
-        self.selectPhotoButton.layer.borderColor = UIColor().necktiePrimary.cgColor
-        self.selectPhotoButton.layer.cornerRadius = 3
+        self.selectPhotoButton.addBorder(color: UIColor.necktiePrimary, width: 1, radius: 3)
     }
 }
 

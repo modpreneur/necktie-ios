@@ -16,15 +16,24 @@ import SnapKit
 import SwiftyBeaver
 import SwiftyUserDefaults
 
-// MARK: - Double
-extension Double {
-    func toArc() -> Double {
-        return (self * 0.01) * 360.0
+// MARK: - UIView
+public extension UIView {
+    /// Adds border and rounds corners
+    func addBorder(color: UIColor, width: CGFloat, radius: CGFloat) {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = width
+        self.layer.cornerRadius = radius
+    }
+    
+    /// Rounds corners {
+    func roundCorners(radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
     }
 }
 
 // MARK: - UIViewController
-extension UIViewController {
+public extension UIViewController {
     /// Adds loading indicator to button
     func show(activityIndicatorView: UIActivityIndicatorView, on button: UIButton) {
         activityIndicatorView.startAnimating()
@@ -87,8 +96,39 @@ extension UIViewController {
     }
 }
 
+// MARK: - UIAlertController
+public extension UIAlertController {
+    /// Shows UIAlertController with specified title, message and actions
+    static func showAlert(controller: UIViewController, title: String, message: String, firstAction: UIAlertAction, secondAction: UIAlertAction) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(firstAction)
+        alert.addAction(secondAction)
+        controller.present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK: - UIFont
+
+public extension UIFont {
+    static func robotoLight(_ size: CGFloat) -> UIFont {
+        return UIFont(name: "Roboto-Light", size: size)!
+    }
+    
+    static func roboto(_ size: CGFloat) -> UIFont {
+        return UIFont(name: "Roboto-Regular", size: size)!
+    }
+    
+    static func robotoMedium(_ size: CGFloat) -> UIFont {
+        return UIFont(name: "Roboto-Medium", size: size)!
+    }
+    
+    static func robotoBold(_ size: CGFloat) -> UIFont {
+        return UIFont(name: "Roboto-Bold", size: size)!
+    }
+}
+
 // MARK: - String
-extension String {
+public extension String {
     /// Convert date to specified format
     func convertDate() -> String {
         let dateFormatter = DateFormatter()
@@ -129,7 +169,7 @@ extension String {
 }
 
 // MARK: - Int
-extension Int {
+public extension Int {
     /// Formats given Int and returns complete String with plural if needed
     func formatDays() -> String {
         if self == 1 {
@@ -137,6 +177,13 @@ extension Int {
         } else {
             return "\(self) days"
         }
+    }
+}
+
+// MARK: - Double
+public extension Double {
+    func toArc() -> Double {
+        return (self * 0.01) * 360.0
     }
 }
 

@@ -27,7 +27,7 @@ class NavigationController: UINavigationController {
     private func imageLayerForGradientBackground() -> UIImage {
         var updatedFrame = self.navigationBar.bounds
         updatedFrame.size.height += 20
-        let layer = CAGradientLayer.gradientLayerForBounds(bounds: updatedFrame, colors: [UIColor().necktieGradientStart.cgColor, UIColor().necktieGradientEnd.cgColor])
+        let layer = CAGradientLayer.gradientLayerForBounds(bounds: updatedFrame, colors: [UIColor.necktieGradientStart.cgColor, UIColor.necktieGradientEnd.cgColor])
         UIGraphicsBeginImageContext(layer.bounds.size)
         layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()

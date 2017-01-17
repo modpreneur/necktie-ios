@@ -43,7 +43,7 @@ struct SegmentioBuilder {
         
         return SegmentioOptions(
             backgroundColor: UIColor.white,
-            maxVisibleItems: 4,
+            maxVisibleItems: 3,
             scrollEnabled: true,
             indicatorOptions: segmentioIndicatorOptions(),
             horizontalSeparatorOptions: segmentioHorizontalSeparatorOptions(),
@@ -60,17 +60,17 @@ struct SegmentioBuilder {
         return SegmentioStates(
             defaultState: segmentioState(
                 backgroundColor: .clear,
-                titleFont: UIFont(name: "Roboto-Regular", size: 12)!,
+                titleFont: UIFont.roboto(12),
                 titleTextColor: .lightGray
             ),
             selectedState: segmentioState(
                 backgroundColor: .clear,
-                titleFont: UIFont(name: "Roboto-Bold", size: 12)!,
+                titleFont: UIFont.robotoBold(12),
                 titleTextColor: .black
             ),
             highlightedState: segmentioState(
                 backgroundColor: .clear,
-                titleFont: UIFont(name: "Roboto-Regular", size: 12)!,
+                titleFont: UIFont.roboto(12),
                 titleTextColor: .lightGray
             )
         )
@@ -89,7 +89,7 @@ struct SegmentioBuilder {
             type: .bottom,
             ratio: 1,
             height: 2,
-            color: UIColor().necktiePrimary
+            color: UIColor.necktiePrimary
         )
     }
     

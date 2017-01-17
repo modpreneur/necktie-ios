@@ -12,7 +12,6 @@ target 'Necktie' do
   pod 'IHKeyboardAvoiding', '~> 2.6'
   pod 'KDCircularProgress'
   pod 'KeychainAccess', '~> 3.0'
-  pod 'PopupDialog', '~> 0.5'
   pod 'RevealingSplashView', '~> 0.1'
   pod 'ScrollableGraphView', '~> 3.0'
   pod 'Segmentio', '~> 2.1'

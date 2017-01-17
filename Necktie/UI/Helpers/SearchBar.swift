@@ -23,7 +23,7 @@ class SearchBar: UISearchBar {
         for subView in self.subviews  {
             for subsubView in subView.subviews  {
                 if let textField = subsubView as? UITextField {
-                    textField.font = UIFont(name: "Roboto-Regular", size: 14)
+                    textField.font = UIFont.roboto(14)
                 }
             }
         }

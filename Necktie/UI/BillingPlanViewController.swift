@@ -205,14 +205,12 @@ class BillingPlanViewController: UIViewController, UITableViewDelegate, UITableV
     @objc private func deleteBillingPlan(sender: UIButton) {
         log.info("Delete product?")
         
-        let alert = UIAlertController(title: "Delete Billing Plan", message: "Are you sure?", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
             log.warning("Product will be deleted")
         }
-        alert.addAction(cancelAction)
-        alert.addAction(deleteAction)
-        self.present(alert, animated: true, completion: nil)
+        
+        UIAlertController.showAlert(controller: self, title: "Delete Billing Plan", message: "Are you sure?", firstAction: cancelAction, secondAction: deleteAction)
     }
 
     /*

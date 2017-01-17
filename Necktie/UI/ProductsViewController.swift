@@ -133,16 +133,14 @@ class ProductsViewController: ViewController, UITableViewDelegate, UITableViewDa
                 case .failure(let error):
                     log.error("Request Error: \(error.localizedDescription)")
                     
-                    let alert = UIAlertController(title: String.Alert.error, message: "\(error.localizedDescription)", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: String.Alert.ok, style: .cancel, handler: nil)
                     let retryAction = UIAlertAction(title: String.Alert.retry, style: .default) { action in
                         log.info("Retry request")
                         
                         self.requestProducts(skip: self.skipCount)
                     }
-                    alert.addAction(okAction)
-                    alert.addAction(retryAction)
-                    self.present(alert, animated: true, completion: nil)
+                    
+                    UIAlertController.showAlert(controller: self, title: String.Alert.error, message: "\(error.localizedDescription)", firstAction: okAction, secondAction: retryAction)
                     
                     self.refreshStop()
                     self.loadingStop()

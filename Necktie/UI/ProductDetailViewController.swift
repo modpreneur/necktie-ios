@@ -9,7 +9,6 @@
 import UIKit
 
 import Segmentio
-import PopupDialog
 
 class ProductDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -196,10 +195,6 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             log.info("Selected index: \(segmentio.selectedSegmentioIndex) (\(Tabs.allValues[segmentio.selectedSegmentioIndex]))")
             
             self.tableView.reloadData()
-            
-            //TODO: Temporary fix, remove
-            let collectionView: UICollectionView = segmentio.subviews[0] as! UICollectionView
-            collectionView.reloadData()
         }
     }
     
@@ -208,14 +203,12 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
     @objc private func deleteProduct(sender: UIButton) {
         log.info("Delete product?")
         
-        let alert = UIAlertController(title: "Delete Product", message: "Are you sure?", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: String.Alert.cancel, style: .cancel, handler: nil)
         let deleteAction = UIAlertAction(title: String.Alert.delete, style: .destructive) { action in
             log.warning("Product will be deleted")
         }
-        alert.addAction(cancelAction)
-        alert.addAction(deleteAction)
-        self.present(alert, animated: true, completion: nil)
+        
+        UIAlertController.showAlert(controller: self, title: "Delete Product", message: "Are you sure?", firstAction: cancelAction, secondAction: deleteAction)
     }
 
     // MARK: - Navigation

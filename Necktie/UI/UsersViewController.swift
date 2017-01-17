@@ -98,9 +98,8 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let user = userArray[indexPath.row]
         
-        cell.statusLabel.backgroundColor = user.isPublic! ? UIColor().necktiePrimary : UIColor.lightGray
-        cell.statusLabel.layer.cornerRadius = 3
-        cell.statusLabel.layer.masksToBounds = true
+        cell.statusLabel.backgroundColor = user.isPublic! ? UIColor.necktiePrimary : UIColor.lightGray
+        cell.statusLabel.roundCorners(radius: 3)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -155,16 +154,14 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 case .failure(let error):
                     log.error("Request Error: \(error.localizedDescription)")
                     
-                    let alert = UIAlertController(title: String.Alert.error, message: "\(error.localizedDescription)", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: String.Alert.ok, style: .cancel, handler: nil)
                     let retryAction = UIAlertAction(title: String.Alert.retry, style: .default) { action in
                         log.info("Retry request")
                         
                         self.requestUsers(skip: 0)
                     }
-                    alert.addAction(okAction)
-                    alert.addAction(retryAction)
-                    self.present(alert, animated: true, completion: nil)
+                    
+                    UIAlertController.showAlert(controller: self, title: String.Alert.error, message: "\(error.localizedDescription)", firstAction: okAction, secondAction: retryAction)
                     
                     self.refreshStop()
                     self.loadingStop()

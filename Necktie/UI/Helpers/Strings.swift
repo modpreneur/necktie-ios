@@ -26,5 +26,5 @@ extension String {
 }
 
 extension NSAttributedString {
-    static let nothingFound = NSAttributedString(string: NSLocalizedString("Nothing found", comment: ""), attributes: [NSForegroundColorAttributeName: UIColor.lightGray, NSFontAttributeName: UIFont(name: "Roboto-Regular", size: 26)!])
+    static let nothingFound = NSAttributedString(string: NSLocalizedString("Nothing found", comment: ""), attributes: [NSForegroundColorAttributeName: UIColor.lightGray, NSFontAttributeName: UIFont.roboto(26)])
 }

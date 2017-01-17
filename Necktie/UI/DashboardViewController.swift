@@ -38,7 +38,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
         
         // Add intro animation
         if Defaults[.introAnimation] == false {
-            let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Logo_Mask")!, iconInitialSize: CGSize(width: 120, height: 125), backgroundColor: UIColor().necktiePrimary)
+            let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Logo_Mask")!, iconInitialSize: CGSize(width: 120, height: 125), backgroundColor: UIColor.necktiePrimary)
             let window = UIApplication.shared.keyWindow
             window?.addSubview(revealingSplashView)
             revealingSplashView.startAnimation() { }
@@ -121,6 +121,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardBarGraphCell", for: indexPath) as! DashboardBarGraphCell
             
             cell.graphView.set(data: [1, 3, 9, 8, 2, 4, 7, 2], withLabels: ["1", "2", "3", "4", "5", "6", "7", "8"])
+            cell.graphView.shouldRoundBarCorners = true
             
             cell.descriptionLabel.text = "Graph design 3"
             

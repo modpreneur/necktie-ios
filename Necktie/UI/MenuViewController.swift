@@ -24,7 +24,7 @@ class MenuViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        self.tableView.backgroundColor = UIColor().necktieSecondary
+        self.tableView.backgroundColor = UIColor.necktieSecondary
         
         // Add stretchable header view
         self.tableView.tableHeaderView = HeaderView.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 64));
@@ -57,7 +57,7 @@ class MenuViewController: UITableViewController {
             
             // Cell selected background
             let backgroundColorView = UIView()
-            backgroundColorView.backgroundColor = UIColor().necktieSecondaryLight
+            backgroundColorView.backgroundColor = UIColor.necktieSecondaryLight
             cell.selectedBackgroundView = backgroundColorView
             
             let item = menuItems[indexPath.row] as MenuItem
@@ -69,8 +69,8 @@ class MenuViewController: UITableViewController {
             cell.menuItemIcon.image = UIImage(named: item.image)
             
             // Change cell background color and font weight if item is selected
-            cell.backgroundColor = selectedIndex == indexPath ? UIColor().necktieSecondaryLight : UIColor().necktieSecondary
-            cell.menuItemName.font = selectedIndex == indexPath ? UIFont(name: "Roboto-Bold", size: 13) : UIFont(name: "Roboto", size: 13)
+            cell.backgroundColor = selectedIndex == indexPath ? UIColor.necktieSecondaryLight : UIColor.necktieSecondary
+            cell.menuItemName.font = selectedIndex == indexPath ? UIFont.robotoBold(12) : UIFont.roboto(12)
             
             return cell
             
@@ -78,7 +78,7 @@ class MenuViewController: UITableViewController {
         } else if indexPath.row == menuItems.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "spacerCell", for: indexPath)
             
-            cell.backgroundColor = UIColor().necktieSecondary
+            cell.backgroundColor = UIColor.necktieSecondary
             cell.isUserInteractionEnabled = false
             
             return cell
@@ -89,11 +89,11 @@ class MenuViewController: UITableViewController {
             
             // Cell selected background
             let backgroundColorView = UIView()
-            backgroundColorView.backgroundColor = UIColor().necktieSecondaryLight
+            backgroundColorView.backgroundColor = UIColor.necktieSecondaryLight
             cell.selectedBackgroundView = backgroundColorView
             
             // Change cell background color and font weight if item is selected
-            cell.backgroundColor = selectedIndex == indexPath ? UIColor().necktieSecondaryLight : UIColor().necktieSecondary
+            cell.backgroundColor = selectedIndex == indexPath ? UIColor.necktieSecondaryLight : UIColor.necktieSecondary
             
             cell.profileName.text = Defaults[.username]
             
