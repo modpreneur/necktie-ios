@@ -73,6 +73,14 @@ class CompaniesViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.companyLabel.text = name
         }
         
+        // Contact
+        if let contact = company.contactPerson {
+            cell.contactLabel.text = contact
+        } else {
+            cell.contactLabel.text = "---"
+            cell.contactLabel.textColor = UIColor.lightGray
+        }
+        
         return cell
     }
     

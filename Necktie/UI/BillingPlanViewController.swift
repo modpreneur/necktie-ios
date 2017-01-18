@@ -21,7 +21,7 @@ class BillingPlanViewController: UIViewController, UITableViewDelegate, UITableV
     
     private enum Tabs: String {
         case edit = "View"
-        case status = "Status"
+        //case status = "Status"
         case dangerzone = "Danger Zone"
         
         static var allValues = [edit.rawValue,

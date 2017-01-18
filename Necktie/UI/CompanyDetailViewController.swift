@@ -25,7 +25,7 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
     private enum Tabs: String {
         case edit = "View"
         case projects = "Projects"
-        case status = "Status"
+        //case status = "Status"
         case dangerzone = "Danger Zone"
         
         static var allValues = [edit.rawValue,
@@ -35,7 +35,7 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     private let tabs = Tabs.allValues
     
-    let keys = ["Business Name", "Logo", "Country", "Region", "City", "ZIP or Postal City", "Address line 1", "Address 2", "Contact Name", "Contact Email", "Support Email"]
+    let keys = ["Business Name", "Logo", "Country", "Region", "City", "ZIP or Postal Code", "Address line 1", "Address 2", "Contact Name", "Contact Email", "Support Email"]
     
     var company: Company? = nil
     
@@ -122,7 +122,8 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                     if let name = company.businessName {
                         cell.valueLabel.text = name
                     } else {
-                        cell.valueLabel.text = ""
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                     
                 // MARK: Country
@@ -130,7 +131,8 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                     if let country = company.country {
                         cell.valueLabel.text = country.convertCountry()
                     } else {
-                        cell.valueLabel.text = ""
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                 
                 // MARK: Region
@@ -138,7 +140,8 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                     if let region = company.region {
                         cell.valueLabel.text = region
                     } else {
-                        cell.valueLabel.text = ""
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                 
                 // MARK: City
@@ -146,7 +149,8 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                     if let city = company.city {
                         cell.valueLabel.text = city
                     } else {
-                        cell.valueLabel.text = ""
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                 
                 // MARK: ZIP or Postal Code
@@ -154,7 +158,8 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                     if let postalCode = company.postalCode {
                         cell.valueLabel.text = postalCode
                     } else {
-                        cell.valueLabel.text = ""
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                 
                 // MARK: Address 1
@@ -162,7 +167,8 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                     if let address = company.address1 {
                         cell.valueLabel.text = address
                     } else {
-                        cell.valueLabel.text = ""
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                 
                 // MARK: Address 2
@@ -170,7 +176,8 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                     if let address = company.address2 {
                         cell.valueLabel.text = address
                     } else {
-                        cell.valueLabel.text = ""
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                 
                 // MARK: Contact Person Name
@@ -178,7 +185,8 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                     if let contactPerson = company.contactPerson {
                         cell.valueLabel.text = contactPerson
                     } else {
-                        cell.valueLabel.text = ""
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                 
                 // MARK: Contact Person Email
@@ -186,7 +194,8 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                     if let contactPersonEmail = company.contactPersonEmail {
                         cell.valueLabel.text = contactPersonEmail
                     } else {
-                        cell.valueLabel.text = ""
+                        cell.valueLabel.text = "---"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
                 
                 // MARK: Support Email
@@ -194,7 +203,8 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
                     if let supportEmail = company.supportEmail {
                         cell.valueLabel.text = supportEmail
                     } else {
-                        cell.valueLabel.text = ""
+                        cell.valueLabel.text = "--"
+                        cell.valueLabel.textColor = UIColor.lightGray
                     }
 
                 default:

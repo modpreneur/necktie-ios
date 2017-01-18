@@ -23,7 +23,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
     private enum Tabs: String {
         case edit = "View"
         case billingPlans = "Billing Plans"
-        case status = "Status"
+        //case status = "Status"
         case dangerzone = "Danger Zone"
         
         static var allValues = [edit.rawValue,
@@ -129,7 +129,8 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             if let frequency = billingPlan.frequency {
                 cell.frequencyLabel.text = "\(frequency)"
             } else {
-                cell.frequencyLabel.text = ""
+                cell.frequencyLabel.text = "---"
+                cell.frequencyLabel.textColor = UIColor.lightGray
             }
             
             // Label: Trial

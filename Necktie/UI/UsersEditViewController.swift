@@ -23,12 +23,12 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
     
     private enum Tabs: String {
         case edit = "View"
-        case newsletter = "Newsletter"
-        case invoices = "Invoices"
-        case accesses = "Accesses"
-        case history = "History"
-        case permissions = "Permissions"
-        case status = "Status"
+        //case newsletter = "Newsletter"
+        //case invoices = "Invoices"
+        //case accesses = "Accesses"
+        //case history = "History"
+        //case permissions = "Permissions"
+        //case status = "Status"
         case dangerzone = "Danger Zone"
         
         static var allValues = [edit.rawValue,
@@ -184,41 +184,41 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
                 return cell
             }
             
-        // MARK: Tab Newsletter
-        } else if segmentio.selectedSegmentioIndex == Tabs.newsletter.hashValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
-            
-            return cell
-        
-        // MARK: Tab Invoices
-        } else if segmentio.selectedSegmentioIndex == Tabs.invoices.hashValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
-            
-            return cell
-        
-        // MARK: Tab Accesses
-        } else if segmentio.selectedSegmentioIndex == Tabs.accesses.hashValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
-            
-            return cell
-        
-        // MARK: Tab History
-        } else if segmentio.selectedSegmentioIndex == Tabs.history.hashValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
-            
-            return cell
-            
-        // MARK: Tab Permissions
-        } else if segmentio.selectedSegmentioIndex == Tabs.permissions.hashValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
-            
-            return cell
-        
-        // MARK: Tab Status
-        } else if segmentio.selectedSegmentioIndex == Tabs.status.hashValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
-            
-            return cell
+//        // MARK: Tab Newsletter
+//        } else if segmentio.selectedSegmentioIndex == Tabs.newsletter.hashValue {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+//            
+//            return cell
+//        
+//        // MARK: Tab Invoices
+//        } else if segmentio.selectedSegmentioIndex == Tabs.invoices.hashValue {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+//            
+//            return cell
+//        
+//        // MARK: Tab Accesses
+//        } else if segmentio.selectedSegmentioIndex == Tabs.accesses.hashValue {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+//            
+//            return cell
+//        
+//        // MARK: Tab History
+//        } else if segmentio.selectedSegmentioIndex == Tabs.history.hashValue {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+//            
+//            return cell
+//            
+//        // MARK: Tab Permissions
+//        } else if segmentio.selectedSegmentioIndex == Tabs.permissions.hashValue {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+//            
+//            return cell
+//        
+//        // MARK: Tab Status
+//        } else if segmentio.selectedSegmentioIndex == Tabs.status.hashValue {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataCell
+//            
+//            return cell
         
         // MARK: Tab Danger Zone
         } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
