@@ -74,6 +74,10 @@ public struct Controller {
     static let projectsNav = "projectsNav"
     static let projects = "projects"
     static let projectDetail = "projectDetail"
+    
+    static let companiesNav = "companiesNav"
+    static let companies = "companies"
+    static let companyDetail = "companyDetail"
 }
 
 /// Storyboard segue identifiers
@@ -82,6 +86,7 @@ public struct Segue {
     static let usersToUserDetail = "users->userDetail"
     static let productDetailToBillingPlan = "productDetail->billingPlan"
     static let projectsToProjectDetail = "projects->projectDetail"
+    static let companiesToCompanyDetail = "companies->companyDetail"
 }
 
 /// SwiftyUserDefaults keys

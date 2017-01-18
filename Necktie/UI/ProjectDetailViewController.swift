@@ -150,6 +150,8 @@ class ProjectDetailViewController: UIViewController, UITableViewDelegate, UITabl
                 cell.keyLabel.text = "Default"
             }
             
+            cell.selectionStyle = .none
+            
             return cell
         
         // MARK: OAuth Clients

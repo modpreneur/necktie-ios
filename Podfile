@@ -4,6 +4,7 @@ target 'Necktie' do
   use_frameworks!
 
   pod 'Alamofire', '~> 4.1'
+  pod 'AlamofireImage', '~> 3.2'
   pod 'AlamofireNetworkActivityIndicator', '~> 2.1'
   pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'ARSLineProgress', '~> 2.1'

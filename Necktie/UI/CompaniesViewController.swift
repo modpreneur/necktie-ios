@@ -8,13 +8,24 @@
 
 import UIKit
 
+import Alamofire
+import AlamofireObjectMapper
+
 class CompaniesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet var sectionHeaderView: UIView!
     @IBOutlet var searchBar: UISearchBar!
     
-    var companiesArray = ["Modpreneur"]
+    // MARK: - Properties
+    
+    var companiesArray: [Company] = []
+    
+    var skipCount = 0
+    
+    // MARK: - View
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +41,7 @@ class CompaniesViewController: UIViewController, UITableViewDelegate, UITableVie
             self.tableView.deselectRow(at: index, animated: true)
         }
         
-        //requestProducts()
+        requestCompanies(skip: skipCount)
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,7 +51,7 @@ class CompaniesViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - UITableView
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return companiesArray.count > 0 ? 1 : 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,11 +59,19 @@ class CompaniesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let company = companiesArray[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "companyCell", for: indexPath) as! CompanyCell
         
-        cell.idLabel.text = "\(indexPath.row)"
+        // ID
+        if let id = company.id {
+            cell.idLabel.text = "\(id)"
+        }
         
-        cell.companyLabel.text = companiesArray[indexPath.row]
+        // Name
+        if let name = company.businessName {
+            cell.companyLabel.text = name
+        }
         
         return cell
     }
@@ -68,15 +87,62 @@ class CompaniesViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 36
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Request
+    
+    func requestCompanies(skip: Int) {
+        skipCount > 0 ? refreshStart() : loadingStart()
+        
+        APIManager.sharedManager.request(Router.companies(limit: Constant.resultLimit, skip: self.skipCount))
+            .validate()
+            .responseArray(keyPath: "companies") { (response: DataResponse<[Company]>) in
+                log.debug("Request URL: \(response.request!.url!)")
+                
+                switch response.result {
+                case .success(let responseArray):
+                    
+                    // Add new objects to array
+                    for company in responseArray {
+                        self.companiesArray.append(company)
+                    }
+                    
+                    // Set skip count
+                    self.skipCount = self.skipCount + Constant.resultLimit
+                    
+                    log.info("Displaying \(self.companiesArray.count) companies")
+                    
+                    self.refreshStop()
+                    self.loadingStop()
+                    
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    log.error("Request Error: \(error.localizedDescription)")
+                    
+                    let okAction = UIAlertAction(title: String.Alert.ok, style: .cancel, handler: nil)
+                    let retryAction = UIAlertAction(title: String.Alert.retry, style: .default) { action in
+                        log.info("Retry request")
+                        
+                        self.requestCompanies(skip: self.skipCount)
+                    }
+                    
+                    UIAlertController.showAlert(controller: self, title: String.Alert.error, message: "\(error.localizedDescription)", firstAction: okAction, secondAction: retryAction)
+                    
+                    self.refreshStop()
+                    self.loadingStop()
+                }
+        }
     }
-    */
+
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.companiesToCompanyDetail {
+            let selectedCell = sender as! UITableViewCell
+            let destination = segue.destination as! CompanyDetailViewController
+            let company = companiesArray[(tableView.indexPath(for: selectedCell)?.row)!]
+            destination.company = company
+            log.info("Displaying product detail of \(company.businessName!)")
+        }
+    }
 
 }

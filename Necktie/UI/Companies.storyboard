@@ -77,7 +77,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7h-f1-hyO">
-                                                    <rect key="frame" x="16" y="14" width="7.5" height="16"/>
+                                                    <rect key="frame" x="16" y="14" width="7" height="16"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -151,7 +151,7 @@
         <!--Company-->
         <scene sceneID="jwt-wb-miy">
             <objects>
-                <viewController id="Zk6-35-P9P" customClass="CompanyDetailViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="companyDetail" id="Zk6-35-P9P" customClass="CompanyDetailViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X7Q-A5-ujD"/>
                         <viewControllerLayoutGuide type="bottom" id="Gbe-y3-hTM"/>
@@ -217,9 +217,15 @@
                                                     <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-um-odN">
+                                                    <rect key="frame" x="188" y="30" width="20" height="20"/>
+                                                    <color key="color" red="0.29125192761421204" green="0.7420649528503418" blue="0.98579519987106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Of3-um-odN" firstAttribute="centerX" secondItem="Fv0-Bp-yU1" secondAttribute="centerX" id="8RZ-FJ-iTK"/>
                                                 <constraint firstItem="Fv0-Bp-yU1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9Jg-QZ-14s" secondAttribute="trailing" constant="16" id="P3t-ti-Dt8"/>
+                                                <constraint firstItem="Of3-um-odN" firstAttribute="centerY" secondItem="Fv0-Bp-yU1" secondAttribute="centerY" id="Pci-L7-13g"/>
                                                 <constraint firstItem="Fv0-Bp-yU1" firstAttribute="centerY" secondItem="bxk-QS-AfE" secondAttribute="centerY" id="VTh-AY-btA"/>
                                                 <constraint firstItem="9Jg-QZ-14s" firstAttribute="leading" secondItem="bxk-QS-AfE" secondAttribute="leadingMargin" constant="32" id="Y7F-xz-3W1"/>
                                                 <constraint firstItem="9Jg-QZ-14s" firstAttribute="top" secondItem="Fv0-Bp-yU1" secondAttribute="top" id="gNy-HC-mdC"/>
@@ -227,7 +233,40 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="Of3-um-odN" id="nEc-F4-GUH"/>
                                             <outlet property="logoImageView" destination="Fv0-Bp-yU1" id="lLc-FD-I7h"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="companyProjectCell" id="Fqi-XC-547" customClass="CompanyProjectCell" customModule="Necktie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="152" width="359" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fqi-XC-547" id="ic7-hh-3aK">
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ue2-O0-ReN">
+                                                    <rect key="frame" x="143" y="13" width="72" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                    <color key="textColor" red="0.17776158450000001" green="0.1984140277" blue="0.24119275809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSj-vs-BYB">
+                                                    <rect key="frame" x="128" y="3.5" width="13" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ue2-O0-ReN" firstAttribute="centerY" secondItem="ic7-hh-3aK" secondAttribute="centerY" id="43Y-Sb-hk8"/>
+                                                <constraint firstItem="ue2-O0-ReN" firstAttribute="centerX" secondItem="ic7-hh-3aK" secondAttribute="centerX" constant="16" id="ASr-Cb-hnm"/>
+                                                <constraint firstItem="ue2-O0-ReN" firstAttribute="leading" secondItem="CSj-vs-BYB" secondAttribute="trailing" constant="2" id="CUp-3n-ke8"/>
+                                                <constraint firstItem="CSj-vs-BYB" firstAttribute="centerY" secondItem="ue2-O0-ReN" secondAttribute="centerY" constant="-2" id="Gmq-CD-uke"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="projectColorLabel" destination="CSj-vs-BYB" id="2Gs-Yu-d2f"/>
+                                            <outlet property="projectName" destination="ue2-O0-ReN" id="WVo-Kh-P9k"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

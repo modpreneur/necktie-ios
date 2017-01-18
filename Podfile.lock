@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.3.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
   - AlamofireNetworkActivityIndicator (2.1.0):
     - Alamofire (~> 4.1)
   - AlamofireObjectMapper (4.0.1):
@@ -24,6 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.1)
+  - AlamofireImage (~> 3.2)
   - AlamofireNetworkActivityIndicator (~> 2.1)
   - AlamofireObjectMapper (~> 4.0)
   - ARSLineProgress (~> 2.1)
@@ -44,6 +47,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
   AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
   ARSLineProgress: 44dd1ec9994a4ddea7767944ecb9001046ecd697
@@ -63,6 +67,6 @@ SPEC CHECKSUMS:
   UICircularProgressRing: aa42aecd035658bd7212fab6e2feabc8dcc72fae
   UIScrollView-InfiniteScroll: d26885be71caca7485cdb37eab513a8f89036bb0
 
-PODFILE CHECKSUM: 31be416065fd3a5c423c8aab116a6a06bc4d4a5d
+PODFILE CHECKSUM: ee5ba935e8a109d099d3c6701b29e203af493c61
 
 COCOAPODS: 1.2.0.beta.1

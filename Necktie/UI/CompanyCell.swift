@@ -44,6 +44,7 @@ class CompanyDataCell: UITableViewCell {
 class CompanyLogoCell: UITableViewCell {
     
     @IBOutlet var logoImageView: UIImageView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,4 +55,18 @@ class CompanyLogoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+}
+
+class CompanyProjectCell: UITableViewCell {
+    
+    @IBOutlet var projectName: UILabel!
+    @IBOutlet var projectColorLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 }

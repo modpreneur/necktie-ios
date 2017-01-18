@@ -8,6 +8,9 @@
 
 import UIKit
 
+import Alamofire
+import AlamofireObjectMapper
+import AlamofireImage
 import Segmentio
 
 class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -21,23 +24,31 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     private enum Tabs: String {
         case edit = "View"
+        case projects = "Projects"
         case status = "Status"
         case dangerzone = "Danger Zone"
         
         static var allValues = [edit.rawValue,
+                                projects.rawValue,
                                 status.rawValue,
                                 dangerzone.rawValue]
     }
     private let tabs = Tabs.allValues
     
-    var product: Product? = nil
+    let keys = ["Business Name", "Logo", "Country", "Region", "City", "ZIP or Postal City", "Address line 1", "Address 2", "Contact Name", "Contact Email", "Support Email"]
+    
+    var company: Company? = nil
+    
+    var projectsArray: [Project] = []
     
     // MARK: - View controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Modpreneur"
+        if let name = company?.businessName {
+            self.title = name
+        }
         
         // Set tableView delegate and data source
         tableView.delegate = self
@@ -66,7 +77,9 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
-            return 10
+            return keys.count
+        } else if segmentio.selectedSegmentioIndex == Tabs.projects.hashValue {
+            return projectsArray.count
         } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
             return 1
         } else {
@@ -75,77 +88,152 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let product = self.product!
+        let company = self.company!
         
-        // Tab Edit
+        // MARK: Tab Edit
         if segmentio.selectedSegmentioIndex == Tabs.edit.hashValue {
+            // MARK: Logo
             if indexPath.row == 1 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "companyLogoCell", for: indexPath) as! CompanyLogoCell
                 
-                cell.imageView?.image = UIImage(named: "Login_Logo")
+                if let logoUrl = company.logo {
+                    cell.activityIndicator.isHidden = false
+                    cell.activityIndicator.startAnimating()
+                    APIManager.sharedManager.request("https://s3-us-west-2.amazonaws.com/test-modpreneur/\(logoUrl)").responseImage(completionHandler: { response in
+                        if let image = response.result.value {
+                            cell.logoImageView.image = image
+                        }
+                        cell.activityIndicator.stopAnimating()
+                    })
+                }
+                
+                cell.selectionStyle = .none
                 
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "companyDataCell", for: indexPath) as! CompanyDataCell
                 
+                cell.keyLabel.text = keys[indexPath.row]
+                
                 switch indexPath.row {
                 
-                // Business Name
+                // MARK: Business Name
                 case 0:
-                    cell.keyLabel.text = "Business Name"
+                    if let name = company.businessName {
+                        cell.valueLabel.text = name
+                    } else {
+                        cell.valueLabel.text = ""
+                    }
                     
-                // Country
+                // MARK: Country
                 case 2:
-                    cell.keyLabel.text = "Country"
+                    if let country = company.country {
+                        cell.valueLabel.text = country.convertCountry()
+                    } else {
+                        cell.valueLabel.text = ""
+                    }
                 
-                // State
+                // MARK: Region
                 case 3:
-                    cell.keyLabel.text = "Region"
+                    if let region = company.region {
+                        cell.valueLabel.text = region
+                    } else {
+                        cell.valueLabel.text = ""
+                    }
                 
-                // City
+                // MARK: City
                 case 4:
-                    cell.keyLabel.text = "City"
+                    if let city = company.city {
+                        cell.valueLabel.text = city
+                    } else {
+                        cell.valueLabel.text = ""
+                    }
                 
-                // ZIP or Postal Code
+                // MARK: ZIP or Postal Code
                 case 5:
-                    cell.keyLabel.text = "ZIP or Postal City"
+                    if let postalCode = company.postalCode {
+                        cell.valueLabel.text = postalCode
+                    } else {
+                        cell.valueLabel.text = ""
+                    }
                 
-                // Address 1
+                // MARK: Address 1
                 case 6:
-                    cell.keyLabel.text = "Address line 1"
+                    if let address = company.address1 {
+                        cell.valueLabel.text = address
+                    } else {
+                        cell.valueLabel.text = ""
+                    }
                 
-                // Address 2
+                // MARK: Address 2
                 case 7:
-                    cell.keyLabel.text = "Address 2"
+                    if let address = company.address2 {
+                        cell.valueLabel.text = address
+                    } else {
+                        cell.valueLabel.text = ""
+                    }
                 
-                // Contact Person Name
+                // MARK: Contact Person Name
                 case 8:
-                    cell.keyLabel.text = "Contact Name"
+                    if let contactPerson = company.contactPerson {
+                        cell.valueLabel.text = contactPerson
+                    } else {
+                        cell.valueLabel.text = ""
+                    }
                 
-                // Contact Person Email
+                // MARK: Contact Person Email
                 case 9:
-                    cell.keyLabel.text = "Contact Email"
+                    if let contactPersonEmail = company.contactPersonEmail {
+                        cell.valueLabel.text = contactPersonEmail
+                    } else {
+                        cell.valueLabel.text = ""
+                    }
                 
-                // Support Email
+                // MARK: Support Email
                 case 10:
-                    cell.keyLabel.text = "Support Email"
+                    if let supportEmail = company.supportEmail {
+                        cell.valueLabel.text = supportEmail
+                    } else {
+                        cell.valueLabel.text = ""
+                    }
 
                 default:
-                    cell.keyLabel.text = "Default"
+                    cell.keyLabel.text = ""
+                    cell.valueLabel.text = ""
                 }
                 
-                cell.valueLabel.text = "Test"
+                cell.selectionStyle = .none
                 
                 return cell
             }
+           
+        // MARK: Tab Projects
+        } else if segmentio.selectedSegmentioIndex == Tabs.projects.hashValue {
+            let project = projectsArray[indexPath.row]
             
-        // Tab Billing Plans
+            let cell = tableView.dequeueReusableCell(withIdentifier: "companyProjectCell", for: indexPath) as! CompanyProjectCell
+            
+            // Project name
+            if let projectName = project.name {
+                cell.projectName.text = projectName
+            }
+            
+            // Project color
+            if let color = project.color {
+                cell.projectColorLabel.textColor = UIColor(hex: color)
+            } else {
+                cell.projectColorLabel.textColor = UIColor.clear
+            }
+            
+            return cell
+            
+        // MARK: Tab Danger Zone
         } else if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningCell
             
             cell.warningLabel.text = String.Warning.product
             
-            cell.deleteButton.addTarget(self, action: #selector(deleteProduct(sender:)), for: .touchUpInside)
+            cell.deleteButton.addTarget(self, action: #selector(deleteCompany(sender:)), for: .touchUpInside)
             
             return cell
             
@@ -160,12 +248,23 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
         if segmentio.selectedSegmentioIndex == Tabs.dangerzone.hashValue {
             let height = self.tableView.frame.size.height - 22
             return height
+        } else if segmentio.selectedSegmentioIndex == Tabs.projects.hashValue {
+            return 44
         } else {
             if indexPath.row == 1 {
                 return 80
             } else {
                 return 44
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if segmentio.selectedSegmentioIndex == Tabs.projects.hashValue {
+            let vc = UIStoryboard(name: "Projects", bundle: Bundle.main).instantiateViewController(withIdentifier: Controller.projectDetail) as! ProjectDetailViewController
+            let project = projectsArray[indexPath.row]
+            vc.project = project
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -180,13 +279,17 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
         segmentio.valueDidChange = { segmentio, segmentIndex in
             log.info("Selected index: \(segmentio.selectedSegmentioIndex) (\(Tabs.allValues[segmentio.selectedSegmentioIndex]))")
             
+            if segmentio.selectedSegmentioIndex == Tabs.projects.hashValue {
+                self.requestProjects()
+            }
+            
             self.tableView.reloadData()
         }
     }
     
     // MARK: - Delete Product
     
-    @objc private func deleteProduct(sender: UIButton) {
+    @objc private func deleteCompany(sender: UIButton) {
         log.info("Delete company?")
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -197,6 +300,53 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
         UIAlertController.showAlert(controller: self, title: "Delete Company", message: "Are you sure?", firstAction: cancelAction, secondAction: deleteAction)
     }
 
+    // MARK: - Request
+    
+    func requestProjects() {
+        refreshStart()
+        
+        guard let companyId = company?.id else {
+            log.warning("No company ID")
+            return
+        }
+        
+        APIManager.sharedManager.request(Router.company(id: companyId, limit: 1000, skip: 0))
+            .validate()
+            .responseArray(keyPath: "projects") { (response: DataResponse<[Project]>) in
+                log.debug("Request URL: \(response.request!.url!)")
+                
+                switch response.result {
+                case .success(let responseArray):
+                    
+                    self.projectsArray = []
+                    
+                    // Add new objects to array
+                    for project in responseArray {
+                        self.projectsArray.append(project)
+                    }
+                    
+                    log.info("Loaded \(self.projectsArray.count) projects")
+                    
+                    self.refreshStop()
+                    
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    log.error("Request Error: \(error.localizedDescription)")
+                    
+                    let okAction = UIAlertAction(title: String.Alert.ok, style: .cancel, handler: nil)
+                    let retryAction = UIAlertAction(title: String.Alert.retry, style: .default) { action in
+                        log.info("Retry request")
+                        
+                        self.requestProjects()
+                    }
+                    
+                    UIAlertController.showAlert(controller: self, title: String.Alert.error, message: "\(error.localizedDescription)", firstAction: okAction, secondAction: retryAction)
+                    
+                    self.refreshStop()
+                }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

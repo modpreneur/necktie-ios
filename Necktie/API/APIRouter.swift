@@ -120,7 +120,7 @@ enum Router: URLRequestConvertible {
             
             // MARK: Company
             case let .company(id, limit, skip):
-                return (API.company + "\(id)" + "/projects", .get, ["limit": limit, "skip": skip])
+                return (API.company + "/\(id)" + "/projects", .get, ["limit": limit, "skip": skip])
         
             }
         }()
