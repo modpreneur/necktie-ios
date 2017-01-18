@@ -30,7 +30,7 @@ class CompanyDetailViewController: UIViewController, UITableViewDelegate, UITabl
         
         static var allValues = [edit.rawValue,
                                 projects.rawValue,
-                                status.rawValue,
+                                //status.rawValue,
                                 dangerzone.rawValue]
     }
     private let tabs = Tabs.allValues

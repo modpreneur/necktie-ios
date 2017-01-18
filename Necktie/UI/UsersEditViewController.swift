@@ -32,12 +32,12 @@ class UsersEditViewController: UIViewController, UITableViewDelegate, UITableVie
         case dangerzone = "Danger Zone"
         
         static var allValues = [edit.rawValue,
-                                newsletter.rawValue,
-                                invoices.rawValue,
-                                accesses.rawValue,
-                                history.rawValue,
-                                permissions.rawValue,
-                                status.rawValue,
+                                //newsletter.rawValue,
+                                //invoices.rawValue,
+                                //accesses.rawValue,
+                                //history.rawValue,
+                                //permissions.rawValue,
+                                //status.rawValue,
                                 dangerzone.rawValue]
     }
     private let tabs = Tabs.allValues

@@ -28,7 +28,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         
         static var allValues = [edit.rawValue,
                                 billingPlans.rawValue,
-                                status.rawValue,
+                                //status.rawValue,
                                 dangerzone.rawValue]
     }
     private let tabs = Tabs.allValues
