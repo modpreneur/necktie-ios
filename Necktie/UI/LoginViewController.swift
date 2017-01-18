@@ -217,10 +217,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func getUser() {
         APIManager.sharedManager.request(Router.profile)
             .validate()
-            .responseObject(keyPath: "user") { (response: DataResponse<Profile>) in
+            .responseObject(keyPath: "user") { (response: DataResponse<User>) in
                 switch response.result {
                 case .success(let user):
                     log.verbose("Current user: \(user.username!)")
+                    
+                    self.saveCurrentUser(user)
                 case .failure(let error):
                     log.error("Error: \(error)")
                 }
@@ -245,14 +247,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Save current user
+    
+    func saveCurrentUser(_ user: User) {
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: user)
+        UserDefaults.standard.setValue(encodedData, forKey: "currentUser")
+        
+        log.info("Saved current user to NSUserDefaults")
     }
-    */
 
 }

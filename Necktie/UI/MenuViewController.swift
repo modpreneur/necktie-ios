@@ -34,6 +34,7 @@ class MenuViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         //requestUser()
+        loadCurrentUser()
     }
     
     override func didReceiveMemoryWarning() {
@@ -200,6 +201,18 @@ class MenuViewController: UITableViewController {
                 case .failure(let error):
                     log.error("Request Error: \(error.localizedDescription)")
                 }
+        }
+    }
+    
+    // MARK: - Load current user
+    
+    func loadCurrentUser() {
+        if let data = UserDefaults.standard.data(forKey: "currentUser") {
+            log.info("Loaded current user from NSUserDefaults")
+            self.user = (NSKeyedUnarchiver.unarchiveObject(with: data) as? User)!
+            
+        } else {
+            log.warning("Unable to load current user from NSUserDefaults")
         }
     }
     
