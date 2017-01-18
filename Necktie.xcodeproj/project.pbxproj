@@ -20,7 +20,6 @@
 		2B1CEA231E0810A80028182F /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CEA221E0810A80028182F /* ProjectsViewController.swift */; };
 		2B1CEA251E0811790028182F /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CEA241E0811790028182F /* ProjectDetailViewController.swift */; };
 		2B1CEA271E0811920028182F /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CEA261E0811920028182F /* ProjectCell.swift */; };
-		2B26DA851DEDD51800C06D23 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2B26DA841DEDD51800C06D23 /* README.md */; };
 		2B29B0611DE5D52B0093AEA7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B29B0601DE5D52B0093AEA7 /* Product.swift */; };
 		2B35CE531E1BCCF800798A81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B35CE521E1BCCF800798A81 /* User.swift */; };
 		2B36DE611E02CC5A00B6F734 /* BillingPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B36DE601E02CC5A00B6F734 /* BillingPlanViewController.swift */; };
@@ -841,7 +840,6 @@
 				2B1CEA271E0811920028182F /* ProjectCell.swift in Sources */,
 				2BBB551B1D9E80AD005347DB /* AppDelegate.swift in Sources */,
 				2BADDF2C1DEDAB6000D22271 /* APIRouter.swift in Sources */,
-				2B26DA851DEDD51800C06D23 /* README.md in Sources */,
 				2B71DBA61DC8938900893937 /* NavigationController.swift in Sources */,
 				2BFB0C041DA7C17B00D29BC4 /* MenuTableViewCell.swift in Sources */,
 				2B70840C1DD31F6800FE4A7D /* UserCell.swift in Sources */,
