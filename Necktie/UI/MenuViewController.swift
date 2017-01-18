@@ -71,7 +71,7 @@ class MenuViewController: UITableViewController {
             
             // Change cell background color and font weight if item is selected
             cell.backgroundColor = selectedIndex == indexPath ? UIColor.necktieSecondaryLight : UIColor.necktieSecondary
-            cell.menuItemName.font = selectedIndex == indexPath ? UIFont.robotoBold(12) : UIFont.roboto(12)
+            cell.menuItemName.font = selectedIndex == indexPath ? UIFont.robotoBold(15) : UIFont.roboto(15)
             
             return cell
             
@@ -110,12 +110,12 @@ class MenuViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == menuItems.count {
-            let menuHeight = 64 + (menuItems.count * 40) + (48 * 2)
+            let menuHeight = 64 + (menuItems.count * 48) + (48 * 2)
             let cellHeight: CGFloat = self.view.bounds.height - CGFloat(menuHeight)
             
             return cellHeight
         } else {
-            return 40
+            return 48
         }
     }
     

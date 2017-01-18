@@ -86,28 +86,28 @@
         <scene sceneID="lE7-nh-pQ0">
             <objects>
                 <tableViewController storyboardIdentifier="menu" id="xMC-Hx-cwh" customClass="MenuViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y8s-Yi-ofM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y8s-Yi-ofM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="40" id="46Q-7c-c0h" customClass="MenuTableViewCell" customModule="Necktie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="48" id="46Q-7c-c0h" customClass="MenuTableViewCell" customModule="Necktie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="46Q-7c-c0h" id="r32-oW-73I">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JNC-60-bcr">
-                                            <rect key="frame" x="20" y="10" width="20" height="20"/>
+                                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JNC-60-bcr">
+                                            <rect key="frame" x="20" y="15" width="18" height="18"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="20" id="kbR-Lt-sZg"/>
-                                                <constraint firstAttribute="height" constant="20" id="soU-S9-Q57"/>
+                                                <constraint firstAttribute="width" constant="18" id="kbR-Lt-sZg"/>
+                                                <constraint firstAttribute="height" constant="18" id="soU-S9-Q57"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zar-Yz-6Gp">
-                                            <rect key="frame" x="56" y="11" width="28.5" height="18.5"/>
-                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                            <rect key="frame" x="54" y="14.5" width="30.5" height="20"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -126,7 +126,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="48" id="cvA-ae-pF4" customClass="MenuProfileCell" customModule="Necktie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="68" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cvA-ae-pF4" id="h0q-aC-ve1">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
@@ -146,8 +146,8 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Appleseed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaj-ss-s6K">
-                                            <rect key="frame" x="54" y="14.5" width="101.5" height="18.5"/>
-                                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                                            <rect key="frame" x="54" y="14" width="108.5" height="20"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -166,24 +166,22 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="logoutCell" rowHeight="48" id="iJd-Be-pt9" customClass="MenuLogoutCell" customModule="Necktie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="116" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iJd-Be-pt9" id="xOd-kW-Qo0">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logout_vector" translatesAutoresizingMaskIntoConstraints="NO" id="G29-01-ayl">
+                                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logout_vector" translatesAutoresizingMaskIntoConstraints="NO" id="G29-01-ayl">
                                             <rect key="frame" x="20" y="14" width="18" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="USi-ur-jSs"/>
                                                 <constraint firstAttribute="width" constant="18" id="Vdo-8z-adq"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="hxJ-qO-lmE"/>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="nU2-7g-Yro"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUz-Rg-ns3">
-                                            <rect key="frame" x="54" y="13.5" width="49.5" height="18.5"/>
-                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                            <rect key="frame" x="54" y="13" width="53" height="20"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -198,7 +196,7 @@
                                 <color key="backgroundColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="spacerCell" id="LAs-AH-0qY">
-                                <rect key="frame" x="0.0" y="164" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="172" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LAs-AH-0qY" id="e4g-OU-zwm">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
@@ -219,7 +217,7 @@
     </scenes>
     <resources>
         <image name="Avatar" width="170" height="170"/>
-        <image name="Logout_vector" width="15" height="17"/>
+        <image name="Logout_vector" width="150" height="170"/>
     </resources>
     <color key="tintColor" red="0.29125192761421204" green="0.7420649528503418" blue="0.98579519987106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
