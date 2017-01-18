@@ -33,7 +33,7 @@ class MenuViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        requestUser()
+        //requestUser()
     }
     
     override func didReceiveMemoryWarning() {

@@ -149,6 +149,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(_ sender: AnyObject) {
+        loginTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
         login()
     }
     
