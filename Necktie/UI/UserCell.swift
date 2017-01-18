@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserCell: UITableViewCell {
+class UserCell: TableViewCell {
     
     @IBOutlet var idLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
@@ -26,7 +26,7 @@ class UserCell: UITableViewCell {
     }
 }
 
-class UserPhotoCell: UITableViewCell {
+class UserPhotoCell: TableViewCell {
     
     @IBOutlet var userPhoto: UIImageView!
     @IBOutlet var selectPhotoButton: UIButton!
@@ -39,7 +39,7 @@ class UserPhotoCell: UITableViewCell {
     }
 }
 
-class UserDataCell: UITableViewCell {
+class UserDataCell: TableViewCell {
     
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!

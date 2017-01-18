@@ -71,7 +71,7 @@ class MenuViewController: UITableViewController {
             
             // Change cell background color and font weight if item is selected
             cell.backgroundColor = selectedIndex == indexPath ? UIColor.necktieSecondaryLight : UIColor.necktieSecondary
-            cell.menuItemName.font = selectedIndex == indexPath ? UIFont.robotoBold(15) : UIFont.roboto(15)
+            cell.menuItemName.font = selectedIndex == indexPath ? UIFont.robotoBold(13) : UIFont.roboto(13)
             
             return cell
             
@@ -104,6 +104,11 @@ class MenuViewController: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "logoutCell", for: indexPath) as! MenuLogoutCell
             
+            // Cell selected background
+            let backgroundColorView = UIView()
+            backgroundColorView.backgroundColor = UIColor.necktieSecondaryLight
+            cell.selectedBackgroundView = backgroundColorView
+            
             return cell
         }
     }
@@ -111,7 +116,7 @@ class MenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == menuItems.count {
             let menuHeight = 64 + (menuItems.count * 48) + (48 * 2)
-            let cellHeight: CGFloat = self.view.bounds.height - CGFloat(menuHeight)
+            let cellHeight: CGFloat = self.view.bounds.height - CGFloat(menuHeight) - 16
             
             return cellHeight
         } else {
@@ -175,6 +180,7 @@ class MenuViewController: UITableViewController {
     
     private func logoutAction() {
         Defaults[.isLoggedIn] = false
+        Defaults["currentUser"] = nil
         
         let keychain = Keychain(service: Constant.App.bundleId)
         keychain["access_token"] = nil

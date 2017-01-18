@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CompanyCell: UITableViewCell {
+class CompanyCell: TableViewCell {
     
     @IBOutlet var idLabel: UILabel!
     @IBOutlet var companyLabel: UILabel!
@@ -25,7 +25,7 @@ class CompanyCell: UITableViewCell {
 
 }
 
-class CompanyDataCell: UITableViewCell {
+class CompanyDataCell: TableViewCell {
     
     @IBOutlet var keyLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
@@ -41,7 +41,7 @@ class CompanyDataCell: UITableViewCell {
     
 }
 
-class CompanyLogoCell: UITableViewCell {
+class CompanyLogoCell: TableViewCell {
     
     @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
@@ -57,7 +57,7 @@ class CompanyLogoCell: UITableViewCell {
     
 }
 
-class CompanyProjectCell: UITableViewCell {
+class CompanyProjectCell: TableViewCell {
     
     @IBOutlet var projectName: UILabel!
     @IBOutlet var projectColorLabel: UILabel!

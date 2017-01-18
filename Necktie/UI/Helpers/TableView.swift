@@ -67,3 +67,13 @@ import UIKit
     */
 
 }
+
+class TableViewCell: UITableViewCell {
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        let view = UIView()
+        view.backgroundColor = UIColor(red:0.86, green:0.88, blue:0.91, alpha:0.3)
+        selectedBackgroundView = view
+    }
+}

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductCell: UITableViewCell {
+class ProductCell: TableViewCell {
     
     @IBOutlet var idLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
@@ -24,7 +24,7 @@ class ProductCell: UITableViewCell {
 
 }
 
-class ProductDataCell: UITableViewCell {
+class ProductDataCell: TableViewCell {
     
     @IBOutlet var keyLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
@@ -35,7 +35,7 @@ class ProductDataCell: UITableViewCell {
     
 }
 
-class ProductBillingPlanCell: UITableViewCell {
+class ProductBillingPlanCell: TableViewCell {
     
     @IBOutlet var idLabel: UILabel!
     @IBOutlet var vendorLabel: UILabel!

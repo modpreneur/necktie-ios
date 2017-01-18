@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectCell: UITableViewCell {
+class ProjectCell: TableViewCell {
     
     @IBOutlet var idLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
@@ -28,7 +28,7 @@ class ProjectCell: UITableViewCell {
 
 }
 
-class ProjectDataCell: UITableViewCell {
+class ProjectDataCell: TableViewCell {
     
     @IBOutlet var keyLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
