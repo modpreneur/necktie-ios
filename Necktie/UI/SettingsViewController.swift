@@ -10,9 +10,10 @@ import UIKit
 
 import Alamofire
 import AlamofireObjectMapper
+import DZNEmptyDataSet
 import Segmentio
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     // MARK: - IBOutlets
     
@@ -42,6 +43,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         // Set delegates
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
 
         // Register no data cell
         tableView.register(UINib(nibName: "NoDataCell", bundle: nil), forCellReuseIdentifier: "noDataCell")
@@ -197,6 +200,12 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
 
+    // MARK: - DZNEmptyDataSet
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return .nothingFound
+    }
+    
     /*
     // MARK: - Navigation
 

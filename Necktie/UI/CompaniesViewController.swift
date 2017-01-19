@@ -10,8 +10,9 @@ import UIKit
 
 import Alamofire
 import AlamofireObjectMapper
+import DZNEmptyDataSet
 
-class CompaniesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class CompaniesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
 
     // MARK: - IBOutlets
     
@@ -33,6 +34,8 @@ class CompaniesViewController: UIViewController, UITableViewDelegate, UITableVie
         // Set delegates
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
         searchBar.delegate = self
     }
     
@@ -139,6 +142,12 @@ class CompaniesViewController: UIViewController, UITableViewDelegate, UITableVie
                     self.loadingStop()
                 }
         }
+    }
+    
+    // MARK: - DZNEmptyDataSet
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return .nothingFound
     }
 
     // MARK: - Navigation

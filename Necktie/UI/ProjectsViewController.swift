@@ -10,8 +10,9 @@ import UIKit
 
 import Alamofire
 import AlamofireObjectMapper
+import DZNEmptyDataSet
 
-class ProjectsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class ProjectsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
 
     // MARK: - IBOutlets
     
@@ -33,6 +34,8 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
         // Set delegates
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
         searchBar.delegate = self
     }
     
@@ -161,6 +164,14 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
                 }
         }
     }
+    
+    // MARK: - DZNEmptyDataSet
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return .nothingFound
+    }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.projectsToProjectDetail {
