@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="tpl-9t-1kY">
+            <objects>
+                <viewController storyboardIdentifier="settings" id="gF9-fj-C4g" customClass="SettingsViewController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jEQ-P7-NO1"/>
+                        <viewControllerLayoutGuide type="bottom" id="f1I-8U-ygm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VBO-58-Tsx">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5ab-df-MLx" customClass="TableView" customModule="Necktie" customModuleProvider="target">
+                                <rect key="frame" x="8" y="44" width="359" height="559"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="settingsCell" id="Zbd-QW-um4" customClass="SettingsCell" customModule="Necktie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zbd-QW-um4" id="3SH-XM-IQp">
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3Q-tf-j8a">
+                                                    <rect key="frame" x="148" y="13.5" width="170" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXH-6n-fmn">
+                                                    <rect key="frame" x="40" y="13.5" width="92" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                    <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="d3Q-tf-j8a" secondAttribute="trailing" id="2yf-SI-8Vr"/>
+                                                <constraint firstItem="vXH-6n-fmn" firstAttribute="centerY" secondItem="3SH-XM-IQp" secondAttribute="centerY" id="57D-1n-mn1"/>
+                                                <constraint firstItem="d3Q-tf-j8a" firstAttribute="centerY" secondItem="3SH-XM-IQp" secondAttribute="centerY" id="ETL-B3-QcC"/>
+                                                <constraint firstItem="d3Q-tf-j8a" firstAttribute="leading" secondItem="vXH-6n-fmn" secondAttribute="trailing" constant="16" id="RAu-Ka-4Z2"/>
+                                                <constraint firstItem="d3Q-tf-j8a" firstAttribute="leading" secondItem="3SH-XM-IQp" secondAttribute="leadingMargin" constant="140" id="TdT-ch-ERg"/>
+                                                <constraint firstItem="vXH-6n-fmn" firstAttribute="leading" secondItem="3SH-XM-IQp" secondAttribute="leadingMargin" constant="32" id="UZ8-8E-h2W"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="key" destination="vXH-6n-fmn" id="0St-lo-9ck"/>
+                                            <outlet property="value" destination="d3Q-tf-j8a" id="wi7-tM-79k"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gF9-fj-C4g" id="JvM-33-WX2"/>
+                                    <outlet property="delegate" destination="gF9-fj-C4g" id="QzO-1O-0ph"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Wu-G3-kNQ" customClass="Segmentio" customModule="Segmentio">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="B6u-kj-7nd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82492238283157349" green="0.84518212080001831" blue="0.88795769214630127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5ab-df-MLx" firstAttribute="top" secondItem="6Wu-G3-kNQ" secondAttribute="bottom" id="03j-Gt-fZu"/>
+                            <constraint firstItem="6Wu-G3-kNQ" firstAttribute="leading" secondItem="VBO-58-Tsx" secondAttribute="leading" id="QFR-9W-ezu"/>
+                            <constraint firstItem="5ab-df-MLx" firstAttribute="leading" secondItem="VBO-58-Tsx" secondAttribute="leading" constant="8" id="kaQ-l4-Idz"/>
+                            <constraint firstItem="6Wu-G3-kNQ" firstAttribute="top" secondItem="jEQ-P7-NO1" secondAttribute="bottom" id="kuq-Cl-PTg"/>
+                            <constraint firstItem="f1I-8U-ygm" firstAttribute="top" secondItem="5ab-df-MLx" secondAttribute="bottom" id="qoo-Qe-pSF"/>
+                            <constraint firstAttribute="trailing" secondItem="5ab-df-MLx" secondAttribute="trailing" constant="8" id="t2a-Ca-kJc"/>
+                            <constraint firstAttribute="trailing" secondItem="6Wu-G3-kNQ" secondAttribute="trailing" id="xVj-w4-qTk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="eEE-bO-b2V"/>
+                    <connections>
+                        <outlet property="segmentio" destination="6Wu-G3-kNQ" id="M45-fE-xqg"/>
+                        <outlet property="tableView" destination="5ab-df-MLx" id="Jc2-jz-6HF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fmk-XA-gfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1311.2" y="129.98500749625188"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jy8-wo-T0s">
+            <objects>
+                <navigationController storyboardIdentifier="settingsNav" automaticallyAdjustsScrollViewInsets="NO" id="7PL-Ht-mLE" customClass="NavigationController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="FWS-AK-Dlu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gF9-fj-C4g" kind="relationship" relationship="rootViewController" id="IZ0-Qt-dZc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqx-Ww-Oqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="129.98500749625188"/>
+        </scene>
+    </scenes>
+</document>

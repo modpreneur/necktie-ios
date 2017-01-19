@@ -36,6 +36,7 @@
                         <segue destination="3g2-UR-Rs0" kind="custom" identifier="showProducts" customClass="CenterContainmentSegue" customModule="SideMenuController" id="Vne-of-ilp"/>
                         <segue destination="Zg4-2s-FdZ" kind="custom" identifier="showCompanies" customClass="CenterContainmentSegue" customModule="SideMenuController" id="yAN-mK-0QT"/>
                         <segue destination="5WJ-92-UEL" kind="custom" identifier="showProjects" customClass="CenterContainmentSegue" customModule="SideMenuController" id="ZkV-KN-JnO"/>
+                        <segue destination="kLY-zj-r7L" kind="custom" identifier="showSettings" customClass="CenterContainmentSegue" customModule="SideMenuController" id="ITB-QC-hLd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCY-GH-Dwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -48,7 +49,7 @@
                 <viewControllerPlaceholder storyboardName="Dashboard" referencedIdentifier="dashboardNav" id="frA-ye-Uko" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUz-Sv-L3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="-440"/>
+            <point key="canvasLocation" x="294" y="-441"/>
         </scene>
         <!--usersNav-->
         <scene sceneID="pC4-jR-DBc">
@@ -80,7 +81,15 @@
                 <viewControllerPlaceholder storyboardName="Projects" referencedIdentifier="projectsNav" id="5WJ-92-UEL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJ1-6Q-klE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="-267"/>
+            <point key="canvasLocation" x="282" y="-268"/>
+        </scene>
+        <!--settingsNav-->
+        <scene sceneID="56D-mY-gYS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="settingsNav" id="kLY-zj-r7L" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZbJ-TF-Wz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="-224"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="lE7-nh-pQ0">
@@ -106,7 +115,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zar-Yz-6Gp">
-                                            <rect key="frame" x="54" y="16" width="26.5" height="17.5"/>
+                                            <rect key="frame" x="54" y="17" width="26" height="15.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -146,7 +155,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Appleseed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaj-ss-s6K">
-                                            <rect key="frame" x="54" y="15.5" width="94" height="17.5"/>
+                                            <rect key="frame" x="54" y="16.5" width="94" height="15.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -180,7 +189,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUz-Rg-ns3">
-                                            <rect key="frame" x="54" y="14.5" width="46" height="17.5"/>
+                                            <rect key="frame" x="54" y="15.5" width="47" height="15.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>

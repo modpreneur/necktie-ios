@@ -46,6 +46,6 @@ var menuItems: [MenuItem] = [MenuItem(name: "Dashboard",
                                            segue: "showDashboard",
                                            image: "Users_vector"),
                                   MenuItem(name: "Settings",
-                                           segue: "showDashboard",
+                                           segue: "showSettings",
                                            image: "Settings_vector")
 ]

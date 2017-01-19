@@ -76,6 +76,9 @@
 		2BD1A44C1DE47BAC007837EB /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD1A44B1DE47BAC007837EB /* ProductsViewController.swift */; };
 		2BD1A44E1DE48192007837EB /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD1A44D1DE48192007837EB /* ProductCell.swift */; };
 		2BD409191DD5DFFE00A6D050 /* UsersEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD409181DD5DFFE00A6D050 /* UsersEditViewController.swift */; };
+		2BDB8B6F1E30E07B001316F7 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BDB8B6E1E30E07B001316F7 /* Settings.storyboard */; };
+		2BDB8B711E30E358001316F7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB8B701E30E358001316F7 /* SettingsViewController.swift */; };
+		2BDB8B741E30E505001316F7 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB8B731E30E505001316F7 /* SettingsCell.swift */; };
 		2BFB0BF01DA78EA900D29BC4 /* UIViewController+MotionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */; };
 		2BFB0BF81DA7BA4800D29BC4 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFB0BF71DA7BA4800D29BC4 /* Dashboard.storyboard */; };
 		2BFB0BFB1DA7BB1D00D29BC4 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFB0BFA1DA7BB1D00D29BC4 /* Menu.storyboard */; };
@@ -185,6 +188,9 @@
 		2BD1A44D1DE48192007837EB /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		2BD1A44F1DE48DF5007837EB /* Necktie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Necktie.entitlements; sourceTree = "<group>"; };
 		2BD409181DD5DFFE00A6D050 /* UsersEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersEditViewController.swift; sourceTree = "<group>"; };
+		2BDB8B6E1E30E07B001316F7 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		2BDB8B701E30E358001316F7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2BDB8B731E30E505001316F7 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		2BFB0BEF1DA78EA900D29BC4 /* UIViewController+MotionEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+MotionEffect.swift"; sourceTree = "<group>"; };
 		2BFB0BF61DA7A21300D29BC4 /* Necktie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Necktie-Bridging-Header.h"; sourceTree = "<group>"; };
 		2BFB0BF71DA7BA4800D29BC4 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
@@ -400,6 +406,7 @@
 				2BD1A4481DE47B6E007837EB /* Products.storyboard */,
 				2B1CEA161E07F9A70028182F /* Companies.storyboard */,
 				2B1CEA1F1E080B7C0028182F /* Projects.storyboard */,
+				2BDB8B6E1E30E07B001316F7 /* Settings.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -424,6 +431,7 @@
 				2B1CEA181E07FF050028182F /* Companies */,
 				2B7084061DD31C3900FE4A7D /* Users */,
 				2B1CEA211E0810830028182F /* Projects */,
+				2BDB8B721E30E35C001316F7 /* Settings */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -477,6 +485,15 @@
 				2B36DE621E02D23500B6F734 /* BillingPlanCell.swift */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2BDB8B721E30E35C001316F7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2BDB8B701E30E358001316F7 /* SettingsViewController.swift */,
+				2BDB8B731E30E505001316F7 /* SettingsCell.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		2BFB0BFC1DA7BD4600D29BC4 /* Menu */ = {
@@ -659,6 +676,7 @@
 				2BBB55221D9E80AD005347DB /* Assets.xcassets in Resources */,
 				2BBB55201D9E80AD005347DB /* Main.storyboard in Resources */,
 				2B71DB941DC88BE000893937 /* Roboto-Medium.ttf in Resources */,
+				2BDB8B6F1E30E07B001316F7 /* Settings.storyboard in Resources */,
 				2B71DB901DC88BE000893937 /* Roboto-BoldItalic.ttf in Resources */,
 				2B4DEEC31E03E0B60053287F /* WarningCell.xib in Resources */,
 				2B71DB911DC88BE000893937 /* Roboto-Italic.ttf in Resources */,
@@ -855,6 +873,8 @@
 				2B6A5F4B1E0026D200133CE0 /* ProductDetailViewController.swift in Sources */,
 				2B1654381DAB7FE7001DBE43 /* UIColor+Necktie.swift in Sources */,
 				2BD1A44C1DE47BAC007837EB /* ProductsViewController.swift in Sources */,
+				2BDB8B711E30E358001316F7 /* SettingsViewController.swift in Sources */,
+				2BDB8B741E30E505001316F7 /* SettingsCell.swift in Sources */,
 				2BAA201E1E2E3FAC00975883 /* Company.swift in Sources */,
 				2BFB0C021DA7BE8900D29BC4 /* MenuViewController.swift in Sources */,
 				2BFB0BFE1DA7BD6D00D29BC4 /* MenuContainerViewController.swift in Sources */,
