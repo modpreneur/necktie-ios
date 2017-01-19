@@ -40,7 +40,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfR-Mg-nsL">
-                                            <rect key="frame" x="16" y="10" width="8" height="16"/>
+                                            <rect key="frame" x="16" y="10" width="7" height="16"/>
                                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                             <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -69,27 +69,27 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productCell" rowHeight="50" id="h7V-Bo-Qsr" customClass="ProductCell" customModule="Necktie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="359" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productCell" id="h7V-Bo-Qsr" customClass="ProductCell" customModule="Necktie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="359" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7V-Bo-Qsr" id="o5T-5r-aiM">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgA-mS-kcs">
-                                                    <rect key="frame" x="16" y="8" width="8" height="16"/>
+                                                    <rect key="frame" x="16" y="14" width="7" height="16"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVN-O2-Mks">
-                                                    <rect key="frame" x="56" y="8" width="32" height="16"/>
+                                                    <rect key="frame" x="56" y="14" width="32" height="16"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                     <color key="textColor" red="0.17592567205429077" green="0.19667884707450867" blue="0.24479725956916809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDd-Xr-aDw">
-                                                    <rect key="frame" x="270" y="9" width="48" height="14"/>
+                                                    <rect key="frame" x="270.5" y="15.5" width="47.5" height="13.5"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -101,9 +101,9 @@
                                                 <constraint firstItem="UVN-O2-Mks" firstAttribute="centerY" secondItem="FgA-mS-kcs" secondAttribute="centerY" id="8Lm-OS-ECL"/>
                                                 <constraint firstItem="FgA-mS-kcs" firstAttribute="leading" secondItem="o5T-5r-aiM" secondAttribute="leading" constant="16" id="Ehe-ps-w5A"/>
                                                 <constraint firstItem="qDd-Xr-aDw" firstAttribute="centerY" secondItem="FgA-mS-kcs" secondAttribute="centerY" id="POH-2L-zYo"/>
+                                                <constraint firstItem="FgA-mS-kcs" firstAttribute="centerY" secondItem="o5T-5r-aiM" secondAttribute="centerY" id="amd-An-Kuo"/>
                                                 <constraint firstItem="UVN-O2-Mks" firstAttribute="leading" secondItem="o5T-5r-aiM" secondAttribute="leadingMargin" constant="48" id="b8r-Wk-xMG"/>
                                                 <constraint firstItem="qDd-Xr-aDw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UVN-O2-Mks" secondAttribute="trailing" constant="16" id="pJB-JV-QJX"/>
-                                                <constraint firstItem="FgA-mS-kcs" firstAttribute="top" secondItem="o5T-5r-aiM" secondAttribute="topMargin" id="vTU-L4-nrA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
