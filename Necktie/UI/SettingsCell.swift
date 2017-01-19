@@ -10,11 +10,15 @@ import UIKit
 
 class SettingsCell: TableViewCell {
     
-    @IBOutlet var key: UILabel!
-    @IBOutlet var value: UILabel!
+    @IBOutlet var keyLabel: UILabel!
+    @IBOutlet var valueLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
     
 }

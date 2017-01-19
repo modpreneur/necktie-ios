@@ -179,6 +179,12 @@ public extension String {
         return priceString!
     }
     
+    /// Gets currency symbol
+    func getSymbolForCurrencyCode() -> String? {
+        let locale = NSLocale(localeIdentifier: "en_US")
+        return locale.displayName(forKey: NSLocale.Key.currencySymbol, value: self)
+    }
+    
     /// Converts country ISO code to corresponding name
     func convertCountry() -> String {
         let locale: NSLocale = NSLocale.init(localeIdentifier: "en_US")

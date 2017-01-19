@@ -60,8 +60,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="key" destination="vXH-6n-fmn" id="0St-lo-9ck"/>
-                                            <outlet property="value" destination="d3Q-tf-j8a" id="wi7-tM-79k"/>
+                                            <outlet property="keyLabel" destination="vXH-6n-fmn" id="oNf-G1-7RB"/>
+                                            <outlet property="valueLabel" destination="d3Q-tf-j8a" id="7Gp-Hi-27B"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
