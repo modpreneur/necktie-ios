@@ -241,6 +241,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     if let currency = settings.currency {
                         Defaults[.currency] = currency
                     }
+                    if let itemsOnPage = settings.itemsOnPage {
+                        Defaults[.itemsOnPage] = itemsOnPage
+                    }
                 case .failure(let error):
                     log.error("Error: \(error)")
                 }

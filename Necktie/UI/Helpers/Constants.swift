@@ -29,7 +29,8 @@ public struct Constant {
         static let build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     }
     
-    static var resultLimit = 15
+    /// Number of items on page per request
+    static var resultLimit = Defaults[.itemsOnPage] != 0 ? Defaults[.itemsOnPage] : 15
 }
 
 /// User Access Token
@@ -95,4 +96,5 @@ public extension DefaultsKeys {
     static let username = DefaultsKey<String>("username")
     static let introAnimation = DefaultsKey<Bool>("introAnimation")
     static let currency = DefaultsKey<String>("currency")
+    static let itemsOnPage = DefaultsKey<Int>("itemsOnPage")
 }
