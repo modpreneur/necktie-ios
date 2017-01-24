@@ -42,6 +42,7 @@ struct API {
     static var projects = API.path + "projects"
     static var companies = API.path + "companies"
     static var company = API.path + "company"
+    static var statistics = API.path + "statistics"
 }
 
 /// API Router, returns URLConvertible
@@ -61,6 +62,7 @@ enum Router: URLRequestConvertible {
     case projects(limit: Int, skip: Int)
     case companies(limit: Int, skip: Int)
     case company(id: Int, limit: Int, skip: Int)
+    case statistics(id: Int, limit: Int, period: Period, quantity: Quantity)
     
     func asURLRequest() throws -> URLRequest {
         let result: (path: String, method: HTTPMethod, parameters: Parameters) = {
@@ -121,6 +123,10 @@ enum Router: URLRequestConvertible {
             // MARK: Company
             case let .company(id, limit, skip):
                 return (API.company + "/\(id)" + "/projects", .get, ["limit": limit, "skip": skip])
+                
+            // MARK: Statistics
+            case let .statistics(id, limit, period, quantity):
+                return (API.statistics + "/\(id)", .get, ["limit": limit, "period": period, "quantity": quantity])
         
             }
         }()
@@ -137,4 +143,18 @@ enum Router: URLRequestConvertible {
 public enum Sort: String {
     case asc = "asc"
     case desc = "desc"
+}
+
+public enum Period: String, RawRepresentable {
+    case thisWeek = "this_week"
+    case lastWeek = "last_week"
+    case thisMonth = "this_month"
+    case lastMonth = "last_month"
+    case thisYear = "this_year"
+}
+
+public enum Quantity: String, RawRepresentable {
+    case day = "day"
+    case week = "week"
+    case month = "month"
 }

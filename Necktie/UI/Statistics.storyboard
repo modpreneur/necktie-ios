@@ -25,7 +25,7 @@
                         <viewControllerLayoutGuide type="top" id="hzS-T8-n6r"/>
                         <viewControllerLayoutGuide type="bottom" id="ise-1b-QO7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7Ww-NC-kkf" customClass="MKDropdownMenu">
+                    <view key="view" contentMode="scaleToFill" id="7Ww-NC-kkf">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -38,11 +38,20 @@
                                         <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-oH-wHM">
+                                        <rect key="frame" x="351" y="8" width="16" height="26"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MoM-oH-wHM" secondAttribute="trailing" constant="8" id="0KO-ZT-a5f"/>
+                                    <constraint firstAttribute="bottom" secondItem="MoM-oH-wHM" secondAttribute="bottom" constant="8" id="CbP-Zh-0ap"/>
                                     <constraint firstItem="vEl-gK-yxH" firstAttribute="top" secondItem="Ia0-HT-XGF" secondAttribute="top" id="LeH-e0-hwS"/>
                                     <constraint firstAttribute="bottom" secondItem="vEl-gK-yxH" secondAttribute="bottom" id="Vpd-Re-2Dh"/>
+                                    <constraint firstItem="MoM-oH-wHM" firstAttribute="top" secondItem="Ia0-HT-XGF" secondAttribute="top" constant="8" id="YOV-nZ-ZO7"/>
                                     <constraint firstAttribute="trailing" secondItem="vEl-gK-yxH" secondAttribute="trailing" id="YeE-5N-cuY"/>
                                     <constraint firstItem="vEl-gK-yxH" firstAttribute="leading" secondItem="Ia0-HT-XGF" secondAttribute="leading" id="h7X-tG-WaL"/>
                                     <constraint firstAttribute="height" constant="42" id="j9a-x6-ia4"/>
@@ -50,7 +59,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bfa-YC-N0F" customClass="ScrollableGraphView" customModule="ScrollableGraphView">
                                 <rect key="frame" x="0.0" y="90" width="375" height="513"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.86060404777526855" green="0.87966305017471313" blue="0.91186362504959106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                         <color key="value" red="0.43255615234375" green="0.41591155529022217" blue="0.98916715383529663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,7 +71,7 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundFillColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.86060404777526855" green="0.87966305017471313" blue="0.91186362504959106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillGradientStartColor">
                                         <color key="value" red="0.43255615234375" green="0.41591155529022217" blue="0.98916715383529663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,7 +101,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="fillType_">
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdaptRange" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdaptRange" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAnimateOnAdapt" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="dataPointSize">
                                         <real key="value" value="4"/>
@@ -106,6 +115,11 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="referenceLinePosition_">
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAnimateOnStartup" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAutomaticallyDetectRange" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period &amp; Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pir-Ly-cF8">
@@ -114,15 +128,23 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5z-CK-9xK">
+                                <rect key="frame" x="141" y="284.5" width="92.5" height="34.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="26"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.86060404777526855" green="0.87966305017471313" blue="0.91186362504959106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="d5z-CK-9xK" firstAttribute="centerX" secondItem="7Ww-NC-kkf" secondAttribute="centerX" id="71F-xP-RAj"/>
                             <constraint firstItem="Pir-Ly-cF8" firstAttribute="top" secondItem="Ia0-HT-XGF" secondAttribute="bottom" constant="16" id="8ZV-So-ZbD"/>
                             <constraint firstAttribute="trailing" secondItem="Ia0-HT-XGF" secondAttribute="trailing" id="Cxx-rl-xnC"/>
                             <constraint firstItem="Bfa-YC-N0F" firstAttribute="leading" secondItem="7Ww-NC-kkf" secondAttribute="leading" id="Fdj-p4-1BF"/>
                             <constraint firstItem="Pir-Ly-cF8" firstAttribute="centerX" secondItem="7Ww-NC-kkf" secondAttribute="centerX" id="G6W-Dc-h7t"/>
                             <constraint firstAttribute="trailing" secondItem="Bfa-YC-N0F" secondAttribute="trailing" id="HZ9-UT-j55"/>
                             <constraint firstItem="Ia0-HT-XGF" firstAttribute="top" secondItem="hzS-T8-n6r" secondAttribute="bottom" id="NUF-ML-TBX"/>
+                            <constraint firstItem="d5z-CK-9xK" firstAttribute="centerY" secondItem="7Ww-NC-kkf" secondAttribute="centerY" id="cVz-BV-2gf"/>
                             <constraint firstItem="Bfa-YC-N0F" firstAttribute="top" secondItem="Pir-Ly-cF8" secondAttribute="bottom" constant="16" id="kD9-aC-IEe"/>
                             <constraint firstItem="ise-1b-QO7" firstAttribute="top" secondItem="Bfa-YC-N0F" secondAttribute="bottom" id="lcK-k4-bMe"/>
                             <constraint firstItem="Ia0-HT-XGF" firstAttribute="leading" secondItem="7Ww-NC-kkf" secondAttribute="leading" id="w8q-Fb-FzP"/>
@@ -146,6 +168,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="graph" destination="Bfa-YC-N0F" id="ePB-5t-uOV"/>
+                        <outlet property="noDataLabel" destination="d5z-CK-9xK" id="CY0-3g-rX7"/>
                         <outlet property="selectedPeriodQuantityLabel" destination="Pir-Ly-cF8" id="6uJ-pX-eSP"/>
                         <outlet property="selectedReportLabel" destination="vEl-gK-yxH" id="YUu-zx-XEq"/>
                     </connections>

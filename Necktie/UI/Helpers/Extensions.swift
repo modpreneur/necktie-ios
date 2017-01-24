@@ -207,6 +207,16 @@ public extension Int {
             return "\(self) days"
         }
     }
+    
+    /// Converts UNIX timestamp to Date
+    func convertTimestampToDate() -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(Double(self/1000)))
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateStyle = .medium
+        
+        return dateFormatter.string(from: date)
+    }
 }
 
 // MARK: - Double
