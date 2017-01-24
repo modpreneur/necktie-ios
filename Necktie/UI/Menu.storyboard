@@ -37,6 +37,7 @@
                         <segue destination="Zg4-2s-FdZ" kind="custom" identifier="showCompanies" customClass="CenterContainmentSegue" customModule="SideMenuController" id="yAN-mK-0QT"/>
                         <segue destination="5WJ-92-UEL" kind="custom" identifier="showProjects" customClass="CenterContainmentSegue" customModule="SideMenuController" id="ZkV-KN-JnO"/>
                         <segue destination="kLY-zj-r7L" kind="custom" identifier="showSettings" customClass="CenterContainmentSegue" customModule="SideMenuController" id="ITB-QC-hLd"/>
+                        <segue destination="i0b-CE-fg5" kind="custom" identifier="showStatistics" customClass="CenterContainmentSegue" customModule="SideMenuController" id="OP4-5G-iyK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCY-GH-Dwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,6 +91,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbJ-TF-Wz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="282" y="-224"/>
+        </scene>
+        <!--statisticsNav-->
+        <scene sceneID="Q5l-4a-UnM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Statistics" referencedIdentifier="statisticsNav" id="i0b-CE-fg5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tS3-MO-EJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="-183"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="lE7-nh-pQ0">

@@ -79,6 +79,9 @@ public struct Controller {
     static let companiesNav = "companiesNav"
     static let companies = "companies"
     static let companyDetail = "companyDetail"
+    
+    static let statisticsNav = "statisticsNav"
+    static let statistics = "statistics"
 }
 
 /// Storyboard segue identifiers

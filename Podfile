@@ -13,6 +13,7 @@ target 'Necktie' do
   pod 'IHKeyboardAvoiding', '~> 2.6'
   pod 'KDCircularProgress'
   pod 'KeychainAccess', '~> 3.0'
+  pod 'MKDropdownMenu', '~> 1.3'
   pod 'RevealingSplashView', '~> 0.1'
   pod 'ScrollableGraphView', '~> 3.0'
   pod 'Segmentio', '~> 2.1'
@@ -20,6 +21,7 @@ target 'Necktie' do
   pod 'SnapKit', '~> 3.0'
   pod 'SwiftyBeaver', '~> 1.1'
   pod 'SwiftyUserDefaults', '~> 3.0'
+  pod 'TBDropdownMenu', '~> 2.3'
   pod 'UICircularProgressRing', '~> 1.1'
   pod 'UIScrollView-InfiniteScroll', '~> 1.0'
 
