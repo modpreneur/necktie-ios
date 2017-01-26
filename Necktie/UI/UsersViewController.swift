@@ -87,7 +87,9 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.emailLabel.text = email
         }
         
-        cell.statusLabel.text = user.isPublic! ? "Enabled" : "Disabled"
+        if let isPublic = user.isPublic {
+            cell.statusLabel.text = isPublic ? "Enabled" : "Disabled"
+        }
         
         return cell
     }
@@ -97,7 +99,10 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let user = userArray[indexPath.row]
         
-        cell.statusLabel.backgroundColor = user.isPublic! ? UIColor.necktiePrimary : UIColor.lightGray
+        if let isPublic = user.isPublic {
+            cell.statusLabel.backgroundColor = isPublic ? UIColor.necktiePrimary : UIColor.lightGray
+        }
+        
         cell.statusLabel.roundCorners(radius: 3)
     }
     
