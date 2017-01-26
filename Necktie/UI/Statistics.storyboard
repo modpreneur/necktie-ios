@@ -38,20 +38,20 @@
                                         <color key="textColor" red="0.17776158452033997" green="0.19841402769088745" blue="0.24119275808334351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-oH-wHM">
-                                        <rect key="frame" x="351" y="8" width="16" height="26"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_Down" translatesAutoresizingMaskIntoConstraints="NO" id="Plr-WQ-sEd">
+                                        <rect key="frame" x="347" y="16.5" width="13" height="8"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="13" id="RPV-ha-n4e"/>
+                                            <constraint firstAttribute="height" constant="8" id="YJ1-Ba-pl0"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="MoM-oH-wHM" secondAttribute="trailing" constant="8" id="0KO-ZT-a5f"/>
-                                    <constraint firstAttribute="bottom" secondItem="MoM-oH-wHM" secondAttribute="bottom" constant="8" id="CbP-Zh-0ap"/>
+                                    <constraint firstItem="Plr-WQ-sEd" firstAttribute="centerY" secondItem="vEl-gK-yxH" secondAttribute="centerY" id="CfP-Os-cFs"/>
                                     <constraint firstItem="vEl-gK-yxH" firstAttribute="top" secondItem="Ia0-HT-XGF" secondAttribute="top" id="LeH-e0-hwS"/>
                                     <constraint firstAttribute="bottom" secondItem="vEl-gK-yxH" secondAttribute="bottom" id="Vpd-Re-2Dh"/>
-                                    <constraint firstItem="MoM-oH-wHM" firstAttribute="top" secondItem="Ia0-HT-XGF" secondAttribute="top" constant="8" id="YOV-nZ-ZO7"/>
+                                    <constraint firstItem="Plr-WQ-sEd" firstAttribute="leading" secondItem="vEl-gK-yxH" secondAttribute="trailing" constant="-28" id="YBO-l3-3ot"/>
                                     <constraint firstAttribute="trailing" secondItem="vEl-gK-yxH" secondAttribute="trailing" id="YeE-5N-cuY"/>
                                     <constraint firstItem="vEl-gK-yxH" firstAttribute="leading" secondItem="Ia0-HT-XGF" secondAttribute="leading" id="h7X-tG-WaL"/>
                                     <constraint firstAttribute="height" constant="42" id="j9a-x6-ia4"/>
@@ -182,7 +182,7 @@
             <objects>
                 <navigationController storyboardIdentifier="statisticsNav" automaticallyAdjustsScrollViewInsets="NO" id="Wyp-ES-GhI" customClass="NavigationController" customModule="Necktie" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4Q6-yV-xLT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4Q6-yV-xLT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -196,4 +196,7 @@
             <point key="canvasLocation" x="2" y="143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Arrow_Down" width="132" height="82"/>
+    </resources>
 </document>
