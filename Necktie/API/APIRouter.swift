@@ -16,8 +16,8 @@ struct API {
     static var baseURL: String {
     #if DEBUG
         //return "http://ci.corp.modpreneur.com:8000"
-        return "http://88.146.49.119"
-        //return "http://88.146.49.119/app_dev.php"
+        //return "http://88.146.49.119"
+        return "http://88.146.49.119/app_dev.php"
         //return "http://dev.getnecktie.com"
     #else
         return "http://dev.getnecktie.com"
