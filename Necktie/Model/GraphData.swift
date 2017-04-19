@@ -11,6 +11,10 @@ import Foundation
 import ObjectMapper
 
 final class GraphData: Mappable {
+    var type: GraphType?
+    var dataNames: [String]?
+    var xAxisName: String?
+    var xAxis: [Int]?
     var data: [[Int]] = []
     
     required init?(map: Map) {
@@ -18,7 +22,15 @@ final class GraphData: Mappable {
     }
     
     func mapping(map: Map) {
+        type <- map["type"]
+        dataNames <- map["dataNames"]
+        xAxisName <- map["xAxisName"]
+        xAxis <- map["xAxis"]
         data <- map["data"]
     }
     
+}
+
+public enum GraphType: String {
+    case areaSpline = "area-spline"
 }

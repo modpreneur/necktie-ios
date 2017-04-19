@@ -94,7 +94,7 @@ class StatisticsViewController: UIViewController {
         
         APIManager.sharedManager.request(Router.statistics(id: selectedReport+1, limit: Constant.resultLimit, period: period, quantity: quantity))
             .validate()
-            .responseObject { (response: DataResponse<GraphData>) in
+            .responseObject(keyPath: "data") { (response: DataResponse<GraphData>) in
                 log.debug("Request URL: \(response.request!.url!)")
                 
                 switch response.result {
@@ -130,8 +130,11 @@ class StatisticsViewController: UIViewController {
             var values: [Double] = []
             
             for item in graphData.data {
-                timestamps.append("\(item[0].convertTimestampToDate())")
-                values.append(Double(item[1]))
+                values.append(Double(item[0]))
+            }
+            
+            for axis in graphData.xAxis! {
+                timestamps.append("\(axis)")
             }
             
             noDataLabel.isHidden = true
