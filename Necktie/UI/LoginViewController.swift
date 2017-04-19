@@ -71,7 +71,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(true)
         
         // Set keyboard to avoid containerView
-        IHKeyboardAvoiding.setAvoiding(loginButton)
+        KeyboardAvoiding.avoidingView = loginButton
         //IHKeyboardAvoiding.setPaddingForCurrentAvoidingView(-118)
     }
 

@@ -9,10 +9,8 @@
 #ifndef Necktie_Bridging_Header_h
 #define Necktie_Bridging_Header_h
 
-#import <IHKeyboardAvoiding/IHKeyboardAvoiding.h>
 #import <MBCircularProgressBar/MBCircularProgressBarView.h>
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-#import <MKDropdownMenu/MKDropdownMenu.h>
 
 @import UIScrollView-InfiniteScroll
 
