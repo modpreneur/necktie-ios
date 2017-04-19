@@ -56,6 +56,7 @@
 		2B80A92F1DD0C97200EED246 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80A92E1DD0C97200EED246 /* Extensions.swift */; };
 		2B8E55531DFECDED000E1B11 /* TransformDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E55521DFECDED000E1B11 /* TransformDate.swift */; };
 		2B8E55551DFED736000E1B11 /* BillingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E55541DFED736000E1B11 /* BillingPlan.swift */; };
+		2B92C3FD1EA76FAD00424073 /* HADropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B92C3FC1EA76FAD00424073 /* HADropDown.swift */; };
 		2BAA201C1E2E3F0000975883 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA201B1E2E3F0000975883 /* Project.swift */; };
 		2BAA201E1E2E3FAC00975883 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA201D1E2E3FAC00975883 /* Company.swift */; };
 		2BADDF2B1DEDAB6000D22271 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BADDF291DEDAB6000D22271 /* APIManager.swift */; };
@@ -164,6 +165,7 @@
 		2B80A92E1DD0C97200EED246 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2B8E55521DFECDED000E1B11 /* TransformDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformDate.swift; sourceTree = "<group>"; };
 		2B8E55541DFED736000E1B11 /* BillingPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingPlan.swift; sourceTree = "<group>"; };
+		2B92C3FC1EA76FAD00424073 /* HADropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HADropDown.swift; sourceTree = "<group>"; };
 		2BAA201B1E2E3F0000975883 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		2BAA201D1E2E3FAC00975883 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		2BADDF291DEDAB6000D22271 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -318,6 +320,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		2B92C3FB1EA76FAD00424073 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				2B92C3FC1EA76FAD00424073 /* HADropDown.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 		2BADDF281DEDAB0F00D22271 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +370,7 @@
 				2BBB554E1D9E8506005347DB /* Helpers */,
 				2BBB55491D9E8128005347DB /* Model */,
 				2BBB55481D9E8118005347DB /* UI */,
+				2B92C3FB1EA76FAD00424073 /* Libraries */,
 				2B71DB7A1DC88BB000893937 /* Resources */,
 				2BBB554B1D9E8162005347DB /* Supporting Files */,
 			);
@@ -914,6 +925,7 @@
 				2B36DE631E02D23600B6F734 /* BillingPlanCell.swift in Sources */,
 				2BD409191DD5DFFE00A6D050 /* UsersEditViewController.swift in Sources */,
 				2BFB0C081DA7D3F500D29BC4 /* SideMenuCustom.swift in Sources */,
+				2B92C3FD1EA76FAD00424073 /* HADropDown.swift in Sources */,
 				2BBBD6051DA682DD00696D1E /* DashboardViewController.swift in Sources */,
 				2B7084081DD31C7B00FE4A7D /* UsersViewController.swift in Sources */,
 			);

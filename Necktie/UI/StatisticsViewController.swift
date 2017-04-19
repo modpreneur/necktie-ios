@@ -11,7 +11,6 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 import ScrollableGraphView
-import TBDropdownMenu
 
 class StatisticsViewController: UIViewController {
     
@@ -22,30 +21,30 @@ class StatisticsViewController: UIViewController {
     @IBOutlet var graph: ScrollableGraphView!
     @IBOutlet var noDataLabel: UILabel!
     
+    @IBOutlet var reportsDropdown: HADropDown!
+    @IBOutlet var periodsDropdown: HADropDown!
+    @IBOutlet var quantitiesDropdown: HADropDown!
+    
     // MARK: - Properties
     
-    let reports = [DropdownItem(title: "Count of user logins"),
-                   DropdownItem(title: "Payments by products breakdown"),
-                   DropdownItem(title: "Payments by payment system breakdown"),
-                   DropdownItem(title: "Income Report - payments minus refunds"),
-                   DropdownItem(title: "Payments by billing plan breakdown"),
-                   DropdownItem(title: "Payments by payment system vendor breakdown"),
-                   DropdownItem(title: "Payments by New vs Existing members"),
-                   DropdownItem(title: "Retention rate")]
+    let reports = ["Count of user logins",
+                   "Payments by products breakdown",
+                   "Payments by payment system breakdown",
+                   "Income Report - payments minus refunds",
+                   "Payments by billing plan breakdown",
+                   "Payments by payment system vendor breakdown",
+                   "Payments by New vs Existing members",
+                   "Retention rate"]
     
-    let periods = [DropdownItem(title: "This week"),
-                   DropdownItem(title: "Last week"),
-                   DropdownItem(title: "This month"),
-                   DropdownItem(title: "Last month"),
-                   DropdownItem(title: "This year")]
+    let periods = ["This week",
+                   "Last week",
+                   "This month",
+                   "Last month",
+                   "This year"]
     
-    let quantities = [DropdownItem(title: "Day"),
-                      DropdownItem(title: "Week"),
-                      DropdownItem(title: "Month")]
-    
-    var reportsDropdown: DropdownMenu? = nil
-    var periodsDropdown: DropdownMenu? = nil
-    var quantitiesDropdown: DropdownMenu? = nil
+    let quantities = ["Day",
+                      "Week",
+                      "Month"]
     
     var selectedReport = 0
     var selectedPeriod = 0
@@ -56,15 +55,23 @@ class StatisticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        selectedReportLabel.text = reports.first?.title
-        if let selectedPeriodText = periods.first?.title, let selectedQuantityText = quantities.first?.title {
+        reportsDropdown.title = reports.first!
+        if let selectedPeriodText = periods.first, let selectedQuantityText = quantities.first {
             selectedPeriodQuantityLabel.text = "\(selectedPeriodText) (\(selectedQuantityText.lowercased()))"
         }
         
-        // Add Tap gesture to label
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(reportLabelTapped))
-        selectedReportLabel.isUserInteractionEnabled = true
-        selectedReportLabel.addGestureRecognizer(tapGesture)
+        // Set DropDown data
+        reportsDropdown.items = reports
+        //periodsDropdown.items = periods
+        //quantitiesDropdown.items = quantities
+        
+        // Set DropDown tags
+        reportsDropdown.tag = 1
+        //periodsDropdown.tag = 2
+        //quantitiesDropdown.tag = 3
+        
+        // Set DropDown delegates
+        reportsDropdown.delegate = self
         
         //graph.set(data: [1, 3, 9, 8, 2, 4, 7, 2], withLabels: ["1", "2", "3", "4", "5", "6", "7", "8"])
     }
@@ -137,44 +144,6 @@ class StatisticsViewController: UIViewController {
         }
     }
     
-    // MARK: - Dropdowns
-    
-    @IBAction func showPeriodDropdown(sender: UIBarButtonItem) {
-        periodsDropdown = DropdownMenu(navigationController: navigationController!, items: periods)
-        periodsDropdown!.tag = 2
-        periodsDropdown!.textFont = UIFont.roboto(12)
-        periodsDropdown!.textColor = UIColor.darkGray
-        periodsDropdown!.highlightColor = UIColor.necktieSecondary
-        
-        periodsDropdown!.delegate = self
-        periodsDropdown!.displaySelected = false
-        periodsDropdown!.showMenu()
-    }
-    
-    @IBAction func showQuantityDropdown(sender: UIBarButtonItem) {
-        quantitiesDropdown = DropdownMenu(navigationController: navigationController!, items: quantities)
-        quantitiesDropdown!.tag = 3
-        quantitiesDropdown!.textFont = UIFont.roboto(12)
-        quantitiesDropdown!.textColor = UIColor.darkGray
-        quantitiesDropdown!.highlightColor = UIColor.necktieSecondary
-        
-        quantitiesDropdown!.delegate = self
-        quantitiesDropdown!.displaySelected = false
-        quantitiesDropdown!.showMenu()
-    }
-    
-    func reportLabelTapped(sender: UITapGestureRecognizer) {
-        reportsDropdown = DropdownMenu(navigationController: navigationController!, items: reports)
-        reportsDropdown!.tag = 1
-        reportsDropdown!.textFont = UIFont.roboto(12)
-        reportsDropdown!.textColor = UIColor.darkGray
-        reportsDropdown!.highlightColor = UIColor.necktieSecondary
-        
-        reportsDropdown!.delegate = self
-        reportsDropdown!.displaySelected = false
-        reportsDropdown!.showMenu()
-    }
-    
     // MARK: - Enum conversion
     
     fileprivate func getPeriod(_ period: Int) -> Period {
@@ -209,22 +178,20 @@ class StatisticsViewController: UIViewController {
     
 }
 
-extension StatisticsViewController: DropdownMenuDelegate {
-    func dropdownMenu(_ dropdownMenu: DropdownMenu, didSelectRowAt indexPath: IndexPath) {
-        if dropdownMenu.tag == 1 {
-            self.selectedReportLabel.text = reports[indexPath.row].title
-            
-            self.selectedReport = indexPath.row
-            log.info("Selected report: \(reports[indexPath.row].title)")
-        } else if dropdownMenu.tag == 2 {
-            self.selectedPeriod = indexPath.row
-            log.info("Selected period: \(periods[indexPath.row].title)")
-        } else if dropdownMenu.tag == 3 {
-             self.selectedQuantity = indexPath.row
-            log.info("Selected quantity: \(quantities[indexPath.row].title)")
+extension StatisticsViewController: HADropDownDelegate {
+    func didSelectItem(dropDown: HADropDown, at index: Int) {
+        if dropDown.tag == 1 {
+            self.selectedReport = index
+            log.info("Selected report: \(reports[index])")
+        } else if dropDown.tag == 2 {
+            self.selectedPeriod = index
+            log.info("Selected period: \(periods[index])")
+        } else if dropDown.tag == 3 {
+            self.selectedQuantity = index
+            log.info("Selected quantity: \(quantities[index])")
         }
         
-        selectedPeriodQuantityLabel.text = "\(periods[selectedPeriod].title) (\(quantities[selectedQuantity].title.lowercased()))"
+        selectedPeriodQuantityLabel.text = "\(periods[selectedPeriod]) (\(quantities[selectedQuantity].lowercased()))"
         
         requestGraphData(id: selectedReport+1, period: getPeriod(self.selectedPeriod), quantity: getQuantity(self.selectedQuantity))
     }

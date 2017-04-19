@@ -9,6 +9,9 @@ PODS:
     - ObjectMapper (~> 2.0)
   - ARSLineProgress (2.1.0)
   - BusyNavigationBar (2.0.0)
+  - Charts (3.0.2):
+    - Charts/Core (= 3.0.2)
+  - Charts/Core (3.0.2)
   - DZNEmptyDataSet (1.8.1)
   - IHKeyboardAvoiding (2.6)
   - KDCircularProgress (1.5.2)
@@ -33,6 +36,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 4.0)
   - ARSLineProgress (~> 2.1)
   - BusyNavigationBar (~> 2.0)
+  - Charts (~> 3.0)
   - DZNEmptyDataSet (~> 1.8)
   - IHKeyboardAvoiding (~> 2.6)
   - KDCircularProgress
@@ -56,6 +60,7 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
   ARSLineProgress: 44dd1ec9994a4ddea7767944ecb9001046ecd697
   BusyNavigationBar: b73fd434b95f6198809dcf048b0245ad89ec1b37
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IHKeyboardAvoiding: d2541ee56dad83e160cd9aed0468c52247af6f49
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
@@ -73,6 +78,6 @@ SPEC CHECKSUMS:
   UICircularProgressRing: aa42aecd035658bd7212fab6e2feabc8dcc72fae
   UIScrollView-InfiniteScroll: d26885be71caca7485cdb37eab513a8f89036bb0
 
-PODFILE CHECKSUM: aab6774b2b3f7e1e32c6cf952bd8e51bc6ae999d
+PODFILE CHECKSUM: 07f3f13fb22c338bb508a8c4e868bd126782ab4a
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.2.0
